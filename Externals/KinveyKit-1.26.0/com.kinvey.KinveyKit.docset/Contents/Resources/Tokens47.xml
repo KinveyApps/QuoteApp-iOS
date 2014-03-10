@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/KCSResourceStore.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/KCSResourceStore</TokenIdentifier>
+			<Abstract type="html">KCSResourceStore loads, creates/updates, and deletes blob resources from the Kinvey backend
+@deprecatedIn 1.18.0</Abstract>
+			<DeclaredIn>KCSResourceStore.h</DeclaredIn>
+			
+			<NodeRef refid="47"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/KCSResourceStore/saveObject:withCompletionBlock:withProgressBlock:KCS_DEPRECATED:</TokenIdentifier>
+			<Abstract type="html">Add or update an object (or objects) in the store.</Abstract>
+			<DeclaredIn>KCSResourceStore.h</DeclaredIn>			
+			
+			<Declaration>- (void)saveObject:(id)object withCompletionBlock:(KCSCompletionBlock)completionBlock withProgressBlock:(KCSProgressBlock)progressBlock KCS_DEPRECATED</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>object</Name>
+					<Abstract type="html">A url to a file to add/update in the resources (if the object is a NSArray, all objects will be added/updated). The object must be a NSURL that points a local file, or a NSArray of such NSURL objects.</Abstract>
+				</Parameter><Parameter>
+					<Name>completionBlock</Name>
+					<Abstract type="html">A block that gets invoked when the addition/update is &quot;complete&quot; (as defined by the store)</Abstract>
+				</Parameter><Parameter>
+					<Name>progressBlock</Name>
+					<Abstract type="html">A block that is invoked whenever the store can offer an update on the progress of the operation.
+
+@deprecatedIn 1.18.0</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/saveObject:withCompletionBlock:withProgressBlock:KCS_DEPRECATED:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/KCSResourceStore/queryWithQuery:withCompletionBlock:withProgressBlock:KCS_DEPRECATED:</TokenIdentifier>
+			<Abstract type="html">Query or fetch an resource (or resource) in the store.</Abstract>
+			<DeclaredIn>KCSResourceStore.h</DeclaredIn>			
+			
+			<Declaration>- (void)queryWithQuery:(id)query withCompletionBlock:(KCSCompletionBlock)completionBlock withProgressBlock:(KCSProgressBlock)progressBlock KCS_DEPRECATED</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>query</Name>
+					<Abstract type="html">A string filename.</Abstract>
+				</Parameter><Parameter>
+					<Name>completionBlock</Name>
+					<Abstract type="html">A block that gets invoked when the query/fetch is &quot;complete&quot;.</Abstract>
+				</Parameter><Parameter>
+					<Name>progressBlock</Name>
+					<Abstract type="html">A block that is invoked whenever the store can offer an update on the progress of the operation.
+@deprecatedIn 1.18.0</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/queryWithQuery:withCompletionBlock:withProgressBlock:KCS_DEPRECATED:</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

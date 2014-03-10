@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="4514" systemVersion="13C64" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController">
+            <connections>
+                <outlet property="collectionView" destination="oh5-Kf-YPG" id="WFj-Ux-dIu"/>
+                <outlet property="collectionViewFlowLayout" destination="PNi-g8-w77" id="U0n-Km-mS9"/>
+                <outlet property="searchBar" destination="jOO-sA-huW" id="K5q-8D-7Wv"/>
+                <outlet property="searchBarTopConstraint" destination="Nv5-cw-zcn" id="5rC-WU-pVN"/>
+                <outlet property="searchCountResultLabel" destination="693-4C-ue0" id="SS3-81-caJ"/>
+                <outlet property="tableGridSegmentedControl" destination="amO-T6-84V" id="aGo-ZZ-t3g"/>
+                <outlet property="tableView" destination="d87-RW-cbZ" id="nwQ-Wd-Ft2"/>
+                <outlet property="topBarView" destination="gkI-o9-a5o" id="3AW-AP-hhC"/>
+                <outlet property="view" destination="2" id="rQZ-ls-ZlI"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="2">
+            <rect key="frame" x="0.0" y="0.0" width="768" height="626"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="jOO-sA-huW">
+                    <rect key="frame" x="0.0" y="20" width="768" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <textInputTraits key="textInputTraits"/>
+                </searchBar>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="companylogo" translatesAutoresizingMaskIntoConstraints="NO" id="4SE-Hg-Qvv">
+                    <rect key="frame" x="20" y="72" width="155" height="60"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="155" id="GfO-SE-OCp"/>
+                        <constraint firstAttribute="height" constant="60" id="dh4-16-6Xa"/>
+                    </constraints>
+                </imageView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="95" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="d87-RW-cbZ">
+                    <rect key="frame" x="0.0" y="140" width="768" height="436"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </tableView>
+                <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search result" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="693-4C-ue0">
+                    <rect key="frame" x="183" y="111" width="565" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="uc5-w5-nl0"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gkI-o9-a5o" userLabel="Top Bar View">
+                    <rect key="frame" x="0.0" y="0.0" width="768" height="64"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aCr-o7-sNG" userLabel="Separator">
+                            <rect key="frame" x="0.0" y="63" width="768" height="1"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.78431379800000001" green="0.77647066119999997" blue="0.80000007149999997" alpha="1" colorSpace="deviceRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="9iq-Q0-qJq"/>
+                            </constraints>
+                            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BwA-Wt-VVI" userLabel="Settings Button">
+                            <rect key="frame" x="10" y="24" width="30" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="ShJ-ky-Oge"/>
+                                <constraint firstAttribute="width" constant="30" id="ds8-NU-WxA"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                            <state key="normal" image="Setting"/>
+                            <connections>
+                                <action selector="pressSettings" destination="-1" eventType="touchUpInside" id="cDV-i9-K9N"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TYG-nm-Dbp" userLabel="Search Button">
+                            <rect key="frame" x="728" y="24" width="30" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="aLR-zp-bF9"/>
+                                <constraint firstAttribute="width" constant="30" id="dub-eI-WH2"/>
+                            </constraints>
+                            <state key="normal" image="Search">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="pressSearch" destination="-1" eventType="touchUpInside" id="O6m-Jq-fKV"/>
+                            </connections>
+                        </button>
+                        <segmentedControl hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="amO-T6-84V">
+                            <rect key="frame" x="627" y="25" width="93" height="29"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="93" id="uoJ-ZF-L61"/>
+                            </constraints>
+                            <segments>
+                                <segment title="Table"/>
+                                <segment title="Grid"/>
+                            </segments>
+                            <connections>
+                                <action selector="changeTableGridView:" destination="-1" eventType="valueChanged" id="RWG-Th-p96"/>
+                            </connections>
+                        </segmentedControl>
+                    </subviews>
+                    <color key="backgroundColor" red="0.81176477670669556" green="0.22745099663734436" blue="0.12941177189350128" alpha="1" colorSpace="deviceRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="aCr-o7-sNG" secondAttribute="bottom" id="ESH-HR-08g"/>
+                        <constraint firstItem="aCr-o7-sNG" firstAttribute="leading" secondItem="gkI-o9-a5o" secondAttribute="leading" id="GIN-11-PMn"/>
+                        <constraint firstItem="BwA-Wt-VVI" firstAttribute="leading" secondItem="gkI-o9-a5o" secondAttribute="leading" constant="10" id="Vhb-fe-j6Y"/>
+                        <constraint firstAttribute="trailing" secondItem="TYG-nm-Dbp" secondAttribute="trailing" constant="10" id="ZVd-wz-hG5"/>
+                        <constraint firstAttribute="bottom" secondItem="BwA-Wt-VVI" secondAttribute="bottom" constant="10" id="ZhE-OG-01E"/>
+                        <constraint firstItem="TYG-nm-Dbp" firstAttribute="leading" secondItem="amO-T6-84V" secondAttribute="trailing" constant="8" id="fbm-3D-fA4"/>
+                        <constraint firstAttribute="bottom" secondItem="amO-T6-84V" secondAttribute="bottom" constant="11" id="gV7-Xk-8Iq"/>
+                        <constraint firstAttribute="bottom" secondItem="TYG-nm-Dbp" secondAttribute="bottom" constant="10" id="gks-r9-nTd"/>
+                        <constraint firstAttribute="trailing" secondItem="aCr-o7-sNG" secondAttribute="trailing" id="uHX-MS-R55"/>
+                        <constraint firstAttribute="height" constant="64" id="vw2-m9-rOa"/>
+                    </constraints>
+                </view>
+                <collectionView hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="oh5-Kf-YPG">
+                    <rect key="frame" x="0.0" y="140" width="768" height="436"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" red="0.86666673419999996" green="0.86666673419999996" blue="0.86666673419999996" alpha="1" colorSpace="deviceRGB"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="2" id="PNi-g8-w77">
+                        <size key="itemSize" width="253" height="189"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="2" minY="2" maxX="2" maxY="2"/>
+                    </collectionViewFlowLayout>
+                    <cells/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="Pm2-Du-GMh"/>
+                        <outlet property="delegate" destination="-1" id="csm-Q8-fAl"/>
+                    </connections>
+                </collectionView>
+            </subviews>
+            <color key="backgroundColor" red="0.86666673421859741" green="0.86666673421859741" blue="0.86666673421859741" alpha="1" colorSpace="deviceRGB"/>
+            <color key="tintColor" red="1" green="0.72941178080000002" blue="0.14901961389999999" alpha="1" colorSpace="deviceRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="693-4C-ue0" secondAttribute="trailing" constant="20" id="50g-ZQ-udO"/>
+                <constraint firstItem="d87-RW-cbZ" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="Cu1-N2-AR4"/>
+                <constraint firstItem="gkI-o9-a5o" firstAttribute="top" secondItem="2" secondAttribute="top" id="Fgn-vP-1nL"/>
+                <constraint firstAttribute="trailing" secondItem="d87-RW-cbZ" secondAttribute="trailing" id="H7w-sh-AQm"/>
+                <constraint firstItem="gkI-o9-a5o" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="NAD-Df-qZA"/>
+                <constraint firstItem="oh5-Kf-YPG" firstAttribute="top" secondItem="d87-RW-cbZ" secondAttribute="top" id="Nbo-WG-dYG"/>
+                <constraint firstItem="jOO-sA-huW" firstAttribute="top" secondItem="gkI-o9-a5o" secondAttribute="bottom" constant="-44" id="Nv5-cw-zcn"/>
+                <constraint firstItem="4SE-Hg-Qvv" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="20" id="OER-xU-zrr"/>
+                <constraint firstItem="oh5-Kf-YPG" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="OMc-3h-RE7"/>
+                <constraint firstItem="693-4C-ue0" firstAttribute="bottom" secondItem="4SE-Hg-Qvv" secondAttribute="bottom" id="TaL-UQ-ugj"/>
+                <constraint firstAttribute="bottom" secondItem="d87-RW-cbZ" secondAttribute="bottom" constant="50" id="VTv-2S-LLr"/>
+                <constraint firstItem="4SE-Hg-Qvv" firstAttribute="top" secondItem="jOO-sA-huW" secondAttribute="bottom" constant="8" id="Y7t-k9-a17"/>
+                <constraint firstAttribute="trailing" secondItem="jOO-sA-huW" secondAttribute="trailing" id="cJ8-Dd-1eB"/>
+                <constraint firstItem="jOO-sA-huW" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="d4V-ix-Qav"/>
+                <constraint firstAttribute="bottom" secondItem="oh5-Kf-YPG" secondAttribute="bottom" constant="50" id="d58-wF-16G"/>
+                <constraint firstAttribute="trailing" secondItem="gkI-o9-a5o" secondAttribute="trailing" id="dWd-dd-mLz"/>
+                <constraint firstItem="d87-RW-cbZ" firstAttribute="top" secondItem="4SE-Hg-Qvv" secondAttribute="bottom" constant="8" id="oXu-zC-ctt"/>
+                <constraint firstItem="693-4C-ue0" firstAttribute="leading" secondItem="4SE-Hg-Qvv" secondAttribute="trailing" constant="8" id="uoJ-zR-OZe"/>
+                <constraint firstAttribute="trailing" secondItem="oh5-Kf-YPG" secondAttribute="trailing" id="vVI-Cm-8z7"/>
+            </constraints>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+            <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Search" width="30" height="30"/>
+        <image name="Setting" width="30" height="30"/>
+        <image name="companylogo" width="275" height="108"/>
+    </resources>
+</document>

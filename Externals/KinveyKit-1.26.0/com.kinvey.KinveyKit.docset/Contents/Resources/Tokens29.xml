@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/KCSConnection.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/KCSConnection</TokenIdentifier>
+			<Abstract type="html">Abstract base class for all network connections</Abstract>
+			<DeclaredIn>KCSConnection.h</DeclaredIn>
+			
+			<NodeRef refid="29"/>
+		</Token>
+		
+		
+	</File>
+</Tokens>

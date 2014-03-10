@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/KCSResourceService.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/KCSResourceService</TokenIdentifier>
+			<Abstract type="html">Kinvey File Service wrapper</Abstract>
+			<DeclaredIn>KCSBlobService.h</DeclaredIn>
+			
+			<NodeRef refid="46"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/KCSResourceService/downloadResource:completionBlock:progressBlock:KCS_DEPRECATED:</TokenIdentifier>
+			<Abstract type="html">Downloads the given Resource ID into a local NSData object</Abstract>
+			<DeclaredIn>KCSBlobService.h</DeclaredIn>			
+			
+			<Declaration>+ (void)downloadResource:(NSString *)resourceId completionBlock:(KCSCompletionBlock)completionBlock progressBlock:(KCSProgressBlock)progressBlock KCS_DEPRECATED</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>resourceId</Name>
+					<Abstract type="html">The Resource ID to download.</Abstract>
+				</Parameter><Parameter>
+					<Name>completionBlock</Name>
+					<Abstract type="html">the block called when the operation completes or fails</Abstract>
+				</Parameter><Parameter>
+					<Name>progressBlock</Name>
+					<Abstract type="html">the block called 0+ times while the operation is in progress</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/downloadResource:completionBlock:progressBlock:KCS_DEPRECATED:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/KCSResourceService/downloadResource:toFile:completionBlock:progressBlock:KCS_DEPRECATED:</TokenIdentifier>
+			<Abstract type="html">Downloads the given Resource ID into a local file.</Abstract>
+			<DeclaredIn>KCSBlobService.h</DeclaredIn>			
+			
+			<Declaration>+ (void)downloadResource:(NSString *)resourceId toFile:(NSString *)filename completionBlock:(KCSCompletionBlock)completionBlock progressBlock:(KCSProgressBlock)progressBlock KCS_DEPRECATED</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>resourceId</Name>
+					<Abstract type="html">The Resource ID to download.</Abstract>
+				</Parameter><Parameter>
+					<Name>filename</Name>
+					<Abstract type="html">The filename that the resource will use as the download location.  This will be set in the KCSResourceResponse that the delegate receives.</Abstract>
+				</Parameter><Parameter>
+					<Name>completionBlock</Name>
+					<Abstract type="html">the block called when the operation completes or fails</Abstract>
+				</Parameter><Parameter>
+					<Name>progressBlock</Name>
+					<Abstract type="html">the block called 0+ times while the operation is in progress</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/downloadResource:toFile:completionBlock:progressBlock:KCS_DEPRECATED:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/KCSResourceService/getStreamingURLForResource:completionBlock:progressBlock:KCS_DEPRECATED:</TokenIdentifier>
+			<Abstract type="html">Obtain a 30-second time-limited URL for streaming a resource stored on Kinvey.</Abstract>
+			<DeclaredIn>KCSBlobService.h</DeclaredIn>			
+			
+			<Declaration>+ (void)getStreamingURLForResource:(NSString *)resourceId completionBlock:(KCSCompletionBlock)completionBlock progressBlock:(KCSProgressBlock)progressBlock KCS_DEPRECATED</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>resourceId</Name>
+					<Abstract type="html">The Resource ID to stream</Abstract>
+				</Parameter><Parameter>
+					<Name>completionBlock</Name>
+					<Abstract type="html">the block called when the operation completes or fails</Abstract>
+				</Parameter><Parameter>
+					<Name>progressBlock</Name>
+					<Abstract type="html">the block is NEVER called, so just supply nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getStreamingURLForResource:completionBlock:progressBlock:KCS_DEPRECATED:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/KCSResourceService/saveLocalResource:completionBlock:progressBlock:KCS_DEPRECATED:</TokenIdentifier>
+			<Abstract type="html">Saves the given File to Kinvey.</Abstract>
+			<DeclaredIn>KCSBlobService.h</DeclaredIn>			
+			
+			<Declaration>+ (void)saveLocalResource:(NSString *)filename completionBlock:(KCSCompletionBlock)completionBlock progressBlock:(KCSProgressBlock)progressBlock KCS_DEPRECATED</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>filename</Name>
+					<Abstract type="html">The filename of the local file to upload.</Abstract>
+				</Parameter><Parameter>
+					<Name>completionBlock</Name>
+					<Abstract type="html">the block called when the operation completes or fails</Abstract>
+				</Parameter><Parameter>
+					<Name>progressBlock</Name>
+					<Abstract type="html">the block called 0+ times while the operation is in progress</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/saveLocalResource:completionBlock:progressBlock:KCS_DEPRECATED:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/KCSResourceService/saveLocalResourceWithURL:completionBlock:progressBlock:KCS_DEPRECATED:</TokenIdentifier>
+			<Abstract type="html">Saves the given URL to Kinvey.</Abstract>
+			<DeclaredIn>KCSBlobService.h</DeclaredIn>			
+			
+			<Declaration>+ (void)saveLocalResourceWithURL:(NSURL *)URL completionBlock:(KCSCompletionBlock)completionBlock progressBlock:(KCSProgressBlock)progressBlock KCS_DEPRECATED</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>URL</Name>
+					<Abstract type="html">The file URL of the local file to upload.</Abstract>
+				</Parameter><Parameter>
+					<Name>completionBlock</Name>
+					<Abstract type="html">the block called when the operation completes or fails</Abstract>
+				</Parameter><Parameter>
+					<Name>progressBlock</Name>
+					<Abstract type="html">the block called 0+ times while the operation is in progress</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/saveLocalResourceWithURL:completionBlock:progressBlock:KCS_DEPRECATED:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/KCSResourceService/saveLocalResource:toResource:completionBlock:progressBlock:KCS_DEPRECATED:</TokenIdentifier>
+			<Abstract type="html">Saves the given File into the specified resource.</Abstract>
+			<DeclaredIn>KCSBlobService.h</DeclaredIn>			
+			
+			<Declaration>+ (void)saveLocalResource:(NSString *)filename toResource:(NSString *)resourceId completionBlock:(KCSCompletionBlock)completionBlock progressBlock:(KCSProgressBlock)progressBlock KCS_DEPRECATED</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>filename</Name>
+					<Abstract type="html">The filename of the local file to upload.</Abstract>
+				</Parameter><Parameter>
+					<Name>resourceId</Name>
+					<Abstract type="html">The resource ID to use for remote storage</Abstract>
+				</Parameter><Parameter>
+					<Name>completionBlock</Name>
+					<Abstract type="html">the block called when the operation completes or fails</Abstract>
+				</Parameter><Parameter>
+					<Name>progressBlock</Name>
+					<Abstract type="html">the block called 0+ times while the operation is in progress</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/saveLocalResource:toResource:completionBlock:progressBlock:KCS_DEPRECATED:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/KCSResourceService/saveLocalResourceWithURL:toResource:completionBlock:progressBlock:KCS_DEPRECATED:</TokenIdentifier>
+			<Abstract type="html">Saves the given URL into the specified resource.</Abstract>
+			<DeclaredIn>KCSBlobService.h</DeclaredIn>			
+			
+			<Declaration>+ (void)saveLocalResourceWithURL:(NSURL *)URL toResource:(NSString *)resourceId completionBlock:(KCSCompletionBlock)completionBlock progressBlock:(KCSProgressBlock)progressBlock KCS_DEPRECATED</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>URL</Name>
+					<Abstract type="html">The URL of the local file to upload.</Abstract>
+				</Parameter><Parameter>
+					<Name>resourceId</Name>
+					<Abstract type="html">The resource ID to use for remote storage</Abstract>
+				</Parameter><Parameter>
+					<Name>completionBlock</Name>
+					<Abstract type="html">the block called when the operation completes or fails</Abstract>
+				</Parameter><Parameter>
+					<Name>progressBlock</Name>
+					<Abstract type="html">the block called 0+ times while the operation is in progress</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/saveLocalResourceWithURL:toResource:completionBlock:progressBlock:KCS_DEPRECATED:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/KCSResourceService/saveData:toResource:completionBlock:progressBlock:KCS_DEPRECATED:</TokenIdentifier>
+			<Abstract type="html">Saves the given Data into the specified resource.</Abstract>
+			<DeclaredIn>KCSBlobService.h</DeclaredIn>			
+			
+			<Declaration>+ (void)saveData:(NSData *)data toResource:(NSString *)resourceId completionBlock:(KCSCompletionBlock)completionBlock progressBlock:(KCSProgressBlock)progressBlock KCS_DEPRECATED</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>data</Name>
+					<Abstract type="html">The Data to upload to Kinvey.</Abstract>
+				</Parameter><Parameter>
+					<Name>resourceId</Name>
+					<Abstract type="html">The resource ID to use for remote storage</Abstract>
+				</Parameter><Parameter>
+					<Name>completionBlock</Name>
+					<Abstract type="html">the block called when the operation completes or fails</Abstract>
+				</Parameter><Parameter>
+					<Name>progressBlock</Name>
+					<Abstract type="html">the block called 0+ times while the operation is in progress</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/saveData:toResource:completionBlock:progressBlock:KCS_DEPRECATED:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/KCSResourceService/deleteResource:completionBlock:progressBlock:KCS_DEPRECATED:</TokenIdentifier>
+			<Abstract type="html">Delete the given resource from Kinvey.</Abstract>
+			<DeclaredIn>KCSBlobService.h</DeclaredIn>			
+			
+			<Declaration>+ (void)deleteResource:(NSString *)resourceId completionBlock:(KCSCompletionBlock)completionBlock progressBlock:(KCSProgressBlock)progressBlock KCS_DEPRECATED</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>resourceId</Name>
+					<Abstract type="html">The resource ID that should be removed.</Abstract>
+				</Parameter><Parameter>
+					<Name>completionBlock</Name>
+					<Abstract type="html">the block called when the operation completes or fails</Abstract>
+				</Parameter><Parameter>
+					<Name>progressBlock</Name>
+					<Abstract type="html">the block called 0+ times while the operation is in progress</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/deleteResource:completionBlock:progressBlock:KCS_DEPRECATED:</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

@@ -1,0 +1,969 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>KCSResourceService Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<meta name="viewport" content="width=550" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.0.5 (build 789)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">KinveyKit </a></h1>
+				<a id="developerHome" href="../index.html">Kinvey</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">KCSResourceService Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/deleteResource:completionBlock:progressBlock:KCS_DEPRECATED:">&nbsp;&nbsp;&nbsp;&nbsp;+ deleteResource:completionBlock:progressBlock:KCS_DEPRECATED:</option>
+	
+	<option value="//api/name/downloadResource:completionBlock:progressBlock:KCS_DEPRECATED:">&nbsp;&nbsp;&nbsp;&nbsp;+ downloadResource:completionBlock:progressBlock:KCS_DEPRECATED:</option>
+	
+	<option value="//api/name/downloadResource:toFile:completionBlock:progressBlock:KCS_DEPRECATED:">&nbsp;&nbsp;&nbsp;&nbsp;+ downloadResource:toFile:completionBlock:progressBlock:KCS_DEPRECATED:</option>
+	
+	<option value="//api/name/getStreamingURLForResource:completionBlock:progressBlock:KCS_DEPRECATED:">&nbsp;&nbsp;&nbsp;&nbsp;+ getStreamingURLForResource:completionBlock:progressBlock:KCS_DEPRECATED:</option>
+	
+	<option value="//api/name/saveData:toResource:completionBlock:progressBlock:KCS_DEPRECATED:">&nbsp;&nbsp;&nbsp;&nbsp;+ saveData:toResource:completionBlock:progressBlock:KCS_DEPRECATED:</option>
+	
+	<option value="//api/name/saveLocalResource:completionBlock:progressBlock:KCS_DEPRECATED:">&nbsp;&nbsp;&nbsp;&nbsp;+ saveLocalResource:completionBlock:progressBlock:KCS_DEPRECATED:</option>
+	
+	<option value="//api/name/saveLocalResource:toResource:completionBlock:progressBlock:KCS_DEPRECATED:">&nbsp;&nbsp;&nbsp;&nbsp;+ saveLocalResource:toResource:completionBlock:progressBlock:KCS_DEPRECATED:</option>
+	
+	<option value="//api/name/saveLocalResourceWithURL:completionBlock:progressBlock:KCS_DEPRECATED:">&nbsp;&nbsp;&nbsp;&nbsp;+ saveLocalResourceWithURL:completionBlock:progressBlock:KCS_DEPRECATED:</option>
+	
+	<option value="//api/name/saveLocalResourceWithURL:toResource:completionBlock:progressBlock:KCS_DEPRECATED:">&nbsp;&nbsp;&nbsp;&nbsp;+ saveLocalResourceWithURL:toResource:completionBlock:progressBlock:KCS_DEPRECATED:</option>
+	
+	
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Downloading Resources">Downloading Resources</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Uploading Resources">Uploading Resources</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Deleting Resources">Deleting Resources</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deleteResource:completionBlock:progressBlock:KCS_DEPRECATED:">deleteResource:completionBlock:progressBlock:KCS_DEPRECATED:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/downloadResource:completionBlock:progressBlock:KCS_DEPRECATED:">downloadResource:completionBlock:progressBlock:KCS_DEPRECATED:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/downloadResource:toFile:completionBlock:progressBlock:KCS_DEPRECATED:">downloadResource:toFile:completionBlock:progressBlock:KCS_DEPRECATED:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getStreamingURLForResource:completionBlock:progressBlock:KCS_DEPRECATED:">getStreamingURLForResource:completionBlock:progressBlock:KCS_DEPRECATED:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/saveData:toResource:completionBlock:progressBlock:KCS_DEPRECATED:">saveData:toResource:completionBlock:progressBlock:KCS_DEPRECATED:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/saveLocalResource:completionBlock:progressBlock:KCS_DEPRECATED:">saveLocalResource:completionBlock:progressBlock:KCS_DEPRECATED:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/saveLocalResource:toResource:completionBlock:progressBlock:KCS_DEPRECATED:">saveLocalResource:toResource:completionBlock:progressBlock:KCS_DEPRECATED:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/saveLocalResourceWithURL:completionBlock:progressBlock:KCS_DEPRECATED:">saveLocalResourceWithURL:completionBlock:progressBlock:KCS_DEPRECATED:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/saveLocalResourceWithURL:toResource:completionBlock:progressBlock:KCS_DEPRECATED:">saveLocalResourceWithURL:toResource:completionBlock:progressBlock:KCS_DEPRECATED:</a></span></li>
+	
+</ul></li>
+
+
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="KCSResourceService Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">KCSResourceService Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">KCSBlobService.h</td>
+</tr>
+						</tbody></table></div>
+					
+					
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>Kinvey File Service wrapper</p>
+
+<p>This class is used to provide access to all Kinvey file services.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						<a title="Downloading Resources" name="task_Downloading Resources"></a>
+						<h3 class="subsubtitle task-title">Downloading Resources</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/downloadResource:completionBlock:progressBlock:KCS_DEPRECATED:">+&nbsp;downloadResource:completionBlock:progressBlock:KCS_DEPRECATED:</a></code>
+		<span class="tooltip"><p>Downloads the given Resource ID into a local NSData object</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/downloadResource:toFile:completionBlock:progressBlock:KCS_DEPRECATED:">+&nbsp;downloadResource:toFile:completionBlock:progressBlock:KCS_DEPRECATED:</a></code>
+		<span class="tooltip"><p>Downloads the given Resource ID into a local file.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getStreamingURLForResource:completionBlock:progressBlock:KCS_DEPRECATED:">+&nbsp;getStreamingURLForResource:completionBlock:progressBlock:KCS_DEPRECATED:</a></code>
+		<span class="tooltip"><p>Obtain a 30-second time-limited URL for streaming a resource stored on Kinvey.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Uploading Resources" name="task_Uploading Resources"></a>
+						<h3 class="subsubtitle task-title">Uploading Resources</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/saveLocalResource:completionBlock:progressBlock:KCS_DEPRECATED:">+&nbsp;saveLocalResource:completionBlock:progressBlock:KCS_DEPRECATED:</a></code>
+		<span class="tooltip"><p>Saves the given File to Kinvey.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/saveLocalResourceWithURL:completionBlock:progressBlock:KCS_DEPRECATED:">+&nbsp;saveLocalResourceWithURL:completionBlock:progressBlock:KCS_DEPRECATED:</a></code>
+		<span class="tooltip"><p>Saves the given URL to Kinvey.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/saveLocalResource:toResource:completionBlock:progressBlock:KCS_DEPRECATED:">+&nbsp;saveLocalResource:toResource:completionBlock:progressBlock:KCS_DEPRECATED:</a></code>
+		<span class="tooltip"><p>Saves the given File into the specified resource.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/saveLocalResourceWithURL:toResource:completionBlock:progressBlock:KCS_DEPRECATED:">+&nbsp;saveLocalResourceWithURL:toResource:completionBlock:progressBlock:KCS_DEPRECATED:</a></code>
+		<span class="tooltip"><p>Saves the given URL into the specified resource.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/saveData:toResource:completionBlock:progressBlock:KCS_DEPRECATED:">+&nbsp;saveData:toResource:completionBlock:progressBlock:KCS_DEPRECATED:</a></code>
+		<span class="tooltip"><p>Saves the given Data into the specified resource.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Deleting Resources" name="task_Deleting Resources"></a>
+						<h3 class="subsubtitle task-title">Deleting Resources</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/deleteResource:completionBlock:progressBlock:KCS_DEPRECATED:">+&nbsp;deleteResource:completionBlock:progressBlock:KCS_DEPRECATED:</a></code>
+		<span class="tooltip"><p>Delete the given resource from Kinvey.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/deleteResource:completionBlock:progressBlock:KCS_DEPRECATED:" title="deleteResource:completionBlock:progressBlock:KCS_DEPRECATED:"></a>
+	<h3 class="subsubtitle method-title">deleteResource:completionBlock:progressBlock:KCS_DEPRECATED:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Delete the given resource from Kinvey.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)deleteResource:(NSString *)<em>resourceId</em> completionBlock:(KCSCompletionBlock)<em>completionBlock</em> progressBlock:(KCSProgressBlock)<em>progressBlock</em> KCS_DEPRECATED</code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>resourceId</em></dt>
+			<dd><p>The resource ID that should be removed.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completionBlock</em></dt>
+			<dd><p>the block called when the operation completes or fails</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>progressBlock</em></dt>
+			<dd><p>the block called 0+ times while the operation is in progress</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Delete the given resource from Kinvey.</p>
+
+<p>Use this method to delete a given resource from Kinvey.  Additional attempts to access this resource will fail with error code 404.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">KCSBlobService.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/downloadResource:completionBlock:progressBlock:KCS_DEPRECATED:" title="downloadResource:completionBlock:progressBlock:KCS_DEPRECATED:"></a>
+	<h3 class="subsubtitle method-title">downloadResource:completionBlock:progressBlock:KCS_DEPRECATED:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Downloads the given Resource ID into a local NSData object</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)downloadResource:(NSString *)<em>resourceId</em> completionBlock:(KCSCompletionBlock)<em>completionBlock</em> progressBlock:(KCSProgressBlock)<em>progressBlock</em> KCS_DEPRECATED</code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>resourceId</em></dt>
+			<dd><p>The Resource ID to download.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completionBlock</em></dt>
+			<dd><p>the block called when the operation completes or fails</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>progressBlock</em></dt>
+			<dd><p>the block called 0+ times while the operation is in progress</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Downloads the given Resource ID into a local NSData object</p>
+
+<p>This method should be used to download a resource from Kinvey into a local NSData object.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">KCSBlobService.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/downloadResource:toFile:completionBlock:progressBlock:KCS_DEPRECATED:" title="downloadResource:toFile:completionBlock:progressBlock:KCS_DEPRECATED:"></a>
+	<h3 class="subsubtitle method-title">downloadResource:toFile:completionBlock:progressBlock:KCS_DEPRECATED:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Downloads the given Resource ID into a local file.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)downloadResource:(NSString *)<em>resourceId</em> toFile:(NSString *)<em>filename</em> completionBlock:(KCSCompletionBlock)<em>completionBlock</em> progressBlock:(KCSProgressBlock)<em>progressBlock</em> KCS_DEPRECATED</code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>resourceId</em></dt>
+			<dd><p>The Resource ID to download.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>filename</em></dt>
+			<dd><p>The filename that the resource will use as the download location.  This will be set in the <a href="../Classes/KCSResourceResponse.html">KCSResourceResponse</a> that the delegate receives.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completionBlock</em></dt>
+			<dd><p>the block called when the operation completes or fails</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>progressBlock</em></dt>
+			<dd><p>the block called 0+ times while the operation is in progress</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Downloads the given Resource ID into a local file.</p>
+
+<p>This method should be used to download a resource from Kinvey into a local File.  The file can then be used to access the resource.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">KCSBlobService.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getStreamingURLForResource:completionBlock:progressBlock:KCS_DEPRECATED:" title="getStreamingURLForResource:completionBlock:progressBlock:KCS_DEPRECATED:"></a>
+	<h3 class="subsubtitle method-title">getStreamingURLForResource:completionBlock:progressBlock:KCS_DEPRECATED:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Obtain a 30-second time-limited URL for streaming a resource stored on Kinvey.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)getStreamingURLForResource:(NSString *)<em>resourceId</em> completionBlock:(KCSCompletionBlock)<em>completionBlock</em> progressBlock:(KCSProgressBlock)<em>progressBlock</em> KCS_DEPRECATED</code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>resourceId</em></dt>
+			<dd><p>The Resource ID to stream</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completionBlock</em></dt>
+			<dd><p>the block called when the operation completes or fails</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>progressBlock</em></dt>
+			<dd><p>the block is NEVER called, so just supply <code>nil</code>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Obtain a 30-second time-limited URL for streaming a resource stored on Kinvey.</p>
+
+<p>This method is used for large objects stored on the Resource Service.  It&rsquo;s used to get a URL that allows the resource to be
+streamed to the device.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">KCSBlobService.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/saveData:toResource:completionBlock:progressBlock:KCS_DEPRECATED:" title="saveData:toResource:completionBlock:progressBlock:KCS_DEPRECATED:"></a>
+	<h3 class="subsubtitle method-title">saveData:toResource:completionBlock:progressBlock:KCS_DEPRECATED:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Saves the given Data into the specified resource.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)saveData:(NSData *)<em>data</em> toResource:(NSString *)<em>resourceId</em> completionBlock:(KCSCompletionBlock)<em>completionBlock</em> progressBlock:(KCSProgressBlock)<em>progressBlock</em> KCS_DEPRECATED</code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>data</em></dt>
+			<dd><p>The Data to upload to Kinvey.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>resourceId</em></dt>
+			<dd><p>The resource ID to use for remote storage</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completionBlock</em></dt>
+			<dd><p>the block called when the operation completes or fails</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>progressBlock</em></dt>
+			<dd><p>the block called 0+ times while the operation is in progress</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Saves the given Data into the specified resource.</p>
+
+<p>This method is used to upload NSData into the Kinvey service.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">KCSBlobService.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/saveLocalResource:completionBlock:progressBlock:KCS_DEPRECATED:" title="saveLocalResource:completionBlock:progressBlock:KCS_DEPRECATED:"></a>
+	<h3 class="subsubtitle method-title">saveLocalResource:completionBlock:progressBlock:KCS_DEPRECATED:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Saves the given File to Kinvey.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)saveLocalResource:(NSString *)<em>filename</em> completionBlock:(KCSCompletionBlock)<em>completionBlock</em> progressBlock:(KCSProgressBlock)<em>progressBlock</em> KCS_DEPRECATED</code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>filename</em></dt>
+			<dd><p>The filename of the local file to upload.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completionBlock</em></dt>
+			<dd><p>the block called when the operation completes or fails</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>progressBlock</em></dt>
+			<dd><p>the block called 0+ times while the operation is in progress</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Saves the given File to Kinvey.</p>
+
+<p>This method is used to upload a local file to Kinvey, the resource ID will be the last path component of the filename with extension.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">KCSBlobService.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/saveLocalResource:toResource:completionBlock:progressBlock:KCS_DEPRECATED:" title="saveLocalResource:toResource:completionBlock:progressBlock:KCS_DEPRECATED:"></a>
+	<h3 class="subsubtitle method-title">saveLocalResource:toResource:completionBlock:progressBlock:KCS_DEPRECATED:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Saves the given File into the specified resource.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)saveLocalResource:(NSString *)<em>filename</em> toResource:(NSString *)<em>resourceId</em> completionBlock:(KCSCompletionBlock)<em>completionBlock</em> progressBlock:(KCSProgressBlock)<em>progressBlock</em> KCS_DEPRECATED</code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>filename</em></dt>
+			<dd><p>The filename of the local file to upload.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>resourceId</em></dt>
+			<dd><p>The resource ID to use for remote storage</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completionBlock</em></dt>
+			<dd><p>the block called when the operation completes or fails</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>progressBlock</em></dt>
+			<dd><p>the block called 0+ times while the operation is in progress</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Saves the given File into the specified resource.</p>
+
+<p>This method is used to upload a local file to Kinvey, use this varient to specify an exact remote resource ID.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">KCSBlobService.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/saveLocalResourceWithURL:completionBlock:progressBlock:KCS_DEPRECATED:" title="saveLocalResourceWithURL:completionBlock:progressBlock:KCS_DEPRECATED:"></a>
+	<h3 class="subsubtitle method-title">saveLocalResourceWithURL:completionBlock:progressBlock:KCS_DEPRECATED:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Saves the given URL to Kinvey.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)saveLocalResourceWithURL:(NSURL *)<em>URL</em> completionBlock:(KCSCompletionBlock)<em>completionBlock</em> progressBlock:(KCSProgressBlock)<em>progressBlock</em> KCS_DEPRECATED</code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>URL</em></dt>
+			<dd><p>The file URL of the local file to upload.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completionBlock</em></dt>
+			<dd><p>the block called when the operation completes or fails</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>progressBlock</em></dt>
+			<dd><p>the block called 0+ times while the operation is in progress</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Saves the given URL to Kinvey.</p>
+
+<p>This method is used to upload a local file to Kinvey, the resource ID will be the last path component of the filename with extension.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">KCSBlobService.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/saveLocalResourceWithURL:toResource:completionBlock:progressBlock:KCS_DEPRECATED:" title="saveLocalResourceWithURL:toResource:completionBlock:progressBlock:KCS_DEPRECATED:"></a>
+	<h3 class="subsubtitle method-title">saveLocalResourceWithURL:toResource:completionBlock:progressBlock:KCS_DEPRECATED:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Saves the given URL into the specified resource.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)saveLocalResourceWithURL:(NSURL *)<em>URL</em> toResource:(NSString *)<em>resourceId</em> completionBlock:(KCSCompletionBlock)<em>completionBlock</em> progressBlock:(KCSProgressBlock)<em>progressBlock</em> KCS_DEPRECATED</code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>URL</em></dt>
+			<dd><p>The URL of the local file to upload.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>resourceId</em></dt>
+			<dd><p>The resource ID to use for remote storage</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completionBlock</em></dt>
+			<dd><p>the block called when the operation completes or fails</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>progressBlock</em></dt>
+			<dd><p>the block called 0+ times while the operation is in progress</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Saves the given URL into the specified resource.</p>
+
+<p>This method is used to upload a local file to Kinvey, use this varient to specify an exact remote resource ID.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">KCSBlobService.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2014 Kinvey. All rights reserved. (Last updated: 2014-01-28)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

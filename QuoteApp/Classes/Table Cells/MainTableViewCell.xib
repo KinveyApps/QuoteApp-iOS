@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="4514" systemVersion="13C64" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainTableViewCell">
+            <connections>
+                <outlet property="dateLabel" destination="c1S-Rs-YZR" id="8gf-Kp-4AN"/>
+                <outlet property="noLabel" destination="M5i-Dp-245" id="6CH-yk-9Ep"/>
+                <outlet property="shipDateLabel" destination="zWN-Lh-HRn" id="agX-OS-gq8"/>
+                <outlet property="statusPriceLabel" destination="PwM-5s-Zqc" id="gA8-T3-srO"/>
+                <outlet property="view" destination="1dq-Bm-Vuz" id="2lw-s7-JQh"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="1dq-Bm-Vuz">
+            <rect key="frame" x="0.0" y="0.0" width="728" height="44"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c1S-Rs-YZR" userLabel="Date">
+                    <rect key="frame" x="20" y="11" width="157" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order No." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M5i-Dp-245">
+                    <rect key="frame" x="177" y="11" width="157" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Est. Ship Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zWN-Lh-HRn">
+                    <rect key="frame" x="334" y="11" width="157" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PwM-5s-Zqc">
+                    <rect key="frame" x="491" y="11" width="157" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ArrowCell" translatesAutoresizingMaskIntoConstraints="NO" id="PC9-y6-ggb">
+                    <rect key="frame" x="678" y="7" width="30" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="9Mw-Ri-OrX"/>
+                        <constraint firstAttribute="width" constant="30" id="LG9-aP-jbM"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="0.90196084980000002" green="0.90196084980000002" blue="0.90196084980000002" alpha="1" colorSpace="deviceRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="c1S-Rs-YZR" secondAttribute="bottom" constant="12" id="7OA-Xd-NGh"/>
+                <constraint firstItem="PwM-5s-Zqc" firstAttribute="leading" secondItem="zWN-Lh-HRn" secondAttribute="trailing" id="7wo-1g-rmf"/>
+                <constraint firstItem="M5i-Dp-245" firstAttribute="leading" secondItem="c1S-Rs-YZR" secondAttribute="trailing" id="A3c-SQ-o1G"/>
+                <constraint firstItem="M5i-Dp-245" firstAttribute="width" secondItem="c1S-Rs-YZR" secondAttribute="width" id="EMv-cz-HbN"/>
+                <constraint firstItem="M5i-Dp-245" firstAttribute="width" secondItem="zWN-Lh-HRn" secondAttribute="width" id="JGa-tq-Biv"/>
+                <constraint firstItem="zWN-Lh-HRn" firstAttribute="leading" secondItem="M5i-Dp-245" secondAttribute="trailing" id="NI4-dh-lR7"/>
+                <constraint firstAttribute="bottom" secondItem="M5i-Dp-245" secondAttribute="bottom" constant="12" id="Pfz-sI-WUA"/>
+                <constraint firstItem="M5i-Dp-245" firstAttribute="width" secondItem="PwM-5s-Zqc" secondAttribute="width" id="S6U-ow-F7K"/>
+                <constraint firstAttribute="bottom" secondItem="PC9-y6-ggb" secondAttribute="bottom" constant="7" id="YRy-P5-U4U"/>
+                <constraint firstItem="PC9-y6-ggb" firstAttribute="leading" secondItem="PwM-5s-Zqc" secondAttribute="trailing" constant="30" id="aJ9-RB-3cT"/>
+                <constraint firstAttribute="bottom" secondItem="zWN-Lh-HRn" secondAttribute="bottom" constant="12" id="djm-Xy-vjs"/>
+                <constraint firstItem="c1S-Rs-YZR" firstAttribute="leading" secondItem="1dq-Bm-Vuz" secondAttribute="leading" constant="20" id="ff3-Ud-Cin"/>
+                <constraint firstItem="PC9-y6-ggb" firstAttribute="leading" secondItem="PwM-5s-Zqc" secondAttribute="trailing" constant="30" id="leC-V5-wGx"/>
+                <constraint firstAttribute="trailing" secondItem="PC9-y6-ggb" secondAttribute="trailing" constant="20" id="nh1-TS-FUd"/>
+                <constraint firstAttribute="bottom" secondItem="PwM-5s-Zqc" secondAttribute="bottom" constant="12" id="suN-GA-ivS"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="ArrowCell" width="30" height="30"/>
+    </resources>
+</document>

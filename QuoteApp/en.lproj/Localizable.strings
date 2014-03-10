@@ -1,0 +1,150 @@
+/*
+ * Localizable.strings
+ * ST
+ *
+ */
+
+"LANG"="en";
+
+"PROBLEM"="Problem";
+"YOU"="You";
+"LATER"="later";
+"ERROR"="Error";
+
+"CANCEL"="Cancel";
+"CONTINUE"="Continue";
+"CLOSE"="Close";
+
+"OKAY"="OK";
+"SKIP"="Skip";
+"EDIT"="Edit";
+"DONE"="Done";
+
+"NOPE"="NO";
+"YEP"="YES";
+
+"PROBLEM"="Problem";
+"ERR_SMTH_WENT_WRONG"="Something went wrong";
+"ERR_NO_EMAIL"="We were unable to fetch your email address from Facebook. Please, ensure you have set primary email in Facebook Account Settings";
+"ERR_NO_INTERNET_CONNECTION"="No internet connection";
+"ERR_UNSUCCESS_LOGIN"="Unsuccess login";
+
+// AppDelegate
+"AD_UPDATE"="Update";
+
+// SideMenuViewController
+"SMVC_MARKETS"="Markets";
+"SMVC_SETTINGS"="Settings";
+"SMVC_ACCOUNT"="Account";
+"SMVC_NOTIFICATIONS"="Notifications";
+"SMVC_RECENTS"="Recents";
+
+// ContentListViewController
+"CLVC_MENU"="Menu";
+"CLVC_ORDERING"="Order";
+
+// ContentViewController
+"CVC_TITLE"="Content";
+
+// NotificationsViewController
+"NVC_TITLE"="Notifications";
+"NVC_NOTIFY_SECTION"="Notify me for";
+"NVC_NEW_CONTENT"="new content";
+
+//SignInViewController
+"SIVC_TITLE"="Sign In";
+"SIVC_SIGNUP"="Register";
+"SIVC_LOGIN"="Log In";
+"SIVC_USERNAME"="username";
+"SIVC_PASSWORD"="password";
+
+//AccountViewController
+"AVC_TITLE"="Account";
+"AVC_LOGOUT"="Log Out";
+
+//TabBarController
+"TBC_HOME"="Home";
+"TBC_PRODUCTS"="Browse";
+"TBC_QUOTE"="Quote";
+"TBC_ORDER"="Order";
+"TBC_SEARCH"="Search";
+"TBC_SETTINGS"="Settings";
+
+//SettingViewController
+"SVC_CELL_TITLE_CONTACT"="Contact Name";
+"SVC_CELL_TITLE_COMPANY"="Company";
+"SVC_CELL_TITLE_SHIPING_ADDRESS"="Shipping Address";
+"SVC_CELL_TITLE_ACCOUNT_NUMBER"="Account Number";
+"SVC_CELL_TITLE_PHONE"="Phone";
+"SVC_PUSH_LABEL"="Push Notification";
+"SVC_EMAIL_CONFIRMATION_LABEL"="Email Confirmation on New Order";
+
+//Search View
+"SV_PROMT"="Search by reference number of quotes and orders";
+"SV_PLACEHOLDER"="Search";
+
+//Detail View
+"DV_PRODUCT_TITLE"="Product: ";
+"DV_REFERENCE_NUMBER"="Reference Number: ";
+"DV_ALLOY"="Active User: ";
+"DV_TEMPER"="Business Logic Scripts: ";
+"DV_WIDTH"="Scheduled Business Logic: ";
+"DV_FINISH"="Collaborators: ";
+"DV_MAX_ID"="Backend Environments: ";
+"DV_MAX_OD"="Data Storage: ";
+"DV_REQUESTED_YIELD"="Business Logic Execution Time Limit: ";
+"DV_FAB_PRICE"="Start Subscription Date: ";
+"DV_FEREIGHT_COST"="Total Cost: ";
+"DV_TOTAL_PRICE"="Total Cost: ";
+"DV_ORDER_TITLE"="Order Details";
+"DV_QUOTE_TITLE"="Your Quote";
+"DV_EST_DATE"="Est. Ship Date: ";
+"DV_REQ_DATE"="Req. Ship Date: ";
+"DV_MESSAGE_ERROR_CREATE_QUOTE"="Error create qoute";
+"DV_MESSAGE_ORDER_CONFIRMATION_TITLE"="Order Confirmation";
+"DV_MESSAGE_ORDER_CONFIRMATION_TEXT"="Your Order has been received.";
+"DV_MESSAGE_ERROR_CREATE_ORDER"="Error create order";
+"DV_BUTTON_RECREATE_ORDER"="Recreate Order";
+"DV_BUTTON_SUBMIT_ORDER"="Submit Order";
+
+//New Quote View Controller
+"NQV_PLACEHOLDER_PRODUCT"="Product";
+"NQV_PLACEHOLDER_ACTIVE_USER"="Active User";
+"NQV_PLACEHOLDER_BUSSINES_LOGIC_SCRIPTS"="Business Logic Scripts";
+"NQV_PLACEHOLDER_SCHEDULED_BUSINESS_LOGIC"="Scheduled Business Logic";
+"NQV_PLACEHOLDER_COLLABORATORS"="Collaborators";
+"NQV_PLACEHOLDER_BACKEND_ENVIROMENTS"="Backend Environments";
+"NQV_PLACEHOLDER_DATA_STOREGE"="Data Storage";
+"NQV_PLACEHOLDER_BUSINESS_LOGIC_EXECUTION_TIME_LIMIT"="Business Logic Execution Time Limit";
+"NQV_PLACEHOLDER_START_SUBSCRIPTION_DATE"="Start Subscription Date";
+"NQV_TITLE"="Request a Quote";
+"NQV_BUTTON_SUBMIT"="Submit";
+
+//Main Table View Header
+"MTVH_TITLE_ORDER"="My Orders";
+"MTVH_DATE_ORDER"="Order Date";
+"MTVH_NO_ORDER"="Order No.";
+"MTVH_SHIP_DATE_ORDER"="Est. Ship Date";
+"MTVH_STATUS_ORDER"="Status";
+"MTVH_MORE_ORDER"="More";
+"MTVH_TITLE_QUOTE"="My Quotes";
+"MTVH_DATE_QUOTE"="Quote Date";
+"MTVH_NO_QUOTE"="Quote No.";
+"MTVH_SHIP_DATE_QUOTE"="Req. Ship Date";
+"MTVH_PRICE_QUOTE"="Price";
+"MTVH_MORE_QUOTE"="View & Order";
+
+//Home and Search View Controller
+"HaSVC_LEBEL_COUNT_RESULT"="Search %d quotes";
+
+//Quote Home View Controller
+"QHVC_CELL_NO_QUOTE"="You have no quote";
+"QHVC_REFRESH_CONTROL_TITLE"="Update quote list";
+
+//Order Home View Controller
+"OHVC_CELL_NO_ORDER"="You have no order";
+"OHVC_REFRESH_CONTROL_TITLE"="Update order list";
+
+//Product Home View Controller
+"PHVC_CELL_NO_PRODUCTS"="No product";
+"PHVC_REFRESH_CONTROL_TITLE"="Update product list";

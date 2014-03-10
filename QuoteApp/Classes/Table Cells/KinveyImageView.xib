@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4514" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="KinveyImageView">
+            <connections>
+                <outlet property="imageView" destination="OlH-eJ-2xV" id="jJb-zF-pQL"/>
+                <outlet property="spinner" destination="2gn-q2-6R0" id="XdB-n2-wcQ"/>
+                <outlet property="view" destination="1" id="w3h-MD-FRg"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="1">
+            <rect key="frame" x="0.0" y="0.0" width="223" height="176"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OlH-eJ-2xV">
+                    <rect key="frame" x="0.0" y="0.0" width="223" height="176"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </imageView>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="2gn-q2-6R0">
+                    <rect key="frame" x="101" y="78" width="20" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </activityIndicatorView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="OlH-eJ-2xV" secondAttribute="trailing" id="L0e-eU-JZ7"/>
+                <constraint firstItem="2gn-q2-6R0" firstAttribute="centerY" secondItem="OlH-eJ-2xV" secondAttribute="centerY" id="OVu-kg-SjI"/>
+                <constraint firstItem="OlH-eJ-2xV" firstAttribute="top" secondItem="1" secondAttribute="top" id="QW4-JD-rwH"/>
+                <constraint firstAttribute="bottom" secondItem="OlH-eJ-2xV" secondAttribute="bottom" id="ggW-TQ-8Mg"/>
+                <constraint firstItem="2gn-q2-6R0" firstAttribute="centerX" secondItem="OlH-eJ-2xV" secondAttribute="centerX" constant="-0.5" id="lZP-o9-ucQ"/>
+                <constraint firstItem="OlH-eJ-2xV" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="yor-0A-PGc"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+</document>

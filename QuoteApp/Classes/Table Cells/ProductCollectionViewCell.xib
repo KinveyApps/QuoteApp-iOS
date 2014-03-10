@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="4514" systemVersion="13C64" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProductCollectionViewCell">
+            <connections>
+                <outlet property="kinveyImageView" destination="lfk-fZ-LV6" id="3bd-N5-oss"/>
+                <outlet property="titleLabel" destination="dNi-fp-JaN" id="5sY-0n-bDC"/>
+                <outlet property="view" destination="sq8-yq-o8P" id="0lm-IB-9mT"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="sq8-yq-o8P">
+            <rect key="frame" x="0.0" y="0.0" width="438" height="310"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lfk-fZ-LV6" customClass="KinveyImageView">
+                    <rect key="frame" x="0.0" y="0.0" width="438" height="310"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y0r-zh-rlw">
+                    <rect key="frame" x="0.0" y="277" width="438" height="33"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <subviews>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="dNi-fp-JaN">
+                            <rect key="frame" x="20" y="4" width="398" height="29"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="29" id="aJY-dV-SUy"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                            <color key="shadowColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="0.5" colorSpace="calibratedRGB"/>
+                            <size key="shadowOffset" width="1" height="1"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="0.5" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="33" id="0OL-xs-82D"/>
+                        <constraint firstAttribute="trailing" secondItem="dNi-fp-JaN" secondAttribute="trailing" constant="20" symbolic="YES" id="GUp-bI-fcD"/>
+                        <constraint firstItem="dNi-fp-JaN" firstAttribute="leading" secondItem="y0r-zh-rlw" secondAttribute="leading" constant="20" symbolic="YES" id="Z8Y-BH-TpB"/>
+                        <constraint firstAttribute="bottom" secondItem="dNi-fp-JaN" secondAttribute="bottom" id="lYt-rI-WgN"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="y0r-zh-rlw" secondAttribute="trailing" id="EyQ-8w-U3Y"/>
+                <constraint firstItem="lfk-fZ-LV6" firstAttribute="leading" secondItem="sq8-yq-o8P" secondAttribute="leading" id="PlC-JN-5Jp"/>
+                <constraint firstItem="lfk-fZ-LV6" firstAttribute="top" secondItem="sq8-yq-o8P" secondAttribute="top" id="XHt-Vf-X1p"/>
+                <constraint firstAttribute="bottom" secondItem="y0r-zh-rlw" secondAttribute="bottom" id="d1f-W9-zLK"/>
+                <constraint firstAttribute="trailing" secondItem="lfk-fZ-LV6" secondAttribute="trailing" id="jdf-tO-iKB"/>
+                <constraint firstItem="y0r-zh-rlw" firstAttribute="leading" secondItem="sq8-yq-o8P" secondAttribute="leading" id="kbf-1M-Gqy"/>
+                <constraint firstAttribute="bottom" secondItem="lfk-fZ-LV6" secondAttribute="bottom" id="sIR-8i-SBA"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

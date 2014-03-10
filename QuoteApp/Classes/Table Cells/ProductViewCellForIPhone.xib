@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4514" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProductViewCellForIPhone">
+            <connections>
+                <outlet property="descriptionLabel" destination="Pv7-fW-niL" id="ZDw-vM-zYi"/>
+                <outlet property="descriptionView" destination="qkT-0T-UNp" id="9Hf-HY-cS0"/>
+                <outlet property="kinveyImageView" destination="lc8-37-woa" id="7a8-fs-RQe"/>
+                <outlet property="productNameLabel" destination="81Z-WA-Sea" id="n38-hL-3XU"/>
+                <outlet property="view" destination="1" id="UBf-Ht-Ye8"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="1">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qkT-0T-UNp" userLabel="Info View">
+                    <rect key="frame" x="126" y="2" width="192" height="96"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name Product" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="81Z-WA-Sea">
+                            <rect key="frame" x="10" y="10" width="146" height="13"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="13" id="UPk-i0-HOn"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                            <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="deviceRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gQt-4m-d3H">
+                            <rect key="frame" x="160" y="2" width="30" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="30" id="0V7-DY-zZO"/>
+                                <constraint firstAttribute="height" constant="30" id="jT0-Xc-oBH"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <state key="normal" image="NewQuote">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="172" translatesAutoresizingMaskIntoConstraints="NO" id="Pv7-fW-niL">
+                            <rect key="frame" x="10" y="31" width="172" height="55"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <attributedString key="attributedText">
+                                <fragment>
+                                    <string key="content">JW Aluminum is known as one of the world's top suppliers of high-quality fin stock for use in a wide variety of Heating, Ventilation and Air Conditioning (HVAC), as well as heat transfer applications.  Our Fin stock is known for maintaining formability while offering remarkable strength and toughness.  We have the capability to develop fin stock solutions to meet even the most demanding expectations, and we can work hand-in-hand with you to create a product that fits your specific needs.
+﻿
+Product Specs
+﻿
+We can produce fin stock in gauges from .0035" to .024" and in widths up to 64".
+﻿
+Our product is produced from 1100, 7072 or 3102 alloy and in Tempers 0, H111, H112, H113, H22, H23, H24, H26, and H19.</string>
+                                    <attributes>
+                                        <color key="NSColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <font key="NSFont" size="12" name="HelveticaNeue"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.96470594409999999" green="0.96470594409999999" blue="0.96470594409999999" alpha="1" colorSpace="deviceRGB"/>
+                    <constraints>
+                        <constraint firstItem="81Z-WA-Sea" firstAttribute="top" secondItem="qkT-0T-UNp" secondAttribute="top" constant="10" id="Agl-ep-8hI"/>
+                        <constraint firstAttribute="trailing" secondItem="Pv7-fW-niL" secondAttribute="trailing" constant="10" id="QT6-5w-79L"/>
+                        <constraint firstItem="81Z-WA-Sea" firstAttribute="leading" secondItem="qkT-0T-UNp" secondAttribute="leading" constant="10" id="Ux6-vp-QMv"/>
+                        <constraint firstItem="Pv7-fW-niL" firstAttribute="leading" secondItem="qkT-0T-UNp" secondAttribute="leading" constant="10" id="aLo-5A-SdT"/>
+                        <constraint firstAttribute="bottom" secondItem="Pv7-fW-niL" secondAttribute="bottom" constant="10" id="bkt-MA-yPX"/>
+                        <constraint firstAttribute="trailing" secondItem="gQt-4m-d3H" secondAttribute="trailing" constant="2" id="bm6-v1-B7O"/>
+                        <constraint firstItem="Pv7-fW-niL" firstAttribute="top" secondItem="81Z-WA-Sea" secondAttribute="bottom" constant="8" id="cEz-jd-J1X"/>
+                        <constraint firstItem="gQt-4m-d3H" firstAttribute="top" secondItem="qkT-0T-UNp" secondAttribute="top" constant="2" id="gA4-Ok-tgf"/>
+                        <constraint firstAttribute="trailing" secondItem="81Z-WA-Sea" secondAttribute="trailing" constant="36" id="tZq-c6-nBQ"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lc8-37-woa" customClass="KinveyImageView">
+                    <rect key="frame" x="2" y="2" width="114" height="96"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="114" id="DLa-I7-f0N"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.90196084980000002" green="0.90196084980000002" blue="0.90196084980000002" alpha="1" colorSpace="deviceRGB"/>
+            <constraints>
+                <constraint firstItem="qkT-0T-UNp" firstAttribute="leading" secondItem="lc8-37-woa" secondAttribute="trailing" constant="10" id="AZ8-aR-wHF"/>
+                <constraint firstItem="qkT-0T-UNp" firstAttribute="top" secondItem="1" secondAttribute="top" constant="2" id="FPE-9i-ruc"/>
+                <constraint firstItem="lc8-37-woa" firstAttribute="top" secondItem="1" secondAttribute="top" constant="2" id="Hx5-Ze-qIy"/>
+                <constraint firstAttribute="trailing" secondItem="qkT-0T-UNp" secondAttribute="trailing" constant="2" id="X7i-g4-Kc2"/>
+                <constraint firstAttribute="bottom" secondItem="qkT-0T-UNp" secondAttribute="bottom" constant="2" id="YG0-bh-DeK"/>
+                <constraint firstItem="lc8-37-woa" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="2" id="gnZ-J8-1up"/>
+                <constraint firstAttribute="bottom" secondItem="lc8-37-woa" secondAttribute="bottom" constant="2" id="iDz-Xs-Xjs"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="NewQuote" width="30" height="30"/>
+    </resources>
+</document>

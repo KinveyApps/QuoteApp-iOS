@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="4514" systemVersion="13C64" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewQuoteViewController">
+            <connections>
+                <outlet property="betweenButtonTableViewConstraint" destination="qSi-s9-eIr" id="4PG-fW-Bkk"/>
+                <outlet property="bottomConstraint" destination="cgT-TE-HVA" id="5Jx-2w-FDL"/>
+                <outlet property="buttonHeightConstraint" destination="wKC-rd-Mj5" id="lqA-Cr-GZp"/>
+                <outlet property="spinner" destination="916-J3-aq7" id="peC-Hg-HhK"/>
+                <outlet property="submitButton" destination="vqJ-eG-hIK" id="JTl-bn-W61"/>
+                <outlet property="tableView" destination="yPb-jY-2sO" id="4jD-Z4-v1e"/>
+                <outlet property="tableViewWidthConstraint" destination="A20-LL-gJp" id="eRI-vb-gfq"/>
+                <outlet property="titleLabel" destination="4X2-xv-P9E" id="uFf-Rf-t56"/>
+                <outlet property="topConstraint" destination="Yc8-wK-q0A" id="t3E-QB-zeO"/>
+                <outlet property="view" destination="2" id="3"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="2">
+            <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="companylogo" translatesAutoresizingMaskIntoConstraints="NO" id="AqI-uk-cfI">
+                    <rect key="frame" x="20" y="64" width="155" height="80"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="80" id="JfF-st-HeT"/>
+                        <constraint firstAttribute="width" constant="155" id="yj1-4u-d5s"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Request A Quote" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4X2-xv-P9E">
+                    <rect key="frame" x="285" y="158" width="198" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="TcD-uc-Ue7"/>
+                        <constraint firstAttribute="width" constant="198" id="j02-3J-u0E"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="yPb-jY-2sO">
+                    <rect key="frame" x="184" y="187" width="400" height="730"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" red="0.86666673419999996" green="0.86666673419999996" blue="0.86666673419999996" alpha="1" colorSpace="deviceRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="400" id="A20-LL-gJp"/>
+                    </constraints>
+                    <color key="sectionIndexTrackingBackgroundColor" red="0.86666673419999996" green="0.86666673419999996" blue="0.86666673419999996" alpha="1" colorSpace="deviceRGB"/>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vqJ-eG-hIK">
+                    <rect key="frame" x="285" y="925" width="198" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.96078437566757202" green="0.96078437566757202" blue="0.96078437566757202" alpha="1" colorSpace="deviceRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="198" id="EKm-J7-MuC"/>
+                        <constraint firstAttribute="height" constant="30" id="wKC-rd-Mj5"/>
+                    </constraints>
+                    <state key="normal" title="Submit">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="pressSubmit" destination="-1" eventType="touchUpInside" id="TU7-sm-nhe"/>
+                    </connections>
+                </button>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="916-J3-aq7">
+                    <rect key="frame" x="437" y="930" width="20" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </activityIndicatorView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7fp-Eu-fJP" userLabel="Top Bar View">
+                    <rect key="frame" x="0.0" y="0.0" width="768" height="64"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sg7-yh-3s8" userLabel="Separator">
+                            <rect key="frame" x="0.0" y="63" width="768" height="1"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.78431379800000001" green="0.77647066119999997" blue="0.80000007149999997" alpha="1" colorSpace="deviceRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="wYx-Z6-Sw8"/>
+                            </constraints>
+                            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="569-mM-gTy" userLabel="Settings Button">
+                            <rect key="frame" x="10" y="24" width="30" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="i5S-0B-xjQ"/>
+                                <constraint firstAttribute="width" constant="30" id="lf7-U5-BJY"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                            <state key="normal" image="Setting"/>
+                            <connections>
+                                <action selector="pressSettings" destination="-1" eventType="touchUpInside" id="Fct-52-OMu"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.81176477670000002" green="0.22745099660000001" blue="0.1294117719" alpha="1" colorSpace="deviceRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="Sg7-yh-3s8" secondAttribute="trailing" id="JO9-GS-Aya"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="64" id="JS2-Sj-7sL"/>
+                        <constraint firstAttribute="height" constant="64" id="kmB-Lg-7XH"/>
+                        <constraint firstItem="Sg7-yh-3s8" firstAttribute="leading" secondItem="7fp-Eu-fJP" secondAttribute="leading" id="qDh-qB-wph"/>
+                        <constraint firstAttribute="bottom" secondItem="Sg7-yh-3s8" secondAttribute="bottom" id="vTb-nS-7o0"/>
+                        <constraint firstItem="569-mM-gTy" firstAttribute="leading" secondItem="7fp-Eu-fJP" secondAttribute="leading" constant="10" id="xIW-mJ-zc3"/>
+                        <constraint firstAttribute="bottom" secondItem="569-mM-gTy" secondAttribute="bottom" constant="10" id="xbI-6R-N1O"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.86666673419999996" green="0.86666673419999996" blue="0.86666673419999996" alpha="1" colorSpace="deviceRGB"/>
+            <constraints>
+                <constraint firstItem="7fp-Eu-fJP" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="5fE-5k-oji"/>
+                <constraint firstItem="7fp-Eu-fJP" firstAttribute="top" secondItem="2" secondAttribute="top" id="8zV-By-YHK"/>
+                <constraint firstAttribute="centerX" secondItem="yPb-jY-2sO" secondAttribute="centerX" id="Ndu-qe-fgH"/>
+                <constraint firstItem="AqI-uk-cfI" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="20" id="O8c-hj-ian"/>
+                <constraint firstAttribute="centerX" secondItem="4X2-xv-P9E" secondAttribute="centerX" id="PAh-IK-Xkx"/>
+                <constraint firstItem="yPb-jY-2sO" firstAttribute="top" secondItem="4X2-xv-P9E" secondAttribute="bottom" constant="8" id="SId-0E-hX8"/>
+                <constraint firstAttribute="centerX" secondItem="vqJ-eG-hIK" secondAttribute="centerX" id="Wzx-Qk-zJC"/>
+                <constraint firstItem="4X2-xv-P9E" firstAttribute="top" secondItem="2" secondAttribute="top" constant="158" id="Yc8-wK-q0A"/>
+                <constraint firstAttribute="bottom" secondItem="vqJ-eG-hIK" secondAttribute="bottom" constant="69" id="cgT-TE-HVA"/>
+                <constraint firstItem="AqI-uk-cfI" firstAttribute="top" secondItem="2" secondAttribute="top" constant="64" id="lC4-8n-8du"/>
+                <constraint firstAttribute="trailing" secondItem="7fp-Eu-fJP" secondAttribute="trailing" id="pfe-6u-9Ch"/>
+                <constraint firstItem="vqJ-eG-hIK" firstAttribute="top" secondItem="yPb-jY-2sO" secondAttribute="bottom" constant="8" id="qSi-s9-eIr"/>
+            </constraints>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+            <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Setting" width="30" height="30"/>
+        <image name="companylogo" width="275" height="108"/>
+    </resources>
+</document>

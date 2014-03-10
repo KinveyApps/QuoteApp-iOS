@@ -1,0 +1,32 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iOS SDK 3.0 and later."
+#endif
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <MessageUI/MessageUI.h>
+#import <KinveyKit/KinveyKit.h>
+
+#import "Localizable.strings.h"
+#import "STLib.h"
+#import "SynthesizeSingleton.h"
+#import "AlertViewController.h"
+#import "AppDelegate.h"
+#endif
+
+#ifdef DEBUG
+#define DLog(...) NSLog(__VA_ARGS__)
+#define DVLog(...) NSLog(@"%s %@", __PRETTY_FUNCTION__, [NSString stringWithFormat:__VA_ARGS__])
+#else
+#define DLog(...) do { }  while (0)
+#define DVLog(...) do { }  while (0)
+#endif

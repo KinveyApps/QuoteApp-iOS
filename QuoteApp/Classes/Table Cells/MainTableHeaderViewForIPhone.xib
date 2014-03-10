@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4514" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainTableHeaderViewForIPhone">
+            <connections>
+                <outlet property="disclosureLabel" destination="aYC-LF-M4W" id="uM0-ep-KCD"/>
+                <outlet property="noLabel" destination="uZn-Zm-qb2" id="Vw5-ga-oBW"/>
+                <outlet property="statusPriceLabel" destination="H1g-if-LqS" id="zDx-4K-vqj"/>
+                <outlet property="titleLabel" destination="YaF-dh-5ku" id="86G-EF-Vdo"/>
+                <outlet property="view" destination="1" id="VyX-Dv-q5g"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="1">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Orders" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YaF-dh-5ku" userLabel="Title">
+                    <rect key="frame" x="20" y="0.0" width="140" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="RrI-5K-K5k"/>
+                        <constraint firstAttribute="width" constant="140" id="e3l-sJ-z74"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order No." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uZn-Zm-qb2" userLabel="No">
+                    <rect key="frame" x="20" y="28" width="96" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H1g-if-LqS" userLabel="PriceStatus">
+                    <rect key="frame" x="131" y="28" width="97" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="More" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aYC-LF-M4W" userLabel="Disclosure Title">
+                    <rect key="frame" x="203" y="28" width="97" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lHS-yh-7cF" userLabel="Separator">
+                    <rect key="frame" x="20" y="59" width="300" height="1"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.78431379800000001" green="0.77647066119999997" blue="0.80000007149999997" alpha="1" colorSpace="deviceRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="1LQ-uZ-2Hj"/>
+                        <constraint firstAttribute="height" constant="1" id="ou7-lY-vpU"/>
+                    </constraints>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.86666673419999996" green="0.86666673419999996" blue="0.86666673419999996" alpha="1" colorSpace="deviceRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="lHS-yh-7cF" secondAttribute="bottom" id="5Xj-Tw-had"/>
+                <constraint firstItem="H1g-if-LqS" firstAttribute="leading" secondItem="uZn-Zm-qb2" secondAttribute="trailing" constant="15" id="Gu4-e4-SI7"/>
+                <constraint firstItem="H1g-if-LqS" firstAttribute="width" secondItem="uZn-Zm-qb2" secondAttribute="width" id="J9o-Pe-py3"/>
+                <constraint firstAttribute="trailing" secondItem="lHS-yh-7cF" secondAttribute="trailing" id="U0j-MW-3ga"/>
+                <constraint firstItem="uZn-Zm-qb2" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="20" id="UhR-qQ-BID"/>
+                <constraint firstItem="lHS-yh-7cF" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="20" id="UlK-Bg-Ok5"/>
+                <constraint firstItem="H1g-if-LqS" firstAttribute="width" secondItem="aYC-LF-M4W" secondAttribute="width" id="UlV-lA-Qmv"/>
+                <constraint firstAttribute="trailing" secondItem="aYC-LF-M4W" secondAttribute="trailing" constant="20" id="agi-mM-Lxn"/>
+                <constraint firstAttribute="bottom" secondItem="H1g-if-LqS" secondAttribute="bottom" constant="11" id="cyM-EA-4xf"/>
+                <constraint firstItem="YaF-dh-5ku" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="20" id="fHi-7c-8OQ"/>
+                <constraint firstItem="YaF-dh-5ku" firstAttribute="top" secondItem="1" secondAttribute="top" id="ivL-Gi-hKW"/>
+                <constraint firstAttribute="bottom" secondItem="aYC-LF-M4W" secondAttribute="bottom" constant="11" id="nZL-gi-F0k"/>
+                <constraint firstItem="aYC-LF-M4W" firstAttribute="leading" secondItem="H1g-if-LqS" secondAttribute="trailing" constant="-25" id="rTj-4u-85n"/>
+                <constraint firstAttribute="bottom" secondItem="uZn-Zm-qb2" secondAttribute="bottom" constant="11" id="v2X-wO-WvN"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+</document>
