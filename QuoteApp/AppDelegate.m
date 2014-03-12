@@ -19,9 +19,9 @@
 @end
 @interface AppDelegate ()
 
-@property (nonatomic) BOOL isCompleteLaodQuotes;
-@property (nonatomic) BOOL isCompleteLaodOrders;
-@property (nonatomic) BOOL isCompleteLaodProducts;
+@property (nonatomic) BOOL isCompleteLoadQuotes;
+@property (nonatomic) BOOL isCompleteLoadOrders;
+@property (nonatomic) BOOL isCompleteLoadProducts;
 
 @end
 
@@ -103,7 +103,11 @@
 
 - (void)hideActivityView
 {
-	[self.activityViewController dismissViewControllerAnimated:NO completion:nil];
+    if (self.isCompleteLoadOrders && self.isCompleteLoadQuotes && self.isCompleteLoadProducts) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.activityViewController dismissViewControllerAnimated:NO completion:nil];
+        });
+    }
 }
 
 - (void)startFetchingDBFromServer
@@ -119,25 +123,33 @@
         [[DataHelper instance] loadQuotesUseCache:NO
                                containtSubstinrg:nil
                                        OnSuccess:^(NSArray *quotes){
-                                          [[DataHelper instance] loadOrdersUseCache:NO
-                                                                 containtSubstinrg:nil
-                                                                         OnSuccess:^(NSArray *orders){
-                                                                             [[DataHelper instance] loadProductsUseCache:NO
-                                                                                                      containtSubstinrg:nil
-                                                                                                              OnSuccess:^(NSArray *products){
-                                                                                                                  [self hideActivityView];
-                                                                                                              }
-                                                                                                              onFailure:^(NSError *error){
-                                                                                                                  [self hideActivityView];
-                                                                                                              }];
-                                                                         }
-                                                                         onFailure:^(NSError *error){
-                                                                             [self hideActivityView];
-                                                                         }];
+                                           self.isCompleteLoadQuotes = YES;
+                                           [self hideActivityView];
                                        }
                                        onFailure:^(NSError *error){
+                                           self.isCompleteLoadQuotes = YES;
                                            [self hideActivityView];
                                        }];
+        [[DataHelper instance] loadOrdersUseCache:NO
+                                containtSubstinrg:nil
+                                        OnSuccess:^(NSArray *orders){
+                                            self.isCompleteLoadOrders = YES;
+                                            [self hideActivityView];
+                                        }
+                                        onFailure:^(NSError *error){
+                                            self.isCompleteLoadOrders = YES;
+                                            [self hideActivityView];
+                                        }];
+        [[DataHelper instance] loadProductsUseCache:NO
+                                  containtSubstinrg:nil
+                                          OnSuccess:^(NSArray *products){
+                                              self.isCompleteLoadProducts = YES;
+                                              [self hideActivityView];
+                                          }
+                                          onFailure:^(NSError *error){
+                                              self.isCompleteLoadProducts = YES;
+                                              [self hideActivityView];
+                                          }];
 		
 
 		/*
