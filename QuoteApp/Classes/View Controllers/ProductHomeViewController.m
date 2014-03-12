@@ -13,7 +13,7 @@
 #import "ProductViewCellForIPhone.h"
 #import "NewQuoteViewController.h"
 
-@interface ProductHomeViewController ()<ProductTableViewCellDelegate, ProductViewCellForIPhoneDelegate>
+@interface ProductHomeViewController ()
 
 @property (strong, nonatomic) ProductsDetailView *detailView;
 
@@ -57,12 +57,10 @@
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
         ProductViewCellForIPhone *cell = [[ProductViewCellForIPhone alloc] init];
         cell.item = self.items[indexPath.row];
-        cell.delegate = self;
         return cell;
     }else{
         ProductTableViewCell *cell = [[ProductTableViewCell alloc] init];
         cell.item = self.items[indexPath.row];
-        cell.delegate = self;
         return cell;
     }
    
@@ -122,30 +120,6 @@
         ProductCollectionViewCell *cellForUpdate = (ProductCollectionViewCell *)cell;
         cellForUpdate.item = self.items[indexPath.row];
     }
-}
-
-#pragma mark - Product Table View Cell Delegate
-
-- (void)createNewQuoteFromSender:(ProductTableViewCell *)sender{
-    NewQuoteViewController *newQuoteViewController = (NewQuoteViewController *)self.tabBarController.viewControllers[2];
-    if ([newQuoteViewController isKindOfClass:[NewQuoteViewController class]]) {
-        self.tabBarController.selectedIndex = 2;
-    }
-}
-
-- (void)createNewQuoteForIPhoneFromSender:(ProductViewCellForIPhone *)sender{
-    NewQuoteViewController *newQuoteViewController = (NewQuoteViewController *)self.tabBarController.viewControllers[2];
-    if ([newQuoteViewController isKindOfClass:[NewQuoteViewController class]]) {
-        self.tabBarController.selectedIndex = 2;
-    }
-}
-
-- (void)newQuoteWithProduct:(Product *)product{
-    
-}
-
-- (NSString *)titleForView{
-    return LOC(PHVC_TITLE);
 }
 
 @end

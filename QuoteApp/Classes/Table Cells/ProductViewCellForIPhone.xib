@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4514" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProductViewCellForIPhone">
@@ -23,46 +23,27 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name Product" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="81Z-WA-Sea">
-                            <rect key="frame" x="10" y="10" width="146" height="13"/>
+                            <rect key="frame" x="10" y="10" width="146" height="11"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="13" id="UPk-i0-HOn"/>
+                                <constraint firstAttribute="height" constant="11" id="UPk-i0-HOn"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                            <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="deviceRGB"/>
+                            <color key="textColor" red="0.85490196080000003" green="0.31372549020000001" blue="0.16862745100000001" alpha="1" colorSpace="deviceRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gQt-4m-d3H">
-                            <rect key="frame" x="160" y="2" width="30" height="30"/>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="172" translatesAutoresizingMaskIntoConstraints="NO" id="Pv7-fW-niL">
+                            <rect key="frame" x="10" y="21" width="172" height="69"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="30" id="0V7-DY-zZO"/>
-                                <constraint firstAttribute="height" constant="30" id="jT0-Xc-oBH"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <state key="normal" image="NewQuote">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                        </button>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="172" translatesAutoresizingMaskIntoConstraints="NO" id="Pv7-fW-niL">
-                            <rect key="frame" x="10" y="31" width="172" height="55"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <attributedString key="attributedText">
-                                <fragment>
-                                    <string key="content">JW Aluminum is known as one of the world's top suppliers of high-quality fin stock for use in a wide variety of Heating, Ventilation and Air Conditioning (HVAC), as well as heat transfer applications.  Our Fin stock is known for maintaining formability while offering remarkable strength and toughness.  We have the capability to develop fin stock solutions to meet even the most demanding expectations, and we can work hand-in-hand with you to create a product that fits your specific needs.
+                            <string key="text">JW Aluminum is known as one of the world's top suppliers of high-quality fin stock for use in a wide variety of Heating, Ventilation and Air Conditioning (HVAC), as well as heat transfer applications.  Our Fin stock is known for maintaining formability while offering remarkable strength and toughness.  We have the capability to develop fin stock solutions to meet even the most demanding expectations, and we can work hand-in-hand with you to create a product that fits your specific needs.
 ﻿
 Product Specs
 ﻿
 We can produce fin stock in gauges from .0035" to .024" and in widths up to 64".
 ﻿
 Our product is produced from 1100, 7072 or 3102 alloy and in Tempers 0, H111, H112, H113, H22, H23, H24, H26, and H19.</string>
-                                    <attributes>
-                                        <color key="NSColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                        <font key="NSFont" size="12" name="HelveticaNeue"/>
-                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                    </attributes>
-                                </fragment>
-                            </attributedString>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
+                            <color key="textColor" red="0.34509804844856262" green="0.34509804844856262" blue="0.34509804844856262" alpha="1" colorSpace="deviceRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
@@ -72,10 +53,8 @@ Our product is produced from 1100, 7072 or 3102 alloy and in Tempers 0, H111, H1
                         <constraint firstAttribute="trailing" secondItem="Pv7-fW-niL" secondAttribute="trailing" constant="10" id="QT6-5w-79L"/>
                         <constraint firstItem="81Z-WA-Sea" firstAttribute="leading" secondItem="qkT-0T-UNp" secondAttribute="leading" constant="10" id="Ux6-vp-QMv"/>
                         <constraint firstItem="Pv7-fW-niL" firstAttribute="leading" secondItem="qkT-0T-UNp" secondAttribute="leading" constant="10" id="aLo-5A-SdT"/>
-                        <constraint firstAttribute="bottom" secondItem="Pv7-fW-niL" secondAttribute="bottom" constant="10" id="bkt-MA-yPX"/>
-                        <constraint firstAttribute="trailing" secondItem="gQt-4m-d3H" secondAttribute="trailing" constant="2" id="bm6-v1-B7O"/>
-                        <constraint firstItem="Pv7-fW-niL" firstAttribute="top" secondItem="81Z-WA-Sea" secondAttribute="bottom" constant="8" id="cEz-jd-J1X"/>
-                        <constraint firstItem="gQt-4m-d3H" firstAttribute="top" secondItem="qkT-0T-UNp" secondAttribute="top" constant="2" id="gA4-Ok-tgf"/>
+                        <constraint firstAttribute="bottom" secondItem="Pv7-fW-niL" secondAttribute="bottom" constant="6" id="bkt-MA-yPX"/>
+                        <constraint firstItem="Pv7-fW-niL" firstAttribute="top" secondItem="81Z-WA-Sea" secondAttribute="bottom" id="cEz-jd-J1X"/>
                         <constraint firstAttribute="trailing" secondItem="81Z-WA-Sea" secondAttribute="trailing" constant="36" id="tZq-c6-nBQ"/>
                     </constraints>
                 </view>
@@ -101,7 +80,4 @@ Our product is produced from 1100, 7072 or 3102 alloy and in Tempers 0, H111, H1
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
         </view>
     </objects>
-    <resources>
-        <image name="NewQuote" width="30" height="30"/>
-    </resources>
 </document>

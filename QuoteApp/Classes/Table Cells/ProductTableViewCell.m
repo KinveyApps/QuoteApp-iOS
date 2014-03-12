@@ -46,6 +46,8 @@
                                                                 documentAttributes:nil
                                                                              error:&error];
         self.descriptionLabel.attributedText = description;
+        
+        [self.descriptionLabel sizeToFit];
         self.kinveyImageView.kinveyID = item.thumbnailID;
     }
     
@@ -56,10 +58,6 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
-}
-
-- (IBAction)pressQuote:(id)sender {
-    [self.delegate createNewQuoteFromSender:self];
 }
 
 @end

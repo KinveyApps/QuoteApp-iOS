@@ -86,11 +86,11 @@
                             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                         </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="569-mM-gTy" userLabel="Settings Button">
-                            <rect key="frame" x="10" y="24" width="30" height="30"/>
+                            <rect key="frame" x="10" y="20" width="44" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="30" id="i5S-0B-xjQ"/>
-                                <constraint firstAttribute="width" constant="30" id="lf7-U5-BJY"/>
+                                <constraint firstAttribute="height" constant="44" id="i5S-0B-xjQ"/>
+                                <constraint firstAttribute="width" constant="44" id="lf7-U5-BJY"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
                             <state key="normal" image="Setting"/>
@@ -120,7 +120,7 @@
                         <constraint firstItem="Sg7-yh-3s8" firstAttribute="leading" secondItem="7fp-Eu-fJP" secondAttribute="leading" id="qDh-qB-wph"/>
                         <constraint firstAttribute="bottom" secondItem="Sg7-yh-3s8" secondAttribute="bottom" id="vTb-nS-7o0"/>
                         <constraint firstItem="569-mM-gTy" firstAttribute="leading" secondItem="7fp-Eu-fJP" secondAttribute="leading" constant="10" id="xIW-mJ-zc3"/>
-                        <constraint firstAttribute="bottom" secondItem="569-mM-gTy" secondAttribute="bottom" constant="10" id="xbI-6R-N1O"/>
+                        <constraint firstAttribute="bottom" secondItem="569-mM-gTy" secondAttribute="bottom" id="xbI-6R-N1O"/>
                     </constraints>
                 </view>
             </subviews>

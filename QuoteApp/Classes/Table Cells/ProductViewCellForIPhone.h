@@ -9,18 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "Product.h"
 
-
-@class ProductViewCellForIPhone;
-
-@protocol ProductViewCellForIPhoneDelegate <NSObject>
-
-- (void)createNewQuoteForIPhoneFromSender:(ProductViewCellForIPhone *)sender;
-
-@end
-
 @interface ProductViewCellForIPhone : UITableViewCell
 @property (strong, nonatomic) IBOutlet UIView *view;
 @property (strong, nonatomic) Product *item;
-@property (weak, nonatomic) id<ProductViewCellForIPhoneDelegate> delegate;
 
 @end

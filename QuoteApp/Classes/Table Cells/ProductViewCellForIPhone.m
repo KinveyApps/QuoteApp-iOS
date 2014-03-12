@@ -49,14 +49,12 @@
                                                                            options:@{NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType}
                                                                 documentAttributes:nil
                                                                              error:&error];
-        self.descriptionLabel.attributedText = description;
+        self.descriptionLabel.text = description.string;
+        [self.descriptionLabel sizeToFit];
+        //self.heightDescriptionLabel.constant = self.descriptionLabel.frame.size.height;
         self.kinveyImageView.kinveyID = item.thumbnailID;
     }
     
-}
-
-- (IBAction)pressQuote:(id)sender {
-    [self.delegate createNewQuoteForIPhoneFromSender:self];
 }
 
 @end

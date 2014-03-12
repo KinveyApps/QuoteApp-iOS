@@ -11,17 +11,11 @@
 
 @class ProductTableViewCell;
 
-@protocol ProductTableViewCellDelegate <NSObject>
-
-- (void)createNewQuoteFromSender:(ProductTableViewCell *)sender;
-
-@end
 
 @interface ProductTableViewCell : UITableViewCell
 
 @property (strong, nonatomic) IBOutlet UIView *view;
 @property (strong, nonatomic) Product *item;
 
-@property (weak, nonatomic) id<ProductTableViewCellDelegate> delegate;
 
 @end
