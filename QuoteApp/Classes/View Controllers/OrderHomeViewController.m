@@ -113,4 +113,8 @@
     return LOC(OHVC_REFRESH_CONTROL_TITLE);
 }
 
+- (NSString *)titleForView{
+    return LOC(OHVC_TITLE);
+}
+
 @end

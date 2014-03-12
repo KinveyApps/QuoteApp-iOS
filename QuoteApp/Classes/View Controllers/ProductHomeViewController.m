@@ -144,4 +144,8 @@
     
 }
 
+- (NSString *)titleForView{
+    return LOC(PHVC_TITLE);
+}
+
 @end

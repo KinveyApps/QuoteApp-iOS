@@ -44,6 +44,8 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *buttonHeightConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *betweenButtonTableViewConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableViewWidthConstraint;
+@property (weak, nonatomic) IBOutlet UIView *topBarView;
+@property (weak, nonatomic) IBOutlet UILabel *titleLable;
 
 @end
 
@@ -84,6 +86,8 @@
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
         self.tableViewWidthConstraint.constant = COMBOBOX_NEW_QUOTE_CELL_WIDTH;
     }
+    self.topBarView.backgroundColor = [UIColor colorWithRed:0.8549 green:0.3137 blue:0.1686 alpha:1.0];
+    self.titleLabel.text = LOC(NQV_TITLE);
 }
 
 - (void)viewWillAppear:(BOOL)animated{

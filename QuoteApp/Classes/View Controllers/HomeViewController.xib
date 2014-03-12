@@ -13,6 +13,7 @@
                 <outlet property="searchCountResultLabel" destination="693-4C-ue0" id="SS3-81-caJ"/>
                 <outlet property="tableGridSegmentedControl" destination="amO-T6-84V" id="aGo-ZZ-t3g"/>
                 <outlet property="tableView" destination="d87-RW-cbZ" id="nwQ-Wd-Ft2"/>
+                <outlet property="titleLable" destination="wwq-O8-ftL" id="3SR-Cd-JmG"/>
                 <outlet property="topBarView" destination="gkI-o9-a5o" id="3AW-AP-hhC"/>
                 <outlet property="view" destination="2" id="rQZ-ls-ZlI"/>
             </connections>
@@ -104,11 +105,24 @@
                                 <action selector="changeTableGridView:" destination="-1" eventType="valueChanged" id="RWG-Th-p96"/>
                             </connections>
                         </segmentedControl>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wwq-O8-ftL">
+                            <rect key="frame" x="306" y="28" width="157" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="157" id="QUV-e7-COk"/>
+                                <constraint firstAttribute="height" constant="21" id="lC5-GF-RhU"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" red="0.81176477670669556" green="0.22745099663734436" blue="0.12941177189350128" alpha="1" colorSpace="deviceRGB"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="aCr-o7-sNG" secondAttribute="bottom" id="ESH-HR-08g"/>
                         <constraint firstItem="aCr-o7-sNG" firstAttribute="leading" secondItem="gkI-o9-a5o" secondAttribute="leading" id="GIN-11-PMn"/>
+                        <constraint firstAttribute="centerX" secondItem="wwq-O8-ftL" secondAttribute="centerX" id="N6L-mR-kuR"/>
+                        <constraint firstItem="aCr-o7-sNG" firstAttribute="top" secondItem="wwq-O8-ftL" secondAttribute="bottom" constant="14" id="Q3w-0w-nJB"/>
                         <constraint firstItem="BwA-Wt-VVI" firstAttribute="leading" secondItem="gkI-o9-a5o" secondAttribute="leading" constant="10" id="Vhb-fe-j6Y"/>
                         <constraint firstAttribute="trailing" secondItem="TYG-nm-Dbp" secondAttribute="trailing" constant="10" id="ZVd-wz-hG5"/>
                         <constraint firstAttribute="bottom" secondItem="BwA-Wt-VVI" secondAttribute="bottom" constant="10" id="ZhE-OG-01E"/>

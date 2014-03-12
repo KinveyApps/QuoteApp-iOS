@@ -34,5 +34,6 @@
 - (BOOL)isVisibleTableGridSegmentedControl;//abstract
 - (Class)classForCollectionViewCell;//abstract
 - (NSString *)reusebleCollectionViewID;//abstract
+- (NSString *)titleForView;//abstract
 
 @end

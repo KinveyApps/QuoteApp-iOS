@@ -114,4 +114,8 @@
     return LOC(QHVC_REFRESH_CONTROL_TITLE);
 }
 
+- (NSString *)titleForView{
+    return LOC(QHVC_TITLE);
+}
+
 @end
