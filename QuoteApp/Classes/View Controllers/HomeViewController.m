@@ -71,6 +71,7 @@
                                           action:@selector(updateData)
                                 forControlEvents:UIControlEventValueChanged];
     [self.collectionView addSubview:self.collectionViewRefreshControl];
+    self.topBarView.backgroundColor = [UIColor colorWithRed:0.8549 green:0.3137 blue:0.1686 alpha:1.0];
 }
 
 - (void)updateData{

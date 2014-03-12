@@ -3,12 +3,12 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "ProductTabBarItemImage.png"
+      "filename" : "ProductTabBarItemImageNor.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "ProductTabBarItemImage@2x.png"
+      "filename" : "ProductTabBarItemImageNor@2x.png"
     }
   ],
   "info" : {

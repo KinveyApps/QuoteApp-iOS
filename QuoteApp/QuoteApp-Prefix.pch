@@ -19,7 +19,6 @@
 #import "Localizable.strings.h"
 #import "STLib.h"
 #import "SynthesizeSingleton.h"
-#import "AlertViewController.h"
 #import "AppDelegate.h"
 #endif
 

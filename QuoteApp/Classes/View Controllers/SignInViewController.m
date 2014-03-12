@@ -56,6 +56,8 @@
 	[self.loginButton setTitle:LOC(SIVC_LOGIN) forState:UIControlStateNormal];
 	self.usernameField.placeholder = LOC(SIVC_USERNAME);
 	self.passwordField.placeholder = LOC(SIVC_PASSWORD);
+    self.view.backgroundColor = [UIColor redColor];
+    self.contentView.backgroundColor = [UIColor colorWithRed:0.8549 green:0.3137 blue:0.1686 alpha:1.0];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -146,9 +148,12 @@
 											  }
 											  onFailure:^(NSError *error) {
 												  [DejalBezelActivityView removeView];
-												  [AlertViewController showAlertViewWithTitle:LOC(ERROR)
-																					  message:error.localizedDescription ? error.localizedDescription : LOC(ERR_SMTH_WENT_WRONG)
-																						block:nil cancelButtonTitle:LOC(OKAY) otherButtonTitle:nil];
+                                                  UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:LOC(ERROR)
+                                                                                                      message:error.localizedDescription ? error.localizedDescription : LOC(ERR_SMTH_WENT_WRONG)
+                                                                                                     delegate:nil
+                                                                                            cancelButtonTitle:LOC(OKAY)
+                                                                                            otherButtonTitles:nil];
+                                                  [alertView show];
 											  }];
 }
 
@@ -168,9 +173,12 @@
 											 }
 											 onFailure:^(NSError *error) {
 												 [DejalBezelActivityView removeView];
-												 [AlertViewController showAlertViewWithTitle:LOC(ERROR)
-																					 message:error.localizedDescription ? error.localizedDescription : LOC(ERR_SMTH_WENT_WRONG)
-																					   block:nil cancelButtonTitle:LOC(OKAY) otherButtonTitle:nil];
+												 UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:LOC(ERROR)
+                                                                                                     message:error.localizedDescription ? error.localizedDescription : LOC(ERR_SMTH_WENT_WRONG)
+                                                                                                    delegate:nil
+                                                                                           cancelButtonTitle:LOC(OKAY)
+                                                                                           otherButtonTitles:nil];
+                                                 [alertView show];
 											 }];
 }
 

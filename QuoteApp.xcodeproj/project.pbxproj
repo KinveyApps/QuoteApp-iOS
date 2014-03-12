@@ -63,11 +63,9 @@
 		C6A3107418A0F6D700916A1A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C6A3107218A0F6D700916A1A /* InfoPlist.strings */; };
 		C6A3107618A0F6D700916A1A /* QuoteAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A3107518A0F6D700916A1A /* QuoteAppTests.m */; };
 		C6A3108018A0F71B00916A1A /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6A3107F18A0F71B00916A1A /* MainWindow.xib */; };
-		C6A3109018A106DF00916A1A /* AlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A3108318A106DF00916A1A /* AlertViewController.m */; };
 		C6A3109118A106DF00916A1A /* DejalActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A3108618A106DF00916A1A /* DejalActivityView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		C6A3109518A106DF00916A1A /* SettingsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A3108C18A106DF00916A1A /* SettingsManager.m */; };
 		C6A3109C18A107F900916A1A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C6A3109A18A107F900916A1A /* Localizable.strings */; };
-		C6A310F818A1083400916A1A /* NSArray+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A310A018A1083400916A1A /* NSArray+Utils.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		C6A310F918A1083400916A1A /* NSData+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A310A218A1083400916A1A /* NSData+Utils.m */; };
 		C6A310FA18A1083400916A1A /* NSDictionary+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A310A418A1083400916A1A /* NSDictionary+Utils.m */; };
 		C6A310FB18A1083400916A1A /* NSError+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A310A618A1083400916A1A /* NSError+Utils.m */; };
@@ -193,8 +191,6 @@
 		C6A3107318A0F6D700916A1A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C6A3107518A0F6D700916A1A /* QuoteAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuoteAppTests.m; sourceTree = "<group>"; };
 		C6A3107F18A0F71B00916A1A /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
-		C6A3108218A106DF00916A1A /* AlertViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertViewController.h; sourceTree = "<group>"; };
-		C6A3108318A106DF00916A1A /* AlertViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertViewController.m; sourceTree = "<group>"; };
 		C6A3108518A106DF00916A1A /* DejalActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DejalActivityView.h; sourceTree = "<group>"; };
 		C6A3108618A106DF00916A1A /* DejalActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DejalActivityView.m; sourceTree = "<group>"; };
 		C6A3108818A106DF00916A1A /* com.kinvey.KinveyKit.docset */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = com.kinvey.KinveyKit.docset; sourceTree = "<group>"; };
@@ -206,8 +202,6 @@
 		C6A3108F18A106DF00916A1A /* SynthesizeSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynthesizeSingleton.h; sourceTree = "<group>"; };
 		C6A3109618A107C900916A1A /* Localizable.strings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Localizable.strings.h; sourceTree = "<group>"; };
 		C6A3109B18A107F900916A1A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		C6A3109F18A1083400916A1A /* NSArray+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Utils.h"; sourceTree = "<group>"; };
-		C6A310A018A1083400916A1A /* NSArray+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Utils.m"; sourceTree = "<group>"; };
 		C6A310A118A1083400916A1A /* NSData+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Utils.h"; sourceTree = "<group>"; };
 		C6A310A218A1083400916A1A /* NSData+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Utils.m"; sourceTree = "<group>"; };
 		C6A310A318A1083400916A1A /* NSDictionary+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Utils.h"; sourceTree = "<group>"; };
@@ -374,8 +368,6 @@
 		C6A3108118A106DF00916A1A /* Externals */ = {
 			isa = PBXGroup;
 			children = (
-				C6A3108218A106DF00916A1A /* AlertViewController.h */,
-				C6A3108318A106DF00916A1A /* AlertViewController.m */,
 				C6A3108418A106DF00916A1A /* DejalActivityView */,
 				C6A3108718A106DF00916A1A /* KinveyKit-1.26.3 */,
 				C6A3108B18A106DF00916A1A /* SettingsManager.h */,
@@ -423,8 +415,6 @@
 			isa = PBXGroup;
 			children = (
 				C6A310B518A1083400916A1A /* STLib.h */,
-				C6A3109F18A1083400916A1A /* NSArray+Utils.h */,
-				C6A310A018A1083400916A1A /* NSArray+Utils.m */,
 				C6A310A118A1083400916A1A /* NSData+Utils.h */,
 				C6A310A218A1083400916A1A /* NSData+Utils.m */,
 				C6A310A318A1083400916A1A /* NSDictionary+Utils.h */,
@@ -604,7 +594,7 @@
 		C6A3104518A0F6D700916A1A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Kinvey, Inc.";
 				TargetAttributes = {
 					C6A3106718A0F6D700916A1A = {
@@ -679,7 +669,6 @@
 				1B4773F518C5BFCB005E1A9C /* MainTableViewCellForIPhone.m in Sources */,
 				1B1A181A18BFCC4800CD23BE /* ProductHomeViewController.m in Sources */,
 				C6A3110D18A1083400916A1A /* DataHelper.m in Sources */,
-				C6A310F818A1083400916A1A /* NSArray+Utils.m in Sources */,
 				C6760A1118A283C300BAC60D /* TabBarController.m in Sources */,
 				C6A3106118A0F6D700916A1A /* AppDelegate.m in Sources */,
 				C6760A1718A39D8400BAC60D /* Order.m in Sources */,
@@ -718,7 +707,6 @@
 				C6A310FF18A1083400916A1A /* NSSet+Utils.m in Sources */,
 				1BC2439518C6F6A700D1E15B /* BaseDetailView.m in Sources */,
 				C6A3109118A106DF00916A1A /* DejalActivityView.m in Sources */,
-				C6A3109018A106DF00916A1A /* AlertViewController.m in Sources */,
 				C6A3110C18A1083400916A1A /* AuthenticationHelper.m in Sources */,
 				C6A3110318A1083400916A1A /* UIColor+AppSpecific.m in Sources */,
 				C6A3110718A1083400916A1A /* UIImage+Resize.m in Sources */,
@@ -775,7 +763,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -815,7 +802,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -848,7 +834,6 @@
 		C6A3107A18A0F6D700916A1A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -868,7 +853,6 @@
 		C6A3107B18A0F6D700916A1A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -888,7 +872,6 @@
 		C6A3107D18A0F6D700916A1A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/QuoteApp.app/QuoteApp";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -911,7 +894,6 @@
 		C6A3107E18A0F6D700916A1A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/QuoteApp.app/QuoteApp";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",

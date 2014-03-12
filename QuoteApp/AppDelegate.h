@@ -19,6 +19,7 @@
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) IBOutlet UIViewController *activityViewController;
 @property (strong, nonatomic) IBOutlet TabBarController *tabBarController;
+@property (weak, nonatomic) IBOutlet UIView *backgroundActivityView;
 
 - (void)showActivityView;
 - (void)hideActivityView;

@@ -44,7 +44,6 @@
 
 // Categories that extend Core Foundation classes
 #import "NSDictionary+Utils.h"
-#import "NSArray+Utils.h"
 #import "NSSet+Utils.h"
 #import "NSObject+Utils.h"
 #import "NSLocale+Utils.h"

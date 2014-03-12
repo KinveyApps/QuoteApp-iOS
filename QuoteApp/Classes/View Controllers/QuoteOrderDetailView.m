@@ -66,7 +66,7 @@
     //change reference number
     NSInteger numberQuote = [self.item.referenceNumber substringFromIndex:2].integerValue;
     numberQuote++;
-    quote.referenceNumber = [[self.item.referenceNumber substringToIndex:2] stringByAppendingString:[NSString stringWithFormat:@"%d", numberQuote]];
+    quote.referenceNumber = [[self.item.referenceNumber substringToIndex:2] stringByAppendingString:[NSString stringWithFormat:@"%ld", (long)numberQuote]];
     
     quote.originator = self.item.originator;
     quote.activeUsers = self.item.activeUsers;

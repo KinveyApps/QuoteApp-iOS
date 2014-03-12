@@ -3,12 +3,12 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "newQuoteTabBarImage.png"
+      "filename" : "newQuoteTabBarImageSel.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "newQuoteTabBarImage@2x.png"
+      "filename" : "newQuoteTabBarImageSel@2x.png"
     }
   ],
   "info" : {

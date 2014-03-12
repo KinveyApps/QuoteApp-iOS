@@ -17,6 +17,13 @@
 }
 
 @end
+@interface AppDelegate ()
+
+@property (nonatomic) BOOL isCompleteLaodQuotes;
+@property (nonatomic) BOOL isCompleteLaodOrders;
+@property (nonatomic) BOOL isCompleteLaodProducts;
+
+@end
 
 @implementation AppDelegate
 
@@ -45,6 +52,7 @@
     self.window.rootViewController = self.tabBarController;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    self.backgroundActivityView.backgroundColor = [UIColor colorWithRed:0.8549 green:0.3137 blue:0.1686 alpha:1.0];
 	
 	if (![[AuthenticationHelper instance] isSignedIn]) {
 		[SignInViewController presentSignInFlowOnViewController:self.window.rootViewController animated:NO
@@ -100,14 +108,6 @@
 
 - (void)startFetchingDBFromServer
 {
-	
-	STErrorBlock errorBlock = ^(NSError *error) {
-		[self hideActivityView];
-		
-		[AlertViewController showAlertViewWithTitle:LOC(ERROR)
-											message:error.localizedDescription ? error.localizedDescription : LOC(ERR_SMTH_WENT_WRONG)
-											  block:nil cancelButtonTitle:LOC(OKAY) otherButtonTitle:nil];
-	};
 	
 	[self showActivityView];
 	

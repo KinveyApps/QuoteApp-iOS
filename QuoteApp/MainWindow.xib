@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="4514" systemVersion="13C64" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UIApplication">
@@ -19,8 +19,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="companylogo" translatesAutoresizingMaskIntoConstraints="NO" id="kl0-Zi-V7X">
-                        <rect key="frame" x="369" y="497" width="30" height="30"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="companylogo" translatesAutoresizingMaskIntoConstraints="NO" id="kl0-Zi-V7X">
+                        <rect key="frame" x="247" y="458" width="275" height="108"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     </imageView>
                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="qeu-lu-xtQ">
@@ -28,7 +28,8 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </activityIndicatorView>
                 </subviews>
-                <color key="backgroundColor" red="0.81176477670000002" green="0.22745099660000001" blue="0.1294117719" alpha="1" colorSpace="deviceRGB"/>
+                <color key="backgroundColor" cyan="0.0" magenta="0.63" yellow="0.80000000000000004" black="0.14999999999999999" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
+                <color key="tintColor" red="1" green="0.72941178080000002" blue="0.14901961389999999" alpha="1" colorSpace="deviceRGB"/>
                 <constraints>
                     <constraint firstItem="IYU-qp-ib0" firstAttribute="top" secondItem="qeu-lu-xtQ" secondAttribute="bottom" constant="94" id="7LP-3k-GGH"/>
                     <constraint firstAttribute="centerX" secondItem="qeu-lu-xtQ" secondAttribute="centerX" id="92Q-lf-Vtl"/>
@@ -97,6 +98,7 @@
         <customObject id="d3e-k0-vG0" customClass="AppDelegate">
             <connections>
                 <outlet property="activityViewController" destination="SeO-d2-2rF" id="H0a-TE-k9N"/>
+                <outlet property="backgroundActivityView" destination="gaW-3v-Ib3" id="CIu-u3-rqx"/>
                 <outlet property="tabBarController" destination="QOT-1N-FgQ" id="6Xa-yw-xe6"/>
             </connections>
         </customObject>
