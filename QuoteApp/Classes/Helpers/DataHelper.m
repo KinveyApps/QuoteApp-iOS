@@ -37,7 +37,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DataHelper)
         
         KCSCollection *collectionProduct = [KCSCollection collectionFromString:@"Products" ofClass:[Product class]];
         self.productStore = [KCSLinkedAppdataStore storeWithOptions:@{ KCSStoreKeyResource : collectionProduct,
-                                                                      KCSStoreKeyCachePolicy : @(KCSCachePolicyNetworkFirst)}];
+                                                                       KCSStoreKeyCachePolicy : @(KCSCachePolicyNetworkFirst)}];
 	}
 	return self;
 }
@@ -88,13 +88,16 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DataHelper)
     
 	[self.quotesStore queryWithQuery:query
                  withCompletionBlock:^(NSArray *objectsOrNil, NSError *errorOrNil) {
-        
-                                if (!errorOrNil) {
-                                    if (reportSuccess) reportSuccess([self entityWithActiveUserOriginatorOnArray:objectsOrNil]);
-                                }else{
-                                    if (reportFailure) reportFailure(errorOrNil);
-                                }
-                            }
+                     
+                     dispatch_async(dispatch_get_main_queue(), ^{
+                         if (!errorOrNil) {
+                             if (reportSuccess) reportSuccess([self entityWithActiveUserOriginatorOnArray:objectsOrNil]);
+                         }else{
+                             if (reportFailure) reportFailure(errorOrNil);
+                         }
+                     });
+                     
+                 }
                    withProgressBlock:nil
                          cachePolicy:useCache ? KCSCachePolicyLocalFirst : KCSCachePolicyNetworkFirst];
     
@@ -102,13 +105,19 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DataHelper)
 
 - (void)saveQuote:(Quote *)quote OnSuccess:(void (^)(NSArray *))reportSuccess onFailure:(STErrorBlock)reportFailure{
     
-    [self.quotesStore saveObject:quote withCompletionBlock:^(NSArray *objectsOrNil, NSError *errorOrNil) {
-        if (errorOrNil != nil) {
-            if (reportFailure) reportFailure(errorOrNil);
-        } else {
-            if (reportSuccess) reportSuccess(objectsOrNil);
-        }
-    } withProgressBlock:nil];
+    [self.quotesStore saveObject:quote
+             withCompletionBlock:^(NSArray *objectsOrNil, NSError *errorOrNil) {
+                 
+                 dispatch_async(dispatch_get_main_queue(), ^{
+                     if (errorOrNil != nil) {
+                         if (reportFailure) reportFailure(errorOrNil);
+                     } else {
+                         if (reportSuccess) reportSuccess(objectsOrNil);
+                     }
+                 });
+                 
+             }
+               withProgressBlock:nil];
     
 }
 
@@ -141,12 +150,16 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DataHelper)
     
     [self.ordersStore queryWithQuery:query
                  withCompletionBlock:^(NSArray *objectsOrNil, NSError *errorOrNil) {
-                                        if (!errorOrNil) {
-                                            if (reportSuccess) reportSuccess([self entityWithActiveUserOriginatorOnArray:objectsOrNil]);
-                                        }else{
-                                            if (reportFailure) reportFailure(errorOrNil);
-                                        }
-                                    }
+                     
+                     dispatch_async(dispatch_get_main_queue(), ^{
+                         if (!errorOrNil) {
+                             if (reportSuccess) reportSuccess([self entityWithActiveUserOriginatorOnArray:objectsOrNil]);
+                         }else{
+                             if (reportFailure) reportFailure(errorOrNil);
+                         }
+                     });
+                     
+                 }
                    withProgressBlock:nil
                          cachePolicy:useCache ? KCSCachePolicyLocalFirst : KCSCachePolicyNetworkFirst];
     
@@ -154,13 +167,19 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DataHelper)
 
 - (void)saveOrder:(Order *)order OnSuccess:(void (^)(NSArray *))reportSuccess onFailure:(STErrorBlock)reportFailure{
     
-    [self.ordersStore saveObject:order withCompletionBlock:^(NSArray *objectsOrNil, NSError *errorOrNil) {
-        if (errorOrNil != nil) {
-            if (reportFailure) reportFailure(errorOrNil);
-        } else {
-            if (reportSuccess) reportSuccess(objectsOrNil);
-        }
-    } withProgressBlock:nil];
+    [self.ordersStore saveObject:order
+             withCompletionBlock:^(NSArray *objectsOrNil, NSError *errorOrNil) {
+                 
+                 dispatch_async(dispatch_get_main_queue(), ^{
+                     if (errorOrNil != nil) {
+                         if (reportFailure) reportFailure(errorOrNil);
+                     } else {
+                         if (reportSuccess) reportSuccess(objectsOrNil);
+                     }
+                 });
+                 
+             }
+               withProgressBlock:nil];
     
 }
 
@@ -179,12 +198,14 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DataHelper)
         
         [user saveWithCompletionBlock:^(NSArray *objectsOrNil, NSError *errorOrNil) {
             
-            if (!errorOrNil) {
-                if (reportSuccess) reportSuccess(objectsOrNil);
-            }
-            else {
-                if (reportFailure) reportFailure(errorOrNil);
-            }
+            dispatch_async(dispatch_get_main_queue(), ^{
+                if (!errorOrNil) {
+                    if (reportSuccess) reportSuccess(objectsOrNil);
+                }
+                else {
+                    if (reportFailure) reportFailure(errorOrNil);
+                }
+            });
             
         }];
     }
@@ -194,20 +215,21 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DataHelper)
     KCSUser *user = [KCSUser activeUser];
     [user refreshFromServer:^(NSArray *objectsOrNil, NSError *errorOrNil) {
         
-        if (!errorOrNil) {
-            NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
-            NSArray *keyArray = [self allUserInfoKey];
-            for (int i = 0; i < keyArray.count; i++) {
-                if ([user getValueForAttribute:keyArray[i]]) {
-                    userInfo[keyArray[i]] = [user getValueForAttribute:keyArray[i]];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (!errorOrNil) {
+                NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
+                NSArray *keyArray = [self allUserInfoKey];
+                for (int i = 0; i < keyArray.count; i++) {
+                    if ([user getValueForAttribute:keyArray[i]]) {
+                        userInfo[keyArray[i]] = [user getValueForAttribute:keyArray[i]];
+                    }
                 }
+                if (reportSuccess) reportSuccess(@[[userInfo copy]]);
             }
-            
-            if (reportSuccess) reportSuccess(@[[userInfo copy]]);
-        }
-        else {
-            if (reportFailure) reportFailure(errorOrNil);
-        }
+            else {
+                if (reportFailure) reportFailure(errorOrNil);
+            }
+        });
         
     }];
 }
@@ -250,12 +272,16 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DataHelper)
     
     [self.productStore queryWithQuery:query
                   withCompletionBlock:^(NSArray *objectsOrNil, NSError *errorOrNil) {
-                                        if (!errorOrNil) {
-                                            if (reportSuccess) reportSuccess(objectsOrNil);
-                                        }else{
-                                            if (reportFailure) reportFailure(errorOrNil);
-                                        }
-                                    }
+                      
+                      dispatch_async(dispatch_get_main_queue(), ^{
+                          if (!errorOrNil) {
+                              if (reportSuccess) reportSuccess(objectsOrNil);
+                          }else{
+                              if (reportFailure) reportFailure(errorOrNil);
+                          }
+                      });
+                      
+                  }
                     withProgressBlock:nil
                           cachePolicy:(useCache ? KCSCachePolicyLocalFirst : KCSCachePolicyNetworkFirst)];
 }

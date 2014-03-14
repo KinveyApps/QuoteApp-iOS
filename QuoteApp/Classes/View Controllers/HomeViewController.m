@@ -127,10 +127,12 @@
         if (self.collectionView.hidden) {
             if (!self.tableViewRefreshControl.isRefreshing) {
                 [self.tableViewRefreshControl beginRefreshing];
+                self.tableViewRefreshControl.hidden = NO;
             }
         }else{
             if (!self.collectionViewRefreshControl.isRefreshing) {
                 [self.collectionViewRefreshControl beginRefreshing];
+                self.collectionViewRefreshControl = NO;
             }
         }
     }else{
