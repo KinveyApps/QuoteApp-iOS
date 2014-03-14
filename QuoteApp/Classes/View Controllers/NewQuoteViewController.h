@@ -10,4 +10,6 @@
 
 @interface NewQuoteViewController : UIViewController
 
+@property (strong, nonatomic) Quote *quote;
+
 @end

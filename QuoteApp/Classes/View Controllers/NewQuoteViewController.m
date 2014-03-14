@@ -10,8 +10,8 @@
 #import "ComboBoxNewQuoteTableViewCell.h"
 #import "Quote.h"
 #import "DataHelper.h"
-#import "QuoteOrderDetailView.h"
-#import "SettingsDetailView.h"
+#import "QuoteOrderModalViewController.h"
+#import "SettingModalViewController.h"
 
 #define PICKER_VIEW_HEIGHT 216
 #define COMBOBOX_NEW_QUOTE_CELL_HEGHT 60
@@ -24,15 +24,13 @@
 @property (nonatomic) NSInteger countTableViewRows;
 @property (strong, nonatomic) NSIndexPath *pickerIndexPath;
 @property (strong, nonatomic) NSArray *pickerItem;
-@property (strong, nonatomic) Quote *quote;
 @property (strong, nonatomic) NSArray *products;
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (strong, nonatomic) SettingsDetailView *settingsView;
 
 @property (weak, nonatomic) IBOutlet UIButton *submitButton;
 @property (strong, nonatomic) UIDatePicker *datePicker;
-@property (strong, nonatomic) QuoteOrderDetailView *detailView;
+@property (strong, nonatomic) QuoteOrderModalViewController *detailView;
 
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 
@@ -122,7 +120,7 @@
 
 - (void)keyboardHide:(NSNotification *)nofification{
     [UIView animateWithDuration:0.3 animations:^{
-        self.bottomConstraint.constant = 69;
+        self.bottomConstraint.constant = 20;
         self.topConstraint.constant = 154;
         [self.view layoutIfNeeded];
     }];
@@ -131,9 +129,7 @@
 #pragma mark - Actions
 
 - (IBAction)pressSubmit {
-    QuoteOrderDetailView *detail = [[QuoteOrderDetailView alloc] initWithFrame:self.tabBarController.view.bounds];
-    self.detailView = detail;
-    self.detailView.item = self.quote;
+    
     [self.spinner startAnimating];
     
     [self addToQuotePriceAndUser];
@@ -141,8 +137,15 @@
     [[DataHelper instance] saveQuote:self.quote
                            OnSuccess:^(NSArray *quotes){
                                if (quotes.count) {
-                                   [self.tabBarController.view addSubview:self.detailView];
-                                   
+                                   QuoteOrderModalViewController *mvc = [[QuoteOrderModalViewController alloc] init];
+                                   if (self.quote) {
+                                       mvc.modalPresentationStyle = UIModalPresentationFormSheet;
+                                       [self.tabBarController presentViewController:mvc
+                                                                           animated:YES
+                                                                         completion:^{
+                                                                             mvc.item = self.quote;
+                                                                         }];
+                                   }
                                }
                                [self.spinner stopAnimating];
                            }
@@ -158,8 +161,11 @@
      ];
 }
 - (IBAction)pressSettings {
-    self.settingsView = [[SettingsDetailView alloc] initWithFrame:self.tabBarController.view.bounds];
-    [self.tabBarController.view addSubview:self.settingsView];
+    SettingModalViewController *mv = [[SettingModalViewController alloc] init];
+    mv.modalPresentationStyle = UIModalPresentationFormSheet;
+    [self presentViewController:mv
+                       animated:YES
+                     completion:nil];
 }
 
 #pragma mark - Geters and Setters
@@ -174,7 +180,7 @@
 - (void)addToQuotePriceAndUser{
     float fabPrice = random();
     fabPrice = (float)(random() % 74) / (float)(random() % 74);
-    self.quote.totalPrice = [@"$" stringByAppendingFormat:@"$1,500/month"];
+    self.quote.totalPrice = [@"$" stringByAppendingFormat:@"1,500/month"];
     self.quote.referenceNumber = [@"Q" stringByAppendingFormat:@"%ld", (random() % 10000000)];
     self.quote.originator = [KCSUser activeUser];
     self.quote.meta = [[KCSMetadata alloc] init];

@@ -11,12 +11,9 @@
 #import "MainTableViewCell.h"
 #import "MainTableHeaderViewForIPhone.h"
 #import "MainTableViewCellForIPhone.h"
-#import "QuoteOrderDetailView.h"
+#import "QuoteOrderModalViewController.h"
 
 @interface OrderHomeViewController ()
-
-@property (weak, nonatomic) QuoteOrderDetailView *detailView;
-
 
 @end
 
@@ -90,18 +87,14 @@
 }
 
 - (void)detailViewForIndex:(NSInteger)index{
-    QuoteOrderDetailView *detail = [[QuoteOrderDetailView alloc] initWithFrame:self.tabBarController.view.bounds];
-    self.detailView = detail;
+    QuoteOrderModalViewController *mvc = [[QuoteOrderModalViewController alloc] init];
     if (self.items.count) {
-        self.detailView.item = self.items[index];
-        [self.tabBarController.view addSubview:self.detailView];
-    }
-}
-
-- (void)viewDidLayoutSubviews{
-    [super viewDidLayoutSubviews];
-    if (self.detailView) {
-        self.detailView.frame = self.tabBarController.view.bounds;
+        mvc.modalPresentationStyle = UIModalPresentationFormSheet;
+        mvc.item = self.items[index];
+        [self.tabBarController presentViewController:mvc
+                                            animated:YES
+                                          completion:^{
+                                          }];
     }
 }
 

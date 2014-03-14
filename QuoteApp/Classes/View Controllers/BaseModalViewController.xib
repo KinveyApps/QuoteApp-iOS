@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BaseModalViewController">
+            <connections>
+                <outlet property="backgroundStatusBarView" destination="peo-4O-uwJ" id="IkI-xC-VgC"/>
+                <outlet property="heightScrollViewConstraint" destination="u72-XW-zlE" id="L15-23-2S7"/>
+                <outlet property="rightButton" destination="7h7-f5-FVJ" id="i4U-wz-9zM"/>
+                <outlet property="scrollView" destination="z7u-jj-d7A" id="SaI-aJ-lbF"/>
+                <outlet property="toolbar" destination="ph6-YU-hqd" id="MXL-Vv-lgo"/>
+                <outlet property="topToolbarConstraint" destination="JO6-Fi-Xgv" id="qor-34-rCu"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="xHR-k5-l0N"/>
+                <outlet property="widthScrollViewConstraint" destination="bsX-Mc-G5Y" id="TKO-Ii-rEW"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="485" height="457"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="peo-4O-uwJ">
+                    <rect key="frame" x="0.0" y="0.0" width="485" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="9IS-Zw-yBl"/>
+                    </constraints>
+                </view>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ph6-YU-hqd">
+                    <rect key="frame" x="0.0" y="0.0" width="485" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <items>
+                        <barButtonItem title="Close" id="Rre-hO-RDk">
+                            <connections>
+                                <action selector="closePress:" destination="-1" id="Vsn-yx-7st"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="I1j-yL-WHd"/>
+                        <barButtonItem title="Item" id="7h7-f5-FVJ">
+                            <connections>
+                                <action selector="additionalButtonPress" destination="-1" id="BhU-1L-kaO"/>
+                            </connections>
+                        </barButtonItem>
+                    </items>
+                    <color key="tintColor" red="1" green="0.72941178080000002" blue="0.14901961389999999" alpha="1" colorSpace="deviceRGB"/>
+                </toolbar>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z7u-jj-d7A">
+                    <rect key="frame" x="20" y="64" width="445" height="373"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="445" id="bsX-Mc-G5Y"/>
+                        <constraint firstAttribute="height" constant="373" id="u72-XW-zlE"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" red="0.86666673419999996" green="0.86666673419999996" blue="0.86666673419999996" alpha="1" colorSpace="deviceRGB"/>
+            <constraints>
+                <constraint firstItem="ph6-YU-hqd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="7M1-Y9-vDw"/>
+                <constraint firstAttribute="centerY" secondItem="z7u-jj-d7A" secondAttribute="centerY" constant="-22" id="8H7-Qr-2ss"/>
+                <constraint firstItem="ph6-YU-hqd" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="JO6-Fi-Xgv"/>
+                <constraint firstAttribute="trailing" secondItem="peo-4O-uwJ" secondAttribute="trailing" id="Smg-oX-De1"/>
+                <constraint firstItem="peo-4O-uwJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Vnb-ZX-Ebl"/>
+                <constraint firstItem="peo-4O-uwJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="cjn-AG-JrO"/>
+                <constraint firstAttribute="trailing" secondItem="ph6-YU-hqd" secondAttribute="trailing" id="fMk-C6-bwj"/>
+                <constraint firstAttribute="centerX" secondItem="z7u-jj-d7A" secondAttribute="centerX" id="wSH-T7-SzI"/>
+            </constraints>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+</document>

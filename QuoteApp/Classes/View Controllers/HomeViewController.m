@@ -7,7 +7,7 @@
 //
 
 #import "HomeViewController.h"
-#import "SettingsDetailView.h"
+#import "SettingModalViewController.h"
 
 @interface HomeViewController () <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
 @property (strong, nonatomic) IBOutlet UIView *view;
@@ -21,7 +21,6 @@
 @property (nonatomic, strong) UIRefreshControl *collectionViewRefreshControl;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
-@property (strong, nonatomic) SettingsDetailView *settingsView;
 @property (weak, nonatomic) IBOutlet UICollectionViewFlowLayout *collectionViewFlowLayout;
 @property (weak, nonatomic) IBOutlet UILabel *titleLable;
 
@@ -103,13 +102,6 @@
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     //[self.collectionView addSubview:self.tableViewRefreshControl];
-}
-
-
-- (void)viewDidLayoutSubviews{
-    if (self.settingsView) {
-        self.settingsView.frame = self.tabBarController.view.bounds;
-    }
 }
 
 - (Class)classForCollectionViewCell{
@@ -220,8 +212,11 @@
 
 
 - (IBAction)pressSettings {
-    self.settingsView = [[SettingsDetailView alloc] initWithFrame:self.tabBarController.view.bounds];
-    [self.tabBarController.view addSubview:self.settingsView];
+    SettingModalViewController *mv = [[SettingModalViewController alloc] init];
+    mv.modalPresentationStyle = UIModalPresentationFormSheet;
+    [self presentViewController:mv
+                       animated:YES
+                     completion:nil];
     
 }
 - (IBAction)changeTableGridView:(UISegmentedControl *)sender {

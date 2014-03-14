@@ -31,18 +31,18 @@
 		1BACC98918AA602600D87C0F /* MainTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BACC98818AA602600D87C0F /* MainTableHeaderView.m */; };
 		1BACC98B18AA716E00D87C0F /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BACC98A18AA716E00D87C0F /* MainTableViewCell.xib */; };
 		1BACC98E18AA71A800D87C0F /* MainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BACC98D18AA71A800D87C0F /* MainTableViewCell.m */; };
-		1BC2439518C6F6A700D1E15B /* BaseDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC2439418C6F6A700D1E15B /* BaseDetailView.m */; };
-		1BC2439718C6F6C400D1E15B /* BaseDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BC2439618C6F6C400D1E15B /* BaseDetailView.xib */; };
-		1BC2439A18C7037400D1E15B /* QuoteOrderSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC2439918C7037300D1E15B /* QuoteOrderSubView.m */; };
+		1BB1E83218D318A500D1FD2C /* ProductModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BB1E83118D318A500D1FD2C /* ProductModalViewController.m */; };
+		1BB1E83A18D343B500D1FD2C /* QuoteOrderSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BB1E83918D343B500D1FD2C /* QuoteOrderSubView.m */; };
+		1BB1E83D18D3535300D1FD2C /* SettingModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BB1E83C18D3535300D1FD2C /* SettingModalViewController.m */; };
 		1BC2439C18C7038300D1E15B /* QuoteOrderSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BC2439B18C7038300D1E15B /* QuoteOrderSubView.xib */; };
-		1BC2439F18C70A2500D1E15B /* QuoteOrderDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC2439E18C70A2500D1E15B /* QuoteOrderDetailView.m */; };
 		1BC243A218C7B12F00D1E15B /* ProductSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC243A118C7B12F00D1E15B /* ProductSubView.m */; };
 		1BC243A418C7B14D00D1E15B /* ProductSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BC243A318C7B14D00D1E15B /* ProductSubView.xib */; };
-		1BC243A718C7B40000D1E15B /* ProductsDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC243A618C7B40000D1E15B /* ProductsDetailView.m */; };
 		1BC243AA18C8655300D1E15B /* SettingsSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC243A918C8655300D1E15B /* SettingsSubView.m */; };
 		1BC243AC18C8656500D1E15B /* SettingsSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BC243AB18C8656500D1E15B /* SettingsSubView.xib */; };
-		1BC243AF18C8674D00D1E15B /* SettingsDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC243AE18C8674D00D1E15B /* SettingsDetailView.m */; };
 		1BC243B118C878F500D1E15B /* SettingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BC243B018C878F500D1E15B /* SettingsTableViewCell.xib */; };
+		1BD60EFF18D21350002496B4 /* BaseModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD60EFD18D21350002496B4 /* BaseModalViewController.m */; };
+		1BD60F0018D21350002496B4 /* BaseModalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BD60EFE18D21350002496B4 /* BaseModalViewController.xib */; };
+		1BD60F0318D24502002496B4 /* QuoteOrderModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD60F0218D24502002496B4 /* QuoteOrderModalViewController.m */; };
 		C67609FE18A2826400BAC60D /* NewQuoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C67609FC18A2826400BAC60D /* NewQuoteViewController.m */; };
 		C67609FF18A2826400BAC60D /* NewQuoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C67609FD18A2826400BAC60D /* NewQuoteViewController.xib */; };
 		C6760A0818A282E200BAC60D /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6760A0618A282E200BAC60D /* HomeViewController.m */; };
@@ -142,25 +142,25 @@
 		1BACC98A18AA716E00D87C0F /* MainTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainTableViewCell.xib; sourceTree = "<group>"; };
 		1BACC98C18AA71A800D87C0F /* MainTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableViewCell.h; sourceTree = "<group>"; };
 		1BACC98D18AA71A800D87C0F /* MainTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableViewCell.m; sourceTree = "<group>"; };
-		1BC2439318C6F6A700D1E15B /* BaseDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseDetailView.h; sourceTree = "<group>"; };
-		1BC2439418C6F6A700D1E15B /* BaseDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseDetailView.m; sourceTree = "<group>"; };
-		1BC2439618C6F6C400D1E15B /* BaseDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseDetailView.xib; sourceTree = "<group>"; };
-		1BC2439818C7037300D1E15B /* QuoteOrderSubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteOrderSubView.h; sourceTree = "<group>"; };
-		1BC2439918C7037300D1E15B /* QuoteOrderSubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuoteOrderSubView.m; sourceTree = "<group>"; };
+		1BB1E83018D318A500D1FD2C /* ProductModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductModalViewController.h; sourceTree = "<group>"; };
+		1BB1E83118D318A500D1FD2C /* ProductModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductModalViewController.m; sourceTree = "<group>"; };
+		1BB1E83818D343B500D1FD2C /* QuoteOrderSubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteOrderSubView.h; sourceTree = "<group>"; };
+		1BB1E83918D343B500D1FD2C /* QuoteOrderSubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuoteOrderSubView.m; sourceTree = "<group>"; };
+		1BB1E83B18D3535300D1FD2C /* SettingModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingModalViewController.h; sourceTree = "<group>"; };
+		1BB1E83C18D3535300D1FD2C /* SettingModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingModalViewController.m; sourceTree = "<group>"; };
 		1BC2439B18C7038300D1E15B /* QuoteOrderSubView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuoteOrderSubView.xib; sourceTree = "<group>"; };
-		1BC2439D18C70A2500D1E15B /* QuoteOrderDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteOrderDetailView.h; sourceTree = "<group>"; };
-		1BC2439E18C70A2500D1E15B /* QuoteOrderDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuoteOrderDetailView.m; sourceTree = "<group>"; };
 		1BC243A018C7B12F00D1E15B /* ProductSubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductSubView.h; sourceTree = "<group>"; };
 		1BC243A118C7B12F00D1E15B /* ProductSubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductSubView.m; sourceTree = "<group>"; };
 		1BC243A318C7B14D00D1E15B /* ProductSubView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductSubView.xib; sourceTree = "<group>"; };
-		1BC243A518C7B40000D1E15B /* ProductsDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductsDetailView.h; sourceTree = "<group>"; };
-		1BC243A618C7B40000D1E15B /* ProductsDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductsDetailView.m; sourceTree = "<group>"; };
 		1BC243A818C8655300D1E15B /* SettingsSubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsSubView.h; sourceTree = "<group>"; };
 		1BC243A918C8655300D1E15B /* SettingsSubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsSubView.m; sourceTree = "<group>"; };
 		1BC243AB18C8656500D1E15B /* SettingsSubView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsSubView.xib; sourceTree = "<group>"; };
-		1BC243AD18C8674D00D1E15B /* SettingsDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsDetailView.h; sourceTree = "<group>"; };
-		1BC243AE18C8674D00D1E15B /* SettingsDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsDetailView.m; sourceTree = "<group>"; };
 		1BC243B018C878F500D1E15B /* SettingsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsTableViewCell.xib; sourceTree = "<group>"; };
+		1BD60EFC18D21350002496B4 /* BaseModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModalViewController.h; sourceTree = "<group>"; };
+		1BD60EFD18D21350002496B4 /* BaseModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModalViewController.m; sourceTree = "<group>"; };
+		1BD60EFE18D21350002496B4 /* BaseModalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseModalViewController.xib; sourceTree = "<group>"; };
+		1BD60F0118D24502002496B4 /* QuoteOrderModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteOrderModalViewController.h; sourceTree = "<group>"; };
+		1BD60F0218D24502002496B4 /* QuoteOrderModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuoteOrderModalViewController.m; sourceTree = "<group>"; };
 		C67609EF18A2761400BAC60D /* License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = License.txt; sourceTree = "<group>"; };
 		C67609FB18A2826400BAC60D /* NewQuoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewQuoteViewController.h; sourceTree = "<group>"; };
 		C67609FC18A2826400BAC60D /* NewQuoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewQuoteViewController.m; sourceTree = "<group>"; };
@@ -528,24 +528,24 @@
 				C67609FB18A2826400BAC60D /* NewQuoteViewController.h */,
 				C67609FC18A2826400BAC60D /* NewQuoteViewController.m */,
 				C67609FD18A2826400BAC60D /* NewQuoteViewController.xib */,
-				1BC2439318C6F6A700D1E15B /* BaseDetailView.h */,
-				1BC2439418C6F6A700D1E15B /* BaseDetailView.m */,
-				1BC2439618C6F6C400D1E15B /* BaseDetailView.xib */,
-				1BC2439818C7037300D1E15B /* QuoteOrderSubView.h */,
-				1BC2439918C7037300D1E15B /* QuoteOrderSubView.m */,
+				1BD60EFC18D21350002496B4 /* BaseModalViewController.h */,
+				1BD60EFD18D21350002496B4 /* BaseModalViewController.m */,
+				1BD60EFE18D21350002496B4 /* BaseModalViewController.xib */,
+				1BB1E83818D343B500D1FD2C /* QuoteOrderSubView.h */,
+				1BB1E83918D343B500D1FD2C /* QuoteOrderSubView.m */,
 				1BC2439B18C7038300D1E15B /* QuoteOrderSubView.xib */,
-				1BC2439D18C70A2500D1E15B /* QuoteOrderDetailView.h */,
-				1BC2439E18C70A2500D1E15B /* QuoteOrderDetailView.m */,
+				1BD60F0118D24502002496B4 /* QuoteOrderModalViewController.h */,
+				1BD60F0218D24502002496B4 /* QuoteOrderModalViewController.m */,
 				1BC243A018C7B12F00D1E15B /* ProductSubView.h */,
 				1BC243A118C7B12F00D1E15B /* ProductSubView.m */,
 				1BC243A318C7B14D00D1E15B /* ProductSubView.xib */,
-				1BC243A518C7B40000D1E15B /* ProductsDetailView.h */,
-				1BC243A618C7B40000D1E15B /* ProductsDetailView.m */,
+				1BB1E83018D318A500D1FD2C /* ProductModalViewController.h */,
+				1BB1E83118D318A500D1FD2C /* ProductModalViewController.m */,
 				1BC243A818C8655300D1E15B /* SettingsSubView.h */,
 				1BC243A918C8655300D1E15B /* SettingsSubView.m */,
 				1BC243AB18C8656500D1E15B /* SettingsSubView.xib */,
-				1BC243AD18C8674D00D1E15B /* SettingsDetailView.h */,
-				1BC243AE18C8674D00D1E15B /* SettingsDetailView.m */,
+				1BB1E83B18D3535300D1FD2C /* SettingModalViewController.h */,
+				1BB1E83C18D3535300D1FD2C /* SettingModalViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -636,12 +636,12 @@
 				1B4773FC18C5C672005E1A9C /* KinveyImageView.xib in Resources */,
 				1BC243AC18C8656500D1E15B /* SettingsSubView.xib in Resources */,
 				C6A3109C18A107F900916A1A /* Localizable.strings in Resources */,
-				1BC2439718C6F6C400D1E15B /* BaseDetailView.xib in Resources */,
 				1B9F390518B1E9EC0089B813 /* ComboBoxNewQuoteTableViewCell.xib in Resources */,
 				1BACC98618AA5F0400D87C0F /* MainTableHeaderView.xib in Resources */,
 				C67609FF18A2826400BAC60D /* NewQuoteViewController.xib in Resources */,
 				1B4773F218C5B783005E1A9C /* MainTableHeaderViewForIPhone.xib in Resources */,
 				C6A3106318A0F6D700916A1A /* Images.xcassets in Resources */,
+				1BD60F0018D21350002496B4 /* BaseModalViewController.xib in Resources */,
 				1B475DBF18AE571C0071BC98 /* ProductTableViewCell.xib in Resources */,
 				1B47740118C5CF9E005E1A9C /* ProductViewCellForIPhone.xib in Resources */,
 				C6A3108018A0F71B00916A1A /* MainWindow.xib in Resources */,
@@ -664,12 +664,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BD60F0318D24502002496B4 /* QuoteOrderModalViewController.m in Sources */,
 				1B727DE818B5DCBD0002F077 /* SettingTableViewCell.m in Sources */,
 				1BC243A218C7B12F00D1E15B /* ProductSubView.m in Sources */,
 				1B4773F518C5BFCB005E1A9C /* MainTableViewCellForIPhone.m in Sources */,
 				1B1A181A18BFCC4800CD23BE /* ProductHomeViewController.m in Sources */,
 				C6A3110D18A1083400916A1A /* DataHelper.m in Sources */,
 				C6760A1118A283C300BAC60D /* TabBarController.m in Sources */,
+				1BB1E83A18D343B500D1FD2C /* QuoteOrderSubView.m in Sources */,
 				C6A3106118A0F6D700916A1A /* AppDelegate.m in Sources */,
 				C6760A1718A39D8400BAC60D /* Order.m in Sources */,
 				C6A310FA18A1083400916A1A /* NSDictionary+Utils.m in Sources */,
@@ -677,19 +679,17 @@
 				C6A310FE18A1083400916A1A /* NSObject+Utils.m in Sources */,
 				1B475DC718AEB7A60071BC98 /* Product.m in Sources */,
 				C6A3105D18A0F6D700916A1A /* main.m in Sources */,
+				1BB1E83218D318A500D1FD2C /* ProductModalViewController.m in Sources */,
 				C6A3110618A1083400916A1A /* UIDevice+Utils.m in Sources */,
+				1BB1E83D18D3535300D1FD2C /* SettingModalViewController.m in Sources */,
 				C6A3110818A1083400916A1A /* UIView+FrameAdditions.m in Sources */,
 				1BC243AA18C8655300D1E15B /* SettingsSubView.m in Sources */,
-				1BC2439F18C70A2500D1E15B /* QuoteOrderDetailView.m in Sources */,
 				1B9F390318B1E9D10089B813 /* ComboBoxNewQuoteTableViewCell.m in Sources */,
 				1B1A181718BFC7BF00CD23BE /* OrderHomeViewController.m in Sources */,
-				1BC2439A18C7037400D1E15B /* QuoteOrderSubView.m in Sources */,
 				C6A310FB18A1083400916A1A /* NSError+Utils.m in Sources */,
-				1BC243AF18C8674D00D1E15B /* SettingsDetailView.m in Sources */,
 				C6760A1418A3969700BAC60D /* Quote.m in Sources */,
 				C6A310F918A1083400916A1A /* NSData+Utils.m in Sources */,
 				C6A3110418A1083400916A1A /* UIColor+Utils.m in Sources */,
-				1BC243A718C7B40000D1E15B /* ProductsDetailView.m in Sources */,
 				1B4773F018C5B775005E1A9C /* MainTableHeaderViewForIPhone.m in Sources */,
 				1B4773E618C46339005E1A9C /* ProductCollectionViewCell.m in Sources */,
 				C6A3112318A1083400916A1A /* SignInViewController.m in Sources */,
@@ -704,8 +704,8 @@
 				C6A3109518A106DF00916A1A /* SettingsManager.m in Sources */,
 				1B4773FF18C5CF8A005E1A9C /* ProductViewCellForIPhone.m in Sources */,
 				1BACC98918AA602600D87C0F /* MainTableHeaderView.m in Sources */,
+				1BD60EFF18D21350002496B4 /* BaseModalViewController.m in Sources */,
 				C6A310FF18A1083400916A1A /* NSSet+Utils.m in Sources */,
-				1BC2439518C6F6A700D1E15B /* BaseDetailView.m in Sources */,
 				C6A3109118A106DF00916A1A /* DejalActivityView.m in Sources */,
 				C6A3110C18A1083400916A1A /* AuthenticationHelper.m in Sources */,
 				C6A3110318A1083400916A1A /* UIColor+AppSpecific.m in Sources */,

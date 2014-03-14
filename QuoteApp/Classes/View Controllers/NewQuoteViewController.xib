@@ -22,7 +22,7 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="2">
-            <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+            <rect key="frame" x="0.0" y="0.0" width="768" height="975"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="companylogo" translatesAutoresizingMaskIntoConstraints="NO" id="AqI-uk-cfI">
@@ -135,13 +135,13 @@
                 <constraint firstItem="yPb-jY-2sO" firstAttribute="top" secondItem="4X2-xv-P9E" secondAttribute="bottom" constant="8" id="SId-0E-hX8"/>
                 <constraint firstAttribute="centerX" secondItem="vqJ-eG-hIK" secondAttribute="centerX" id="Wzx-Qk-zJC"/>
                 <constraint firstItem="4X2-xv-P9E" firstAttribute="top" secondItem="2" secondAttribute="top" constant="158" id="Yc8-wK-q0A"/>
-                <constraint firstAttribute="bottom" secondItem="vqJ-eG-hIK" secondAttribute="bottom" constant="69" id="cgT-TE-HVA"/>
+                <constraint firstAttribute="bottom" secondItem="vqJ-eG-hIK" secondAttribute="bottom" constant="20" id="cgT-TE-HVA"/>
                 <constraint firstItem="AqI-uk-cfI" firstAttribute="top" secondItem="2" secondAttribute="top" constant="72" id="lC4-8n-8du"/>
                 <constraint firstAttribute="trailing" secondItem="7fp-Eu-fJP" secondAttribute="trailing" id="pfe-6u-9Ch"/>
                 <constraint firstItem="vqJ-eG-hIK" firstAttribute="top" secondItem="yPb-jY-2sO" secondAttribute="bottom" constant="8" id="qSi-s9-eIr"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
-            <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+            <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
         </view>
     </objects>
     <resources>

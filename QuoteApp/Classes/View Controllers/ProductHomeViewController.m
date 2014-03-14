@@ -8,14 +8,12 @@
 
 #import "ProductHomeViewController.h"
 #import "ProductTableViewCell.h"
-#import "ProductsDetailView.h"
 #import "ProductCollectionViewCell.h"
 #import "ProductViewCellForIPhone.h"
 #import "NewQuoteViewController.h"
+#import "ProductModalViewController.h"
 
 @interface ProductHomeViewController ()
-
-@property (strong, nonatomic) ProductsDetailView *detailView;
 
 @end
 
@@ -94,16 +92,15 @@
 }
 
 - (void)detailViewForIndex:(NSInteger)index{
-    ProductsDetailView *detail = [[ProductsDetailView alloc] initWithFrame:self.tabBarController.view.bounds];
-    self.detailView = detail;
-    self.detailView.item = self.items[index];
-    [self.tabBarController.view addSubview:self.detailView];
-}
-
-- (void)viewDidLayoutSubviews{
-    [super viewDidLayoutSubviews];
-    if (self.detailView) {
-        self.detailView.frame = self.tabBarController.view.bounds;
+    ProductModalViewController *mvc = [[ProductModalViewController alloc] init];
+    if (self.items.count) {
+        mvc.modalPresentationStyle = UIModalPresentationFormSheet;
+        mvc.item = self.items[index];
+        [self.tabBarController presentViewController:mvc
+                                            animated:YES
+                                          completion:^{
+                                              mvc.item = self.items[index];
+                                          }];
     }
 }
 
