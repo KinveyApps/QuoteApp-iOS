@@ -35,49 +35,49 @@
             [self.button setImage:[UIImage imageNamed:IMAGE_NAME_LIST_BUTTON] forState:UIControlStateNormal];
             self.button.hidden = NO;
         }break;
-        case AlloyCellIndex:{
+        case ActiveUserCellIndex:{
             self.textField.placeholder = PLACEHOLDER_ACTIVE_USER_TEXT_FIELD;
             self.textField.enabled = YES;
             self.textField.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
             self.button.hidden = YES;
         }break;
-        case TemperCellIndex:{
-            self.textField.placeholder = PLACEHOLDER_BUSSINES_LOGIC_SCRIPTS_TEXT_FIELD;
+        case BusinessLogicScriptsCellIndex:{
+            self.textField.placeholder = PLACEHOLDER_BUSINESS_LOGIC_SCRIPTS_TEXT_FIELD;
             self.textField.enabled = YES;
-            self.textField.keyboardType = UIKeyboardTypeDefault;
+            self.textField.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
             self.button.hidden = YES;
         }break;
-        case WindthCellIndex:{
+        case ScheduledBusinessLogicCellIndex:{
             self.textField.placeholder = PLACEHOLDER_SCHEDULED_BUSINESS_LOGIC_TEXT_FIELD;
             self.textField.enabled = YES;
             self.textField.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
             self.button.hidden = YES;
         }break;
-        case FinishCellIndex:{
+        case CollaboratorsCellIndex:{
             self.textField.placeholder = PLACEHOLDER_COLLABORATORS_TEXT_FIELD;
             self.textField.enabled = YES;
             self.textField.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
             self.button.hidden = YES;
         }break;
-        case MaxIDCellIndex:{
+        case BackendEnviromentsCellIndex:{
             self.textField.placeholder = PLACEHOLDER_BACKEND_ENVIROMENTS_TEXT_FIELD;
             self.textField.enabled = YES;
             self.textField.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
             self.button.hidden = YES;
         }break;
-        case MaxODCellIndex:{
+        case DataStoregeCellIndex:{
             self.textField.placeholder = PLACEHOLDER_DATA_STOREGE_TEXT_FIELD;
             self.textField.enabled = YES;
             self.textField.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
             self.button.hidden = YES;
         }break;
-        case RequestedLbsYieldCellIndex:{
+        case BusinessLogicExecutionTimeLimitCellIndex:{
             self.textField.placeholder = PLACEHOLDER_BUSINESS_LOGIC_EXECUTION_TIME_LIMIT_TEXT_FIELD;
             self.textField.enabled = YES;
             self.textField.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
             self.button.hidden = YES;
         }break;
-        case RequestedDeliveryDate:{
+        case StartSubscriptionDateCellIndex:{
             self.textField.placeholder = PLACEHOLDER_START_SUBSCRIPTION_DATE_TEXT_FIELD;
             [self.button setImage:[UIImage imageNamed:IMAGE_NAME_CALENDAR_BUTTON] forState:UIControlStateNormal];
             self.button.hidden = NO;
@@ -86,14 +86,6 @@
         default:
             break;
     }
-}
-
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
 
 @end

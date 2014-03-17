@@ -39,25 +39,22 @@
 - (void)setItem:(Product *)item{
     if (item) {
         _item = item;
+        
         self.productNameLabel.text = item.title;
+        
         NSError *error = nil;
         NSAttributedString *description = [[NSAttributedString alloc] initWithData:[item.description dataUsingEncoding:NSUTF8StringEncoding]
                                                                            options:@{NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType}
                                                                 documentAttributes:nil
                                                                              error:&error];
-        self.descriptionLabel.attributedText = description;
+        if (!error) {
+            self.descriptionLabel.attributedText = description;
+            [self.descriptionLabel sizeToFit];
+        }
         
-        [self.descriptionLabel sizeToFit];
         self.kinveyImageView.kinveyID = item.thumbnailID;
     }
     
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
 
 @end

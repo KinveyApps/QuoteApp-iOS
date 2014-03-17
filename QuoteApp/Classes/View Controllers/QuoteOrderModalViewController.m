@@ -60,9 +60,8 @@
 }
 
 - (void)additionalButtonAction{
-    if ([self.item isKindOfClass:[Order class]]) {
         Order *order = [[Order alloc] init];
-        
+    
         order.referenceNumber = self.item.referenceNumber;
         order.originator = self.item.originator;
         order.originator = self.item.originator;
@@ -81,6 +80,7 @@
         [[DataHelper instance] saveOrder:order
                                OnSuccess:^(NSArray *orders){
                                    if (orders.count) {
+                                       self.item = [orders firstObject];
                                        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:LOC(DV_MESSAGE_ORDER_CONFIRMATION_TITLE)
                                                                                        message:LOC(DV_MESSAGE_ORDER_CONFIRMATION_TEXT)
                                                                                       delegate:self
@@ -99,42 +99,6 @@
                                }
          ];
         
-    }else{
-        Quote *quote = [[Quote alloc] init];
-        
-        //change reference number
-        NSInteger numberQuote = [self.item.referenceNumber substringFromIndex:2].integerValue;
-        numberQuote++;
-        quote.referenceNumber = [[self.item.referenceNumber substringToIndex:2] stringByAppendingString:[NSString stringWithFormat:@"%ld", (long)numberQuote]];
-        
-        quote.originator = self.item.originator;
-        quote.activeUsers = self.item.activeUsers;
-        quote.businessLogicScripts = self.item.businessLogicScripts;
-        quote.scheduledBusinessLogic = self.item.scheduledBusinessLogic;
-        quote.collaborators = self.item.collaborators;
-        quote.backendEnvironments = self.item.backendEnvironments;
-        quote.dataStorage = self.item.dataStorage;
-        quote.businessLogicExecutionTimeLimit = self.item.businessLogicExecutionTimeLimit;
-        quote.startSubscriptionDate = self.item.startSubscriptionDate;
-        quote.totalPrice = self.item.totalPrice;
-        quote.product = self.item.product;
-        
-        [[DataHelper instance] saveQuote:quote
-                               OnSuccess:^(NSArray *quotes){
-                                   if (quotes.count) {
-                                       self.item = quote;
-                                   }
-                               }
-                               onFailure:^(NSError *error){
-                                   UIAlertView *alert = [[UIAlertView alloc] initWithTitle:LOC(DV_MESSAGE_ERROR_CREATE_QUOTE)
-                                                                                   message:error.localizedDescription
-                                                                                  delegate:nil
-                                                                         cancelButtonTitle:LOC(OKAY)
-                                                                         otherButtonTitles:nil];
-                                   [alert show];
-                               }
-         ];
-    }
 }
 
 

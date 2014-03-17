@@ -25,16 +25,8 @@
             <rect key="frame" x="0.0" y="0.0" width="768" height="975"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="companylogo" translatesAutoresizingMaskIntoConstraints="NO" id="AqI-uk-cfI">
-                    <rect key="frame" x="20" y="72" width="155" height="60"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="60" id="JfF-st-HeT"/>
-                        <constraint firstAttribute="width" constant="155" id="yj1-4u-d5s"/>
-                    </constraints>
-                </imageView>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Request A Quote" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4X2-xv-P9E">
-                    <rect key="frame" x="285" y="158" width="198" height="21"/>
+                    <rect key="frame" x="285" y="84" width="198" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="TcD-uc-Ue7"/>
@@ -45,7 +37,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="yPb-jY-2sO">
-                    <rect key="frame" x="184" y="187" width="400" height="730"/>
+                    <rect key="frame" x="184" y="113" width="400" height="804"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" red="0.86666673419999996" green="0.86666673419999996" blue="0.86666673419999996" alpha="1" colorSpace="deviceRGB"/>
                     <constraints>
@@ -68,8 +60,8 @@
                         <action selector="pressSubmit" destination="-1" eventType="touchUpInside" id="TU7-sm-nhe"/>
                     </connections>
                 </button>
-                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="916-J3-aq7">
-                    <rect key="frame" x="437" y="930" width="20" height="20"/>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="916-J3-aq7">
+                    <rect key="frame" x="491" y="930" width="20" height="20"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </activityIndicatorView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7fp-Eu-fJP" userLabel="Top Bar View">
@@ -130,15 +122,15 @@
                 <constraint firstItem="7fp-Eu-fJP" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="5fE-5k-oji"/>
                 <constraint firstItem="7fp-Eu-fJP" firstAttribute="top" secondItem="2" secondAttribute="top" id="8zV-By-YHK"/>
                 <constraint firstAttribute="centerX" secondItem="yPb-jY-2sO" secondAttribute="centerX" id="Ndu-qe-fgH"/>
-                <constraint firstItem="AqI-uk-cfI" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="20" id="O8c-hj-ian"/>
                 <constraint firstAttribute="centerX" secondItem="4X2-xv-P9E" secondAttribute="centerX" id="PAh-IK-Xkx"/>
                 <constraint firstItem="yPb-jY-2sO" firstAttribute="top" secondItem="4X2-xv-P9E" secondAttribute="bottom" constant="8" id="SId-0E-hX8"/>
                 <constraint firstAttribute="centerX" secondItem="vqJ-eG-hIK" secondAttribute="centerX" id="Wzx-Qk-zJC"/>
-                <constraint firstItem="4X2-xv-P9E" firstAttribute="top" secondItem="2" secondAttribute="top" constant="158" id="Yc8-wK-q0A"/>
+                <constraint firstItem="4X2-xv-P9E" firstAttribute="top" secondItem="2" secondAttribute="top" constant="84" id="Yc8-wK-q0A"/>
+                <constraint firstItem="916-J3-aq7" firstAttribute="centerY" secondItem="vqJ-eG-hIK" secondAttribute="centerY" id="aZz-vV-S1A"/>
                 <constraint firstAttribute="bottom" secondItem="vqJ-eG-hIK" secondAttribute="bottom" constant="20" id="cgT-TE-HVA"/>
-                <constraint firstItem="AqI-uk-cfI" firstAttribute="top" secondItem="2" secondAttribute="top" constant="72" id="lC4-8n-8du"/>
                 <constraint firstAttribute="trailing" secondItem="7fp-Eu-fJP" secondAttribute="trailing" id="pfe-6u-9Ch"/>
                 <constraint firstItem="vqJ-eG-hIK" firstAttribute="top" secondItem="yPb-jY-2sO" secondAttribute="bottom" constant="8" id="qSi-s9-eIr"/>
+                <constraint firstItem="916-J3-aq7" firstAttribute="leading" secondItem="vqJ-eG-hIK" secondAttribute="trailing" constant="8" id="vPq-LW-yLd"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
             <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
@@ -146,6 +138,5 @@
     </objects>
     <resources>
         <image name="Setting" width="30" height="30"/>
-        <image name="companylogo" width="275" height="108"/>
     </resources>
 </document>

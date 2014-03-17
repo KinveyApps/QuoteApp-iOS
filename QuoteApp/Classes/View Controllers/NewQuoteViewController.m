@@ -121,7 +121,7 @@
 - (void)keyboardHide:(NSNotification *)nofification{
     [UIView animateWithDuration:0.3 animations:^{
         self.bottomConstraint.constant = 20;
-        self.topConstraint.constant = 154;
+        self.topConstraint.constant = 84;
         [self.view layoutIfNeeded];
     }];
 }
@@ -139,6 +139,7 @@
                                if (quotes.count) {
                                    QuoteOrderModalViewController *mvc = [[QuoteOrderModalViewController alloc] init];
                                    if (self.quote) {
+                                       mvc.item = self.quote;
                                        mvc.modalPresentationStyle = UIModalPresentationFormSheet;
                                        [self.tabBarController presentViewController:mvc
                                                                            animated:YES
@@ -194,7 +195,7 @@
         self.quote.product = (Product *)self.products[index];
     }else if ([placeholder isEqualToString:PLACEHOLDER_ACTIVE_USER_TEXT_FIELD]) {
         self.quote.activeUsers = textField.text;
-    }else if ([placeholder isEqualToString:PLACEHOLDER_BUSSINES_LOGIC_SCRIPTS_TEXT_FIELD]){
+    }else if ([placeholder isEqualToString:PLACEHOLDER_BUSINESS_LOGIC_SCRIPTS_TEXT_FIELD]){
         self.quote.businessLogicScripts = textField.text;
     }else if ([placeholder isEqualToString:PLACEHOLDER_SCHEDULED_BUSINESS_LOGIC_TEXT_FIELD]){
         self.quote.scheduledBusinessLogic = textField.text;
@@ -249,7 +250,7 @@
         indexPath = [NSIndexPath indexPathForRow:1 inSection:0];
     }else if ([placeholder isEqualToString:PLACEHOLDER_ACTIVE_USER_TEXT_FIELD]) {
         indexPath = [NSIndexPath indexPathForRow:2 inSection:0];
-    }else if ([placeholder isEqualToString:PLACEHOLDER_BUSSINES_LOGIC_SCRIPTS_TEXT_FIELD]){
+    }else if ([placeholder isEqualToString:PLACEHOLDER_BUSINESS_LOGIC_SCRIPTS_TEXT_FIELD]){
         indexPath = [NSIndexPath indexPathForRow:3 inSection:0];
     }else if ([placeholder isEqualToString:PLACEHOLDER_SCHEDULED_BUSINESS_LOGIC_TEXT_FIELD]){
         indexPath = [NSIndexPath indexPathForRow:4 inSection:0];
@@ -339,22 +340,22 @@
             }
             result = [mResult copy];
         }break;
-        case AlloyCellIndex:
+        case ActiveUserCellIndex:
             result = nil;
             break;
-        case TemperCellIndex:
+        case BusinessLogicScriptsCellIndex:
             result = nil;
             break;
-        case WindthCellIndex:
+        case ScheduledBusinessLogicCellIndex:
             result = nil;
             break;
-        case FinishCellIndex:
-            result = @[@"Mill Finish", @"Coated Finish", @"Other"];;
+        case CollaboratorsCellIndex:
+            result = @[@"0", @"2", @"Unlimited"];
             break;
-        case MaxIDCellIndex:
+        case BackendEnviromentsCellIndex:
             result = nil;
             break;
-        case MaxODCellIndex:
+        case DataStoregeCellIndex:
             result = nil;
             break;
         default:

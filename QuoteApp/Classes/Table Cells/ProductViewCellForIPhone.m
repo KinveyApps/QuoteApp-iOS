@@ -33,13 +33,6 @@
     return self;
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
-}
-
 - (void)setItem:(Product *)item{
     if (item) {
         _item = item;
@@ -49,9 +42,10 @@
                                                                            options:@{NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType}
                                                                 documentAttributes:nil
                                                                              error:&error];
-        self.descriptionLabel.text = description.string;
-        [self.descriptionLabel sizeToFit];
-        //self.heightDescriptionLabel.constant = self.descriptionLabel.frame.size.height;
+        if (!error) {
+            self.descriptionLabel.text = description.string;
+            [self.descriptionLabel sizeToFit];
+        }
         self.kinveyImageView.kinveyID = item.thumbnailID;
     }
     

@@ -20,8 +20,12 @@
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="companylogo" translatesAutoresizingMaskIntoConstraints="NO" id="kl0-Zi-V7X">
-                        <rect key="frame" x="247" y="458" width="275" height="108"/>
+                        <rect key="frame" x="224" y="473" width="320" height="79"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="320" id="Df6-LM-ZdK"/>
+                            <constraint firstAttribute="height" constant="79" id="Xff-bR-yRM"/>
+                        </constraints>
                     </imageView>
                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="qeu-lu-xtQ">
                         <rect key="frame" x="374" y="910" width="20" height="20"/>
@@ -107,6 +111,6 @@
         <image name="Browse" width="30" height="30"/>
         <image name="Home" width="30" height="30"/>
         <image name="NewQuote" width="30" height="30"/>
-        <image name="companylogo" width="275" height="108"/>
+        <image name="companylogo" width="452" height="110"/>
     </resources>
 </document>

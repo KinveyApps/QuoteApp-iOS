@@ -28,22 +28,14 @@
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <textInputTraits key="textInputTraits"/>
                 </searchBar>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="companylogo" translatesAutoresizingMaskIntoConstraints="NO" id="4SE-Hg-Qvv">
-                    <rect key="frame" x="20" y="72" width="155" height="60"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="155" id="GfO-SE-OCp"/>
-                        <constraint firstAttribute="height" constant="60" id="dh4-16-6Xa"/>
-                    </constraints>
-                </imageView>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="95" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="d87-RW-cbZ">
-                    <rect key="frame" x="0.0" y="140" width="768" height="835"/>
+                    <rect key="frame" x="0.0" y="64" width="768" height="911"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                 </tableView>
                 <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search result" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="693-4C-ue0">
-                    <rect key="frame" x="183" y="140" width="565" height="21"/>
+                    <rect key="frame" x="669" y="74" width="79" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="uc5-w5-nl0"/>
@@ -135,7 +127,7 @@
                     </constraints>
                 </view>
                 <collectionView hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="oh5-Kf-YPG">
-                    <rect key="frame" x="0.0" y="140" width="768" height="835"/>
+                    <rect key="frame" x="0.0" y="64" width="768" height="911"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" red="0.86666673419999996" green="0.86666673419999996" blue="0.86666673419999996" alpha="1" colorSpace="deviceRGB"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="2" id="PNi-g8-w77">
@@ -158,19 +150,16 @@
                 <constraint firstItem="d87-RW-cbZ" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="Cu1-N2-AR4"/>
                 <constraint firstItem="gkI-o9-a5o" firstAttribute="top" secondItem="2" secondAttribute="top" id="Fgn-vP-1nL"/>
                 <constraint firstAttribute="trailing" secondItem="d87-RW-cbZ" secondAttribute="trailing" id="H7w-sh-AQm"/>
+                <constraint firstItem="d87-RW-cbZ" firstAttribute="top" secondItem="jOO-sA-huW" secondAttribute="bottom" id="KBr-S0-dLk"/>
                 <constraint firstItem="gkI-o9-a5o" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="NAD-Df-qZA"/>
                 <constraint firstItem="oh5-Kf-YPG" firstAttribute="top" secondItem="d87-RW-cbZ" secondAttribute="top" id="Nbo-WG-dYG"/>
                 <constraint firstItem="jOO-sA-huW" firstAttribute="top" secondItem="gkI-o9-a5o" secondAttribute="bottom" constant="-44" id="Nv5-cw-zcn"/>
-                <constraint firstItem="4SE-Hg-Qvv" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="20" id="OER-xU-zrr"/>
                 <constraint firstItem="oh5-Kf-YPG" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="OMc-3h-RE7"/>
-                <constraint firstItem="693-4C-ue0" firstAttribute="bottom" secondItem="4SE-Hg-Qvv" secondAttribute="bottom" constant="29" id="TaL-UQ-ugj"/>
                 <constraint firstAttribute="bottom" secondItem="d87-RW-cbZ" secondAttribute="bottom" id="VTv-2S-LLr"/>
-                <constraint firstItem="4SE-Hg-Qvv" firstAttribute="top" secondItem="jOO-sA-huW" secondAttribute="bottom" constant="8" id="Y7t-k9-a17"/>
                 <constraint firstAttribute="trailing" secondItem="jOO-sA-huW" secondAttribute="trailing" id="cJ8-Dd-1eB"/>
                 <constraint firstItem="jOO-sA-huW" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="d4V-ix-Qav"/>
                 <constraint firstAttribute="trailing" secondItem="gkI-o9-a5o" secondAttribute="trailing" id="dWd-dd-mLz"/>
-                <constraint firstItem="d87-RW-cbZ" firstAttribute="top" secondItem="4SE-Hg-Qvv" secondAttribute="bottom" constant="8" id="oXu-zC-ctt"/>
-                <constraint firstItem="693-4C-ue0" firstAttribute="leading" secondItem="4SE-Hg-Qvv" secondAttribute="trailing" constant="8" id="uoJ-zR-OZe"/>
+                <constraint firstItem="d87-RW-cbZ" firstAttribute="top" secondItem="693-4C-ue0" secondAttribute="top" constant="-10" id="mZs-h2-Tpo"/>
                 <constraint firstAttribute="trailing" secondItem="oh5-Kf-YPG" secondAttribute="trailing" id="vVI-Cm-8z7"/>
                 <constraint firstItem="d87-RW-cbZ" firstAttribute="bottom" secondItem="oh5-Kf-YPG" secondAttribute="bottom" id="zoH-Pu-b2n"/>
             </constraints>
@@ -182,6 +171,5 @@
     <resources>
         <image name="Search" width="30" height="30"/>
         <image name="Setting" width="30" height="30"/>
-        <image name="companylogo" width="275" height="108"/>
     </resources>
 </document>

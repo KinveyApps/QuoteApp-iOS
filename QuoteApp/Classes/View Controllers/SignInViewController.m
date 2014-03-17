@@ -102,7 +102,7 @@
                         options:animationOptions
                      animations:^{
                          // set views with new info
-						 self.contentView.$y -= keyboardHeight;
+						 self.contentView.$y -= keyboardHeight / 2;
                      }
                      completion:nil];
 }
@@ -127,7 +127,7 @@
                         options:animationOptions
                      animations:^{
                          // set views with new info
-						 self.contentView.$y += keyboardHeight;
+						 self.contentView.$y += keyboardHeight / 2;
                      }
                      completion:nil];
 }

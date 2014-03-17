@@ -10,19 +10,19 @@
 
 typedef enum {
     ProductCellIndex = 0,
-	AlloyCellIndex,
-	TemperCellIndex,
-	WindthCellIndex,
-    FinishCellIndex,
-    MaxIDCellIndex,
-    MaxODCellIndex,
-    RequestedLbsYieldCellIndex,
-    RequestedDeliveryDate
+	ActiveUserCellIndex,
+	BusinessLogicScriptsCellIndex,
+	ScheduledBusinessLogicCellIndex,
+    CollaboratorsCellIndex,
+    BackendEnviromentsCellIndex,
+    DataStoregeCellIndex,
+    BusinessLogicExecutionTimeLimitCellIndex,
+    StartSubscriptionDateCellIndex
 } CellIndex;
 
 #define PLACEHOLDER_PRODUCT_TEXT_FIELD LOC(NQV_PLACEHOLDER_PRODUCT)
 #define PLACEHOLDER_ACTIVE_USER_TEXT_FIELD LOC(NQV_PLACEHOLDER_ACTIVE_USER)
-#define PLACEHOLDER_BUSSINES_LOGIC_SCRIPTS_TEXT_FIELD LOC(NQV_PLACEHOLDER_BUSSINES_LOGIC_SCRIPTS)
+#define PLACEHOLDER_BUSINESS_LOGIC_SCRIPTS_TEXT_FIELD LOC(NQV_PLACEHOLDER_BUSINESS_LOGIC_SCRIPTS)
 #define PLACEHOLDER_SCHEDULED_BUSINESS_LOGIC_TEXT_FIELD LOC(NQV_PLACEHOLDER_SCHEDULED_BUSINESS_LOGIC)
 #define PLACEHOLDER_COLLABORATORS_TEXT_FIELD LOC(NQV_PLACEHOLDER_COLLABORATORS)
 #define PLACEHOLDER_BACKEND_ENVIROMENTS_TEXT_FIELD LOC(NQV_PLACEHOLDER_BACKEND_ENVIROMENTS)

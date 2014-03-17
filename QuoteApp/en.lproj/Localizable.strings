@@ -110,7 +110,7 @@
 //New Quote View Controller
 "NQV_PLACEHOLDER_PRODUCT"="Product";
 "NQV_PLACEHOLDER_ACTIVE_USER"="Active User";
-"NQV_PLACEHOLDER_BUSSINES_LOGIC_SCRIPTS"="Business Logic Scripts";
+"NQV_PLACEHOLDER_BUSINESS_LOGIC_SCRIPTS"="Business Logic Scripts";
 "NQV_PLACEHOLDER_SCHEDULED_BUSINESS_LOGIC"="Scheduled Business Logic";
 "NQV_PLACEHOLDER_COLLABORATORS"="Collaborators";
 "NQV_PLACEHOLDER_BACKEND_ENVIROMENTS"="Backend Environments";
@@ -125,14 +125,13 @@
 "MTVH_TITLE_ORDER"="My Orders";
 "MTVH_DATE_ORDER"="Order Date";
 "MTVH_NO_ORDER"="Order No.";
-"MTVH_SHIP_DATE_ORDER"="Est. Ship Date";
+"MTVH_START_SUBSCRIPTION_DATE"="Start Date";
 "MTVH_STATUS_ORDER"="Status";
 "MTVH_MORE_ORDER"="More";
 "MTVH_TITLE_QUOTE"="My Quotes";
 "MTVH_DATE_QUOTE"="Quote Date";
 "MTVH_NO_QUOTE"="Quote No.";
-"MTVH_SHIP_DATE_QUOTE"="Req. Ship Date";
-"MTVH_PRICE_QUOTE"="Price";
+ "MTVH_PRICE_QUOTE"="Price";
 "MTVH_MORE_QUOTE"="View & Order";
 
 //Home and Search View Controller
