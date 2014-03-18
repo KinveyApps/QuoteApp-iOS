@@ -69,17 +69,37 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DataHelper)
     if (substring.length) {
         query = [KCSQuery queryOnField:@"referenceNumber"
                              withRegex:[self regexForContaintSubstring:substring]];
-        KCSQuery *alloyQuery = [KCSQuery queryOnField:@"alloy"
-                                            withRegex:[self regexForContaintSubstring:substring]];
-        query = [query queryByJoiningQuery:alloyQuery
+        KCSQuery *activeUsersQuery = [KCSQuery queryOnField:@"activeUsers"
+                                                  withRegex:[self regexForContaintSubstring:substring]];
+        query = [query queryByJoiningQuery:activeUsersQuery
                              usingOperator:kKCSOr];
-        KCSQuery *finishQuery = [KCSQuery queryOnField:@"finish"
-                                             withRegex:[self regexForContaintSubstring:substring]];
-        query = [query queryByJoiningQuery:finishQuery
+        KCSQuery *businessLogicScriptsQuery = [KCSQuery queryOnField:@"businessLogicScripts"
+                                                           withRegex:[self regexForContaintSubstring:substring]];
+        query = [query queryByJoiningQuery:businessLogicScriptsQuery
                              usingOperator:kKCSOr];
-        KCSQuery *temperQuery = [KCSQuery queryOnField:@"temper"
-                                             withRegex:[self regexForContaintSubstring:substring]];
-        query = [query queryByJoiningQuery:temperQuery
+        KCSQuery *scheduledBusinessLogicQuery = [KCSQuery queryOnField:@"scheduledBusinessLogic"
+                                                             withRegex:[self regexForContaintSubstring:substring]];
+        query = [query queryByJoiningQuery:scheduledBusinessLogicQuery
+                             usingOperator:kKCSOr];
+        KCSQuery *collaboratorsQuery = [KCSQuery queryOnField:@"collaborators"
+                                                    withRegex:[self regexForContaintSubstring:substring]];
+        query = [query queryByJoiningQuery:collaboratorsQuery
+                             usingOperator:kKCSOr];
+        KCSQuery *backendEnvironmentsQuery = [KCSQuery queryOnField:@"backendEnvironments"
+                                                          withRegex:[self regexForContaintSubstring:substring]];
+        query = [query queryByJoiningQuery:backendEnvironmentsQuery
+                             usingOperator:kKCSOr];
+        KCSQuery *dataStorageQuery = [KCSQuery queryOnField:@"dataStorage"
+                                                  withRegex:[self regexForContaintSubstring:substring]];
+        query = [query queryByJoiningQuery:dataStorageQuery
+                             usingOperator:kKCSOr];
+        KCSQuery *businessLogicExecutionTimeLimitQuery = [KCSQuery queryOnField:@"businessLogicExecutionTimeLimit"
+                                                                      withRegex:[self regexForContaintSubstring:substring]];
+        query = [query queryByJoiningQuery:businessLogicExecutionTimeLimitQuery
+                             usingOperator:kKCSOr];
+        KCSQuery *totalPriceQuery = [KCSQuery queryOnField:@"totalPrice"
+                                                 withRegex:[self regexForContaintSubstring:substring]];
+        query = [query queryByJoiningQuery:totalPriceQuery
                              usingOperator:kKCSOr];
     }else{
         query = [KCSQuery query];
@@ -131,17 +151,37 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DataHelper)
     if (substring.length) {
         query = [KCSQuery queryOnField:@"referenceNumber"
                              withRegex:[self regexForContaintSubstring:substring]];
-        KCSQuery *alloyQuery = [KCSQuery queryOnField:@"alloy"
-                                            withRegex:[self regexForContaintSubstring:substring]];
-        query = [query queryByJoiningQuery:alloyQuery
+        KCSQuery *activeUsersQuery = [KCSQuery queryOnField:@"activeUsers"
+                                                  withRegex:[self regexForContaintSubstring:substring]];
+        query = [query queryByJoiningQuery:activeUsersQuery
                              usingOperator:kKCSOr];
-        KCSQuery *finishQuery = [KCSQuery queryOnField:@"finish"
-                                             withRegex:[self regexForContaintSubstring:substring]];
-        query = [query queryByJoiningQuery:finishQuery
+        KCSQuery *businessLogicScriptsQuery = [KCSQuery queryOnField:@"businessLogicScripts"
+                                                           withRegex:[self regexForContaintSubstring:substring]];
+        query = [query queryByJoiningQuery:businessLogicScriptsQuery
                              usingOperator:kKCSOr];
-        KCSQuery *temperQuery = [KCSQuery queryOnField:@"temper"
-                                             withRegex:[self regexForContaintSubstring:substring]];
-        query = [query queryByJoiningQuery:temperQuery
+        KCSQuery *scheduledBusinessLogicQuery = [KCSQuery queryOnField:@"scheduledBusinessLogic"
+                                                             withRegex:[self regexForContaintSubstring:substring]];
+        query = [query queryByJoiningQuery:scheduledBusinessLogicQuery
+                             usingOperator:kKCSOr];
+        KCSQuery *collaboratorsQuery = [KCSQuery queryOnField:@"collaborators"
+                                                    withRegex:[self regexForContaintSubstring:substring]];
+        query = [query queryByJoiningQuery:collaboratorsQuery
+                             usingOperator:kKCSOr];
+        KCSQuery *backendEnvironmentsQuery = [KCSQuery queryOnField:@"backendEnvironments"
+                                                          withRegex:[self regexForContaintSubstring:substring]];
+        query = [query queryByJoiningQuery:backendEnvironmentsQuery
+                             usingOperator:kKCSOr];
+        KCSQuery *dataStorageQuery = [KCSQuery queryOnField:@"dataStorage"
+                                                  withRegex:[self regexForContaintSubstring:substring]];
+        query = [query queryByJoiningQuery:dataStorageQuery
+                             usingOperator:kKCSOr];
+        KCSQuery *businessLogicExecutionTimeLimitQuery = [KCSQuery queryOnField:@"businessLogicExecutionTimeLimit"
+                                                                      withRegex:[self regexForContaintSubstring:substring]];
+        query = [query queryByJoiningQuery:businessLogicExecutionTimeLimitQuery
+                             usingOperator:kKCSOr];
+        KCSQuery *totalPriceQuery = [KCSQuery queryOnField:@"totalPrice"
+                                                 withRegex:[self regexForContaintSubstring:substring]];
+        query = [query queryByJoiningQuery:totalPriceQuery
                              usingOperator:kKCSOr];
     }else{
         query = [KCSQuery query];

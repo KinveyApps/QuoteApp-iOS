@@ -13,20 +13,20 @@
 - (NSDictionary *)hostToKinveyPropertyMapping
 {
     return @{
-             @"kinveyId"    : KCSEntityKeyId,
-			 @"meta"        : KCSEntityKeyMetadata,
-             @"originator"  : @"originator",
-             @"referenceNumber": @"referenceNumber",
-             @"activeUsers" : @"activeUsers",
+             @"kinveyId"            : KCSEntityKeyId,
+			 @"meta"                : KCSEntityKeyMetadata,
+             @"originator"          : @"originator",
+             @"referenceNumber"     : @"referenceNumber",
+             @"activeUsers"         : @"activeUsers",
              @"businessLogicScripts" : @"businessLogicScripts",
              @"scheduledBusinessLogic" : @"scheduledBusinessLogic",
-             @"collaborators" : @"collaborators",
+             @"collaborators"       : @"collaborators",
              @"backendEnvironments" : @"backendEnvironments",
-             @"dataStorage" : @"dataStorage",
+             @"dataStorage"         : @"dataStorage",
              @"businessLogicExecutionTimeLimit" : @"businessLogicExecutionTimeLimit",
-             @"totalPrice" : @"totalPrice",
+             @"totalPrice"          : @"totalPrice",
              @"startSubscriptionDate" : @"startSubscriptionDate",
-             @"product" : @"product"
+             @"product"             : @"product"
              };
 }
 
