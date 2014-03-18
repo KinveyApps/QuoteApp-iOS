@@ -11,17 +11,15 @@
 #import "Order.h"
 #import "Product.h"
 
-#define USER_INFO_KEY_CONTACT           @"Contact"
-#define USER_INFO_KEY_COMPANY           @"Company"
-#define USER_INFO_KEY_SHIPING_ADDRESS   @"Street"
-//#define USER_INFO_KEY_CITY      @"City"
-//#define USER_INFO_KEY_STATE     @"State"
-//#define USER_INFO_KEY_POSTAL    @"Postal"
-//#define USER_INFO_KEY_COUNTRY   @"Country"
-#define USER_INFO_KEY_ACCOUNT_NUMBER    @"Account Number"
-#define USER_INFO_KEY_PHONE             @"Phone"
-#define USER_INFO_KEY_EMAIL             KCSUserAttributeEmail
-#define FORMAT_DATE                     @"dd/MM/yyyy"
+#define USER_INFO_KEY_CONTACT                   @"Contact"
+#define USER_INFO_KEY_COMPANY                   @"Company"
+#define USER_INFO_KEY_SHIPING_ADDRESS           @"Street"
+#define USER_INFO_KEY_ACCOUNT_NUMBER            @"Account Number"
+#define USER_INFO_KEY_PHONE                     @"Phone"
+#define USER_INFO_KEY_EMAIL                     KCSUserAttributeEmail
+#define USER_INFO_KEY_PUSH_NOTIFICATION_ENABLE  @"PushNotificationEnable"
+#define USER_INFO_KEY_EMAIL_CONFIRMATION_ENABLE @"EmailConfirmationEnable"
+#define FORMAT_DATE                             @"dd/MM/yyyy"
 
 
 @interface DataHelper : NSObject

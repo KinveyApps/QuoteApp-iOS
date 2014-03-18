@@ -22,6 +22,8 @@
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 
 @property (weak, nonatomic) IBOutlet UIButton *editButton;
+@property (weak, nonatomic) IBOutlet UISwitch *emailConfirmationSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *pushNotificationSwitch;
 
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *pushLabel;
@@ -58,6 +60,8 @@
     self.pushLabel.text = LOC(SVC_PUSH_LABEL);
     self.emailConfirmationLabel.text = LOC(SVC_EMAIL_CONFIRMATION_LABEL);
     [self.editButton setTitle:LOC(EDIT) forState:UIControlStateNormal];
+    self.emailConfirmationSwitch.on = [[[KCSUser activeUser] getValueForAttribute:USER_INFO_KEY_EMAIL_CONFIRMATION_ENABLE] boolValue];
+    self.pushNotificationSwitch.on = [[[KCSUser activeUser] getValueForAttribute:USER_INFO_KEY_PUSH_NOTIFICATION_ENABLE] boolValue];
     self.tableView.scrollEnabled = NO;
     [self updateUserData];
 }
@@ -110,9 +114,24 @@
                                               [self.spinner stopAnimating];
                                           }
                                       }
-                                      onFailure:nil];
+                                      onFailure:^(NSError *error){
+                                          [self.spinner stopAnimating];
+                                      }];
     }
     [self.tableView reloadData];
+}
+
+- (IBAction)switchEmailPush {
+    [self.spinner startAnimating];
+    [[DataHelper instance] saveUserWithInfo:[self userInfo]
+                                  OnSuccess:^(NSArray *users){
+                                      if (users.count) {
+                                          [self.spinner stopAnimating];
+                                      }
+                                  }
+                                  onFailure:^(NSError *error){
+                                      [self.spinner stopAnimating];
+                                  }];
 }
 
 #pragma mark - Utils
@@ -137,6 +156,12 @@
             result[keyArray[i]] = value;
         }
     }
+    
+    [result setObject:[NSNumber numberWithBool:self.emailConfirmationSwitch.on]
+               forKey:USER_INFO_KEY_EMAIL_CONFIRMATION_ENABLE];
+    [result setObject:[NSNumber numberWithBool:self.pushNotificationSwitch.on]
+               forKey:USER_INFO_KEY_PUSH_NOTIFICATION_ENABLE];
+    [result setObject:@"vitaytii@tut.by" forKey:USER_INFO_KEY_EMAIL];
     
     return [result copy];
 }
