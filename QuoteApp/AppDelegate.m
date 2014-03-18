@@ -63,7 +63,7 @@
 	else {
 		[self startFetchingDBFromServer];
 	}
-	
+	[self startListening];
     return YES;
 }
 
@@ -150,34 +150,27 @@
                                               self.isCompleteLoadProducts = YES;
                                               [self hideActivityView];
                                           }];
-		
-
-		/*
-		DataHelper *dataHelper = [DataHelper instance];
-		[dataHelper loadMarketsUsingCache:NO onSuccess:^(NSArray *markets) {
-			
-			[dataHelper loadContentTypesUsingCache:NO onSuccess:^(NSArray *contentTypes) {
-				
-				[dataHelper loadContentItemsUsingCache:NO onSuccess:^(NSArray *contentItems) {
-					
-					// we've updated all the data
-					[[KCSPush sharedPush] resetPushBadge];
-					[self.sideMenuViewController initializeOpenDefaultScreenAndThen:^(NSError *error) {
-						if (!error) {
-							[self hideActivityView];
-						}
-						else {
-							errorBlock(error);
-						}
-					}];
-				}
-											 onFailure:errorBlock];
-				
-			}
-										 onFailure:errorBlock];
-		 } onFailure:errorBlock];
-		*/
 	}];
+}
+
+- (void)startListening
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(show) name:KCSNetworkConnectionDidStart object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hide) name:KCSNetworkConnectionDidEnd object:nil];
+}
+
+- (void) show
+{
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+}
+
+- (void) hide
+{
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+}
+
+- (void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 @end
