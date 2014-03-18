@@ -336,7 +336,6 @@
 
 - (void)startSearchWithSubstring{
     
-    self.spinnerCount ++;
     self.isSearchProcess = YES;
     self.searchText = self.searchBar.text;
     [self sendSearchRequestWithString:self.searchBar.text];

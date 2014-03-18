@@ -66,12 +66,9 @@
                                    OnSuccess:^(NSArray *orders) {
                                                 self.isSearchProcess = NO;
                                                 self.items = orders;
-                                                self.spinnerCount --;
                                                 self.searchCountResultLabel.text = [NSString stringWithFormat:LOC(HaSVC_LEBEL_COUNT_RESULT), self.items.count];
                                             }
-                                   onFailure:^(NSError *error){
-                                                self.spinnerCount --;
-                                            }];
+                                   onFailure:nil];
 }
 
 - (CGFloat)heightForRow{

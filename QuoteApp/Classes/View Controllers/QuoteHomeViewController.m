@@ -66,15 +66,12 @@
                                    OnSuccess:^(NSArray *quotes) {
                                                 self.isSearchProcess = NO;
                                                 self.items = quotes;
-                                                self.spinnerCount --;
                                                 self.searchCountResultLabel.text = [NSString stringWithFormat:LOC(HaSVC_LEBEL_COUNT_RESULT), self.items.count];
                                                 if (self.isNeedRemoveSearchView) {
                                                     [super hideSearchBar];
                                                 }
                                             }
-                                   onFailure:^(NSError *error){
-                                                self.spinnerCount --;
-                                            }];
+                                   onFailure:nil];
 }
 
 - (CGFloat)heightForRow{
