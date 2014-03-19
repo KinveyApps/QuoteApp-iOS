@@ -25,27 +25,32 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(AuthenticationHelper)
 
 - (void)signUpWithUsername:(NSString *)username password:(NSString *)password onSuccess:(STEmptyBlock)successBlock onFailure:(STErrorBlock)failureBlock {
 	
-	[KCSUser userWithUsername:username password:password fieldsAndValues:nil withCompletionBlock:^(KCSUser *user, NSError *errorOrNil, KCSUserActionResult result) {
-		if (!errorOrNil) {
-			if (successBlock) successBlock();
-		}
-		else {
-			if (failureBlock) failureBlock(errorOrNil);
-		}
-	}];
+	[KCSUser userWithUsername:username
+                     password:password
+              fieldsAndValues:nil
+          withCompletionBlock:^(KCSUser *user, NSError *errorOrNil, KCSUserActionResult result) {
+              if (!errorOrNil) {
+                  if (successBlock) successBlock();
+              }
+              else {
+                  if (failureBlock) failureBlock(errorOrNil);
+              }
+          }];
 }
 
 
 - (void)loginWithUsername:(NSString *)username password:(NSString *)password onSuccess:(STEmptyBlock)successBlock onFailure:(STErrorBlock)failureBlock {
 	
-	[KCSUser loginWithUsername:username password:password withCompletionBlock:^(KCSUser *user, NSError *errorOrNil, KCSUserActionResult result) {
-		if (!errorOrNil) {
-			if (successBlock) successBlock();
-		}
-		else {
-			if (failureBlock) failureBlock(errorOrNil);
-		}
-    }];
+	[KCSUser loginWithUsername:username
+                      password:password
+           withCompletionBlock:^(KCSUser *user, NSError *errorOrNil, KCSUserActionResult result) {
+               if (!errorOrNil) {
+                   if (successBlock) successBlock();
+               }
+               else {
+                   if (failureBlock) failureBlock(errorOrNil);
+               }
+           }];
 }
 
 

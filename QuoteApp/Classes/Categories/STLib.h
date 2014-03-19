@@ -37,21 +37,11 @@
 #import "DataHelper.h"
 
 // Model Classes
-#import "KCSUser+ContentBox.h"
-
 #import "Quote.h"
 #import "Order.h"
+#import "Product.h"
 
 // Categories that extend Core Foundation classes
-#import "NSDictionary+Utils.h"
-#import "NSSet+Utils.h"
-#import "NSObject+Utils.h"
-#import "NSLocale+Utils.h"
-#import "UIDevice+Utils.h"
-#import "NSString+Utils.h"
 #import "UIColor+Utils.h"
-#import "UIDevice+Additions.h"
-#import "NSError+Utils.h"
 #import "UIView+FrameAdditions.h"
-#import "NSData+Utils.h"
 #import "UIColor+AppSpecific.h"
