@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "Quote.h"
 
+#define ORDERS_COLLECTIONS_NAME @"Orders"
+
 @interface Order : Quote
 
 @property (nonatomic, retain) NSNumber *currentSubscription;

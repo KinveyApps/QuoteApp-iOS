@@ -14,6 +14,8 @@
 #define BUSINESS_ORDER_SUBSCRIPTION @2
 #define ENTERPRISE_ORDER_SUBSCRIPTION @3
 
+#define QUOTES_COLLECTIONS_NAME @"Quotes"
+
 @interface Quote : NSObject
 
 @property (nonatomic, retain) NSString *kinveyId;
@@ -30,5 +32,7 @@
 @property (nonatomic, retain) NSString *totalPrice;
 @property (nonatomic, retain) NSDate *startSubscriptionDate;
 @property (nonatomic, retain) Product *product;
+
++ (NSArray *)textFieldsName;
 
 @end

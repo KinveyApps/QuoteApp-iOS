@@ -105,6 +105,7 @@
 
 /* Begin PBXFileReference section */
 		1B0EB1D418B4907900DD8C73 /* KinveyKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KinveyKit.framework; sourceTree = "<group>"; };
+		1B15819618D98178000BF6CA /* constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = constant.h; sourceTree = "<group>"; };
 		1B1A180B18BF4B0C00CD23BE /* QuoteHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteHomeViewController.h; sourceTree = "<group>"; };
 		1B1A180C18BF4B0C00CD23BE /* QuoteHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuoteHomeViewController.m; sourceTree = "<group>"; };
 		1B1A181518BFC7BF00CD23BE /* OrderHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderHomeViewController.h; sourceTree = "<group>"; };
@@ -343,6 +344,7 @@
 				C6A3105C18A0F6D700916A1A /* main.m */,
 				C6A3105E18A0F6D700916A1A /* QuoteApp-Prefix.pch */,
 				C6A3107F18A0F71B00916A1A /* MainWindow.xib */,
+				1B15819618D98178000BF6CA /* constant.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";

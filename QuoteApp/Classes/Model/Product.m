@@ -12,14 +12,16 @@
 
 - (NSDictionary *)hostToKinveyPropertyMapping
 {
-    return @{
-			 @"entityId"	: KCSEntityKeyId,
+    return @{@"entityId"	: KCSEntityKeyId,
 			 @"meta"        : KCSEntityKeyMetadata,
 			 @"title"       : @"title",
 			 @"description" : @"description",
 			 @"thumbnailID" : @"thumbnailID",
-			 @"imageID"     : @"imageID",
-			 };
+			 @"imageID"     : @"imageID"};
+}
+
++ (NSArray *)textFieldsName{
+    return @[@"title"];
 }
 
 @end

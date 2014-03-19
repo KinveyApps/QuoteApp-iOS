@@ -12,33 +12,41 @@
 
 - (NSDictionary *)hostToKinveyPropertyMapping
 {
-    return @{
-             @"kinveyId"            : KCSEntityKeyId,
-			 @"meta"                : KCSEntityKeyMetadata,
-             @"originator"          : @"originator",
-             @"referenceNumber"     : @"referenceNumber",
-             @"activeUsers"         : @"activeUsers",
-             @"businessLogicScripts" : @"businessLogicScripts",
-             @"scheduledBusinessLogic" : @"scheduledBusinessLogic",
-             @"collaborators"       : @"collaborators",
-             @"backendEnvironments" : @"backendEnvironments",
-             @"dataStorage"         : @"dataStorage",
+    return @{@"kinveyId"                        : KCSEntityKeyId,
+			 @"meta"                            : KCSEntityKeyMetadata,
+             @"originator"                      : @"originator",
+             @"referenceNumber"                 : @"referenceNumber",
+             @"activeUsers"                     : @"activeUsers",
+             @"businessLogicScripts"            : @"businessLogicScripts",
+             @"scheduledBusinessLogic"          : @"scheduledBusinessLogic",
+             @"collaborators"                   : @"collaborators",
+             @"backendEnvironments"             : @"backendEnvironments",
+             @"dataStorage"                     : @"dataStorage",
              @"businessLogicExecutionTimeLimit" : @"businessLogicExecutionTimeLimit",
-             @"totalPrice"          : @"totalPrice",
-             @"startSubscriptionDate" : @"startSubscriptionDate",
-             @"product"             : @"product"
-             };
+             @"totalPrice"                      : @"totalPrice",
+             @"startSubscriptionDate"           : @"startSubscriptionDate",
+             @"product"                         : @"product"};
 }
 
-+ (NSDictionary *)kinveyPropertyToCollectionMapping
-{
++ (NSDictionary *)kinveyPropertyToCollectionMapping{
     return @{ @"originator" : KCSUserCollectionName,
               @"product" : @"Products"};
 }
 
-+(NSDictionary *)kinveyObjectBuilderOptions
-{
++ (NSDictionary *)kinveyObjectBuilderOptions{
     return @{ KCS_REFERENCE_MAP_KEY : @{ @"product" : [Product class]}};
+}
+
++ (NSArray *)textFieldsName{
+    return @[@"referenceNumber",
+             @"activeUsers",
+             @"businessLogicScripts",
+             @"scheduledBusinessLogic",
+             @"collaborators",
+             @"backendEnvironments",
+             @"dataStorage",
+             @"businessLogicExecutionTimeLimit",
+             @"totalPrice"];
 }
 
 @end

@@ -27,17 +27,20 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DataHelper)
 	self = [super init];
 	if (self) {
         
-        KCSCollection *collectionQuote = [KCSCollection collectionFromString:@"Quotes" ofClass:[Quote class]];
-        self.quotesStore = [KCSLinkedAppdataStore storeWithOptions:@{ KCSStoreKeyResource : collectionQuote,
-                                                                      KCSStoreKeyCachePolicy : @(KCSCachePolicyNetworkFirst)}];
+        KCSCollection *collectionQuote = [KCSCollection collectionFromString:QUOTES_COLLECTIONS_NAME
+                                                                     ofClass:[Quote class]];
+        self.quotesStore = [KCSLinkedAppdataStore storeWithOptions:@{ KCSStoreKeyResource       : collectionQuote,
+                                                                      KCSStoreKeyCachePolicy    : @(KCSCachePolicyNetworkFirst)}];
         
-        KCSCollection *collectionOrder = [KCSCollection collectionFromString:@"Orders" ofClass:[Order class]];
-        self.ordersStore = [KCSLinkedAppdataStore storeWithOptions:@{ KCSStoreKeyResource : collectionOrder,
-                                                                      KCSStoreKeyCachePolicy : @(KCSCachePolicyNetworkFirst)}];
+        KCSCollection *collectionOrder = [KCSCollection collectionFromString:ORDERS_COLLECTIONS_NAME
+                                                                     ofClass:[Order class]];
+        self.ordersStore = [KCSLinkedAppdataStore storeWithOptions:@{ KCSStoreKeyResource       : collectionOrder,
+                                                                      KCSStoreKeyCachePolicy    : @(KCSCachePolicyNetworkFirst)}];
         
-        KCSCollection *collectionProduct = [KCSCollection collectionFromString:@"Products" ofClass:[Product class]];
-        self.productStore = [KCSLinkedAppdataStore storeWithOptions:@{ KCSStoreKeyResource : collectionProduct,
-                                                                       KCSStoreKeyCachePolicy : @(KCSCachePolicyNetworkFirst)}];
+        KCSCollection *collectionProduct = [KCSCollection collectionFromString:PRODUCTS_COLLECTIONS_NAME
+                                                                       ofClass:[Product class]];
+        self.productStore = [KCSLinkedAppdataStore storeWithOptions:@{ KCSStoreKeyResource      : collectionProduct,
+                                                                       KCSStoreKeyCachePolicy   : @(KCSCachePolicyNetworkFirst)}];
 	}
 	return self;
 }
@@ -56,7 +59,23 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DataHelper)
 }
 
 - (KCSQuery *)queryForOriginatorEqualsActiveUser{
-    return [KCSQuery queryOnField:@"originator._id" withExactMatchForValue:[KCSUser activeUser].userId];
+    return [KCSQuery queryOnField:@"originator._id"
+           withExactMatchForValue:[KCSUser activeUser].userId];
+}
+
+- (KCSQuery *)queryForSearchSubstring:(NSString *)substring inFields:(NSArray *)textFields{
+    KCSQuery *query = [KCSQuery query];
+    
+    query = [KCSQuery queryOnField:[textFields firstObject]
+                         withRegex:[self regexForContaintSubstring:substring]];
+    for (NSInteger i = 1; i < textFields.count; i ++) {
+        KCSQuery *fieldQuery = [KCSQuery queryOnField:textFields[i]
+                                            withRegex:[self regexForContaintSubstring:substring]];
+        query = [query queryByJoiningQuery:fieldQuery
+                             usingOperator:kKCSOr];
+    }
+    
+    return query;
 }
 
 #pragma mark - QUOTE
@@ -64,47 +83,15 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DataHelper)
 
 - (void)loadQuotesUseCache:(BOOL)useCache containtSubstinrg:(NSString *)substring OnSuccess:(void (^)(NSArray *))reportSuccess onFailure:(STErrorBlock)reportFailure{
     
-    KCSQuery *query;
+    KCSQuery *query = [KCSQuery query];
     
     if (substring.length) {
-        query = [KCSQuery queryOnField:@"referenceNumber"
-                             withRegex:[self regexForContaintSubstring:substring]];
-        KCSQuery *activeUsersQuery = [KCSQuery queryOnField:@"activeUsers"
-                                                  withRegex:[self regexForContaintSubstring:substring]];
-        query = [query queryByJoiningQuery:activeUsersQuery
-                             usingOperator:kKCSOr];
-        KCSQuery *businessLogicScriptsQuery = [KCSQuery queryOnField:@"businessLogicScripts"
-                                                           withRegex:[self regexForContaintSubstring:substring]];
-        query = [query queryByJoiningQuery:businessLogicScriptsQuery
-                             usingOperator:kKCSOr];
-        KCSQuery *scheduledBusinessLogicQuery = [KCSQuery queryOnField:@"scheduledBusinessLogic"
-                                                             withRegex:[self regexForContaintSubstring:substring]];
-        query = [query queryByJoiningQuery:scheduledBusinessLogicQuery
-                             usingOperator:kKCSOr];
-        KCSQuery *collaboratorsQuery = [KCSQuery queryOnField:@"collaborators"
-                                                    withRegex:[self regexForContaintSubstring:substring]];
-        query = [query queryByJoiningQuery:collaboratorsQuery
-                             usingOperator:kKCSOr];
-        KCSQuery *backendEnvironmentsQuery = [KCSQuery queryOnField:@"backendEnvironments"
-                                                          withRegex:[self regexForContaintSubstring:substring]];
-        query = [query queryByJoiningQuery:backendEnvironmentsQuery
-                             usingOperator:kKCSOr];
-        KCSQuery *dataStorageQuery = [KCSQuery queryOnField:@"dataStorage"
-                                                  withRegex:[self regexForContaintSubstring:substring]];
-        query = [query queryByJoiningQuery:dataStorageQuery
-                             usingOperator:kKCSOr];
-        KCSQuery *businessLogicExecutionTimeLimitQuery = [KCSQuery queryOnField:@"businessLogicExecutionTimeLimit"
-                                                                      withRegex:[self regexForContaintSubstring:substring]];
-        query = [query queryByJoiningQuery:businessLogicExecutionTimeLimitQuery
-                             usingOperator:kKCSOr];
-        KCSQuery *totalPriceQuery = [KCSQuery queryOnField:@"totalPrice"
-                                                 withRegex:[self regexForContaintSubstring:substring]];
-        query = [query queryByJoiningQuery:totalPriceQuery
-                             usingOperator:kKCSOr];
-    }else{
-        query = [KCSQuery query];
+        query = [self queryForSearchSubstring:substring
+                                     inFields:[Quote textFieldsName]];
     }
-    [query addQueryForJoiningOperator:kKCSAnd onQueries:[self queryForOriginatorEqualsActiveUser], nil];
+    
+    [query addQueryForJoiningOperator:kKCSAnd
+                            onQueries:[self queryForOriginatorEqualsActiveUser], nil];
     
 	[self.quotesStore queryWithQuery:query
                  withCompletionBlock:^(NSArray *objectsOrNil, NSError *errorOrNil) {
@@ -146,47 +133,15 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DataHelper)
 
 - (void)loadOrdersUseCache:(BOOL)useCache containtSubstinrg:(NSString *)substring OnSuccess:(void (^)(NSArray *))reportSuccess onFailure:(STErrorBlock)reportFailure{
     
-    KCSQuery *query;
+    KCSQuery *query = [KCSQuery query];
     
     if (substring.length) {
-        query = [KCSQuery queryOnField:@"referenceNumber"
-                             withRegex:[self regexForContaintSubstring:substring]];
-        KCSQuery *activeUsersQuery = [KCSQuery queryOnField:@"activeUsers"
-                                                  withRegex:[self regexForContaintSubstring:substring]];
-        query = [query queryByJoiningQuery:activeUsersQuery
-                             usingOperator:kKCSOr];
-        KCSQuery *businessLogicScriptsQuery = [KCSQuery queryOnField:@"businessLogicScripts"
-                                                           withRegex:[self regexForContaintSubstring:substring]];
-        query = [query queryByJoiningQuery:businessLogicScriptsQuery
-                             usingOperator:kKCSOr];
-        KCSQuery *scheduledBusinessLogicQuery = [KCSQuery queryOnField:@"scheduledBusinessLogic"
-                                                             withRegex:[self regexForContaintSubstring:substring]];
-        query = [query queryByJoiningQuery:scheduledBusinessLogicQuery
-                             usingOperator:kKCSOr];
-        KCSQuery *collaboratorsQuery = [KCSQuery queryOnField:@"collaborators"
-                                                    withRegex:[self regexForContaintSubstring:substring]];
-        query = [query queryByJoiningQuery:collaboratorsQuery
-                             usingOperator:kKCSOr];
-        KCSQuery *backendEnvironmentsQuery = [KCSQuery queryOnField:@"backendEnvironments"
-                                                          withRegex:[self regexForContaintSubstring:substring]];
-        query = [query queryByJoiningQuery:backendEnvironmentsQuery
-                             usingOperator:kKCSOr];
-        KCSQuery *dataStorageQuery = [KCSQuery queryOnField:@"dataStorage"
-                                                  withRegex:[self regexForContaintSubstring:substring]];
-        query = [query queryByJoiningQuery:dataStorageQuery
-                             usingOperator:kKCSOr];
-        KCSQuery *businessLogicExecutionTimeLimitQuery = [KCSQuery queryOnField:@"businessLogicExecutionTimeLimit"
-                                                                      withRegex:[self regexForContaintSubstring:substring]];
-        query = [query queryByJoiningQuery:businessLogicExecutionTimeLimitQuery
-                             usingOperator:kKCSOr];
-        KCSQuery *totalPriceQuery = [KCSQuery queryOnField:@"totalPrice"
-                                                 withRegex:[self regexForContaintSubstring:substring]];
-        query = [query queryByJoiningQuery:totalPriceQuery
-                             usingOperator:kKCSOr];
-    }else{
-        query = [KCSQuery query];
+        query = [self queryForSearchSubstring:substring
+                                     inFields:[Order textFieldsName]];
     }
-    [query addQueryForJoiningOperator:kKCSAnd onQueries:[self queryForOriginatorEqualsActiveUser], nil];
+    
+    [query addQueryForJoiningOperator:kKCSAnd
+                            onQueries:[self queryForOriginatorEqualsActiveUser], nil];
     
     [self.ordersStore queryWithQuery:query
                  withCompletionBlock:^(NSArray *objectsOrNil, NSError *errorOrNil) {
@@ -232,7 +187,8 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DataHelper)
         NSArray *keyArray = [self allUserInfoKey];
         for (int i = 0; i < keyArray.count; i++) {
             if (userInfo[keyArray[i]]) {
-                [user setValue:userInfo[keyArray[i]] forAttribute:keyArray[i]];
+                [user setValue:userInfo[keyArray[i]]
+                  forAttribute:keyArray[i]];
             }
         }
         
@@ -284,19 +240,21 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DataHelper)
              USER_INFO_KEY_PHONE,
              USER_INFO_KEY_PUSH_NOTIFICATION_ENABLE,
              USER_INFO_KEY_EMAIL_CONFIRMATION_ENABLE,
-             USER_INFO_KEY_EMAIL
-             ];
+             USER_INFO_KEY_EMAIL];
 }
 
 - (NSArray *)entityWithActiveUserOriginatorOnArray:(NSArray *)array{
+    
     NSMutableArray *result = [NSMutableArray array];
     KCSUser *user = [KCSUser activeUser];
+    
     for (int i = 0; i < array.count; i++) {
         Quote *quote = (Quote *)array[i];
         if ([quote.originator.userId isEqualToString:user.userId]) {
             [result addObject:quote];
         }
     }
+    
     return result;
 }
 
@@ -305,12 +263,11 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DataHelper)
 
 - (void)loadProductsUseCache:(BOOL)useCache containtSubstinrg:(NSString *)substring OnSuccess:(void (^)(NSArray *))reportSuccess onFailure:(STErrorBlock)reportFailure{
     
-    KCSQuery *query;
+    KCSQuery *query = [KCSQuery query];
     
     if (substring.length) {
-        query = [KCSQuery queryOnField:@"title" withRegex:[self regexForContaintSubstring:substring]];
-    }else{
-        query = [KCSQuery query];
+        query = [self queryForSearchSubstring:substring
+                                     inFields:[Product textFieldsName]];
     }
     
     [self.productStore queryWithQuery:query
