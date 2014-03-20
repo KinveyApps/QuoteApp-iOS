@@ -188,6 +188,12 @@
 	[self updateButtons];
 }
 
+- (IBAction)demoPress:(id)sender {
+    self.usernameField.text = @"demoSampleQuote";
+    self.passwordField.text = @"123456";
+    [self pressedLogin:sender];
+}
+
 #pragma mark UITextFieldDelegate methods
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
