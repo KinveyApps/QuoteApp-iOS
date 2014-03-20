@@ -70,10 +70,11 @@
 
 - (void)setUserData:(NSArray *)userData{
     _userData = userData;
-    if ([self.userData[3] isEqualToString:@""]) {
-        NSMutableArray *userData = [self.userData mutableCopy];
-        userData[3] = [KCSUser activeUser].userId;
-        self.userData = [userData copy];
+    NSInteger indexAccountNumber = [[self allUserInfoKey] indexOfObject:USER_INFO_KEY_ACCOUNT_NUMBER];
+    if ([_userData[indexAccountNumber] isEqualToString:@""]) {
+        NSMutableArray *userData = [_userData mutableCopy];
+        userData[indexAccountNumber] = [KCSUser activeUser].userId;
+        _userData = [userData copy];
     }
     [self.tableView reloadData];
 }
@@ -90,7 +91,11 @@
                 [userData addObject:[user getValueForAttribute:keyArray[i]]];
             }else{
                 if ([keyArray[i] isEqualToString:USER_INFO_KEY_EMAIL]) {
-                    [userData addObject:user.email];
+                    if (user.email) {
+                        [userData addObject:user.email];
+                    }else{
+                        [userData addObject:@""];
+                    }
                 }else{
                     [userData addObject:@""];
                 }
@@ -172,7 +177,6 @@
 - (NSArray *)allUserInfoKey{
     return @[USER_INFO_KEY_CONTACT,
              USER_INFO_KEY_COMPANY,
-             USER_INFO_KEY_SHIPING_ADDRESS,
              USER_INFO_KEY_ACCOUNT_NUMBER,
              USER_INFO_KEY_PHONE,
              USER_INFO_KEY_EMAIL
