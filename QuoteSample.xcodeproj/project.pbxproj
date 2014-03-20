@@ -169,20 +169,20 @@
 		C6760A1318A3969700BAC60D /* Quote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Quote.m; sourceTree = "<group>"; };
 		C6760A1518A39D8400BAC60D /* Order.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Order.h; sourceTree = "<group>"; };
 		C6760A1618A39D8400BAC60D /* Order.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Order.m; sourceTree = "<group>"; };
-		C6A3104D18A0F6D700916A1A /* QuoteApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuoteApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6A3104D18A0F6D700916A1A /* QuoteSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuoteSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6A3105018A0F6D700916A1A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C6A3105218A0F6D700916A1A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		C6A3105418A0F6D700916A1A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		C6A3105818A0F6D700916A1A /* QuoteApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "QuoteApp-Info.plist"; sourceTree = "<group>"; };
+		C6A3105818A0F6D700916A1A /* QuoteSample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "QuoteSample-Info.plist"; sourceTree = "<group>"; };
 		C6A3105A18A0F6D700916A1A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C6A3105C18A0F6D700916A1A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		C6A3105E18A0F6D700916A1A /* QuoteApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QuoteApp-Prefix.pch"; sourceTree = "<group>"; };
+		C6A3105E18A0F6D700916A1A /* QuoteSample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QuoteSample-Prefix.pch"; sourceTree = "<group>"; };
 		C6A3105F18A0F6D700916A1A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C6A3106018A0F6D700916A1A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		C6A3106218A0F6D700916A1A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		C6A3106818A0F6D700916A1A /* QuoteAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuoteAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6A3106818A0F6D700916A1A /* QuoteSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuoteSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6A3106918A0F6D700916A1A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		C6A3107118A0F6D700916A1A /* QuoteAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "QuoteAppTests-Info.plist"; sourceTree = "<group>"; };
+		C6A3107118A0F6D700916A1A /* QuoteSampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "QuoteSampleTests-Info.plist"; sourceTree = "<group>"; };
 		C6A3107318A0F6D700916A1A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C6A3107518A0F6D700916A1A /* QuoteAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuoteAppTests.m; sourceTree = "<group>"; };
 		C6A3107F18A0F71B00916A1A /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
@@ -264,8 +264,8 @@
 		C6A3104E18A0F6D700916A1A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C6A3104D18A0F6D700916A1A /* QuoteApp.app */,
-				C6A3106818A0F6D700916A1A /* QuoteAppTests.xctest */,
+				C6A3104D18A0F6D700916A1A /* QuoteSample.app */,
+				C6A3106818A0F6D700916A1A /* QuoteSampleTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -307,10 +307,10 @@
 				C67609EF18A2761400BAC60D /* License.txt */,
 				C6A3109618A107C900916A1A /* Localizable.strings.h */,
 				C6A3109A18A107F900916A1A /* Localizable.strings */,
-				C6A3105818A0F6D700916A1A /* QuoteApp-Info.plist */,
+				C6A3105818A0F6D700916A1A /* QuoteSample-Info.plist */,
 				C6A3105918A0F6D700916A1A /* InfoPlist.strings */,
 				C6A3105C18A0F6D700916A1A /* main.m */,
-				C6A3105E18A0F6D700916A1A /* QuoteApp-Prefix.pch */,
+				C6A3105E18A0F6D700916A1A /* QuoteSample-Prefix.pch */,
 				C6A3107F18A0F71B00916A1A /* MainWindow.xib */,
 				1B15819618D98178000BF6CA /* constant.h */,
 			);
@@ -329,7 +329,7 @@
 		C6A3107018A0F6D700916A1A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				C6A3107118A0F6D700916A1A /* QuoteAppTests-Info.plist */,
+				C6A3107118A0F6D700916A1A /* QuoteSampleTests-Info.plist */,
 				C6A3107218A0F6D700916A1A /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -501,9 +501,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C6A3104C18A0F6D700916A1A /* QuoteApp */ = {
+		C6A3104C18A0F6D700916A1A /* QuoteSample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C6A3107918A0F6D700916A1A /* Build configuration list for PBXNativeTarget "QuoteApp" */;
+			buildConfigurationList = C6A3107918A0F6D700916A1A /* Build configuration list for PBXNativeTarget "QuoteSample" */;
 			buildPhases = (
 				C6A3104918A0F6D700916A1A /* Sources */,
 				C6A3104A18A0F6D700916A1A /* Frameworks */,
@@ -513,14 +513,14 @@
 			);
 			dependencies = (
 			);
-			name = QuoteApp;
+			name = QuoteSample;
 			productName = QuoteApp;
-			productReference = C6A3104D18A0F6D700916A1A /* QuoteApp.app */;
+			productReference = C6A3104D18A0F6D700916A1A /* QuoteSample.app */;
 			productType = "com.apple.product-type.application";
 		};
-		C6A3106718A0F6D700916A1A /* QuoteAppTests */ = {
+		C6A3106718A0F6D700916A1A /* QuoteSampleTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C6A3107C18A0F6D700916A1A /* Build configuration list for PBXNativeTarget "QuoteAppTests" */;
+			buildConfigurationList = C6A3107C18A0F6D700916A1A /* Build configuration list for PBXNativeTarget "QuoteSampleTests" */;
 			buildPhases = (
 				C6A3106418A0F6D700916A1A /* Sources */,
 				C6A3106518A0F6D700916A1A /* Frameworks */,
@@ -531,9 +531,9 @@
 			dependencies = (
 				C6A3106E18A0F6D700916A1A /* PBXTargetDependency */,
 			);
-			name = QuoteAppTests;
+			name = QuoteSampleTests;
 			productName = QuoteAppTests;
-			productReference = C6A3106818A0F6D700916A1A /* QuoteAppTests.xctest */;
+			productReference = C6A3106818A0F6D700916A1A /* QuoteSampleTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -550,7 +550,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C6A3104818A0F6D700916A1A /* Build configuration list for PBXProject "QuoteApp" */;
+			buildConfigurationList = C6A3104818A0F6D700916A1A /* Build configuration list for PBXProject "QuoteSample" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -562,8 +562,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C6A3104C18A0F6D700916A1A /* QuoteApp */,
-				C6A3106718A0F6D700916A1A /* QuoteAppTests */,
+				C6A3104C18A0F6D700916A1A /* QuoteSample */,
+				C6A3106718A0F6D700916A1A /* QuoteSampleTests */,
 			);
 		};
 /* End PBXProject section */
@@ -664,7 +664,7 @@
 /* Begin PBXTargetDependency section */
 		C6A3106E18A0F6D700916A1A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = C6A3104C18A0F6D700916A1A /* QuoteApp */;
+			target = C6A3104C18A0F6D700916A1A /* QuoteSample */;
 			targetProxy = C6A3106D18A0F6D700916A1A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -774,15 +774,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/1/Developer/Softteco/QuoteApp-iOS/Externals/KinveyKit-1.26.0",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "QuoteApp/QuoteApp-Prefix.pch";
-				INFOPLIST_FILE = "QuoteApp/QuoteApp-Info.plist";
+				GCC_PREFIX_HEADER = "QuoteApp/QuoteSample-Prefix.pch";
+				INFOPLIST_FILE = "QuoteApp/QuoteSample-Info.plist";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = QuoteSample;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -793,15 +794,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/1/Developer/Softteco/QuoteApp-iOS/Externals/KinveyKit-1.26.0",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "QuoteApp/QuoteApp-Prefix.pch";
-				INFOPLIST_FILE = "QuoteApp/QuoteApp-Info.plist";
+				GCC_PREFIX_HEADER = "QuoteApp/QuoteSample-Prefix.pch";
+				INFOPLIST_FILE = "QuoteApp/QuoteSample-Info.plist";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = QuoteSample;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -822,8 +824,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "QuoteAppTests/QuoteAppTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "QuoteAppTests/QuoteSampleTests-Info.plist";
+				PRODUCT_NAME = QuoteSampleTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -840,8 +842,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "QuoteApp/QuoteApp-Prefix.pch";
-				INFOPLIST_FILE = "QuoteAppTests/QuoteAppTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "QuoteAppTests/QuoteSampleTests-Info.plist";
+				PRODUCT_NAME = QuoteSampleTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -850,7 +852,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C6A3104818A0F6D700916A1A /* Build configuration list for PBXProject "QuoteApp" */ = {
+		C6A3104818A0F6D700916A1A /* Build configuration list for PBXProject "QuoteSample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C6A3107718A0F6D700916A1A /* Debug */,
@@ -859,7 +861,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C6A3107918A0F6D700916A1A /* Build configuration list for PBXNativeTarget "QuoteApp" */ = {
+		C6A3107918A0F6D700916A1A /* Build configuration list for PBXNativeTarget "QuoteSample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C6A3107A18A0F6D700916A1A /* Debug */,
@@ -868,7 +870,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C6A3107C18A0F6D700916A1A /* Build configuration list for PBXNativeTarget "QuoteAppTests" */ = {
+		C6A3107C18A0F6D700916A1A /* Build configuration list for PBXNativeTarget "QuoteSampleTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C6A3107D18A0F6D700916A1A /* Debug */,

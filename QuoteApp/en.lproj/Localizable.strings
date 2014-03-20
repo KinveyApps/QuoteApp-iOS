@@ -76,6 +76,7 @@
 "SVC_CELL_TITLE_SHIPING_ADDRESS"="Shipping Address";
 "SVC_CELL_TITLE_ACCOUNT_NUMBER"="Account Number";
 "SVC_CELL_TITLE_PHONE"="Phone";
+"SVC_CELL_TITLE_EMAIL"="E-mail";
 "SVC_PUSH_LABEL"="Push Notification";
 "SVC_EMAIL_CONFIRMATION_LABEL"="Email Confirmation on New Order";
 
