@@ -89,7 +89,11 @@
             if ([user getValueForAttribute:keyArray[i]]) {
                 [userData addObject:[user getValueForAttribute:keyArray[i]]];
             }else{
-                [userData addObject:@""];
+                if ([keyArray[i] isEqualToString:USER_INFO_KEY_EMAIL]) {
+                    [userData addObject:user.email];
+                }else{
+                    [userData addObject:@""];
+                }
             }
         }
         
@@ -161,7 +165,6 @@
                forKey:USER_INFO_KEY_EMAIL_CONFIRMATION_ENABLE];
     [result setObject:[NSNumber numberWithBool:self.pushNotificationSwitch.on]
                forKey:USER_INFO_KEY_PUSH_NOTIFICATION_ENABLE];
-    [result setObject:@"vitaytii@tut.by" forKey:USER_INFO_KEY_EMAIL];
     
     return [result copy];
 }
@@ -171,7 +174,8 @@
              USER_INFO_KEY_COMPANY,
              USER_INFO_KEY_SHIPING_ADDRESS,
              USER_INFO_KEY_ACCOUNT_NUMBER,
-             USER_INFO_KEY_PHONE
+             USER_INFO_KEY_PHONE,
+             USER_INFO_KEY_EMAIL
              ];
 }
 
@@ -223,6 +227,9 @@
     }
     if ([key isEqualToString:USER_INFO_KEY_PHONE]) {
         return LOC(SVC_CELL_TITLE_PHONE);
+    }
+    if ([key isEqualToString:USER_INFO_KEY_EMAIL]) {
+        return LOC(SVC_CELL_TITLE_EMAIL);
     }
     return nil;
 }
