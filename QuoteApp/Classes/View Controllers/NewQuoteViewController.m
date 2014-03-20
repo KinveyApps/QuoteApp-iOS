@@ -134,17 +134,34 @@
     
     [self addToQuotePriceAndUser];
     
-    [[DataHelper instance] saveQuote:self.quote
+    Quote *quote = [[Quote alloc] init];
+    
+    quote.meta = [[KCSMetadata alloc] init];
+    quote.referenceNumber = self.quote.referenceNumber;
+    quote.originator = self.quote.originator;
+    quote.originator = self.quote.originator;
+    quote.activeUsers = self.quote.activeUsers;
+    quote.businessLogicScripts = self.quote.businessLogicScripts;
+    quote.scheduledBusinessLogic = self.quote.scheduledBusinessLogic;
+    quote.collaborators = self.quote.collaborators;
+    quote.backendEnvironments = self.quote.backendEnvironments;
+    quote.dataStorage = self.quote.dataStorage;
+    quote.businessLogicExecutionTimeLimit = self.quote.businessLogicExecutionTimeLimit;
+    quote.startSubscriptionDate = self.quote.startSubscriptionDate;
+    quote.totalPrice = self.quote.totalPrice;
+    quote.product = self.quote.product;
+    
+    [[DataHelper instance] saveQuote:quote
                            OnSuccess:^(NSArray *quotes){
                                if (quotes.count) {
                                    QuoteOrderModalViewController *mvc = [[QuoteOrderModalViewController alloc] init];
                                    if (self.quote) {
-                                       mvc.item = self.quote;
+                                       mvc.item = quote;
                                        mvc.modalPresentationStyle = UIModalPresentationFormSheet;
                                        [self.tabBarController presentViewController:mvc
                                                                            animated:YES
                                                                          completion:^{
-                                                                             mvc.item = self.quote;
+                                                                             mvc.item = quote;
                                                                          }];
                                    }
                                }
