@@ -6,19 +6,19 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QuoteOrderSubView">
             <connections>
-                <outlet property="alloyLabel" destination="7cc-gg-iB4" id="mYP-Bw-9Zq"/>
-                <outlet property="baseFabPriceLabel" destination="ywq-zY-Y4C" id="0gy-Gd-5ZO"/>
-                <outlet property="finishLabel" destination="Rb2-ME-Uvs" id="mQn-Eg-ZLh"/>
-                <outlet property="maxIDLabel" destination="CYb-eD-f2d" id="Oze-IK-vQK"/>
-                <outlet property="maxODLabel" destination="F62-xe-PBk" id="abq-yK-qbH"/>
+                <outlet property="activeUserLabel" destination="7cc-gg-iB4" id="b55-9r-ccH"/>
+                <outlet property="backendEnvironmentsLabel" destination="CYb-eD-f2d" id="Xd4-zv-vA8"/>
+                <outlet property="businessLogicExecutionTimeLimitLabel" destination="LpL-24-JDc" id="qdK-Am-qsG"/>
+                <outlet property="businessLogicScriptsLebel" destination="irc-UC-WXS" id="Eac-2g-pOQ"/>
+                <outlet property="collaboratorsLabel" destination="Rb2-ME-Uvs" id="Jwj-Uw-NYg"/>
+                <outlet property="dataStorageLabel" destination="F62-xe-PBk" id="diE-WA-hXI"/>
                 <outlet property="productTitleLabel" destination="uSI-Cx-cpY" id="wsi-OW-YEe"/>
                 <outlet property="referenceNumberLabel" destination="qyW-Zf-Z4h" id="8d7-wN-Vio"/>
-                <outlet property="requestLbsYieldLabel" destination="LpL-24-JDc" id="bWf-DE-e49"/>
-                <outlet property="shipDateLabel" destination="Wj6-Aa-Dcq" id="dl8-dL-LRD"/>
-                <outlet property="temperLebel" destination="irc-UC-WXS" id="A4z-pq-Doz"/>
+                <outlet property="scheduledBusinessLogicLabel" destination="diJ-Ph-v2i" id="Y3w-SP-T9P"/>
+                <outlet property="startSubscriptionDateLabel" destination="Wj6-Aa-Dcq" id="o1U-KH-kJO"/>
                 <outlet property="titleLabel" destination="WZt-fP-UJI" id="eaR-HA-qXV"/>
+                <outlet property="totalCostLabel" destination="ywq-zY-Y4C" id="btQ-mb-V2z"/>
                 <outlet property="view" destination="1" id="a9A-U5-Qo4"/>
-                <outlet property="widthLabel" destination="diJ-Ph-v2i" id="UgP-lQ-mpi"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -49,55 +49,55 @@
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alloy:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="7cc-gg-iB4" userLabel="Alloy">
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Active User:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="7cc-gg-iB4" userLabel="Alloy">
                     <rect key="frame" x="0.0" y="85" width="280" height="20"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temper:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="irc-UC-WXS" userLabel="Temper">
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Business Logic Scripts:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="irc-UC-WXS" userLabel="Temper">
                     <rect key="frame" x="0.0" y="113" width="280" height="20"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Width (inches):" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="diJ-Ph-v2i" userLabel="Width">
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scheduled Business Logic:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="diJ-Ph-v2i" userLabel="Width">
                     <rect key="frame" x="0.0" y="141" width="280" height="20"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Finish:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="Rb2-ME-Uvs" userLabel="Finish">
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Collaborators:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="Rb2-ME-Uvs" userLabel="Finish">
                     <rect key="frame" x="0.0" y="169" width="280" height="20"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Max OD (inches):" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="F62-xe-PBk" userLabel="Max OD">
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data Storage:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="F62-xe-PBk" userLabel="Max OD">
                     <rect key="frame" x="0.0" y="225" width="280" height="20"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Requested Lbs/Yield:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="LpL-24-JDc" userLabel="Requested Lbs Yield">
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Business Logic Execution Time Limit:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="LpL-24-JDc" userLabel="Requested Lbs Yield">
                     <rect key="frame" x="0.0" y="253" width="280" height="20"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Est Ship Date:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="Wj6-Aa-Dcq" userLabel="Est Ship Date">
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Subscription Date:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="Wj6-Aa-Dcq" userLabel="Est Ship Date">
                     <rect key="frame" x="0.0" y="281" width="280" height="20"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Base Fab Price ($/lb):" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="ywq-zY-Y4C" userLabel="Base Fab Price">
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Cost:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="ywq-zY-Y4C" userLabel="Base Fab Price">
                     <rect key="frame" x="0.0" y="309" width="280" height="20"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Max ID (inches):" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="CYb-eD-f2d" userLabel="Max ID">
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Backend Enviroments:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="CYb-eD-f2d" userLabel="Max ID">
                     <rect key="frame" x="0.0" y="197" width="280" height="20"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>

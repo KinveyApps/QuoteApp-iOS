@@ -43,11 +43,6 @@
 	[[UIApplication sharedApplication] setStatusBarHidden:NO];
 	[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
 	
-	[UINavigationBar appearance].tintColor = [UIColor appTextColor];
-	[UINavigationBar appearance].barTintColor = [UIColor appTintColor];
-	[UINavigationBar appearance].tintColor = [UIColor appTextColor];
-	[UINavigationBar appearance].titleTextAttributes = @{ NSForegroundColorAttributeName : [UIColor appTextColor] };
-	
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = self.tabBarController;
     self.window.backgroundColor = [UIColor whiteColor];
@@ -67,6 +62,33 @@
     return YES;
 }
 
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
+    
+    [[KCSPush sharedPush] application:application didRegisterForRemoteNotificationsWithDeviceToken:deviceToken completionBlock:^(BOOL success, NSError *error) {
+        //if there is an error, try again laster
+    }];
+    // Additional registration goes here (if needed)
+}
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
+{
+    [[KCSPush sharedPush] application:application didReceiveRemoteNotification:userInfo];
+    // Additional push notification handling code should be performed here
+}
+- (void) application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
+{
+    [[KCSPush sharedPush] application:application didFailToRegisterForRemoteNotificationsWithError:error];
+}
+- (void)applicationDidBecomeActive:(UIApplication *)application
+{
+    [[KCSPush sharedPush] registerForRemoteNotifications];
+    //Additional become active actions
+}
+- (void)applicationWillTerminate:(UIApplication *)application
+{
+    [[KCSPush sharedPush] onUnloadHelper];
+    // Additional termination actions
+}
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
 	// Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -82,16 +104,6 @@
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
 	// Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-}
-
-- (void)applicationDidBecomeActive:(UIApplication *)application
-{
-	// Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-}
-
-- (void)applicationWillTerminate:(UIApplication *)application
-{
-	// Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
 - (void)showActivityView

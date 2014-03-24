@@ -9,28 +9,40 @@
 #import "HomeViewController.h"
 #import "SettingModalViewController.h"
 
+#define COUNT_COLLECTION_VIEW_CELL_IN_ROW_FOR_IPHONE 2
+#define ASPECT_RATIO_COLLECTION_VIEW_CELL 4 * 3
+#define INSTANT_SEARCH_TIME_INTEVAL 1
+
 @interface HomeViewController () <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
+
 @property (strong, nonatomic) IBOutlet UIView *view;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *searchBarTopConstraint;
 @property (weak, nonatomic) IBOutlet UIView *topBarView;
-@property (strong, nonatomic) NSTimer *timer;
-@property (nonatomic) BOOL isNeedSearh;
-@property (nonatomic, strong) NSString *searchText;
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+
+@property (weak, nonatomic) IBOutlet UILabel *titleLable;
 @property (nonatomic, strong) UIRefreshControl *tableViewRefreshControl;
 @property (nonatomic, strong) UIRefreshControl *collectionViewRefreshControl;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
-@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
-@property (weak, nonatomic) IBOutlet UICollectionViewFlowLayout *collectionViewFlowLayout;
-@property (weak, nonatomic) IBOutlet UILabel *titleLable;
 
+
+@property (strong, nonatomic) NSTimer *timer;
+@property (nonatomic) BOOL isNeedSearh;
+@property (nonatomic, strong) NSString *searchText;
+
+@property (weak, nonatomic) IBOutlet UICollectionViewFlowLayout *collectionViewFlowLayout;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *searchBarTopConstraint;
 
 @end
 
+
 @implementation HomeViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+
+#pragma mark - Initialisation
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
+    
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         [self setup];
@@ -46,84 +58,62 @@
     return self;
 }
 
+- (void)setup{
+    
+    [[NSBundle mainBundle] loadNibNamed:@"HomeViewController" owner:self options:nil];
+    
+    [self.tableViewRefreshControl addTarget:self
+                                     action:@selector(updateData)
+                           forControlEvents:UIControlEventValueChanged];
+    [self.tableViewRefreshControl setAttributedTitle:[[NSAttributedString alloc] initWithString:[self titleForRefreshControl]]];
+    [self.tableView addSubview:self.tableViewRefreshControl];
+    
+    [self.collectionViewRefreshControl addTarget:self
+                                          action:@selector(updateData)
+                                forControlEvents:UIControlEventValueChanged];
+    [self.collectionViewRefreshControl setAttributedTitle:[[NSAttributedString alloc] initWithString:[self titleForRefreshControl]]];
+    [self.collectionView addSubview:self.collectionViewRefreshControl];
+    
+    self.topBarView.backgroundColor = BAR_COLOR;
+    self.titleLable.text = [self titleForView];
+}
+
+- (void)updateData{
+    
+    [self getDataForItemsFromCache:NO];
+}
+
+- (NSString *)titleForView{ return nil; }//abstract
+
+- (NSString *)titleForRefreshControl{ return nil;}//abstract
+
+
+#pragma mark - Setters and Getters
+
 - (UIRefreshControl *)tableViewRefreshControl{
+    
     if (!_tableViewRefreshControl) {
         _tableViewRefreshControl = [[UIRefreshControl alloc] init];
     }
+    
     return _tableViewRefreshControl;
 }
 
 - (UIRefreshControl *)collectionViewRefreshControl{
+    
     if (!_collectionViewRefreshControl) {
         _collectionViewRefreshControl = [[UIRefreshControl alloc] init];
     }
+    
     return _collectionViewRefreshControl;
 }
 
-
-- (void)setup{
-    [[NSBundle mainBundle] loadNibNamed:@"HomeViewController" owner:self options:nil];
-    [self.tableViewRefreshControl addTarget:self
-                                     action:@selector(updateData)
-                           forControlEvents:UIControlEventValueChanged];
-    [self.tableView addSubview:self.tableViewRefreshControl];
-    [self.collectionViewRefreshControl addTarget:self
-                                          action:@selector(updateData)
-                                forControlEvents:UIControlEventValueChanged];
-    [self.collectionView addSubview:self.collectionViewRefreshControl];
-    self.topBarView.backgroundColor = [UIColor colorWithRed:0.8549 green:0.3137 blue:0.1686 alpha:1.0];
-    self.titleLable.text = [self titleForView];
-}
-
-- (NSString *)titleForView{
-    return nil;//abstract
-}
-
-- (void)updateData{
-    [self getDataForItemsFromCache:NO];
-}
-
-- (void)viewDidLoad{
-    [super viewDidLoad];
-    self.searchBar.delegate = self;
-    
-    self.tableGridSegmentedControl.hidden = [self isVisibleTableGridSegmentedControl];
-    [self.collectionView registerClass:[self classForCollectionViewCell] forCellWithReuseIdentifier:[self reusebleCollectionViewID]];
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
-        CGFloat cellWidth = (320 - 2 * (2 + 1)) / 2;
-        self.collectionViewFlowLayout.itemSize = CGSizeMake(cellWidth, cellWidth / 4 * 3);
-        self.collectionViewFlowLayout.sectionInset = UIEdgeInsetsMake(2, 2, 2, 2);
-        self.collectionViewFlowLayout.minimumInteritemSpacing = 2;
-        self.collectionViewFlowLayout.minimumLineSpacing = 2;
-    }
-    
-}
-
-- (void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    //[self.collectionView addSubview:self.tableViewRefreshControl];
-}
-
-- (Class)classForCollectionViewCell{
-    return [UICollectionViewCell class];//abstract
-}
-
-- (NSString *)reusebleCollectionViewID{
-    return @"Default ID";
-}
-
-- (BOOL)isVisibleTableGridSegmentedControl{
-    return YES;//abstract
-}
-
-- (NSString *)titleForRefreshControl{
-    return nil;//abstract
-}
-
 - (void)setSpinnerCount:(NSUInteger *)spinnerCount{
+    
     _spinnerCount = spinnerCount;
+    
     if (_spinnerCount > 0) {
-        //[self.spinner startAnimating];
+        
         if (self.collectionView.hidden) {
             if (!self.tableViewRefreshControl.isRefreshing) {
                 [self.tableViewRefreshControl beginRefreshing];
@@ -135,19 +125,21 @@
                 self.collectionViewRefreshControl = NO;
             }
         }
+        
     }else{
         _spinnerCount = 0;
-        //[self.spinner stopAnimating];
+        
         if (self.collectionView.hidden) {
             [self.tableViewRefreshControl endRefreshing];
         }else{
             [self.collectionViewRefreshControl endRefreshing];
         }
+        
     }
 }
 
 - (void)setItems:(NSArray *)items{
-
+    
     _items = items;
     
     if (self.collectionView.hidden) {
@@ -155,7 +147,30 @@
     }else{
         [self.collectionView reloadData];
     }
+}
 
+
+#pragma mark - View Life Cycle
+
+- (void)viewDidLoad{
+    
+    [super viewDidLoad];
+    self.searchBar.delegate = self;
+    
+    self.tableGridSegmentedControl.hidden = [self isVisibleTableGridSegmentedControl];
+    
+    [self.collectionView registerClass:[self classForCollectionViewCell]
+            forCellWithReuseIdentifier:[self reusebleCollectionViewID]];
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+        CGFloat cellWidth = (self.view.bounds.size.width - self.collectionViewFlowLayout.minimumInteritemSpacing * (COUNT_COLLECTION_VIEW_CELL_IN_ROW_FOR_IPHONE + 1)) / COUNT_COLLECTION_VIEW_CELL_IN_ROW_FOR_IPHONE;
+        self.collectionViewFlowLayout.itemSize = CGSizeMake(cellWidth, cellWidth / ASPECT_RATIO_COLLECTION_VIEW_CELL);
+        [self.collectionView layoutIfNeeded];
+    }
 }
 
 - (void) viewDidAppear:(BOOL)animated{
@@ -167,53 +182,65 @@
     [self laodData];
 }
 
+- (void)didReceiveMemoryWarning{
+    
+    [super didReceiveMemoryWarning];
+}
 
 - (void)laodData{
     
     [self getDataForItemsFromCache:YES];
-    
 }
 
-- (void)getDataForItemsFromCache:(BOOL)useCache{
-    //abstract
-}
+- (BOOL)isVisibleTableGridSegmentedControl{ return YES; }//abstract
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+- (Class)classForCollectionViewCell{ return [UICollectionViewCell class]; }//abstract
 
+- (NSString *)reusebleCollectionViewID{ return @"Default ID"; }//abstract
+
+
+#pragma mark - Utils
+
+- (void)getDataForItemsFromCache:(BOOL)useCache{ }//abstract
+
+
+#pragma mark - Actions
 
 - (IBAction)pressSearch {
-    [UIView animateWithDuration:0.3 animations:^{
+    
+    [UIView animateWithDuration:ANIMATION_DURATION
+                     animations:^{
+                         
         if (self.searchBarTopConstraint.constant) {
             [self showSearchBar];
         }else{
             [self hideSearchBar];
         }
         [self.view layoutIfNeeded];
+                         
     }];
 }
 
 - (void)showSearchBar{
+    
     self.searchBarTopConstraint.constant = 0;
     self.searchCountResultLabel.hidden = NO;
     [self.searchBar becomeFirstResponder];
 }
 
 - (void)hideSearchBar{
-    self.searchBarTopConstraint.constant = -44;
+    
+    self.searchBarTopConstraint.constant = -self.searchBar.frame.size.height;
     [self getDataForItemsFromCache:YES];
     self.searchCountResultLabel.hidden = YES;
+    
     if ([self.searchBar isFirstResponder]) {
         [self.searchBar resignFirstResponder];
-
     }
 }
 
-
 - (IBAction)pressSettings {
+    
     SettingModalViewController *mv = [[SettingModalViewController alloc] init];
     mv.modalPresentationStyle = UIModalPresentationFormSheet;
     [self presentViewController:mv
@@ -221,7 +248,9 @@
                      completion:nil];
     
 }
+
 - (IBAction)changeTableGridView:(UISegmentedControl *)sender {
+    
     if (sender.selectedSegmentIndex) {
         self.collectionView.hidden = NO;
         self.tableView.hidden = YES;
@@ -233,42 +262,36 @@
     }
 }
 
-#pragma mark - Table View Delegate
+
+#pragma mark - TABLE VIEW
+#pragma mark - Delegate
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     return [self headerForTableView];
 }
 
-- (UIView *)headerForTableView{
-    return nil;//abstract
-}
+- (UIView *)headerForTableView{ return nil; }//abstract
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
     [self detailViewForIndex:indexPath.row];
 }
 
-- (void)detailViewForIndex:(NSInteger)index{
-    //abstract
-}
+- (void)detailViewForIndex:(NSInteger)index{ }//abstract
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return [self heightForRow];
 }
 
-- (CGFloat)heightForRow{
-    return 0; //abstract
-}
+- (CGFloat)heightForRow{ return 0; }//abstract
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     return [self heightForHeaderInSection];
 }
 
-- (CGFloat)heightForHeaderInSection{
-    return 0; //abstract
-}
+- (CGFloat)heightForHeaderInSection{ return 0; }//abstract
 
-#pragma mark - Table View Data Source
+
+#pragma mark - Data Source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
@@ -285,15 +308,12 @@
     }
 }
 
-- (NSString *)messageForEmptyItems{
-    return nil;//abstract
-}
+- (UITableViewCell *)cellForTableViewAtIndexPath:(NSIndexPath *)indexPath{ return nil; }//abstract
 
-- (UITableViewCell *)cellForTableViewAtIndexPath:(NSIndexPath *)indexPath{
-    return nil;//abstract
-}
+- (NSString *)messageForEmptyItems{ return nil; }//abstract
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    
     if (self.items.count) {
         return self.items.count;
     }else{
@@ -304,34 +324,37 @@
 #pragma mark - Search Bar Delegate
 
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar{
-    
-}
-
-- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar{
-    //self.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(searchIfNeed) userInfo:nil repeats:YES];
+    [self hideSearchBar];
 }
 
 - (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar{
+    
+    if (self.isNeedSearh) {
+        [self.timer fire];
+    }
     [self.timer invalidate];
     self.timer = nil;
 }
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
+    
     self.isNeedSearh = YES;
     if (!self.isSearchProcess) {
         [self.timer invalidate];
         self.timer = nil;
-        self.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(searchIfNeed) userInfo:nil repeats:YES];
+        self.timer = [NSTimer scheduledTimerWithTimeInterval:INSTANT_SEARCH_TIME_INTEVAL
+                                                      target:self
+                                                    selector:@selector(searchIfNeed)
+                                                    userInfo:nil
+                                                     repeats:YES];
     }
 }
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
-    self.isNeedRemoveSearchView = YES;
-
+    
     if (!self.isSearchProcess) {
         [self sendSearchRequestWithString:self.searchBar.text];
     }
-    
 }
 
 - (void)startSearchWithSubstring{
@@ -341,16 +364,16 @@
     [self sendSearchRequestWithString:self.searchBar.text];
 }
 
-- (void)sendSearchRequestWithString:(NSString *)searchString{
-    //abstract
-}
-
 - (void)searchIfNeed{
+    
     if (self.isNeedSearh) {
         [self startSearchWithSubstring];
         self.isNeedSearh = NO;
     }
 }
+
+- (void)sendSearchRequestWithString:(NSString *)searchString{ }//abstract
+
 
 #pragma mark - COLLECTION VIEW
 #pragma mark - Data Source
@@ -364,6 +387,7 @@
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:[self reusebleCollectionViewID] forIndexPath:indexPath];
     [cell setClipsToBounds:YES];
     cell.layer.cornerRadius = 2.0f;
@@ -371,9 +395,8 @@
     return cell;
 }
 
-- (void)updateCell:(UICollectionViewCell *)cell forCollectionViewAtIndexPath:(NSIndexPath *)indexPath{
-    //abstract
-}
+- (void)updateCell:(UICollectionViewCell *)cell forCollectionViewAtIndexPath:(NSIndexPath *)indexPath{ }//abstract
+
 
 #pragma mark - Delegate
 

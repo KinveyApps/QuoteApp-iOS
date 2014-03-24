@@ -27,6 +27,7 @@
 }
 
 - (void)setItem:(id)item{
+    
     if (item) {
         _item = item;
         

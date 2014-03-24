@@ -42,6 +42,4 @@
 #import "Product.h"
 
 // Categories that extend Core Foundation classes
-#import "UIColor+Utils.h"
 #import "UIView+FrameAdditions.h"
-#import "UIColor+AppSpecific.h"

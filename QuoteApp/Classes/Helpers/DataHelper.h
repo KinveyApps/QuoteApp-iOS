@@ -13,7 +13,6 @@
 
 #define USER_INFO_KEY_CONTACT                   @"Contact"
 #define USER_INFO_KEY_COMPANY                   @"Company"
-#define USER_INFO_KEY_SHIPING_ADDRESS           @"Street"
 #define USER_INFO_KEY_ACCOUNT_NUMBER            @"Account Number"
 #define USER_INFO_KEY_PHONE                     @"Phone"
 #define USER_INFO_KEY_EMAIL                     KCSUserAttributeEmail

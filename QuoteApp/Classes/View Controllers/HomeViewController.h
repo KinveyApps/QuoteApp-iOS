@@ -11,29 +11,36 @@
 @interface HomeViewController : UIViewController
 
 @property (strong, nonatomic) NSArray *items;
-@property (weak, nonatomic) IBOutlet UILabel *searchCountResultLabel;
-@property (nonatomic) NSUInteger *spinnerCount;
 @property (nonatomic) BOOL isSearchProcess;
 @property (nonatomic) BOOL isNeedRemoveSearchView;
+
+@property (weak, nonatomic) IBOutlet UILabel *searchCountResultLabel;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *tableGridSegmentedControl;
+
+@property (nonatomic) NSUInteger *spinnerCount;
 
 
 - (void)laodData;
-
-- (void)getDataForItemsFromCache:(BOOL)useCache;        //abstract
-- (UIView *)headerForTableView; //abstract
-- (UITableViewCell *)cellForTableViewAtIndexPath:(NSIndexPath *)indexPath;//abstract
-- (void)sendSearchRequestWithString:(NSString *)searchString;//abstract
-- (CGFloat)heightForRow;        //abstract
-- (CGFloat)heightForHeaderInSection; //abstract
-- (void)detailViewForIndex:(NSInteger)index; //abstract
-- (NSString *)messageForEmptyItems;
-- (NSString *)titleForRefreshControl;
 - (void)hideSearchBar;
-- (void)updateCell:(UICollectionViewCell *)cell forCollectionViewAtIndexPath:(NSIndexPath *)indexPath;//abstract
-- (BOOL)isVisibleTableGridSegmentedControl;//abstract
-- (Class)classForCollectionViewCell;//abstract
-- (NSString *)reusebleCollectionViewID;//abstract
-- (NSString *)titleForView;//abstract
+
+//abstract messages
+- (void)getDataForItemsFromCache:(BOOL)useCache;
+- (UIView *)headerForTableView;
+- (UITableViewCell *)cellForTableViewAtIndexPath:(NSIndexPath *)indexPath;
+- (CGFloat)heightForRow;
+- (CGFloat)heightForHeaderInSection;
+
+- (void)sendSearchRequestWithString:(NSString *)searchString;
+
+- (void)detailViewForIndex:(NSInteger)index;
+- (NSString *)titleForRefreshControl;
+
+- (NSString *)messageForEmptyItems;
+- (BOOL)isVisibleTableGridSegmentedControl;
+- (NSString *)titleForView;
+
+- (void)updateCell:(UICollectionViewCell *)cell forCollectionViewAtIndexPath:(NSIndexPath *)indexPath;
+- (Class)classForCollectionViewCell;
+- (NSString *)reusebleCollectionViewID;
 
 @end

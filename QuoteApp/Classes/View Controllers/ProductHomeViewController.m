@@ -13,29 +13,26 @@
 #import "NewQuoteViewController.h"
 #import "ProductModalViewController.h"
 
-@interface ProductHomeViewController ()
-
-@end
+#define HEIGHT_FOR_ROW_FOR_IPHONE 100
+#define HEIGHT_FOR_ROW_FOR_IPAD 180
+#define HEIGHT_FOR_HEADER_IN_SECTION 0
+#define CELL_COLLECTION_VIEW_ID @"Product CV Cell"
 
 @implementation ProductHomeViewController
 
-- (void)getDataForItemsFromCache:(BOOL)useCache{
-    
-    self.spinnerCount++;
-    [[DataHelper instance] loadProductsUseCache:useCache
-                             containtSubstinrg:@""
-                                     OnSuccess:^(NSArray *products) {
-                                                self.items = products;
-                                                self.spinnerCount--;
-                                            }
-                                     onFailure:^(NSError *error){
-                                                self.spinnerCount --;
-                                            }];
+
+#pragma mark - Initialisation
+
+- (NSString *)titleForView{
+    return LOC(PHVC_TITLE);
 }
 
-- (UIView *)headerForTableView{
-    return nil;
+- (NSString *)titleForRefreshControl{
+    return LOC(PHVC_REFRESH_CONTROL_TITLE);
 }
+
+
+#pragma mark - View Life Cycle
 
 - (BOOL)isVisibleTableGridSegmentedControl{
     return NO;
@@ -45,51 +42,40 @@
     return [ProductCollectionViewCell class];
 }
 
-#define CELL_COLLECTION_VIEW_ID @"Product CV Cell"
-
 - (NSString *)reusebleCollectionViewID{
     return CELL_COLLECTION_VIEW_ID;
 }
 
-- (UITableViewCell *)cellForTableViewAtIndexPath:(NSIndexPath *)indexPath{
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
-        ProductViewCellForIPhone *cell = [[ProductViewCellForIPhone alloc] init];
-        cell.item = self.items[indexPath.row];
-        return cell;
-    }else{
-        ProductTableViewCell *cell = [[ProductTableViewCell alloc] init];
-        cell.item = self.items[indexPath.row];
-        return cell;
-    }
-   
-}
 
-- (void)sendSearchRequestWithString:(NSString *)searchString{
+#pragma mark - Utils
+
+- (void)getDataForItemsFromCache:(BOOL)useCache{
     
-    [[DataHelper instance] loadProductsUseCache:YES
-                             containtSubstinrg:searchString
-                                     OnSuccess:^(NSArray *products) {
-                                                self.isSearchProcess = NO;
-                                                self.items = products;
-                                                self.searchCountResultLabel.text = [NSString stringWithFormat:LOC(HaSVC_LEBEL_COUNT_RESULT), self.items.count];
-                                            }
-                                     onFailure:nil];
+    self.spinnerCount++;
+    
+    [[DataHelper instance] loadProductsUseCache:useCache
+                              containtSubstinrg:nil
+                                      OnSuccess:^(NSArray *products) {
+                                          self.items = products;
+                                          self.spinnerCount--;
+                                      }
+                                      onFailure:^(NSError *error){
+                                          self.spinnerCount --;
+                                      }];
 }
 
-- (CGFloat)heightForRow{
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
-        return 100;
-    }else{
-        return 180;
-    }
-}
 
-- (CGFloat)heightForHeaderInSection{
-    return 0;
+#pragma mark - TABLE VIEW
+#pragma mark - Delegate
+
+- (UIView *)headerForTableView{
+    return nil;
 }
 
 - (void)detailViewForIndex:(NSInteger)index{
+    
     ProductModalViewController *mvc = [[ProductModalViewController alloc] init];
+    
     if (self.items.count) {
         mvc.modalPresentationStyle = UIModalPresentationFormSheet;
         mvc.item = self.items[index];
@@ -101,13 +87,61 @@
     }
 }
 
+- (CGFloat)heightForRow{
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+        return HEIGHT_FOR_ROW_FOR_IPHONE;
+    }else{
+        return HEIGHT_FOR_ROW_FOR_IPAD;
+    }
+}
+
+- (CGFloat)heightForHeaderInSection{
+    return HEIGHT_FOR_HEADER_IN_SECTION;
+}
+
+
+#pragma mark - Data Source
+
+- (UITableViewCell *)cellForTableViewAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+        ProductViewCellForIPhone *cell = [[ProductViewCellForIPhone alloc] init];
+        cell.item = self.items[indexPath.row];
+        
+        return cell;
+        
+    }else{
+        ProductTableViewCell *cell = [[ProductTableViewCell alloc] init];
+        cell.item = self.items[indexPath.row];
+        
+        return cell;
+        
+    }
+    
+}
+
 - (NSString *)messageForEmptyItems{
     return LOC(PHVC_CELL_NO_PRODUCTS);
 }
 
-- (NSString *)titleForRefreshControl{
-    return LOC(PHVC_REFRESH_CONTROL_TITLE);
+
+#pragma mark - Search Bar Delegate
+
+- (void)sendSearchRequestWithString:(NSString *)searchString{
+    
+    [[DataHelper instance] loadProductsUseCache:YES
+                              containtSubstinrg:searchString
+                                      OnSuccess:^(NSArray *products) {
+                                          self.isSearchProcess = NO;
+                                          self.items = products;
+                                          self.searchCountResultLabel.text = [NSString stringWithFormat:LOC(HaSVC_LEBEL_COUNT_RESULT), self.items.count];
+                                      }
+                                      onFailure:nil];
 }
+
+
+#pragma mark - COLLECTION VIEW
+#pragma mark - Data Source
 
 - (void)updateCell:(UICollectionViewCell *)cell forCollectionViewAtIndexPath:(NSIndexPath *)indexPath{
     if ([cell isKindOfClass:[ProductCollectionViewCell class]]) {

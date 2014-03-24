@@ -20,19 +20,24 @@
 }
 
 - (NSString *)statusDescription{
+    
     switch ([self.currentSubscription integerValue]) {
         case 0:
             return @"Starter";
             break;
+            
         case 1:
             return @"Indie";
             break;
+            
         case 2:
             return @"Business";
             break;
+            
         case 3:
             return @"Enterprise";
             break;
+            
         default:
             return nil;
             break;

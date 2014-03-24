@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1B0EB1D618B4908400DD8C73 /* KinveyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B0EB1D418B4907900DD8C73 /* KinveyKit.framework */; };
 		1B15819918D99778000BF6CA /* UIView+FrameAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B15819818D99778000BF6CA /* UIView+FrameAdditions.m */; };
-		1B15819C18D997A1000BF6CA /* UIColor+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B15819B18D997A1000BF6CA /* UIColor+Utils.m */; };
 		1B1A180D18BF4B0C00CD23BE /* QuoteHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B1A180C18BF4B0C00CD23BE /* QuoteHomeViewController.m */; };
 		1B1A181718BFC7BF00CD23BE /* OrderHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B1A181618BFC7BF00CD23BE /* OrderHomeViewController.m */; };
 		1B1A181A18BFCC4800CD23BE /* ProductHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B1A181918BFCC4800CD23BE /* ProductHomeViewController.m */; };
@@ -68,7 +67,6 @@
 		C6A3109118A106DF00916A1A /* DejalActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A3108618A106DF00916A1A /* DejalActivityView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		C6A3109518A106DF00916A1A /* SettingsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A3108C18A106DF00916A1A /* SettingsManager.m */; };
 		C6A3109C18A107F900916A1A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C6A3109A18A107F900916A1A /* Localizable.strings */; };
-		C6A3110318A1083400916A1A /* UIColor+AppSpecific.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A310B718A1083400916A1A /* UIColor+AppSpecific.m */; };
 		C6A3110C18A1083400916A1A /* AuthenticationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A310CA18A1083400916A1A /* AuthenticationHelper.m */; };
 		C6A3110D18A1083400916A1A /* DataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A310CC18A1083400916A1A /* DataHelper.m */; };
 		C6A3112318A1083400916A1A /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A310F318A1083400916A1A /* SignInViewController.m */; };
@@ -98,8 +96,6 @@
 		1B15819618D98178000BF6CA /* constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = constant.h; sourceTree = "<group>"; };
 		1B15819718D99778000BF6CA /* UIView+FrameAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FrameAdditions.h"; sourceTree = "<group>"; };
 		1B15819818D99778000BF6CA /* UIView+FrameAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FrameAdditions.m"; sourceTree = "<group>"; };
-		1B15819A18D997A1000BF6CA /* UIColor+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Utils.h"; sourceTree = "<group>"; };
-		1B15819B18D997A1000BF6CA /* UIColor+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Utils.m"; sourceTree = "<group>"; };
 		1B1A180B18BF4B0C00CD23BE /* QuoteHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteHomeViewController.h; sourceTree = "<group>"; };
 		1B1A180C18BF4B0C00CD23BE /* QuoteHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuoteHomeViewController.m; sourceTree = "<group>"; };
 		1B1A181518BFC7BF00CD23BE /* OrderHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderHomeViewController.h; sourceTree = "<group>"; };
@@ -198,8 +194,6 @@
 		C6A3109618A107C900916A1A /* Localizable.strings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Localizable.strings.h; sourceTree = "<group>"; };
 		C6A3109B18A107F900916A1A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C6A310B518A1083400916A1A /* STLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STLib.h; sourceTree = "<group>"; };
-		C6A310B618A1083400916A1A /* UIColor+AppSpecific.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+AppSpecific.h"; sourceTree = "<group>"; };
-		C6A310B718A1083400916A1A /* UIColor+AppSpecific.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+AppSpecific.m"; sourceTree = "<group>"; };
 		C6A310C918A1083400916A1A /* AuthenticationHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthenticationHelper.h; sourceTree = "<group>"; };
 		C6A310CA18A1083400916A1A /* AuthenticationHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthenticationHelper.m; sourceTree = "<group>"; };
 		C6A310CB18A1083400916A1A /* DataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataHelper.h; sourceTree = "<group>"; };
@@ -385,10 +379,6 @@
 			isa = PBXGroup;
 			children = (
 				C6A310B518A1083400916A1A /* STLib.h */,
-				C6A310B618A1083400916A1A /* UIColor+AppSpecific.h */,
-				C6A310B718A1083400916A1A /* UIColor+AppSpecific.m */,
-				1B15819A18D997A1000BF6CA /* UIColor+Utils.h */,
-				1B15819B18D997A1000BF6CA /* UIColor+Utils.m */,
 				1B15819718D99778000BF6CA /* UIView+FrameAdditions.h */,
 				1B15819818D99778000BF6CA /* UIView+FrameAdditions.m */,
 			);
@@ -615,7 +605,6 @@
 				1BD60F0318D24502002496B4 /* QuoteOrderModalViewController.m in Sources */,
 				1B727DE818B5DCBD0002F077 /* SettingTableViewCell.m in Sources */,
 				1BC243A218C7B12F00D1E15B /* ProductSubView.m in Sources */,
-				1B15819C18D997A1000BF6CA /* UIColor+Utils.m in Sources */,
 				1B4773F518C5BFCB005E1A9C /* MainTableViewCellForIPhone.m in Sources */,
 				1B1A181A18BFCC4800CD23BE /* ProductHomeViewController.m in Sources */,
 				C6A3110D18A1083400916A1A /* DataHelper.m in Sources */,
@@ -647,7 +636,6 @@
 				1BD60EFF18D21350002496B4 /* BaseModalViewController.m in Sources */,
 				C6A3109118A106DF00916A1A /* DejalActivityView.m in Sources */,
 				C6A3110C18A1083400916A1A /* AuthenticationHelper.m in Sources */,
-				C6A3110318A1083400916A1A /* UIColor+AppSpecific.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -775,6 +763,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/1/Developer/Softteco/QuoteApp-iOS/Externals/KinveyKit-1.26.0",
@@ -784,6 +773,7 @@
 				INFOPLIST_FILE = "QuoteApp/QuoteSample-Info.plist";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = QuoteSample;
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -795,6 +785,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/1/Developer/Softteco/QuoteApp-iOS/Externals/KinveyKit-1.26.0",
@@ -804,6 +795,7 @@
 				INFOPLIST_FILE = "QuoteApp/QuoteSample-Info.plist";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = QuoteSample;
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};

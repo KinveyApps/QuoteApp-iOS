@@ -18,6 +18,10 @@
 #define TABLE_VIEW_ROW_COUNT 9
 #define COMBOBOX_NEW_QUOTE_CELL_WIDTH 300
 #define BUTTON_CORNER_RADIUS 5.0f
+#define TOP_CONSTRAINT_FOR_LANDSCAPE_ORIENTATIONS_SHOW_KEYBOARD 64
+#define TOP_CONSTRAINT_FOR_LANDSCAPE_ORIENTATIONS_HIDE_KEYBOARD 84
+#define BOTTOM_CONSTRAINT_FOR_LANDSCAPE_ORIENTATIONS_HIDE_KEYBOARD 20
+
 
 @interface NewQuoteViewController ()<UITableViewDataSource, UITableViewDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate>
 
@@ -49,52 +53,71 @@
 
 @implementation NewQuoteViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+
+#pragma mark - Initialization
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
+    
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
     }
     return self;
 }
 
+
+#pragma mark - Geters and Setters
+
+- (Quote *)quote{
+    if (!_quote) {
+        _quote = [[Quote alloc] init];
+    }
+    return _quote;
+}
+
+
 #pragma mark - View Life Cicly
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad{
+    
     [super viewDidLoad];
+    
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.countTableViewRows = TABLE_VIEW_ROW_COUNT;
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardShow:)
-                                                 name:UIKeyboardWillShowNotification
-                                               object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardHide:)
-                                                 name:UIKeyboardDidHideNotification
-                                               object:nil];
-    self.titleLabel.text = LOC(NQV_TITLE);
-    [self.submitButton setTitle:LOC(NQV_BUTTON_SUBMIT) forState:UIControlStateNormal];
+    
     [[DataHelper instance] loadProductsUseCache:YES
                               containtSubstinrg:nil
                                       OnSuccess:^(NSArray *products){
                                           self.products = products;
                                       }
                                       onFailure:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardShow:)
+                                                 name:UIKeyboardWillShowNotification
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardHide:)
+                                                 name:UIKeyboardWillHideNotification
+                                               object:nil];
+    
+    self.titleLabel.text = LOC(NQV_TITLE);
+    [self.submitButton setTitle:LOC(NQV_BUTTON_SUBMIT) forState:UIControlStateNormal];
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
         self.tableViewWidthConstraint.constant = COMBOBOX_NEW_QUOTE_CELL_WIDTH;
     }
-    self.topBarView.backgroundColor = [UIColor colorWithRed:0.8549 green:0.3137 blue:0.1686 alpha:1.0];
+    self.topBarView.backgroundColor = BAR_COLOR;
     self.titleLabel.text = LOC(NQV_TITLE);
 }
 
 - (void)viewWillAppear:(BOOL)animated{
+    
     [super viewWillAppear:animated];
     self.submitButton.layer.cornerRadius = BUTTON_CORNER_RADIUS;
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning{
+    
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
@@ -106,24 +129,29 @@
 #pragma mark - Keyboard Notification
 
 - (void)keyboardShow:(NSNotification *)notification{
+    
     CGRect keyboardOriginFrame = [notification.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
     CGRect keyboardRelativeFrame = [self.view convertRect:keyboardOriginFrame fromView:nil];
-    [UIView animateWithDuration:0.3 animations:^{
-        UIDeviceOrientation orientation = [UIDevice currentDevice].orientation;
-        if ((orientation == UIDeviceOrientationLandscapeLeft)||(orientation == UIDeviceOrientationLandscapeRight)) {
-            self.topConstraint.constant = 64;
-        }
-        self.bottomConstraint.constant = keyboardRelativeFrame.size.height - self.betweenButtonTableViewConstraint.constant - self.buttonHeightConstraint.constant;
-        [self.view layoutIfNeeded];
-    }];
+    
+    [UIView animateWithDuration:ANIMATION_DURATION
+                     animations:^{
+                         UIDeviceOrientation orientation = [UIDevice currentDevice].orientation;
+                         if ((orientation == UIDeviceOrientationLandscapeLeft)||(orientation == UIDeviceOrientationLandscapeRight)) {
+                             self.topConstraint.constant = TOP_CONSTRAINT_FOR_LANDSCAPE_ORIENTATIONS_SHOW_KEYBOARD;
+                         }
+                         self.bottomConstraint.constant = keyboardRelativeFrame.size.height - self.betweenButtonTableViewConstraint.constant - self.buttonHeightConstraint.constant - self.tabBarController.tabBar.bounds.size.height;
+                         [self.view layoutIfNeeded];
+                     }];
 }
 
 - (void)keyboardHide:(NSNotification *)nofification{
-    [UIView animateWithDuration:0.3 animations:^{
-        self.bottomConstraint.constant = 20;
-        self.topConstraint.constant = 84;
-        [self.view layoutIfNeeded];
-    }];
+    
+    [UIView animateWithDuration:ANIMATION_DURATION
+                     animations:^{
+                         self.bottomConstraint.constant = BOTTOM_CONSTRAINT_FOR_LANDSCAPE_ORIENTATIONS_HIDE_KEYBOARD;
+                         self.topConstraint.constant = TOP_CONSTRAINT_FOR_LANDSCAPE_ORIENTATIONS_HIDE_KEYBOARD;
+                         [self.view layoutIfNeeded];
+                     }];
 }
 
 #pragma mark - Actions
@@ -178,31 +206,28 @@
                            }
      ];
 }
-- (IBAction)pressSettings {
-    SettingModalViewController *mv = [[SettingModalViewController alloc] init];
-    mv.modalPresentationStyle = UIModalPresentationFormSheet;
-    [self presentViewController:mv
-                       animated:YES
-                     completion:nil];
-}
-
-#pragma mark - Geters and Setters
-
-- (Quote *)quote{
-    if (!_quote) {
-        _quote = [[Quote alloc] init];
-    }
-    return _quote;
-}
 
 - (void)addToQuotePriceAndUser{
+    
     float fabPrice = random();
     fabPrice = (float)(random() % 74) / (float)(random() % 74);
     self.quote.totalPrice = [@"$" stringByAppendingFormat:@"1,500/month"];
     self.quote.referenceNumber = [@"Q" stringByAppendingFormat:@"%ld", (random() % 10000000)];
     self.quote.originator = [KCSUser activeUser];
-    self.quote.meta = [[KCSMetadata alloc] init];
 }
+
+- (IBAction)pressSettings {
+    
+    SettingModalViewController *mv = [[SettingModalViewController alloc] init];
+    mv.modalPresentationStyle = UIModalPresentationFormSheet;
+    
+    [self presentViewController:mv
+                       animated:YES
+                     completion:nil];
+}
+
+
+#pragma mark - Utils
 
 - (void)updateQuoteWithTextField:(UITextField *)textField andIndex:(NSInteger)index{
     
@@ -228,6 +253,7 @@
         self.quote.startSubscriptionDate = [[DataHelper instance].formatter dateFromString:textField.text];
     }
 }
+
 
 #pragma mark - TEXT FIELD
 #pragma mark - Delegate
@@ -261,8 +287,10 @@
 #pragma mark - Utils
 
 - (void)setNextResponderCellAfterCellWithTextFieldPlaceholder:(NSString *)placeholder{
+    
     BOOL isEditableCell = YES;
     NSIndexPath *indexPath;
+    
     if ([placeholder isEqualToString:PLACEHOLDER_PRODUCT_TEXT_FIELD]) {
         indexPath = [NSIndexPath indexPathForRow:1 inSection:0];
     }else if ([placeholder isEqualToString:PLACEHOLDER_ACTIVE_USER_TEXT_FIELD]) {
@@ -271,9 +299,6 @@
         indexPath = [NSIndexPath indexPathForRow:3 inSection:0];
     }else if ([placeholder isEqualToString:PLACEHOLDER_SCHEDULED_BUSINESS_LOGIC_TEXT_FIELD]){
         indexPath = [NSIndexPath indexPathForRow:4 inSection:0];
-        isEditableCell = NO;
-        [self addPickerViewForIndexPath:indexPath];
-        indexPath = [NSIndexPath indexPathForRow:5 inSection:0];
     }else if ([placeholder isEqualToString:PLACEHOLDER_COLLABORATORS_TEXT_FIELD]){
         indexPath = [NSIndexPath indexPathForRow:5 inSection:0];
     }else if ([placeholder isEqualToString:PLACEHOLDER_BACKEND_ENVIROMENTS_TEXT_FIELD]){
@@ -286,7 +311,11 @@
         [self addPickerViewForIndexPath:indexPath];
         indexPath = [NSIndexPath indexPathForRow:9 inSection:0];
     }
-    [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
+    
+    [self.tableView scrollToRowAtIndexPath:indexPath
+                          atScrollPosition:UITableViewScrollPositionTop
+                                  animated:YES];
+    
     if (isEditableCell) {
         ComboBoxNewQuoteTableViewCell *cell = (ComboBoxNewQuoteTableViewCell *)[self.tableView cellForRowAtIndexPath:indexPath];
         [cell.textField becomeFirstResponder];
@@ -301,7 +330,9 @@
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
+    
     ComboBoxNewQuoteTableViewCell *cell = (ComboBoxNewQuoteTableViewCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:self.pickerIndexPath.row - 1 inSection:0]];
+    
     cell.textField.text = self.pickerItem[row];
     NSIndexPath *indexPath = self.pickerIndexPath;
     self.pickerIndexPath = nil;
@@ -325,21 +356,26 @@
 - (void)addPickerViewForIndexPath:(NSIndexPath *)indexPath{
     
     if ((self.pickerIndexPath) && (self.pickerIndexPath.row - 1 == indexPath.row)) {
+        
         NSIndexPath *pickerIndexPath = self.pickerIndexPath;
         self.pickerIndexPath = nil;
         [self deletePikerFromTableViewInIndexPath:pickerIndexPath];
     }else if (self.pickerIndexPath){
+        
         NSIndexPath *pickerIndexPath = self.pickerIndexPath;
         [self deletePikerFromTableViewInIndexPath:pickerIndexPath];
         NSInteger indexPahOffset;
+        
         if (pickerIndexPath.row > indexPath.row){
             indexPahOffset = 1;
         }else{
             indexPahOffset = 0;
         }
+        
         self.pickerIndexPath = [NSIndexPath indexPathForRow:indexPath.row + indexPahOffset inSection:0];
         [self insertPickerOnTableView];
     }else{
+        
         self.pickerIndexPath = [NSIndexPath indexPathForRow:indexPath.row + 1 inSection:0];
         [self insertPickerOnTableView];
     }
@@ -347,6 +383,7 @@
 }
 
 - (NSArray *)pickerData{
+    
     NSArray *result;
     
     switch (self.pickerIndexPath.row - 1) {
@@ -357,24 +394,6 @@
             }
             result = [mResult copy];
         }break;
-        case ActiveUserCellIndex:
-            result = nil;
-            break;
-        case BusinessLogicScriptsCellIndex:
-            result = nil;
-            break;
-        case ScheduledBusinessLogicCellIndex:
-            result = nil;
-            break;
-        case CollaboratorsCellIndex:
-            result = @[@"0", @"2", @"Unlimited"];
-            break;
-        case BackendEnviromentsCellIndex:
-            result = nil;
-            break;
-        case DataStoregeCellIndex:
-            result = nil;
-            break;
         default:
             break;
     }
@@ -385,27 +404,43 @@
 - (UIPickerView *)pickerViewForTableView{
     
     UIPickerView *pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 0, self.tableViewWidthConstraint.constant, PICKER_VIEW_HEIGHT)];
+    
     self.pickerItem = [self pickerData];
-    [pickerView selectRow:0 inComponent:0 animated:YES];
+    
+    [pickerView selectRow:0
+              inComponent:0
+                 animated:YES];
+    
     pickerView.delegate = self;
     pickerView.dataSource = self;
     pickerView.backgroundColor = self.tableView.backgroundColor;
+    
     return pickerView;
 }
 
 - (void)selectedDate{
+    
     ComboBoxNewQuoteTableViewCell *cell = (ComboBoxNewQuoteTableViewCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:8 inSection:0]];
     cell.textField.text = [[DataHelper instance].formatter stringFromDate:[self.datePicker date]];
     [self updateQuoteWithTextField:cell.textField andIndex:0];
 }
 
 - (UIDatePicker *)datePickerForTableView{
+    
     UIDatePicker *datePicker = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, 0, self.tableViewWidthConstraint.constant, PICKER_VIEW_HEIGHT)];
+    
     datePicker.datePickerMode = UIDatePickerModeDate;
-    [datePicker setDate:[NSDate date] animated:YES];
+    
+    [datePicker setDate:[NSDate date]
+               animated:YES];
+    
     self.datePicker = datePicker;
     self.datePicker.backgroundColor = self.tableView.backgroundColor;
-    [datePicker addTarget:nil action:@selector(selectedDate) forControlEvents:UIControlEventValueChanged];
+    
+    [datePicker addTarget:nil
+                   action:@selector(selectedDate)
+         forControlEvents:UIControlEventValueChanged];
+    
     return datePicker;
 }
 
@@ -413,14 +448,21 @@
 #pragma mark - Delegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
     if (self.pickerIndexPath) {
         if (indexPath.row == self.pickerIndexPath.row) {
+            
             return PICKER_VIEW_HEIGHT;
+            
         }else{
+            
             return COMBOBOX_NEW_QUOTE_CELL_HEGHT;
+            
         }
     }else{
+        
         return COMBOBOX_NEW_QUOTE_CELL_HEGHT;
+        
     }
 }
 
@@ -434,7 +476,9 @@
             }else{
                 [cell addSubview:[self pickerViewForTableView]];
             }
+            
             return cell;
+            
         }else{
             ComboBoxNewQuoteTableViewCell *cell = [[ComboBoxNewQuoteTableViewCell alloc] init];
             cell.index = (indexPath.row > self.pickerIndexPath.row) ? indexPath.row - 1 : indexPath.row;
@@ -443,7 +487,9 @@
             if (currentValue.length) {
                 cell.textField.text = currentValue;
             }
+            
             return cell;
+            
         }
     }else{
         ComboBoxNewQuoteTableViewCell *cell = [[ComboBoxNewQuoteTableViewCell alloc] init];
@@ -453,7 +499,9 @@
         if (currentValue.length) {
             cell.textField.text = currentValue;
         }
+        
         return cell;
+        
     }
  
 }
@@ -462,52 +510,71 @@
     switch (index) {
         case 0:
             if (self.quote.product) {
+                
                 return self.quote.product.title;
+                
             }
             break;
         case 1:
             if (self.quote.activeUsers.length) {
+                
                 return self.quote.activeUsers;
+                
             }
             break;
         case 2:
             if (self.quote.businessLogicScripts.length) {
+                
                 return self.quote.businessLogicScripts;
+                
             }
             break;
         case 3:
             if (self.quote.scheduledBusinessLogic.length) {
+                
                 return self.quote.scheduledBusinessLogic;
+                
             }
             break;
         case 4:
             if (self.quote.collaborators.length) {
+                
                 return self.quote.collaborators;
+                
             }
             break;
         case 5:
             if (self.quote.backendEnvironments.length) {
+                
                 return self.quote.backendEnvironments;
+                
             }
             break;
         case 6:
             if (self.quote.dataStorage.length) {
+                
                 return self.quote.dataStorage;
+                
             }
             break;
         case 7:
             if (self.quote.businessLogicExecutionTimeLimit.length) {
+                
                 return self.quote.businessLogicExecutionTimeLimit;
+                
             }
             break;
         case 8:
             if (self.quote.startSubscriptionDate) {
+                
                 return [[DataHelper instance].formatter stringFromDate:self.quote.startSubscriptionDate];
+                
             }
             break;
         default:
             break;
     }
+    
     return nil;
 }
 
@@ -518,7 +585,10 @@
         [self addPickerViewForIndexPath:indexPath];
     }else{
         [tableView beginUpdates];
-        [tableView deselectRowAtIndexPath:indexPath animated:NO];
+        
+        [tableView deselectRowAtIndexPath:indexPath
+                                 animated:NO];
+        
         [tableView endUpdates];
     }
 }
@@ -536,21 +606,27 @@
 #pragma mark - Utils
 
 - (void)deletePikerFromTableViewInIndexPath:(NSIndexPath *)indexPath{
+    
     [self.tableView beginUpdates];
     self.countTableViewRows --;
+    
     [self.tableView deselectRowAtIndexPath:[NSIndexPath indexPathForRow:indexPath.row - 1 inSection:0]
                                   animated:NO];
+    
     [self.tableView deleteRowsAtIndexPaths:@[indexPath]
                           withRowAnimation:UITableViewRowAnimationFade];
+    
     [self.tableView endUpdates];
 }
 
 - (void)insertPickerOnTableView{
+    
     [self.tableView beginUpdates];
     self.countTableViewRows ++;
     
     [self.tableView deselectRowAtIndexPath:[NSIndexPath indexPathForRow:self.pickerIndexPath.row - 1 inSection:0]
                                   animated:NO];
+    
     [self.tableView insertRowsAtIndexPaths:@[self.pickerIndexPath]
                           withRowAnimation:UITableViewRowAnimationFade];
     

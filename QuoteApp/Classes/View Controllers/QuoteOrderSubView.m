@@ -12,15 +12,15 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *referenceNumberLabel;
-@property (weak, nonatomic) IBOutlet UILabel *alloyLabel;
-@property (weak, nonatomic) IBOutlet UILabel *temperLebel;
-@property (weak, nonatomic) IBOutlet UILabel *widthLabel;
-@property (weak, nonatomic) IBOutlet UILabel *finishLabel;
-@property (weak, nonatomic) IBOutlet UILabel *maxIDLabel;
-@property (weak, nonatomic) IBOutlet UILabel *maxODLabel;
-@property (weak, nonatomic) IBOutlet UILabel *requestLbsYieldLabel;
-@property (weak, nonatomic) IBOutlet UILabel *shipDateLabel;
-@property (weak, nonatomic) IBOutlet UILabel *baseFabPriceLabel;
+@property (weak, nonatomic) IBOutlet UILabel *activeUserLabel;
+@property (weak, nonatomic) IBOutlet UILabel *businessLogicScriptsLebel;
+@property (weak, nonatomic) IBOutlet UILabel *scheduledBusinessLogicLabel;
+@property (weak, nonatomic) IBOutlet UILabel *collaboratorsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *backendEnvironmentsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *dataStorageLabel;
+@property (weak, nonatomic) IBOutlet UILabel *businessLogicExecutionTimeLimitLabel;
+@property (weak, nonatomic) IBOutlet UILabel *startSubscriptionDateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *totalCostLabel;
 @property (weak, nonatomic) IBOutlet UILabel *productTitleLabel;
 
 @end
@@ -29,46 +29,55 @@
 
 #pragma mark - Initialisation
 
-- (id)initWithFrame:(CGRect)frame
-{
+- (id)initWithFrame:(CGRect)frame{
+    
     self = [super initWithFrame:frame];
+    
     if (self) {
         [self setup];
     }
+    
     return self;
 }
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder{
+    
     self = [super initWithCoder:aDecoder];
+    
     if (self) {
         [self setup];
     }
+    
     return self;
 }
 
 - (void)setup{
-    [[NSBundle mainBundle] loadNibNamed:@"QuoteOrderSubView" owner:self options:nil];
+    
+    [[NSBundle mainBundle] loadNibNamed:@"QuoteOrderSubView"
+                                  owner:self
+                                options:nil];
     [self addSubview:self.view];
     self.view.frame = self.bounds;
-    
 }
 
 #pragma mark - Setters and Getters
 
 - (void)setItem:(Quote *)item{
+    
     if (item) {
         _item = item;
+        
         if (item.product) self.productTitleLabel.text = [LOC(DV_PRODUCT_TITLE) stringByAppendingString:item.product.title];
         if (item.referenceNumber) self.referenceNumberLabel.text = [LOC(DV_REFERENCE_NUMBER) stringByAppendingString:item.referenceNumber];
-        if (item.activeUsers) self.alloyLabel.text = [LOC(DV_ALLOY) stringByAppendingString:item.activeUsers];
-        if (item.businessLogicScripts) self.temperLebel.text = [LOC(DV_TEMPER) stringByAppendingString:item.businessLogicScripts];
-        if (item.scheduledBusinessLogic) self.widthLabel.text = [LOC(DV_WIDTH) stringByAppendingString:item.scheduledBusinessLogic];
-        if (item.collaborators) self.finishLabel.text = [LOC(DV_FINISH) stringByAppendingString:item.collaborators];
-        if (item.backendEnvironments) self.maxIDLabel.text = [LOC(DV_MAX_ID) stringByAppendingString:item.backendEnvironments];
-        if (item.dataStorage) self.maxODLabel.text = [LOC(DV_MAX_OD) stringByAppendingString:item.dataStorage];
-        if (item.businessLogicExecutionTimeLimit) self.requestLbsYieldLabel.text = [LOC(DV_REQUESTED_YIELD) stringByAppendingString:item.businessLogicExecutionTimeLimit];
-        if (item.totalPrice) self.baseFabPriceLabel.text = [LOC(DV_TOTAL_PRICE) stringByAppendingString:item.totalPrice];
-        if (item.startSubscriptionDate) self.shipDateLabel.text = [LOC(DV_FAB_PRICE) stringByAppendingString:[[DataHelper instance].formatter stringFromDate:item.startSubscriptionDate]];
+        if (item.activeUsers) self.activeUserLabel.text = [LOC(DV_ACTIVE_USER) stringByAppendingString:item.activeUsers];
+        if (item.businessLogicScripts) self.businessLogicScriptsLebel.text = [LOC(DV_BUSINESS_LOGIC_SCRIPTS) stringByAppendingString:item.businessLogicScripts];
+        if (item.scheduledBusinessLogic) self.scheduledBusinessLogicLabel.text = [LOC(DV_SCHEDULED_BUSINESS_LOGIC) stringByAppendingString:item.scheduledBusinessLogic];
+        if (item.collaborators) self.collaboratorsLabel.text = [LOC(DV_COLLABORATORS) stringByAppendingString:item.collaborators];
+        if (item.backendEnvironments) self.backendEnvironmentsLabel.text = [LOC(DV_BACKEND_ENVIRONMENTS) stringByAppendingString:item.backendEnvironments];
+        if (item.dataStorage) self.dataStorageLabel.text = [LOC(DV_DATA_STORAGE) stringByAppendingString:item.dataStorage];
+        if (item.businessLogicExecutionTimeLimit) self.businessLogicScriptsLebel.text = [LOC(DV_BUSINESS_EXECUTION_TIME_LIMIT) stringByAppendingString:item.businessLogicExecutionTimeLimit];
+        if (item.totalPrice) self.totalCostLabel.text = [LOC(DV_TOTAL_COST) stringByAppendingString:item.totalPrice];
+        if (item.startSubscriptionDate) self.startSubscriptionDateLabel.text = [LOC(DV_START_SUBSCRIPTION_DATE) stringByAppendingString:[[DataHelper instance].formatter stringFromDate:item.startSubscriptionDate]];
         
         if ([self.item isKindOfClass:[Order class]]) {
             self.titleLabel.text = LOC(DV_ORDER_TITLE);

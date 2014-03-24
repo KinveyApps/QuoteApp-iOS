@@ -37,6 +37,7 @@
     if (item) {
         _item = item;
         self.productNameLabel.text = item.title;
+        
         NSError *error = nil;
         NSAttributedString *description = [[NSAttributedString alloc] initWithData:[item.description dataUsingEncoding:NSUTF8StringEncoding]
                                                                            options:@{NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType}
@@ -46,6 +47,7 @@
             self.descriptionLabel.text = description.string;
             [self.descriptionLabel sizeToFit];
         }
+        
         self.kinveyImageView.kinveyID = item.thumbnailID;
     }
     

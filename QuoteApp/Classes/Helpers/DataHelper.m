@@ -68,6 +68,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DataHelper)
     
     query = [KCSQuery queryOnField:[textFields firstObject]
                          withRegex:[self regexForContaintSubstring:substring]];
+    
     for (NSInteger i = 1; i < textFields.count; i ++) {
         KCSQuery *fieldQuery = [KCSQuery queryOnField:textFields[i]
                                             withRegex:[self regexForContaintSubstring:substring]];
@@ -182,9 +183,12 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DataHelper)
 #pragma mark - Save and Load Attributes
 
 - (void)saveUserWithInfo:(NSDictionary *)userInfo OnSuccess:(void (^)(NSArray *))reportSuccess onFailure:(STErrorBlock)reportFailure{
+    
     KCSUser *user = [KCSUser activeUser];
+    
     if (user) {
         NSArray *keyArray = [self allUserInfoKey];
+        
         for (int i = 0; i < keyArray.count; i++) {
             if (userInfo[keyArray[i]]) {
                 [user setValue:userInfo[keyArray[i]]
@@ -208,18 +212,22 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DataHelper)
 }
 
 - (void)loadUserOnSuccess:(void (^)(NSArray *))reportSuccess onFailure:(STErrorBlock)reportFailure{
+    
     KCSUser *user = [KCSUser activeUser];
+    
     [user refreshFromServer:^(NSArray *objectsOrNil, NSError *errorOrNil) {
         
         dispatch_async(dispatch_get_main_queue(), ^{
             if (!errorOrNil) {
                 NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
                 NSArray *keyArray = [self allUserInfoKey];
+                
                 for (int i = 0; i < keyArray.count; i++) {
                     if ([user getValueForAttribute:keyArray[i]]) {
                         userInfo[keyArray[i]] = [user getValueForAttribute:keyArray[i]];
                     }
                 }
+                
                 if (reportSuccess) reportSuccess(@[[userInfo copy]]);
             }
             else {

@@ -12,25 +12,33 @@
 
 #pragma mark - Initialisation
 
-
 - (id)initWithFrame:(CGRect)frame{
+    
     self = [super initWithFrame:frame];
+    
     if (self) {
         [self setup];
     }
+    
     return self;
 }
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder{
+    
     self = [super initWithCoder:aDecoder];
+    
     if (self) {
         [self setup];
     }
+    
     return self;
 }
 
 - (void)setup{
-    [[NSBundle mainBundle] loadNibNamed:@"ProductSubView" owner:self options:nil];
+    
+    [[NSBundle mainBundle] loadNibNamed:@"ProductSubView"
+                                  owner:self
+                                options:nil];
     [self addSubview:self.view];
     self.view.frame = self.bounds;
 }

@@ -32,26 +32,37 @@
 
 @implementation SettingsSubView
 
+
 #pragma mark - Initialisation
 
 - (id)initWithFrame:(CGRect)frame{
+    
     self = [super initWithFrame:frame];
+    
     if (self) {
         [self setup];
     }
+    
     return self;
 }
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder{
+    
     self = [super initWithCoder:aDecoder];
+    
     if (self) {
         [self setup];
     }
+    
     return self;
 }
 
 - (void)setup{
-    [[NSBundle mainBundle] loadNibNamed:@"SettingsSubView" owner:self options:nil];
+    
+    [[NSBundle mainBundle] loadNibNamed:@"SettingsSubView"
+                                  owner:self
+                                options:nil];
+    
     [self addSubview:self.view];
     self.view.frame = self.bounds;
     self.tableView.dataSource = self;
@@ -60,55 +71,37 @@
     self.pushLabel.text = LOC(SVC_PUSH_LABEL);
     self.emailConfirmationLabel.text = LOC(SVC_EMAIL_CONFIRMATION_LABEL);
     [self.editButton setTitle:LOC(EDIT) forState:UIControlStateNormal];
+    
     self.emailConfirmationSwitch.on = [[[KCSUser activeUser] getValueForAttribute:USER_INFO_KEY_EMAIL_CONFIRMATION_ENABLE] boolValue];
     self.pushNotificationSwitch.on = [[[KCSUser activeUser] getValueForAttribute:USER_INFO_KEY_PUSH_NOTIFICATION_ENABLE] boolValue];
     self.tableView.scrollEnabled = NO;
+    
     [self updateUserData];
 }
+
 
 #pragma mark - Setters and Getters
 
 - (void)setUserData:(NSArray *)userData{
+    
     _userData = userData;
+    
     NSInteger indexAccountNumber = [[self allUserInfoKey] indexOfObject:USER_INFO_KEY_ACCOUNT_NUMBER];
+    
     if ([_userData[indexAccountNumber] isEqualToString:@""]) {
         NSMutableArray *userData = [_userData mutableCopy];
         userData[indexAccountNumber] = [KCSUser activeUser].userId;
         _userData = [userData copy];
     }
+    
     [self.tableView reloadData];
 }
 
-- (void)updateUserData{
-    KCSUser *user = [KCSUser activeUser];
-    if (user) {
-        
-        NSMutableArray *userData = [NSMutableArray array];
-        NSArray *keyArray = [self allUserInfoKey];
-        
-        for (int i = 0; i < keyArray.count; i++) {
-            if ([user getValueForAttribute:keyArray[i]]) {
-                [userData addObject:[user getValueForAttribute:keyArray[i]]];
-            }else{
-                if ([keyArray[i] isEqualToString:USER_INFO_KEY_EMAIL]) {
-                    if (user.email) {
-                        [userData addObject:user.email];
-                    }else{
-                        [userData addObject:@""];
-                    }
-                }else{
-                    [userData addObject:@""];
-                }
-            }
-        }
-        
-        self.userData = [userData copy];
-    }
-}
 
 #pragma mark - Actions
 
 - (IBAction)pressEdit:(UIButton *)sender {
+    
     self.isEditModeTableView = self.isEditModeTableView ? NO : YES;
     
     if (self.isEditModeTableView) {
@@ -117,6 +110,7 @@
         [self.editButton setTitle:LOC(EDIT) forState:UIControlStateNormal];
         [self.spinner startAnimating];
         [self endInputIfNeed];
+        
         [[DataHelper instance] saveUserWithInfo:[self userInfo]
                                       OnSuccess:^(NSArray *users){
                                           if (users.count) {
@@ -127,11 +121,14 @@
                                           [self.spinner stopAnimating];
                                       }];
     }
+    
     [self.tableView reloadData];
 }
 
 - (IBAction)switchEmailPush {
+    
     [self.spinner startAnimating];
+    
     [[DataHelper instance] saveUserWithInfo:[self userInfo]
                                   OnSuccess:^(NSArray *users){
                                       if (users.count) {
@@ -146,6 +143,7 @@
 #pragma mark - Utils
 
 - (void)endInputIfNeed{
+    
     for (int i = 0; i < self.userData.count; i++) {
         SettingTableViewCell *cell = (SettingTableViewCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
         if ([cell.valueTextField isFirstResponder]) {
@@ -155,6 +153,7 @@
 }
 
 - (NSDictionary *)userInfo{
+    
     NSString *value;
     NSMutableDictionary *result = [NSMutableDictionary dictionary];
     NSArray *keyArray = [self allUserInfoKey];
@@ -183,6 +182,39 @@
              ];
 }
 
+- (void)updateUserData{
+    
+    KCSUser *user = [KCSUser activeUser];
+    
+    if (user) {
+        NSMutableArray *userData = [NSMutableArray array];
+        NSArray *keyArray = [self allUserInfoKey];
+        
+        for (int i = 0; i < keyArray.count; i++) {
+            
+            if ([user getValueForAttribute:keyArray[i]]) {
+                [userData addObject:[user getValueForAttribute:keyArray[i]]];
+            }else{
+                
+                if ([keyArray[i] isEqualToString:USER_INFO_KEY_EMAIL]) {
+                    if (user.email) {
+                        [userData addObject:user.email];
+                    }else{
+                        [userData addObject:@""];
+                    }
+                }else{
+                    [userData addObject:@""];
+                }
+                
+            }
+            
+        }
+        
+        self.userData = [userData copy];
+    }
+}
+
+
 #pragma mark - TABLE VIEW
 #pragma mark - Data Source
 
@@ -197,9 +229,11 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     SettingTableViewCell *cell = [[SettingTableViewCell alloc] init];
+    
     cell.backgroundColor = [UIColor clearColor];
     cell.backgroundView = [UIView new];
     cell.selectedBackgroundView = [UIView new];
+    
     cell.titleLabel.text = [self titleForCellWithKey:[self allUserInfoKey][indexPath.row]];
     NSString *value = (NSString *)self.userData[indexPath.row];
     if (![value isEqualToString:@""]) {
@@ -211,20 +245,19 @@
     }else{
         cell.valueTextField.enabled = NO;
     }
+    
     return cell;
 }
 
 #pragma mark - Utils
 
 - (NSString *)titleForCellWithKey:(NSString *)key{
+    
     if ([key isEqualToString:USER_INFO_KEY_CONTACT]) {
         return LOC(SVC_CELL_TITLE_CONTACT);
     }
     if ([key isEqualToString:USER_INFO_KEY_COMPANY]) {
         return LOC(SVC_CELL_TITLE_COMPANY);
-    }
-    if ([key isEqualToString:USER_INFO_KEY_SHIPING_ADDRESS]) {
-        return LOC(SVC_CELL_TITLE_SHIPING_ADDRESS);
     }
     if ([key isEqualToString:USER_INFO_KEY_ACCOUNT_NUMBER]) {
         return LOC(SVC_CELL_TITLE_ACCOUNT_NUMBER);
@@ -235,6 +268,7 @@
     if ([key isEqualToString:USER_INFO_KEY_EMAIL]) {
         return LOC(SVC_CELL_TITLE_EMAIL);
     }
+    
     return nil;
 }
 
@@ -242,6 +276,7 @@
 #pragma mark - Delegate
 
 - (void)valueTextFieldDidEndEditingWithValue:(NSString *)value sender:(SettingTableViewCell *)sender{
+    
     NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
     NSMutableArray *userData = [self.userData mutableCopy];
     userData[indexPath.row] = value;

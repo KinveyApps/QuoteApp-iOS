@@ -22,8 +22,8 @@
 
 @implementation SignInViewController
 
-+ (void)presentSignInFlowOnViewController:(UIViewController *)vc animated:(BOOL)animated onCompletion:(STEmptyBlock)success
-{
++ (void)presentSignInFlowOnViewController:(UIViewController *)vc animated:(BOOL)animated onCompletion:(STEmptyBlock)success{
+    
 	if (!vc) return;
 	
 	SignInViewController *signInViewController = [[SignInViewController alloc] init];
@@ -33,17 +33,17 @@
 	[vc presentViewController:navigationController animated:animated completion:nil];
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
+    
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
     }
+    
     return self;
 }
 
-- (void)dealloc
-{
+- (void)dealloc{
 	DVLog(@"");
 }
 
@@ -52,39 +52,49 @@
     [super viewDidLoad];
 
 	self.title = LOC(SIVC_TITLE);
-	[self.signUpButton setTitle:LOC(SIVC_SIGNUP) forState:UIControlStateNormal];
-	[self.loginButton setTitle:LOC(SIVC_LOGIN) forState:UIControlStateNormal];
+	[self.signUpButton setTitle:LOC(SIVC_SIGNUP)
+                       forState:UIControlStateNormal];
+	[self.loginButton setTitle:LOC(SIVC_LOGIN)
+                      forState:UIControlStateNormal];
 	self.usernameField.placeholder = LOC(SIVC_USERNAME);
 	self.passwordField.placeholder = LOC(SIVC_PASSWORD);
-    self.view.backgroundColor = [UIColor colorWithRed:0.8549 green:0.3137 blue:0.1686 alpha:1.0];
-    self.contentView.backgroundColor = [UIColor colorWithRed:0.8549 green:0.3137 blue:0.1686 alpha:1.0];
+    
+    self.view.backgroundColor = BAR_COLOR;
+    self.contentView.backgroundColor = BAR_COLOR;
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
+- (void)viewWillAppear:(BOOL)animated{
+    
 	[super viewWillAppear:animated];
 	
 	[self updateButtons];
 
     NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
-    [notificationCenter addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
-    [notificationCenter addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+    [notificationCenter addObserver:self
+                           selector:@selector(keyboardWillShow:)
+                               name:UIKeyboardWillShowNotification
+                             object:nil];
+    [notificationCenter addObserver:self
+                           selector:@selector(keyboardWillHide:)
+                               name:UIKeyboardWillHideNotification
+                             object:nil];
 }
 
-- (void)viewWillDisappear:(BOOL)animated
-{
+- (void)viewWillDisappear:(BOOL)animated{
+    
 	[super viewWillDisappear:animated];
 
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-- (void)updateButtons
-{
+- (void)updateButtons{
+    
 	self.signUpButton.enabled = self.loginButton.enabled = (self.usernameField.text.length && self.passwordField.text.length);
+    
 }
 
--(void)keyboardWillShow:(NSNotification *)notification
-{
+-(void)keyboardWillShow:(NSNotification *)notification{
+    
 	NSValue *v = [notification.userInfo valueForKey:UIKeyboardFrameEndUserInfoKey];
 	CGRect rect = [v CGRectValue];
 	rect = [self.view convertRect:rect fromView:nil];
@@ -107,8 +117,8 @@
                      completion:nil];
 }
 
--(void)keyboardWillHide:(NSNotification *)notification
-{
+-(void)keyboardWillHide:(NSNotification *)notification{
+    
 	NSValue *v = [notification.userInfo valueForKey:UIKeyboardFrameEndUserInfoKey];
 	CGRect rect = [v CGRectValue];
 	rect = [self.view convertRect:rect fromView:nil];
@@ -132,12 +142,16 @@
                      completion:nil];
 }
 
-- (IBAction)pressedSignUp:(id)sender
-{
+- (IBAction)pressedSignUp:(id)sender{
+    
 	[DejalBezelActivityView activityViewForView:self.view.window];
-	[[AuthenticationHelper instance] signUpWithUsername:self.usernameField.text password:self.passwordField.text
+    
+	[[AuthenticationHelper instance] signUpWithUsername:self.usernameField.text
+                                               password:self.passwordField.text
 											  onSuccess:^{
+                                                  
 												  [DejalActivityView removeView];
+                                                  
 												  [self.navigationController dismissViewControllerAnimated:NO
 																								completion:^{
 																									if (self.completionBlock) {
@@ -147,7 +161,9 @@
 																								}];
 											  }
 											  onFailure:^(NSError *error) {
+                                                  
 												  [DejalBezelActivityView removeView];
+                                                  
                                                   UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:LOC(ERROR)
                                                                                                       message:error.localizedDescription ? error.localizedDescription : LOC(ERR_SMTH_WENT_WRONG)
                                                                                                      delegate:nil
@@ -157,12 +173,16 @@
 											  }];
 }
 
-- (IBAction)pressedLogin:(id)sender
-{
+- (IBAction)pressedLogin:(id)sender{
+    
 	[DejalBezelActivityView activityViewForView:self.view.window];
-	[[AuthenticationHelper instance] loginWithUsername:self.usernameField.text password:self.passwordField.text
+    
+	[[AuthenticationHelper instance] loginWithUsername:self.usernameField.text
+                                              password:self.passwordField.text
 											 onSuccess:^{
+                                                 
 												 [DejalActivityView removeView];
+                                                 
 												 [self.navigationController dismissViewControllerAnimated:NO
 																							   completion:^{
 																								   if (self.completionBlock) {
@@ -172,38 +192,45 @@
 																							   }];
 											 }
 											 onFailure:^(NSError *error) {
+                                                 
 												 [DejalBezelActivityView removeView];
+                                                 
 												 UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:LOC(ERROR)
                                                                                                      message:error.localizedDescription ? error.localizedDescription : LOC(ERR_SMTH_WENT_WRONG)
                                                                                                     delegate:nil
                                                                                            cancelButtonTitle:LOC(OKAY)
                                                                                            otherButtonTitles:nil];
                                                  [alertView show];
+                                                 
 											 }];
 }
 
 
-- (IBAction)textFieldEditingDidChange:(id)sender
-{
+- (IBAction)textFieldEditingDidChange:(id)sender{
+    
 	[self updateButtons];
+    
 }
 
 - (IBAction)demoPress:(id)sender {
+    
     self.usernameField.text = @"demoSampleQuote";
     self.passwordField.text = @"123456";
     [self pressedLogin:sender];
+    
 }
 
 #pragma mark UITextFieldDelegate methods
 
-- (BOOL)textFieldShouldReturn:(UITextField *)textField
-{
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    
 	if (textField == self.usernameField) {
 		[self.passwordField becomeFirstResponder];
 	}
 	else {
 		[self.passwordField resignFirstResponder];
 	}
+    
 	return YES;
 }
 

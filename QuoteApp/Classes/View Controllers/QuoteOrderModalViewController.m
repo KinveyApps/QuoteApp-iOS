@@ -11,6 +11,7 @@
 
 #define SCROLL_VIEW_WIDHT_FOR_IPAD 300
 #define SCROLL_VIEW_HEIGHT_FOR_IPAD 400
+#define SCROLL_VIEW_INSETS_FOR_IPHONE 20
 
 @interface QuoteOrderModalViewController ()
 
@@ -20,28 +21,55 @@
 
 @implementation QuoteOrderModalViewController
 
+
+#pragma mark - Initialization
+
 - (instancetype)init{
-    self = [self initWithNibName:@"BaseModalViewController" bundle:nil];
+    
+    self = [self initWithNibName:@"BaseModalViewController"
+                          bundle:nil];
     return self;
 }
 
--(UIView *)getDetailSubView{
-   CGRect frame = CGRectMake(0, 0, self.scrollView.bounds.size.width, self.scrollView.bounds.size.height);
-    self.detailSubView = [[QuoteOrderSubView alloc] initWithFrame:frame];
-    if (self.item) {
-        self.detailSubView.item = self.item;
-        [self updateToolbarButtonTitle];
-    }
-    return self.detailSubView;
-}
+
+#pragma mark - Setters and Getters
 
 - (void)setItem:(Quote *)item{
     _item = item;
+    
     self.detailSubView.item = item;
     [self updateToolbarButtonTitle];
 }
 
+
+#pragma mark - View Life Cycle
+
+- (void)setupConstraints{
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        self.widthScrollViewConstraint.constant = SCROLL_VIEW_WIDHT_FOR_IPAD;
+        self.heightScrollViewConstraint.constant = SCROLL_VIEW_HEIGHT_FOR_IPAD;
+    }else{
+        self.widthScrollViewConstraint.constant = self.view.bounds.size.width - 2 * SCROLL_VIEW_INSETS_FOR_IPHONE;
+        self.heightScrollViewConstraint.constant = self.view.bounds.size.height - self.toolbar.frame.size.height - [UIApplication sharedApplication].statusBarFrame.size.height - 2 * SCROLL_VIEW_INSETS_FOR_IPHONE;
+    }
+}
+
+-(UIView *)getDetailSubView{
+    
+    CGRect frame = CGRectMake(0, 0, self.scrollView.bounds.size.width, self.scrollView.bounds.size.height);
+    self.detailSubView = [[QuoteOrderSubView alloc] initWithFrame:frame];
+    
+    if (self.item) {
+        self.detailSubView.item = self.item;
+        [self updateToolbarButtonTitle];
+    }
+    
+    return self.detailSubView;
+}
+
 - (void)updateToolbarButtonTitle{
+    
     if ([self.item isKindOfClass:[Order class]]) {
         [self.rightButton setTitle:LOC(DV_BUTTON_RECREATE_ORDER)];
     }else{
@@ -49,17 +77,11 @@
     }
 }
 
-- (void)setupConstraints{
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        self.widthScrollViewConstraint.constant = SCROLL_VIEW_WIDHT_FOR_IPAD;
-        self.heightScrollViewConstraint.constant = SCROLL_VIEW_HEIGHT_FOR_IPAD;
-    }else{
-        self.widthScrollViewConstraint.constant = self.view.bounds.size.width - 40;
-        self.heightScrollViewConstraint.constant = self.view.bounds.size.height - self.toolbar.frame.size.height - 20 - 40;
-    }
-}
+
+#pragma mark - Actions
 
 - (void)additionalButtonAction{
+    
     Order *order = [[Order alloc] init];
     
     order.meta = [[KCSMetadata alloc] init];
@@ -97,10 +119,7 @@
                                                                      cancelButtonTitle:LOC(OKAY)
                                                                      otherButtonTitles:nil];
                                [alert show];
-                           }
-     ];
-    
+                           }];
 }
-
 
 @end

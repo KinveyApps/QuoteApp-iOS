@@ -10,6 +10,7 @@
 #import "Product.h"
 
 @interface ProductViewCellForIPhone : UITableViewCell
+
 @property (strong, nonatomic) IBOutlet UIView *view;
 @property (strong, nonatomic) Product *item;
 

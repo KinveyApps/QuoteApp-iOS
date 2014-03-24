@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface KinveyImageView : UIView
+
 @property (strong, nonatomic) IBOutlet UIView *view;
 @property (strong, nonatomic) NSString *kinveyID;
+
 @end

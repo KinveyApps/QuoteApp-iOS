@@ -9,14 +9,14 @@
 #import <UIKit/UIKit.h>
 
 @interface BaseModalViewController : UIViewController
-@property (strong, nonatomic) IBOutlet UIView *view;
 
+@property (strong, nonatomic) IBOutlet UIView *view;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *rightButton;
 @property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topToolbarConstraint;
-
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *heightScrollViewConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *widthScrollViewConstraint;
 @end

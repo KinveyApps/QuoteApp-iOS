@@ -31,6 +31,7 @@
 }
 
 - (void)setItem:(Product *)item{
+    
     if (item) {
         _item = item;
         self.titleLabel.text = item.title;

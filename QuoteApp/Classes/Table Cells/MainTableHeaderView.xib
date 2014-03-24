@@ -9,7 +9,7 @@
                 <outlet property="dateLabel" destination="1IF-Jr-Ccs" id="Agk-Vd-5Qy"/>
                 <outlet property="disclosureLabel" destination="kEo-tf-rCX" id="6bg-iJ-huR"/>
                 <outlet property="noLabel" destination="Q6D-bq-jlu" id="n08-Vu-apJ"/>
-                <outlet property="shipaDateLabel" destination="40h-tO-i0Y" id="90y-J1-1P3"/>
+                <outlet property="startSubscriptionDate" destination="40h-tO-i0Y" id="87P-Jv-hxX"/>
                 <outlet property="statusPriceLabel" destination="1GE-EH-qAZ" id="CDk-Im-rr6"/>
                 <outlet property="titleLabel" destination="SR9-dw-1hR" id="GiT-k6-IG7"/>
                 <outlet property="view" destination="ANt-YG-sR4" id="Qf0-BO-2wP"/>

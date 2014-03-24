@@ -23,8 +23,8 @@
 @implementation ProductTableViewCell
 
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-{
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
+    
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         [[NSBundle mainBundle] loadNibNamed:@"ProductTableViewCell" owner:self options:nil];
@@ -37,9 +37,9 @@
 }
 
 - (void)setItem:(Product *)item{
+    
     if (item) {
         _item = item;
-        
         self.productNameLabel.text = item.title;
         
         NSError *error = nil;

@@ -7,6 +7,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BaseModalViewController">
             <connections>
                 <outlet property="backgroundStatusBarView" destination="peo-4O-uwJ" id="IkI-xC-VgC"/>
+                <outlet property="closeButton" destination="Rre-hO-RDk" id="mRO-0r-mN2"/>
                 <outlet property="heightScrollViewConstraint" destination="u72-XW-zlE" id="L15-23-2S7"/>
                 <outlet property="rightButton" destination="7h7-f5-FVJ" id="i4U-wz-9zM"/>
                 <outlet property="scrollView" destination="z7u-jj-d7A" id="SaI-aJ-lbF"/>

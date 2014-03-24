@@ -8,7 +8,7 @@
             <connections>
                 <outlet property="dateLabel" destination="c1S-Rs-YZR" id="8gf-Kp-4AN"/>
                 <outlet property="noLabel" destination="M5i-Dp-245" id="6CH-yk-9Ep"/>
-                <outlet property="shipDateLabel" destination="zWN-Lh-HRn" id="agX-OS-gq8"/>
+                <outlet property="startSubscriptionDateLabel" destination="zWN-Lh-HRn" id="7VS-fJ-QAL"/>
                 <outlet property="statusPriceLabel" destination="PwM-5s-Zqc" id="gA8-T3-srO"/>
                 <outlet property="view" destination="1dq-Bm-Vuz" id="2lw-s7-JQh"/>
             </connections>
