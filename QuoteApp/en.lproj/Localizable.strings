@@ -53,6 +53,7 @@
 "DV_DATA_STORAGE"="Data Storage: ";
 "DV_BUSINESS_EXECUTION_TIME_LIMIT"="Business Logic Execution Time Limit: ";
 "DV_START_SUBSCRIPTION_DATE"="Start Subscription Date: ";
+"DV_TOTAL_COST"="Total Cost: ";
 "DV_ORDER_TITLE"="Order Details";
 "DV_QUOTE_TITLE"="Your Quote";
 "DV_MESSAGE_ERROR_CREATE_QUOTE"="Error create qoute";
