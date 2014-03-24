@@ -3,8 +3,16 @@
 //  QuoteApp
 //
 //  Created by Igor Sapyanik on 04.02.14.
-//  Copyright (c) 2014 Kinvey, Inc. All rights reserved.
-//
+/**
+ * Copyright (c) 2014 Kinvey Inc. *
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License. You may obtain a copy of the License at *
+ * http://www.apache.org/licenses/LICENSE-2.0 *
+ * Unless required by applicable law or agreed to in writing, software distributed under the License
+ * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
+ * or implied. See the License for the specific language governing permissions and limitations under
+ * the License. *
+ */
 
 #import "AppDelegate.h"
 #import "SignInViewController.h"
@@ -30,6 +38,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
 #ifdef DEBUG
+    //Kinvey: Setup configuration
 	[KCSClient configureLoggingWithNetworkEnabled:YES
 									 debugEnabled:YES
 									 traceEnabled:YES
@@ -37,7 +46,7 @@
 									 errorEnabled:YES];
 #endif
 	
-	//Start push service
+	//Kinvey: Start push service
     [KCSPush registerForPush];
 	
 	[[UIApplication sharedApplication] setStatusBarHidden:NO];
@@ -64,74 +73,58 @@
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
     
+    //Kinvey: Rigstration on push service
     [[KCSPush sharedPush] application:application didRegisterForRemoteNotificationsWithDeviceToken:deviceToken completionBlock:^(BOOL success, NSError *error) {
-        //if there is an error, try again laster
     }];
-    // Additional registration goes here (if needed)
 }
-- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
-{
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
+    
+    //Kinvey: Get remote notification
     [[KCSPush sharedPush] application:application didReceiveRemoteNotification:userInfo];
-    // Additional push notification handling code should be performed here
 }
-- (void) application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
-{
+- (void) application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error{
+    
+    //Kinvey: Fail to register for remote notification
     [[KCSPush sharedPush] application:application didFailToRegisterForRemoteNotificationsWithError:error];
 }
-- (void)applicationDidBecomeActive:(UIApplication *)application
-{
+- (void)applicationDidBecomeActive:(UIApplication *)application{
+    
+    //Kinvey: register for remote notification
     [[KCSPush sharedPush] registerForRemoteNotifications];
-    //Additional become active actions
 }
-- (void)applicationWillTerminate:(UIApplication *)application
-{
+- (void)applicationWillTerminate:(UIApplication *)application{
+    
+    //Kinvey: Clean-up Push Service
     [[KCSPush sharedPush] onUnloadHelper];
-    // Additional termination actions
 }
 
-- (void)applicationWillResignActive:(UIApplication *)application
-{
-	// Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-	// Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
-}
-
-- (void)applicationDidEnterBackground:(UIApplication *)application
-{
-	// Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
-	// If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-}
-
-- (void)applicationWillEnterForeground:(UIApplication *)application
-{
-	// Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-}
-
-- (void)showActivityView
-{
+- (void)showActivityView{
 	
 	if (!self.activityViewController.presentingViewController)
 		[self.window.rootViewController presentViewController:self.activityViewController animated:NO completion:nil];
 }
 
-- (void)hideActivityView
-{
+- (void)hideActivityView{
+    
     if (self.isCompleteLoadOrders && self.isCompleteLoadQuotes && self.isCompleteLoadProducts) {
+        
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.activityViewController dismissViewControllerAnimated:NO completion:nil];
         });
     }
 }
 
-- (void)startFetchingDBFromServer
-{
+- (void)startFetchingDBFromServer{
 	
 	[self showActivityView];
 	
+    //Kinvey: update user data form server
 	[[KCSUser activeUser] refreshFromServer:^(NSArray *objectsOrNil, NSError *errorOrNil) {
 		
 		if (errorOrNil)
 			DLog(@"%@", errorOrNil.localizedDescription);
         
+        //Preload data form all collection to cache
         [[DataHelper instance] loadQuotesUseCache:NO
                                containtSubstinrg:nil
                                        OnSuccess:^(NSArray *quotes){
@@ -142,6 +135,7 @@
                                            self.isCompleteLoadQuotes = YES;
                                            [self hideActivityView];
                                        }];
+        
         [[DataHelper instance] loadOrdersUseCache:NO
                                 containtSubstinrg:nil
                                         OnSuccess:^(NSArray *orders){
@@ -152,6 +146,7 @@
                                             self.isCompleteLoadOrders = YES;
                                             [self hideActivityView];
                                         }];
+        
         [[DataHelper instance] loadProductsUseCache:NO
                                   containtSubstinrg:nil
                                           OnSuccess:^(NSArray *products){
@@ -165,19 +160,18 @@
 	}];
 }
 
-- (void)startListening
-{
+- (void)startListening{
+    
+    //Kinvey: Listen notification about kinvey network activity
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(show) name:KCSNetworkConnectionDidStart object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hide) name:KCSNetworkConnectionDidEnd object:nil];
 }
 
-- (void) show
-{
+- (void) show{
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
 }
 
-- (void) hide
-{
+- (void) hide{
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
 }
 
