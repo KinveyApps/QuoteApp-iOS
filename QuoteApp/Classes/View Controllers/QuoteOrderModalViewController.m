@@ -90,6 +90,7 @@
 
 - (void)additionalButtonAction{
     
+    //Create new order
     Order *order = [[Order alloc] init];
     
     order.meta = [[KCSMetadata alloc] init];

@@ -27,7 +27,7 @@
 @property (nonatomic, retain) NSString *thumbnailID;
 @property (nonatomic, retain) NSString *imageID;
 
-//Return name sting type field of Quote collection
+//Return name string type field of Quote collection
 + (NSArray *)textFieldsName;
 
 @end

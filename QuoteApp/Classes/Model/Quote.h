@@ -37,7 +37,7 @@
 @property (nonatomic, retain) Product *product;
 
 
-//Return name sting type field of Quote collection 
+//Return name string type field of Quote collection
 + (NSArray *)textFieldsName;
 
 @end

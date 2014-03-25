@@ -80,6 +80,7 @@
     self.emailConfirmationLabel.text = LOC(SVC_EMAIL_CONFIRMATION_LABEL);
     [self.editButton setTitle:LOC(EDIT) forState:UIControlStateNormal];
     
+    //Setup UI by user attribute value
     self.emailConfirmationSwitch.on = [[[KCSUser activeUser] getValueForAttribute:USER_INFO_KEY_EMAIL_CONFIRMATION_ENABLE] boolValue];
     self.pushNotificationSwitch.on = [[[KCSUser activeUser] getValueForAttribute:USER_INFO_KEY_PUSH_NOTIFICATION_ENABLE] boolValue];
     self.tableView.scrollEnabled = NO;
@@ -96,6 +97,7 @@
     
     NSInteger indexAccountNumber = [[self allUserInfoKey] indexOfObject:USER_INFO_KEY_ACCOUNT_NUMBER];
     
+    //Extract data from user attribute
     if ([_userData[indexAccountNumber] isEqualToString:@""]) {
         NSMutableArray *userData = [_userData mutableCopy];
         userData[indexAccountNumber] = [KCSUser activeUser].userId;
@@ -194,6 +196,7 @@
 
 - (void)updateUserData{
     
+    //Update date in user attributes
     KCSUser *user = [KCSUser activeUser];
     
     if (user) {
