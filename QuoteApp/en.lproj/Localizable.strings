@@ -50,6 +50,7 @@
 "SVC_CELL_TITLE_EMAIL"="E-mail";
 "SVC_PUSH_LABEL"="Push Notification";
 "SVC_EMAIL_CONFIRMATION_LABEL"="Email Confirmation on New Order";
+"SVC_BUTTON_LOGOUT"="Logout";
 
 //Detail View
 "DV_PRODUCT_TITLE"="Product: ";

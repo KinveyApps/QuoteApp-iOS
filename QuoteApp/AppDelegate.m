@@ -56,10 +56,11 @@
     self.window.rootViewController = self.tabBarController;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
-    self.backgroundActivityView.backgroundColor = [UIColor colorWithRed:0.8549 green:0.3137 blue:0.1686 alpha:1.0];
+    self.backgroundActivityView.backgroundColor = BAR_COLOR;
 	
 	if (![[AuthenticationHelper instance] isSignedIn]) {
-		[SignInViewController presentSignInFlowOnViewController:self.window.rootViewController animated:NO
+		[SignInViewController presentSignInFlowOnViewController:self.window.rootViewController
+                                                       animated:NO
 												   onCompletion:^{
 													   [self startFetchingDBFromServer];
 												   }];
@@ -163,8 +164,14 @@
 - (void)startListening{
     
     //Kinvey: Listen notification about kinvey network activity
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(show) name:KCSNetworkConnectionDidStart object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hide) name:KCSNetworkConnectionDidEnd object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(show)
+                                                 name:KCSNetworkConnectionDidStart
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(hide)
+                                                 name:KCSNetworkConnectionDidEnd
+                                               object:nil];
 }
 
 - (void) show{

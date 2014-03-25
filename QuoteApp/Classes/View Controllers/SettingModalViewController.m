@@ -16,6 +16,7 @@
 
 #import "SettingModalViewController.h"
 #import "SettingsSubView.h"
+#import "SignInViewController.h"
 
 #define SCROOLL_VIEW_INSETS_FOR_IPHONE 20
 #define SCROOLL_VIEW_INSETS_FOR_IPAD 40
@@ -59,7 +60,7 @@
     
     self.detailSubView = [[SettingsSubView alloc] initWithFrame:CGRectMake(0, 0, self.scrollView.bounds.size.width, self.scrollView.bounds.size.height)];
     
-    self.rightButton.title = @"";
+    [self.rightButton setTitle:LOC(SVC_BUTTON_LOGOUT)];
     self.scrollView.scrollEnabled = NO;
     
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -99,6 +100,23 @@
                      animations:^{
                          self.scrollView.contentOffset = CGPointZero;
                      }];
+    
+}
+
+
+#pragma mark - Actions
+
+- (void)additionalButtonAction{
+    
+    [[AuthenticationHelper instance] logout];
+    [self dismissViewControllerAnimated:YES
+                             completion:^{
+                                 [SignInViewController presentSignInFlowOnViewController:[UIApplication sharedApplication].appDelegate.window.rootViewController
+                                                                                animated:YES
+                                                                            onCompletion:^{
+                                                                                [[UIApplication sharedApplication].appDelegate startFetchingDBFromServer];
+                                                                            }];
+                             }];
     
 }
 

@@ -3,7 +3,7 @@
  *  ST
  *
  *
- /**
+ *
  * Copyright (c) 2014 Kinvey Inc. *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
  * in compliance with the License. You may obtain a copy of the License at *
@@ -52,6 +52,8 @@
 #define SVC_CELL_TITLE_EMAIL @"SVC_CELL_TITLE_EMAIL"
 #define SVC_PUSH_LABEL @"SVC_PUSH_LABEL"
 #define SVC_EMAIL_CONFIRMATION_LABEL @"SVC_EMAIL_CONFIRMATION_LABEL"
+#define SVC_BUTTON_LOGOUT @"SVC_BUTTON_LOGOUT"
+
 
 //Detail View
 #define DV_PRODUCT_TITLE @"DV_PRODUCT_TITLE"
