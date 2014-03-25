@@ -196,7 +196,7 @@
 
 - (void)updateUserData{
     
-    //Update date in user attributes
+    //Update data in user attributes
     KCSUser *user = [KCSUser activeUser];
     
     if (user) {

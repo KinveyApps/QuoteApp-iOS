@@ -108,6 +108,7 @@
 
 - (void)additionalButtonAction{
     
+    //Loguot current user
     [[AuthenticationHelper instance] logout];
     [self dismissViewControllerAnimated:YES
                              completion:^{
