@@ -112,28 +112,40 @@
 
 - (IBAction)pressEdit:(UIButton *)sender {
     
-    self.isEditModeTableView = self.isEditModeTableView ? NO : YES;
+    KCSUser *user = [KCSUser activeUser];
     
-    if (self.isEditModeTableView) {
-        [self.editButton setTitle:LOC(DONE) forState:UIControlStateNormal];
-    }else{
-        [self.editButton setTitle:LOC(EDIT) forState:UIControlStateNormal];
-        [self.spinner startAnimating];
-        [self endInputIfNeed];
+    if (![user.username isEqualToString:@"demoSampleQuote"]) {
+        self.isEditModeTableView = self.isEditModeTableView ? NO : YES;
         
-        //Save user info
-        [[DataHelper instance] saveUserWithInfo:[self userInfo]
-                                      OnSuccess:^(NSArray *users){
-                                          if (users.count) {
-                                              [self.spinner stopAnimating];
+        if (self.isEditModeTableView) {
+            [self.editButton setTitle:LOC(DONE) forState:UIControlStateNormal];
+        }else{
+            [self.editButton setTitle:LOC(EDIT) forState:UIControlStateNormal];
+            [self.spinner startAnimating];
+            [self endInputIfNeed];
+            
+            //Save user info
+            [[DataHelper instance] saveUserWithInfo:[self userInfo]
+                                          OnSuccess:^(NSArray *users){
+                                              if (users.count) {
+                                                  [self.spinner stopAnimating];
+                                              }
                                           }
-                                      }
-                                      onFailure:^(NSError *error){
-                                          [self.spinner stopAnimating];
-                                      }];
+                                          onFailure:^(NSError *error){
+                                              [self.spinner stopAnimating];
+                                          }];
+        }
+        
+        [self.tableView reloadData];
+    }else{
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Demo Account Limit"
+                                                            message:@"You can't change user info in demo account.\n Please sing up new account for testing this function"
+                                                           delegate:nil
+                                                  cancelButtonTitle:LOC(CANCEL)
+                                                  otherButtonTitles:nil];
+        [alertView show];
     }
     
-    [self.tableView reloadData];
 }
 
 - (IBAction)switchEmailPush {
