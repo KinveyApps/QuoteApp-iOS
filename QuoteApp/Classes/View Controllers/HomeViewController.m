@@ -187,7 +187,9 @@
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    [self laodData];
+    if ([AuthenticationHelper instance].isSignedIn) {
+        [self laodData];
+    }
 }
 
 - (void)didReceiveMemoryWarning{
