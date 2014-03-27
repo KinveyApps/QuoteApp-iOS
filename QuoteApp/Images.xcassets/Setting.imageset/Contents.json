@@ -3,12 +3,12 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "ProductTabBarItemImageNor.png"
+      "filename" : "SettingsButton.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "ProductTabBarItemImageNor@2x.png"
+      "filename" : "SettingsButton@2x.png"
     }
   ],
   "info" : {
