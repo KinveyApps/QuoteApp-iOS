@@ -97,6 +97,14 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <nil key="simulatedDestinationMetrics"/>
                 </viewController>
+                <viewController id="peH-ng-U9s" customClass="AboutViewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="gGs-Jp-8BO"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackOpaque"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <nil key="simulatedDestinationMetrics"/>
+                </viewController>
             </viewControllers>
         </tabBarController>
         <customObject id="d3e-k0-vG0" customClass="AppDelegate">

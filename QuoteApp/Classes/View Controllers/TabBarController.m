@@ -58,11 +58,15 @@
     [self setTabBarItemAtIndex:3
              selectedImageName:@"NewQuoteSelected"
            unselectedImageName:@"NewQuoteNormal"];
+    [self setTabBarItemAtIndex:4
+             selectedImageName:@"AboutSelected"
+           unselectedImageName:@"AboutNormal"];
 
     [self.tabBar.items[0] setTitle:LOC(TBC_QUOTE)];
     [self.tabBar.items[1] setTitle:LOC(TBC_ORDER)];
     [self.tabBar.items[2] setTitle:LOC(TBC_PRODUCTS)];
-    [self.tabBar.items[3] setTitle:LOC(TBC_QUOTE)];
+    [self.tabBar.items[3] setTitle:LOC(TBC_NEW_QUOTES)];
+    [self.tabBar.items[4] setTitle:LOC(TBC_ABOUT)];
 }
 
 - (void)setTabBarItemAtIndex:(NSInteger)index selectedImageName:(NSString *)selectedImageName unselectedImageName:(NSString *)unselectedImageName{

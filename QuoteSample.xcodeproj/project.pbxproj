@@ -32,6 +32,8 @@
 		1BACC98918AA602600D87C0F /* MainTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BACC98818AA602600D87C0F /* MainTableHeaderView.m */; };
 		1BACC98B18AA716E00D87C0F /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BACC98A18AA716E00D87C0F /* MainTableViewCell.xib */; };
 		1BACC98E18AA71A800D87C0F /* MainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BACC98D18AA71A800D87C0F /* MainTableViewCell.m */; };
+		1BAECC8018E43DE1007B83BE /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BAECC7E18E43DE1007B83BE /* AboutViewController.m */; };
+		1BAECC8118E43DE1007B83BE /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BAECC7F18E43DE1007B83BE /* AboutViewController.xib */; };
 		1BB1E83218D318A500D1FD2C /* ProductModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BB1E83118D318A500D1FD2C /* ProductModalViewController.m */; };
 		1BB1E83A18D343B500D1FD2C /* QuoteOrderSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BB1E83918D343B500D1FD2C /* QuoteOrderSubView.m */; };
 		1BB1E83D18D3535300D1FD2C /* SettingModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BB1E83C18D3535300D1FD2C /* SettingModalViewController.m */; };
@@ -133,6 +135,9 @@
 		1BACC98A18AA716E00D87C0F /* MainTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainTableViewCell.xib; sourceTree = "<group>"; };
 		1BACC98C18AA71A800D87C0F /* MainTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableViewCell.h; sourceTree = "<group>"; };
 		1BACC98D18AA71A800D87C0F /* MainTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableViewCell.m; sourceTree = "<group>"; };
+		1BAECC7D18E43DE1007B83BE /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		1BAECC7E18E43DE1007B83BE /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		1BAECC7F18E43DE1007B83BE /* AboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
 		1BB1E83018D318A500D1FD2C /* ProductModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductModalViewController.h; sourceTree = "<group>"; };
 		1BB1E83118D318A500D1FD2C /* ProductModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductModalViewController.m; sourceTree = "<group>"; };
 		1BB1E83818D343B500D1FD2C /* QuoteOrderSubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteOrderSubView.h; sourceTree = "<group>"; };
@@ -484,6 +489,9 @@
 				1BC243AB18C8656500D1E15B /* SettingsSubView.xib */,
 				1BB1E83B18D3535300D1FD2C /* SettingModalViewController.h */,
 				1BB1E83C18D3535300D1FD2C /* SettingModalViewController.m */,
+				1BAECC7D18E43DE1007B83BE /* AboutViewController.h */,
+				1BAECC7E18E43DE1007B83BE /* AboutViewController.m */,
+				1BAECC7F18E43DE1007B83BE /* AboutViewController.xib */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -583,6 +591,7 @@
 				1B475DBF18AE571C0071BC98 /* ProductTableViewCell.xib in Resources */,
 				1B47740118C5CF9E005E1A9C /* ProductViewCellForIPhone.xib in Resources */,
 				C6A3108018A0F71B00916A1A /* MainWindow.xib in Resources */,
+				1BAECC8118E43DE1007B83BE /* AboutViewController.xib in Resources */,
 				1B4773E818C4634D005E1A9C /* ProductCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -633,6 +642,7 @@
 				C6A3109518A106DF00916A1A /* SettingsManager.m in Sources */,
 				1B4773FF18C5CF8A005E1A9C /* ProductViewCellForIPhone.m in Sources */,
 				1BACC98918AA602600D87C0F /* MainTableHeaderView.m in Sources */,
+				1BAECC8018E43DE1007B83BE /* AboutViewController.m in Sources */,
 				1BD60EFF18D21350002496B4 /* BaseModalViewController.m in Sources */,
 				C6A3109118A106DF00916A1A /* DejalActivityView.m in Sources */,
 				C6A3110C18A1083400916A1A /* AuthenticationHelper.m in Sources */,
