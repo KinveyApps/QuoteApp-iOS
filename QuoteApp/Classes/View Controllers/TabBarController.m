@@ -47,14 +47,14 @@
     
     //Set Tab Bar Items Image for selected and normal state
     [self setTabBarItemAtIndex:0
-             selectedImageName:@"HomeSelected"
-           unselectedImageName:@"HomeNormal"];
+             selectedImageName:@"QuotesSelected"
+           unselectedImageName:@"QuotesNormal"];
     [self setTabBarItemAtIndex:1
-             selectedImageName:@"HomeSelected"
-           unselectedImageName:@"HomeNormal"];
+             selectedImageName:@"OrdersSelected"
+           unselectedImageName:@"OrdersNormal"];
     [self setTabBarItemAtIndex:2
-             selectedImageName:@"BrowseSelected"
-           unselectedImageName:@"BrowseNormal"];
+             selectedImageName:@"ProductsSelected"
+           unselectedImageName:@"ProductsNormal"];
     [self setTabBarItemAtIndex:3
              selectedImageName:@"NewQuoteSelected"
            unselectedImageName:@"NewQuoteNormal"];

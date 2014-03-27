@@ -3,12 +3,12 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "NewQuoteNormal.png"
+      "filename" : "QuotesSelected.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "NewQuoteNormal@2x.png"
+      "filename" : "QuotesSelected@2x.png"
     }
   ],
   "info" : {
