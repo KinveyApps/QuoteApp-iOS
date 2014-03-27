@@ -55,7 +55,7 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *betweenButtonTableViewConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableViewWidthConstraint;
 @property (weak, nonatomic) IBOutlet UIView *topBarView;
-@property (weak, nonatomic) IBOutlet UILabel *titleLable;
+@property (weak, nonatomic) IBOutlet UILabel *titleTopBarLable;
 
 @end
 
@@ -68,8 +68,26 @@
     
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        [self setup];
     }
     return self;
+}
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder{
+    
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        [self setup];
+    }
+    
+    return self;
+}
+
+- (void)setup{
+    [[NSBundle mainBundle] loadNibNamed:@"NewQuoteViewController" owner:self options:nil];
+
+    [self.titleLabel setText:LOC(NQV_TITLE)];
+    self.titleTopBarLable.text = LOC(NQV_TOP_BAR_TITLE);
 }
 
 
@@ -110,13 +128,12 @@
                                                  name:UIKeyboardWillHideNotification
                                                object:nil];
     
-    self.titleLabel.text = LOC(NQV_TITLE);
     [self.submitButton setTitle:LOC(NQV_BUTTON_SUBMIT) forState:UIControlStateNormal];
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
         self.tableViewWidthConstraint.constant = COMBOBOX_NEW_QUOTE_CELL_WIDTH;
     }
+
     self.topBarView.backgroundColor = BAR_COLOR;
-    self.titleLabel.text = LOC(NQV_TITLE);
 }
 
 - (void)viewWillAppear:(BOOL)animated{

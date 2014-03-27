@@ -14,7 +14,7 @@
                 <outlet property="tableView" destination="yPb-jY-2sO" id="4jD-Z4-v1e"/>
                 <outlet property="tableViewWidthConstraint" destination="A20-LL-gJp" id="eRI-vb-gfq"/>
                 <outlet property="titleLabel" destination="4X2-xv-P9E" id="uFf-Rf-t56"/>
-                <outlet property="titleLable" destination="cFe-3A-tSn" id="bON-Qo-gmz"/>
+                <outlet property="titleTopBarLable" destination="cFe-3A-tSn" id="Scm-eC-Lum"/>
                 <outlet property="topBarView" destination="7fp-Eu-fJP" id="QUl-MT-r88"/>
                 <outlet property="topConstraint" destination="Yc8-wK-q0A" id="t3E-QB-zeO"/>
                 <outlet property="view" destination="2" id="3"/>
