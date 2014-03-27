@@ -32,7 +32,15 @@
 #pragma mark - Initialisation
 
 - (NSString *)titleForView{
-    return LOC(PHVC_TITLE);
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        
+        return LOC(PHVC_TITLE);
+
+    }else{
+        
+        return @"";
+        
+    }
 }
 
 - (NSString *)titleForRefreshControl{
