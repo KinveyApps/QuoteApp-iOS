@@ -45,7 +45,7 @@
 								   warningEnabled:YES
 									 errorEnabled:YES];
 #endif
-	
+
 	//Kinvey: Start push service
     [KCSPush registerForPush];
 	
@@ -122,42 +122,60 @@
     //Kinvey: update user data form server
 	[[KCSUser activeUser] refreshFromServer:^(NSArray *objectsOrNil, NSError *errorOrNil) {
 		
-		if (errorOrNil)
+		if (errorOrNil){
 			DLog(@"%@", errorOrNil.localizedDescription);
-        
-        //Preload data form all collection to cache
-        [[DataHelper instance] loadQuotesUseCache:NO
-                               containtSubstinrg:nil
-                                       OnSuccess:^(NSArray *quotes){
-                                           self.isCompleteLoadQuotes = YES;
-                                           [self hideActivityView];
-                                       }
-                                       onFailure:^(NSError *error){
-                                           self.isCompleteLoadQuotes = YES;
-                                           [self hideActivityView];
-                                       }];
-        
-        [[DataHelper instance] loadOrdersUseCache:NO
-                                containtSubstinrg:nil
-                                        OnSuccess:^(NSArray *orders){
-                                            self.isCompleteLoadOrders = YES;
-                                            [self hideActivityView];
-                                        }
-                                        onFailure:^(NSError *error){
-                                            self.isCompleteLoadOrders = YES;
-                                            [self hideActivityView];
-                                        }];
-        
-        [[DataHelper instance] loadProductsUseCache:NO
-                                  containtSubstinrg:nil
-                                          OnSuccess:^(NSArray *products){
-                                              self.isCompleteLoadProducts = YES;
-                                              [self hideActivityView];
-                                          }
-                                          onFailure:^(NSError *error){
-                                              self.isCompleteLoadProducts = YES;
-                                              [self hideActivityView];
-                                          }];
+            
+            [self.activityViewController dismissViewControllerAnimated:NO completion:nil];
+            
+            [SignInViewController presentSignInFlowOnViewController:self.window.rootViewController
+                                                           animated:NO
+                                                       onCompletion:^{
+                                                           [self startFetchingDBFromServer];
+                                                       }];
+            
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Sign In Error"
+                                                                message:errorOrNil.localizedDescription
+                                                               delegate:nil
+                                                      cancelButtonTitle:LOC(CANCEL)
+                                                      otherButtonTitles:nil];
+            [alertView show];
+            
+        }else{
+            
+            //Preload data form all collection to cache
+            [[DataHelper instance] loadQuotesUseCache:NO
+                                    containtSubstinrg:nil
+                                            OnSuccess:^(NSArray *quotes){
+                                                self.isCompleteLoadQuotes = YES;
+                                                [self hideActivityView];
+                                            }
+                                            onFailure:^(NSError *error){
+                                                self.isCompleteLoadQuotes = YES;
+                                                [self hideActivityView];
+                                            }];
+            
+            [[DataHelper instance] loadOrdersUseCache:NO
+                                    containtSubstinrg:nil
+                                            OnSuccess:^(NSArray *orders){
+                                                self.isCompleteLoadOrders = YES;
+                                                [self hideActivityView];
+                                            }
+                                            onFailure:^(NSError *error){
+                                                self.isCompleteLoadOrders = YES;
+                                                [self hideActivityView];
+                                            }];
+            
+            [[DataHelper instance] loadProductsUseCache:NO
+                                      containtSubstinrg:nil
+                                              OnSuccess:^(NSArray *products){
+                                                  self.isCompleteLoadProducts = YES;
+                                                  [self hideActivityView];
+                                              }
+                                              onFailure:^(NSError *error){
+                                                  self.isCompleteLoadProducts = YES;
+                                                  [self hideActivityView];
+                                              }];
+        }
 	}];
 }
 

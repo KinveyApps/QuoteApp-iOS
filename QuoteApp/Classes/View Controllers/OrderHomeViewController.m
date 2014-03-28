@@ -44,7 +44,7 @@
 
 - (void)getDataForItemsFromCache:(BOOL)useCache{
     
-    self.spinnerCount++;
+    if (!useCache) self.spinnerCount++;
     
     //Load all data from Order collection
     [[DataHelper instance] loadOrdersUseCache:useCache

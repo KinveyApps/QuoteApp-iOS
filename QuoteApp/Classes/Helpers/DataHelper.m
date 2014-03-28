@@ -40,6 +40,11 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DataHelper)
     
 	if (self) {
         
+        //Kinvey: Here we initialize KCSClient instance
+		(void)[[KCSClient sharedClient] initializeKinveyServiceForAppKey:KINVEY_APP_KEY
+														   withAppSecret:KINVEY_APP_SECRET
+															usingOptions:nil];
+        
         //Kinvey: Here we define our collection to use
         //Quotes collection
         KCSCollection *collectionQuote = [KCSCollection collectionFromString:QUOTES_COLLECTIONS_NAME

@@ -43,7 +43,7 @@
 
 - (void)getDataForItemsFromCache:(BOOL)useCache{
     
-    self.spinnerCount++;
+    if (!useCache) self.spinnerCount++;
     
     //Load all data form Quote collection
     [[DataHelper instance] loadQuotesUseCache:useCache      
