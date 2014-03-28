@@ -17,9 +17,6 @@
 
 #import <Foundation/Foundation.h>
 
-#define KINVEY_APP_KEY				@"kid_PVSldxB6vq"
-#define KINVEY_APP_SECRET			@"51dd16bd82434ad4b5383df1e70bc9e6"
-
 
 @interface AuthenticationHelper : NSObject
 
