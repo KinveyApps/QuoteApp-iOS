@@ -25,7 +25,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *searchCountResultLabel;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *tableGridSegmentedControl;
 
-@property (nonatomic) NSUInteger *spinnerCount;
+@property (nonatomic) NSInteger spinnerCount;
 
 
 - (void)laodData;

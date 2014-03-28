@@ -74,12 +74,14 @@
                                      action:@selector(updateData)
                            forControlEvents:UIControlEventValueChanged];
     [self.tableViewRefreshControl setAttributedTitle:[[NSAttributedString alloc] initWithString:[self titleForRefreshControl]]];
+    self.tableViewRefreshControl.layer.zPosition -= 1;
     [self.tableView addSubview:self.tableViewRefreshControl];
     
     [self.collectionViewRefreshControl addTarget:self
                                           action:@selector(updateData)
                                 forControlEvents:UIControlEventValueChanged];
     [self.collectionViewRefreshControl setAttributedTitle:[[NSAttributedString alloc] initWithString:[self titleForRefreshControl]]];
+    self.collectionViewRefreshControl.layer.zPosition -= 1;
     [self.collectionView addSubview:self.collectionViewRefreshControl];
     
     self.topBarView.backgroundColor = BAR_COLOR;
@@ -116,7 +118,7 @@
     return _collectionViewRefreshControl;
 }
 
-- (void)setSpinnerCount:(NSUInteger *)spinnerCount{
+- (void)setSpinnerCount:(NSInteger)spinnerCount{
     
     _spinnerCount = spinnerCount;
     
