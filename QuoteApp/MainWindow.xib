@@ -62,7 +62,7 @@
             </tabBar>
             <viewControllers>
                 <viewController id="qpZ-uy-npq" customClass="QuoteHomeViewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="Home" id="gNF-Ka-c81"/>
+                    <tabBarItem key="tabBarItem" title="Item" id="gNF-Ka-c81"/>
                     <navigationItem key="navigationItem" title="Item" id="w0E-9p-EH2"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackOpaque"/>
                     <nil key="simulatedTopBarMetrics"/>
@@ -71,7 +71,7 @@
                     <nil key="simulatedDestinationMetrics"/>
                 </viewController>
                 <viewController nibName="HomeViewController" id="ETq-GW-L7d" customClass="OrderHomeViewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="Home" id="nlm-1h-cGx"/>
+                    <tabBarItem key="tabBarItem" title="Item" id="nlm-1h-cGx"/>
                     <navigationItem key="navigationItem" title="Root View Controller" id="Hor-v8-aHC"/>
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
@@ -80,7 +80,7 @@
                     <nil key="simulatedDestinationMetrics"/>
                 </viewController>
                 <viewController nibName="ProductsViewController" id="HuJ-tP-7ij" customClass="ProductHomeViewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="Browse" id="RhV-Ab-rW0"/>
+                    <tabBarItem key="tabBarItem" title="Item" id="RhV-Ab-rW0"/>
                     <navigationItem key="navigationItem" title="Root View Controller" id="glp-tF-ctf"/>
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
@@ -89,7 +89,7 @@
                     <nil key="simulatedDestinationMetrics"/>
                 </viewController>
                 <viewController nibName="NewQuoteViewController" id="NFM-NC-0uv" customClass="NewQuoteViewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="NewQuote" id="5GO-gi-ec6"/>
+                    <tabBarItem key="tabBarItem" title="Item" id="5GO-gi-ec6"/>
                     <navigationItem key="navigationItem" title="Root View Controller" id="OhC-Ef-Vdh"/>
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
@@ -116,9 +116,6 @@
         </customObject>
     </objects>
     <resources>
-        <image name="Browse" width="30" height="30"/>
-        <image name="Home" width="30" height="30"/>
-        <image name="NewQuote" width="30" height="30"/>
         <image name="companylogo" width="452" height="110"/>
     </resources>
 </document>
