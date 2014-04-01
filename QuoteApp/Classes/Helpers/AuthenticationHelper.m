@@ -76,4 +76,48 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(AuthenticationHelper)
 	[[KCSUser activeUser] logout];
 }
 
+- (BOOL)unregisteringCurrentDeviceOnPushService{
+    
+    if ([KCSUser activeUser] && self.deviceToken) {
+        
+        NSDictionary *bodyDictionary = @{@"platform": @"ios",
+                                         @"deviceId": self.deviceToken,
+                                         @"userId"  : [KCSUser activeUser].userId};
+        
+        if ([NSJSONSerialization isValidJSONObject:bodyDictionary]) {
+            
+            NSError *error = nil;
+            
+            NSData *bodyData = [NSJSONSerialization dataWithJSONObject:bodyDictionary
+                                                               options:NSJSONWritingPrettyPrinted
+                                                                 error:&error];
+            if (!error) {
+                
+                NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://baas.kinvey.com/push/%@/unregister-device", KINVEY_APP_KEY]]
+                                                                            cachePolicy:NSURLCacheStorageAllowedInMemoryOnly
+                                                                        timeoutInterval:30.0];
+                [request setHTTPBody:bodyData];
+                [request setValue:[NSString stringWithFormat:@"%lu", (unsigned long)bodyData.length] forHTTPHeaderField:@"Content-Length"];
+                request.HTTPMethod = @"POST";
+                [request setValue:[KCSUser activeUser].sessionAuth forHTTPHeaderField:@"Authorization"];
+                [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+                
+                NSHTTPURLResponse *response = nil;
+                
+                [NSURLConnection sendSynchronousRequest:request
+                                      returningResponse:&response
+                                                  error:&error];
+                
+                if (!error && (response.statusCode == 204)) {
+                    
+                    return YES;
+                    
+                }
+            }
+        }
+    }
+    return  NO;
+}
+
+
 @end

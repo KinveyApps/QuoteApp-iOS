@@ -108,17 +108,19 @@
 
 - (void)additionalButtonAction{
     
-    //Loguot current user
-    [[AuthenticationHelper instance] logout];
-    [self dismissViewControllerAnimated:YES
-                             completion:^{
-                                 [SignInViewController presentSignInFlowOnViewController:[UIApplication sharedApplication].appDelegate.window.rootViewController
-                                                                                animated:YES
-                                                                            onCompletion:^{
-                                                                                [[UIApplication sharedApplication].appDelegate startFetchingDBFromServer];
-                                                                            }];
-                             }];
-    
+    if ([[AuthenticationHelper instance] unregisteringCurrentDeviceOnPushService]) {
+        
+        //Loguot current user
+        [[AuthenticationHelper instance] logout];
+        [self dismissViewControllerAnimated:YES
+                                 completion:^{
+                                     [SignInViewController presentSignInFlowOnViewController:[UIApplication sharedApplication].appDelegate.window.rootViewController
+                                                                                    animated:YES
+                                                                                onCompletion:^{
+                                                                                    [[UIApplication sharedApplication].appDelegate startFetchingDBFromServer];
+                                                                                }];
+                                 }];
+    }
 }
 
 @end

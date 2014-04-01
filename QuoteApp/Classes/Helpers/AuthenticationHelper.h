@@ -23,9 +23,11 @@
 + (AuthenticationHelper *)instance;
 
 @property (nonatomic, readonly) BOOL isSignedIn;
+@property (nonatomic, strong) NSString *deviceToken;
 
 - (void)signUpWithUsername:(NSString *)username password:(NSString *)password onSuccess:(STEmptyBlock)successBlock onFailure:(STErrorBlock)failureBlock;
 - (void)loginWithUsername:(NSString *)username password:(NSString *)password onSuccess:(STEmptyBlock)successBlock onFailure:(STErrorBlock)failureBlock;
 - (void)logout;
+- (BOOL)unregisteringCurrentDeviceOnPushService;
 
 @end
