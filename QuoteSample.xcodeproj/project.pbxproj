@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00AF463B18D748B1002AAB9E /* KinveyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00AF463818D748B1002AAB9E /* KinveyKit.framework */; };
 		1B0EB1D618B4908400DD8C73 /* KinveyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B0EB1D418B4907900DD8C73 /* KinveyKit.framework */; };
 		1B15819918D99778000BF6CA /* UIView+FrameAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B15819818D99778000BF6CA /* UIView+FrameAdditions.m */; };
 		1B1A180D18BF4B0C00CD23BE /* QuoteHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B1A180C18BF4B0C00CD23BE /* QuoteHomeViewController.m */; };
@@ -95,7 +94,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00AF463818D748B1002AAB9E /* KinveyKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KinveyKit.framework; path = "Externals/KinveyKit-1.26.0/KinveyKit.framework"; sourceTree = "<group>"; };
 		1B0EB1D418B4907900DD8C73 /* KinveyKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KinveyKit.framework; sourceTree = "<group>"; };
 		1B15819618D98178000BF6CA /* constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = constant.h; sourceTree = "<group>"; };
 		1B15819718D99778000BF6CA /* UIView+FrameAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FrameAdditions.h"; sourceTree = "<group>"; };
@@ -228,7 +226,6 @@
 				C6A3113418A1108900916A1A /* SystemConfiguration.framework in Frameworks */,
 				C6A3113218A1107D00916A1A /* Social.framework in Frameworks */,
 				C6A3113018A1107400916A1A /* Security.framework in Frameworks */,
-				00AF463B18D748B1002AAB9E /* KinveyKit.framework in Frameworks */,
 				C6A3112E18A1106800916A1A /* MobileCoreServices.framework in Frameworks */,
 				C6A3112C18A1105F00916A1A /* libsqlite3.dylib in Frameworks */,
 				C6A3112A18A1105400916A1A /* CoreLocation.framework in Frameworks */,
@@ -275,7 +272,6 @@
 		C6A3104F18A0F6D700916A1A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				00AF463818D748B1002AAB9E /* KinveyKit.framework */,
 				C6A3113518A110A000916A1A /* MessageUI.framework */,
 				C6A3113318A1108900916A1A /* SystemConfiguration.framework */,
 				C6A3113118A1107D00916A1A /* Social.framework */,
@@ -547,9 +543,6 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Kinvey, Inc.";
 				TargetAttributes = {
-					C6A3104C18A0F6D700916A1A = {
-						DevelopmentTeam = 5W7CYNR7UE;
-					};
 					C6A3106718A0F6D700916A1A = {
 						TestTargetID = C6A3104C18A0F6D700916A1A;
 					};
@@ -718,7 +711,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Kinvey, Inc. (5W7CYNR7UE)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -757,7 +750,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Kinvey, Inc. (5W7CYNR7UE)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -779,20 +772,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Vilbik Pavel (2EZKHBXLV5)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Vilbik Pavel (2EZKHBXLV5)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/1/Developer/Softteco/QuoteApp-iOS/Externals/KinveyKit-1.26.0",
-					"/Users/m0rganic/Documents/Projects/KinveyDev/git/QuoteSample-iOS/Externals/KinveyKit-1.26.0",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "QuoteApp/QuoteSample-Prefix.pch";
 				INFOPLIST_FILE = "QuoteApp/QuoteSample-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = QuoteSample;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "4A6DC938-E6AF-4D29-8F35-531914D532DF";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -803,20 +794,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Vilbik Pavel (2EZKHBXLV5)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Vilbik Pavel (2EZKHBXLV5)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/1/Developer/Softteco/QuoteApp-iOS/Externals/KinveyKit-1.26.0",
-					"/Users/m0rganic/Documents/Projects/KinveyDev/git/QuoteSample-iOS/Externals/KinveyKit-1.26.0",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "QuoteApp/QuoteSample-Prefix.pch";
 				INFOPLIST_FILE = "QuoteApp/QuoteSample-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = QuoteSample;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "4A6DC938-E6AF-4D29-8F35-531914D532DF";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};

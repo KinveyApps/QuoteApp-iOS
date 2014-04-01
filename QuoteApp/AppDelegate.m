@@ -74,9 +74,16 @@
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
     
+    [AuthenticationHelper instance].deviceToken = [[[[deviceToken description]
+                                                     stringByReplacingOccurrencesOfString: @"<" withString: @""]
+                                                    stringByReplacingOccurrencesOfString: @">" withString: @""]
+                                                   stringByReplacingOccurrencesOfString: @" " withString: @""];
+    
     //Kinvey: Rigstration on push service
     [[KCSPush sharedPush] application:application didRegisterForRemoteNotificationsWithDeviceToken:deviceToken completionBlock:^(BOOL success, NSError *error) {
     }];
+
+   
 }
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
     

@@ -76,4 +76,17 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(AuthenticationHelper)
 	[[KCSUser activeUser] logout];
 }
 
+- (void)unregisteringCurrentDeviceOnPushServiceOnSuccess:(STEmptyBlock)successBlock onFailure:(STErrorBlock)failureBlock{
+    
+    [[KCSPush sharedPush] unRegisterDeviceToken:^(BOOL success, NSError* error){
+        
+        if (success) {
+            if (successBlock) successBlock();
+        }else{
+            if (failureBlock) failureBlock(error);
+        }
+    }];
+}
+
+
 @end
