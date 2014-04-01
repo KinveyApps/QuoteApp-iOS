@@ -80,11 +80,14 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(AuthenticationHelper)
     
     [[KCSPush sharedPush] unRegisterDeviceToken:^(BOOL success, NSError* error){
         
-        if (success) {
-            if (successBlock) successBlock();
-        }else{
-            if (failureBlock) failureBlock(error);
-        }
+        //Return to main thread for update UI
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (!error) {
+                if (successBlock) successBlock();
+            }else{
+                if (failureBlock) failureBlock(error);
+            }
+        });
     }];
 }
 

@@ -17,6 +17,7 @@
 #import "SettingModalViewController.h"
 #import "SettingsSubView.h"
 #import "SignInViewController.h"
+#import "DejalActivityView.h"
 
 #define SCROOLL_VIEW_INSETS_FOR_IPHONE 20
 #define SCROOLL_VIEW_INSETS_FOR_IPAD 40
@@ -108,17 +109,25 @@
 
 - (void)additionalButtonAction{
     
-    [[AuthenticationHelper instance] unregisteringCurrentDeviceOnPushServiceOnSuccess:nil
-                                                                            onFailure:nil];
-    [[AuthenticationHelper instance] logout];
-    [self dismissViewControllerAnimated:YES
-                             completion:^{
-                                 [SignInViewController presentSignInFlowOnViewController:[UIApplication sharedApplication].appDelegate.window.rootViewController
-                                                                                animated:YES
-                                                                            onCompletion:^{
-                                                                                [[UIApplication sharedApplication].appDelegate startFetchingDBFromServer];
+    [DejalBezelActivityView activityViewForView:self.view.window];
+
+    [[AuthenticationHelper instance] unregisteringCurrentDeviceOnPushServiceOnSuccess:^(){
+        [[AuthenticationHelper instance] logout];
+        
+        [DejalActivityView removeView];
+        [self dismissViewControllerAnimated:YES
+                                 completion:^{
+                                     [SignInViewController presentSignInFlowOnViewController:[UIApplication sharedApplication].appDelegate.window.rootViewController
+                                                                                    animated:YES
+                                                                                onCompletion:^{
+                                                                                    [[UIApplication sharedApplication].appDelegate startFetchingDBFromServer];
+                                                                                }];
+                                 }];
+    }
+                                                                            onFailure:^(NSError *error){
+                                                                                [DejalActivityView removeView];
                                                                             }];
-                             }];
+    
 }
 
 @end
