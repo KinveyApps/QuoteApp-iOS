@@ -108,9 +108,8 @@
 
 - (void)additionalButtonAction{
     
-    if ([[AuthenticationHelper instance] unregisteringCurrentDeviceOnPushService]) {
+    [[AuthenticationHelper instance] unregisteringCurrentDeviceOnPushServiceOnSuccess:^{
         
-        //Loguot current user
         [[AuthenticationHelper instance] logout];
         [self dismissViewControllerAnimated:YES
                                  completion:^{
@@ -121,6 +120,7 @@
                                                                                 }];
                                  }];
     }
+                                                                            onFailure:nil];
 }
 
 @end
