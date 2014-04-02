@@ -125,7 +125,14 @@
                                  }];
     }
                                                                             onFailure:^(NSError *error){
+                                                                                
                                                                                 [DejalActivityView removeView];
+                                                                                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:LOC(ERR_SMTH_WENT_WRONG)
+                                                                                                                                    message:error.localizedDescription
+                                                                                                                                   delegate:nil
+                                                                                                                          cancelButtonTitle:LOC(CANCEL)
+                                                                                                                          otherButtonTitles:nil];
+                                                                                [alertView show];
                                                                             }];
     
 }
