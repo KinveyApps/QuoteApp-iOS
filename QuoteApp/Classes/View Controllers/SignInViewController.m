@@ -151,7 +151,7 @@
 
 - (IBAction)pressedSignUp:(id)sender{
     
-	[DejalBezelActivityView activityViewForView:self.view.window];
+	[DejalBezelActivityView activityViewForView:self.view];
     
     //Sing up new Kinvey user 
 	[[AuthenticationHelper instance] signUpWithUsername:self.usernameField.text
@@ -183,7 +183,7 @@
 
 - (IBAction)pressedLogin:(id)sender{
     
-	[DejalBezelActivityView activityViewForView:self.view.window];
+	[DejalBezelActivityView activityViewForView:self.view];
     
     //Login Kinvey user
 	[[AuthenticationHelper instance] loginWithUsername:self.usernameField.text

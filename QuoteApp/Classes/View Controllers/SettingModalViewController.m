@@ -109,7 +109,7 @@
 
 - (void)additionalButtonAction{
     
-    [DejalBezelActivityView activityViewForView:self.view.window];
+    [DejalBezelActivityView activityViewForView:self.view];
 
     [[AuthenticationHelper instance] unregisteringCurrentDeviceOnPushServiceOnSuccess:^(){
         [[AuthenticationHelper instance] logout];
