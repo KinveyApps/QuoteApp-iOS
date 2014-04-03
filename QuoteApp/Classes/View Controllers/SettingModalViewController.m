@@ -17,6 +17,7 @@
 #import "SettingModalViewController.h"
 #import "SettingsSubView.h"
 #import "SignInViewController.h"
+#import "DejalActivityView.h"
 
 #define SCROOLL_VIEW_INSETS_FOR_IPHONE 20
 #define SCROOLL_VIEW_INSETS_FOR_IPAD 40
@@ -108,9 +109,12 @@
 
 - (void)additionalButtonAction{
     
-    [[AuthenticationHelper instance] unregisteringCurrentDeviceOnPushServiceOnSuccess:^{
-        
+    [DejalBezelActivityView activityViewForView:self.view];
+
+    [[AuthenticationHelper instance] unregisteringCurrentDeviceOnPushServiceOnSuccess:^(){
         [[AuthenticationHelper instance] logout];
+        
+        [DejalActivityView removeView];
         [self dismissViewControllerAnimated:YES
                                  completion:^{
                                      [SignInViewController presentSignInFlowOnViewController:[UIApplication sharedApplication].appDelegate.window.rootViewController
@@ -120,7 +124,17 @@
                                                                                 }];
                                  }];
     }
-                                                                            onFailure:nil];
+                                                                            onFailure:^(NSError *error){
+                                                                                
+                                                                                [DejalActivityView removeView];
+                                                                                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:LOC(ERR_SMTH_WENT_WRONG)
+                                                                                                                                    message:error.localizedDescription
+                                                                                                                                   delegate:nil
+                                                                                                                          cancelButtonTitle:LOC(CANCEL)
+                                                                                                                          otherButtonTitles:nil];
+                                                                                [alertView show];
+                                                                            }];
+    
 }
 
 @end
