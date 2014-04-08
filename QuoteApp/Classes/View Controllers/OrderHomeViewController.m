@@ -22,8 +22,8 @@
 #import "QuoteOrderModalViewController.h"
 
 #define HEIGHT_FOR_ROW 44
-#define HEIGHT_FOR_HEADER_IN_SECTION_FOR_IPHONE 60
-#define HEIGHT_FOR_HEADER_IN_SECTION_FOR_IPAD 95
+#define HEIGHT_FOR_HEADER_IN_SECTION_FOR_IPHONE 44
+#define HEIGHT_FOR_HEADER_IN_SECTION_FOR_IPAD 60
 
 @implementation OrderHomeViewController
 

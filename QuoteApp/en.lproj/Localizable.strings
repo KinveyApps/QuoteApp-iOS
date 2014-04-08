@@ -99,7 +99,7 @@
 "MTVH_TITLE_QUOTE"="My Quotes";
 "MTVH_DATE_QUOTE"="Quote Date";
 "MTVH_NO_QUOTE"="Quote No.";
- "MTVH_PRICE_QUOTE"="Price";
+"MTVH_PRICE_QUOTE"="Price";
 "MTVH_MORE_QUOTE"="View & Order";
 
 //Home and Search View Controller
@@ -108,7 +108,7 @@
 //Quote Home View Controller
 "QHVC_CELL_NO_QUOTE"="You have no quote";
 "QHVC_REFRESH_CONTROL_TITLE"="Update quote list";
-"QHVC_TITLE"="My Quote";
+"QHVC_TITLE"="My Quotes";
 
 //Order Home View Controller
 "OHVC_CELL_NO_ORDER"="You have no order";
