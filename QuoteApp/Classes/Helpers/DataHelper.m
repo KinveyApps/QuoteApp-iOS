@@ -20,7 +20,7 @@
 
 @property (nonatomic, strong) KCSLinkedAppdataStore *quotesStore;
 @property (nonatomic, strong) KCSLinkedAppdataStore *ordersStore;
-@property (nonatomic, strong) KCSLinkedAppdataStore *productStore;
+@property (nonatomic, strong) KCSLinkedAppdataStore *productsStore;
 @property (nonatomic, strong) NSDictionary *contentTypesByName;
 
 @end
@@ -61,7 +61,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DataHelper)
         //Products collection
         KCSCollection *collectionProduct = [KCSCollection collectionFromString:PRODUCTS_COLLECTIONS_NAME
                                                                        ofClass:[Product class]];
-        self.productStore = [KCSLinkedAppdataStore storeWithOptions:@{ KCSStoreKeyResource      : collectionProduct,                //collection
+        self.productsStore = [KCSLinkedAppdataStore storeWithOptions:@{ KCSStoreKeyResource      : collectionProduct,                //collection
                                                                        KCSStoreKeyCachePolicy   : @(KCSCachePolicyNetworkFirst)}];  //default cache policy
 	}
     
@@ -115,6 +115,19 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DataHelper)
     
     return query;
 }
+
+- (NSArray *)allUserInfoKey{
+    
+    //Return attribute user key which use in app
+    return @[USER_INFO_KEY_CONTACT,
+             USER_INFO_KEY_COMPANY,
+             USER_INFO_KEY_ACCOUNT_NUMBER,
+             USER_INFO_KEY_PHONE,
+             USER_INFO_KEY_PUSH_NOTIFICATION_ENABLE,
+             USER_INFO_KEY_EMAIL_CONFIRMATION_ENABLE,
+             USER_INFO_KEY_EMAIL];
+}
+
 
 #pragma mark - QUOTE
 #pragma mark - Save and Load Entity
@@ -173,6 +186,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DataHelper)
     
 }
 
+
 #pragma mark - ORDER
 #pragma mark - Save and Load Entity
 
@@ -230,6 +244,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DataHelper)
                withProgressBlock:nil];
     
 }
+
 
 #pragma mark - USER
 #pragma mark - Save and Load Attributes
@@ -298,19 +313,6 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DataHelper)
     }];
 }
 
-#pragma mark - Utils
-
-- (NSArray *)allUserInfoKey{
-    
-    //Return attribute user key which use in app
-    return @[USER_INFO_KEY_CONTACT,
-             USER_INFO_KEY_COMPANY,
-             USER_INFO_KEY_ACCOUNT_NUMBER,
-             USER_INFO_KEY_PHONE,
-             USER_INFO_KEY_PUSH_NOTIFICATION_ENABLE,
-             USER_INFO_KEY_EMAIL_CONFIRMATION_ENABLE,
-             USER_INFO_KEY_EMAIL];
-}
 
 #pragma mark - PRODUCT
 #pragma mark - Load
@@ -327,7 +329,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DataHelper)
     }
     
     //Kinvey: Load entity from Product collection which correspond query
-    [self.productStore queryWithQuery:query
+    [self.productsStore queryWithQuery:query
                   withCompletionBlock:^(NSArray *objectsOrNil, NSError *errorOrNil) {
                       
                       //Return to main thread for update UI

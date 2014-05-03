@@ -18,6 +18,7 @@
 #import "DejalActivityView.h"
 
 @interface SignInViewController ()
+
 @property (weak, nonatomic) IBOutlet UIView *contentView;
 @property (weak, nonatomic) IBOutlet UIButton *signUpButton;
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
@@ -25,6 +26,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
 
 - (IBAction)textFieldEditingDidChange:(id)sender;
+
 @end
 
 @implementation SignInViewController
@@ -107,7 +109,6 @@
 	rect = [self.view convertRect:rect fromView:nil];
 	CGFloat keyboardHeight = CGRectGetHeight(rect);
 	
-	
 	// get keyboard size and loctaion
 	NSNumber *duration = [notification.userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey];
     NSNumber *curve = [notification.userInfo objectForKey:UIKeyboardAnimationCurveUserInfoKey];
@@ -131,14 +132,12 @@
 	rect = [self.view convertRect:rect fromView:nil];
 	CGFloat keyboardHeight = CGRectGetHeight(rect);
 	
-	
 	// get keyboard size
 	NSNumber *duration = [notification.userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey];
     NSNumber *curve = [notification.userInfo objectForKey:UIKeyboardAnimationCurveUserInfoKey];
     UIViewAnimationCurve curveType = [curve integerValue];
     UIViewAnimationOptions animationOptions = curveType << 16;
     
-	
     [UIView animateWithDuration:[duration doubleValue]
 						  delay:0
                         options:animationOptions
@@ -210,7 +209,6 @@
                                                                                            cancelButtonTitle:LOC(OKAY)
                                                                                            otherButtonTitles:nil];
                                                  [alertView show];
-                                                 
 											 }];
 }
 
@@ -218,7 +216,6 @@
 - (IBAction)textFieldEditingDidChange:(id)sender{
     
 	[self updateButtons];
-    
 }
 
 - (IBAction)demoPress:(id)sender {
@@ -226,8 +223,8 @@
     self.usernameField.text = @"demoSampleQuote";
     self.passwordField.text = @"123456";
     [self pressedLogin:sender];
-    
 }
+
 
 #pragma mark UITextFieldDelegate methods
 

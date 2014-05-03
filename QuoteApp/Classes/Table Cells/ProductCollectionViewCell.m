@@ -22,7 +22,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet KinveyImageView *kinveyImageView;
 
-
 @end
 
 @implementation ProductCollectionViewCell
@@ -35,6 +34,7 @@
 		[self.contentView addSubview:self.view];
 		self.view.frame = self.contentView.bounds;
     }
+    
     return self;
 }
 

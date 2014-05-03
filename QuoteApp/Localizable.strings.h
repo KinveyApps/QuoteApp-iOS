@@ -13,8 +13,9 @@
  * or implied. See the License for the specific language governing permissions and limitations under
  * the License. *
  */
-#define LOC(locKey) (NSLocalizedString(locKey, nil))
 
+
+#define LOC(locKey) (NSLocalizedString(locKey, nil))
 
 #define LANG @"LANG"
 #define UNSPEC @"UNSPEC"
@@ -93,13 +94,11 @@
 #define NQV_TOP_BAR_TITLE @"NQV_TOP_BAR_TITLE"
 
 //Main Table View Header
-#define MTVH_TITLE_ORDER @"MTVH_TITLE_ORDER"
 #define MTVH_DATE_ORDER @"MTVH_DATE_ORDER"
 #define MTVH_NO_ORDER @"MTVH_NO_ORDER"
 #define MTVH_START_SUBSCRIPTION_DATE @"MTVH_START_SUBSCRIPTION_DATE"
 #define MTVH_STATUS_ORDER @"MTVH_STATUS_ORDER"
 #define MTVH_MORE_ORDER @"MTVH_MORE_ORDER"
-#define MTVH_TITLE_QUOTE @"MTVH_TITLE_QUOTE"
 #define MTVH_DATE_QUOTE @"MTVH_DATE_QUOTE"
 #define MTVH_NO_QUOTE @"MTVH_NO_QUOTE"
 #define MTVH_PRICE_QUOTE @"MTVH_PRICE_QUOTE"

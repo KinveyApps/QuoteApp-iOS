@@ -20,6 +20,7 @@
 @interface ProductCollectionViewCell : UICollectionViewCell
 
 @property (strong, nonatomic) IBOutlet UIView *view;
+
 @property (strong, nonatomic) Product *item;
 
 @end

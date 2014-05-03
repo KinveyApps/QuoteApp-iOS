@@ -32,68 +32,89 @@
 		[self.contentView addSubview:self.view];
 		self.view.frame = self.contentView.bounds;
     }
+    
     return self;
 }
 
 - (void)setIndex:(NSInteger)index{
+    
     _index = index;
+    
+    //configure cell by index
     switch (index) {
+            
         case ProductCellIndex:{
-            self.textField.placeholder = PLACEHOLDER_PRODUCT_TEXT_FIELD;
-            [self.button setImage:[UIImage imageNamed:IMAGE_NAME_LIST_BUTTON] forState:UIControlStateNormal];
-            self.button.hidden = NO;
+            [self setupCellWithImageName:IMAGE_NAME_LIST_BUTTON
+                          andPlaceholder:PLACEHOLDER_PRODUCT_TEXT_FIELD
+                         andKeyboardType:UIKeyboardTypeNumbersAndPunctuation];
         }break;
+            
         case ActiveUserCellIndex:{
-            self.textField.placeholder = PLACEHOLDER_ACTIVE_USER_TEXT_FIELD;
-            self.textField.enabled = YES;
-            self.textField.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
-            self.button.hidden = YES;
+            [self setupCellWithImageName:nil
+                          andPlaceholder:PLACEHOLDER_ACTIVE_USER_TEXT_FIELD
+                         andKeyboardType:UIKeyboardTypeNumbersAndPunctuation];
         }break;
+            
         case BusinessLogicScriptsCellIndex:{
-            self.textField.placeholder = PLACEHOLDER_BUSINESS_LOGIC_SCRIPTS_TEXT_FIELD;
-            self.textField.enabled = YES;
-            self.textField.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
-            self.button.hidden = YES;
+            [self setupCellWithImageName:nil
+                          andPlaceholder:PLACEHOLDER_BUSINESS_LOGIC_SCRIPTS_TEXT_FIELD
+                         andKeyboardType:UIKeyboardTypeNumbersAndPunctuation];
         }break;
+            
         case ScheduledBusinessLogicCellIndex:{
-            self.textField.placeholder = PLACEHOLDER_SCHEDULED_BUSINESS_LOGIC_TEXT_FIELD;
-            self.textField.enabled = YES;
-            self.textField.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
-            self.button.hidden = YES;
+            [self setupCellWithImageName:nil
+                          andPlaceholder:PLACEHOLDER_SCHEDULED_BUSINESS_LOGIC_TEXT_FIELD
+                         andKeyboardType:UIKeyboardTypeNumbersAndPunctuation];
         }break;
+            
         case CollaboratorsCellIndex:{
-            self.textField.placeholder = PLACEHOLDER_COLLABORATORS_TEXT_FIELD;
-            self.textField.enabled = YES;
-            self.textField.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
-            self.button.hidden = YES;
+            [self setupCellWithImageName:nil
+                          andPlaceholder:PLACEHOLDER_COLLABORATORS_TEXT_FIELD
+                         andKeyboardType:UIKeyboardTypeNumbersAndPunctuation];
         }break;
+            
         case BackendEnviromentsCellIndex:{
-            self.textField.placeholder = PLACEHOLDER_BACKEND_ENVIROMENTS_TEXT_FIELD;
-            self.textField.enabled = YES;
-            self.textField.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
-            self.button.hidden = YES;
+            [self setupCellWithImageName:nil
+                          andPlaceholder:PLACEHOLDER_BACKEND_ENVIROMENTS_TEXT_FIELD
+                         andKeyboardType:UIKeyboardTypeNumbersAndPunctuation];
         }break;
+            
         case DataStoregeCellIndex:{
-            self.textField.placeholder = PLACEHOLDER_DATA_STOREGE_TEXT_FIELD;
-            self.textField.enabled = YES;
-            self.textField.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
-            self.button.hidden = YES;
+            [self setupCellWithImageName:nil
+                          andPlaceholder:PLACEHOLDER_DATA_STOREGE_TEXT_FIELD
+                         andKeyboardType:UIKeyboardTypeNumbersAndPunctuation];
         }break;
+            
         case BusinessLogicExecutionTimeLimitCellIndex:{
-            self.textField.placeholder = PLACEHOLDER_BUSINESS_LOGIC_EXECUTION_TIME_LIMIT_TEXT_FIELD;
-            self.textField.enabled = YES;
-            self.textField.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
-            self.button.hidden = YES;
+            [self setupCellWithImageName:nil
+                          andPlaceholder:PLACEHOLDER_BUSINESS_LOGIC_EXECUTION_TIME_LIMIT_TEXT_FIELD
+                         andKeyboardType:UIKeyboardTypeNumbersAndPunctuation];
         }break;
+            
         case StartSubscriptionDateCellIndex:{
-            self.textField.placeholder = PLACEHOLDER_START_SUBSCRIPTION_DATE_TEXT_FIELD;
-            [self.button setImage:[UIImage imageNamed:IMAGE_NAME_CALENDAR_BUTTON] forState:UIControlStateNormal];
-            self.button.hidden = NO;
+            [self setupCellWithImageName:IMAGE_NAME_CALENDAR_BUTTON
+                          andPlaceholder:PLACEHOLDER_START_SUBSCRIPTION_DATE_TEXT_FIELD
+                         andKeyboardType:UIKeyboardTypeNumbersAndPunctuation];
         }break;
             
         default:
             break;
     }
+}
+
+- (void)setupCellWithImageName:(NSString *)imageName andPlaceholder:(NSString *)placeholder andKeyboardType:(UIKeyboardType)keyboardType{
+    
+    if (imageName.length) {
+        [self.button setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
+        self.button.hidden = NO;
+        self.textField.enabled = NO;
+    }else{
+        self.textField.enabled = YES;
+        self.textField.keyboardType = keyboardType;
+        self.button.hidden = YES;
+    }
+    
+    self.textField.placeholder = placeholder;
 }
 
 @end

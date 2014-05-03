@@ -80,10 +80,12 @@
                        }
                    } progressBlock:nil];
     }else{
+        
         self.imageView.image = nil;
     }
 }
 
+//resize image
 - (UIImage *)imageWithImage:(UIImage *)image size:(CGSize)size {
     
     UIGraphicsBeginImageContextWithOptions(size, NO, 0.0);

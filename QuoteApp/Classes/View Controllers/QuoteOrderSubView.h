@@ -23,6 +23,4 @@
 
 @property (strong, nonatomic) Quote *item;
 
-
-
 @end

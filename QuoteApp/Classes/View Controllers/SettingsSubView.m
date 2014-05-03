@@ -24,7 +24,6 @@
 @property (strong, nonatomic) NSArray *userData;
 @property (nonatomic) BOOL isEditModeTableView;
 
-
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
@@ -164,6 +163,7 @@
                                   }];
 }
 
+
 #pragma mark - Utils
 
 - (void)endInputIfNeed{
@@ -274,6 +274,7 @@
     return cell;
 }
 
+
 #pragma mark - Utils
 
 - (NSString *)titleForCellWithKey:(NSString *)key{
@@ -296,6 +297,7 @@
     
     return nil;
 }
+
 
 #pragma mark - SETTING TABLE VIEW CELL
 #pragma mark - Delegate

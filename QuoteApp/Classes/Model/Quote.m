@@ -41,12 +41,16 @@
 }
 
 + (NSDictionary *)kinveyPropertyToCollectionMapping{
-    return @{ @"originator" : KCSUserCollectionName,
-              @"product"    : @"Products"};
+    //    backend field name:collection name
+    //----------------------:---------------------------
+    return @{ @"originator" : KCSUserCollectionName,    //originator link to users
+              @"product"    : @"Products"};             //product link to Products
 }
 
 + (NSDictionary *)kinveyObjectBuilderOptions{
-    return @{ KCS_REFERENCE_MAP_KEY : @{ @"product" : [Product class]}};
+    //Maps properties to object:        property    : class
+    //----------------------------------------------:-------------------
+    return @{ KCS_REFERENCE_MAP_KEY : @{ @"product" : [Product class]}};    //product property maps to Product class
 }
 
 + (NSArray *)textFieldsName{

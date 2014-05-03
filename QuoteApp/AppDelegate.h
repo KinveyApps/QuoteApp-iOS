@@ -17,11 +17,15 @@
 #import <UIKit/UIKit.h>
 
 @class AppDelegate;
+
 @interface NSObject (AppDelegate)
+
 - (AppDelegate *)appDelegate;
+
 @end
 
 @class TabBarController;
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;

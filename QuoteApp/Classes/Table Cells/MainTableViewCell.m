@@ -17,6 +17,7 @@
 #import "MainTableViewCell.h"
 
 @interface MainTableViewCell ()
+
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *noLabel;
 @property (weak, nonatomic) IBOutlet UILabel *startSubscriptionDateLabel;
@@ -26,16 +27,31 @@
 
 @implementation MainTableViewCell
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-{
-    self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier];
+- (id)initWithFrame:(CGRect)frame{
+    
+    self = [super initWithFrame:frame];
     if (self) {
-        [[NSBundle mainBundle] loadNibNamed:@"MainTableViewCell" owner:self options:nil];
-		[self.contentView addSubview:self.view];
-		self.view.frame = self.contentView.bounds;
+        [self setup];
     }
     
     return self;
+}
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder{
+    
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        [self setup];
+    }
+    
+    return self;
+}
+
+- (void)setup{
+    
+    [[NSBundle mainBundle] loadNibNamed:@"MainTableViewCell" owner:self options:nil];
+    [self.contentView addSubview:self.view];
+    self.view.frame = self.contentView.bounds;
 }
 
 - (void)setItem:(id)item{
@@ -46,6 +62,7 @@
         
         if ([item isKindOfClass:[Order class]]) {
             
+            //setup orders cell
             Order *order = (Order *)item;
             self.dateLabel.text = [formatter stringFromDate:order.meta.creationTime];
             self.noLabel.text = order.referenceNumber;
@@ -54,12 +71,12 @@
             
         }else if ([item isKindOfClass:[Quote class]]) {
             
+            //setup quotes cell
             Quote *quote = (Quote *)item;
             self.dateLabel.text = [formatter stringFromDate:quote.meta.creationTime];
             self.noLabel.text = quote.referenceNumber;
             self.startSubscriptionDateLabel.text = [formatter stringFromDate:quote.startSubscriptionDate];
             self.statusPriceLabel.text = quote.totalPrice;
-            
         }
     }
 }

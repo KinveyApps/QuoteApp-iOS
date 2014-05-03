@@ -20,6 +20,8 @@
 @interface MainTableHeaderViewForIPhone : UITableViewHeaderFooterView
 
 @property (strong, nonatomic) IBOutlet UIView *view;
+
+//define current header type
 @property (nonatomic) HeaderViewMainTableType type;
 
 @end

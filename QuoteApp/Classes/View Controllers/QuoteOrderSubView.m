@@ -68,6 +68,7 @@
     self.view.frame = self.bounds;
 }
 
+
 #pragma mark - Setters and Getters
 
 - (void)setItem:(Quote *)item{

@@ -24,6 +24,8 @@
     //Kinvey: Mapping Function
     NSMutableDictionary *mapping = [NSMutableDictionary dictionary];
     [mapping addEntriesFromDictionary:[super hostToKinveyPropertyMapping]];
+    
+    //Add field to Quote map
     //                                  client property         : backend column
     //                                  ------------------------:-------------------------------
     [mapping addEntriesFromDictionary:@{ @"currentSubscription" : @"currentSubscription" }];    //currentSubscription maps to currentSubscription

@@ -16,6 +16,7 @@
 
 #import <UIKit/UIKit.h>
 
+//cell type at index
 typedef enum {
     ProductCellIndex = 0,
 	ActiveUserCellIndex,
@@ -46,7 +47,6 @@ typedef enum {
 
 @property (strong, nonatomic) IBOutlet UIView *view;
 @property (weak, nonatomic) IBOutlet UITextField *textField;
-
 
 @property (nonatomic) NSInteger index;
 

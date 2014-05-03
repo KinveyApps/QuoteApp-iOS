@@ -17,13 +17,10 @@
 #import <UIKit/UIKit.h>
 #import "Product.h"
 
-@class ProductTableViewCell;
-
-
 @interface ProductTableViewCell : UITableViewCell
 
 @property (strong, nonatomic) IBOutlet UIView *view;
-@property (strong, nonatomic) Product *item;
 
+@property (strong, nonatomic) Product *item;
 
 @end

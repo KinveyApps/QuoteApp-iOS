@@ -20,6 +20,7 @@
 
 @protocol SettingTableViewCellDelegate <NSObject>
 
+//call in UITextFieldDelegate method
 - (void)valueTextFieldDidEndEditingWithValue:(NSString *)value sender:(SettingTableViewCell *)sender;
 
 @end

@@ -49,7 +49,6 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(AuthenticationHelper)
           }];
 }
 
-
 - (void)loginWithUsername:(NSString *)username password:(NSString *)password onSuccess:(STEmptyBlock)successBlock onFailure:(STErrorBlock)failureBlock {
 	
     //Kinvey: Login an existing user
@@ -64,7 +63,6 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(AuthenticationHelper)
                }
            }];
 }
-
 
 - (BOOL)isSignedIn{
     //Kinvey: Check currently currently active user
@@ -90,6 +88,5 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(AuthenticationHelper)
         });
     }];
 }
-
 
 @end

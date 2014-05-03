@@ -16,6 +16,7 @@
 
 #import <UIKit/UIKit.h>
 
+//Supported type of header
 typedef enum  {
     HeaderViewMainTableTypeOrder = 0,
     HeaderViewMainTableTypeQuotes = 1
@@ -24,6 +25,8 @@ typedef enum  {
 @interface MainTableHeaderView : UITableViewHeaderFooterView
 
 @property (strong, nonatomic) IBOutlet UIView *view;
+
+//define current header type
 @property (nonatomic) HeaderViewMainTableType type;
 
 @end

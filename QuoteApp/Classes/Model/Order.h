@@ -30,6 +30,7 @@
 
 @property (nonatomic, retain) NSNumber *currentSubscription;
 
+//return description of current entity status
 - (NSString *)statusDescription;
 
 @end

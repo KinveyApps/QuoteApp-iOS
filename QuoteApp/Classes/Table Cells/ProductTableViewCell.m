@@ -50,6 +50,7 @@
         _item = item;
         self.productNameLabel.text = item.title;
         
+        //contvert HTML data to NSAttributed string
         NSError *error = nil;
         NSAttributedString *description = [[NSAttributedString alloc] initWithData:[item.description dataUsingEncoding:NSUTF8StringEncoding]
                                                                            options:@{NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType}
@@ -62,7 +63,6 @@
         
         self.kinveyImageView.kinveyID = item.thumbnailID;
     }
-    
 }
 
 @end

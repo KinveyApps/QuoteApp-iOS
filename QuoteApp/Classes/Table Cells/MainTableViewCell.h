@@ -22,7 +22,6 @@
 
 @property (strong, nonatomic) IBOutlet UIView *view;
 
-@property (strong, nonatomic) id item;
-
+@property (strong, nonatomic) id item;  //quote or order
 
 @end

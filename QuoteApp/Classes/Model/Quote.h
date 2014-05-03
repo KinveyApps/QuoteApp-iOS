@@ -19,7 +19,7 @@
 
 #define QUOTES_COLLECTIONS_NAME @"Quotes"
 
-@interface Quote : NSObject
+@interface Quote : NSObject <KCSPersistable>
 
 @property (nonatomic, retain) NSString *kinveyId;
 @property (nonatomic, retain) KCSMetadata *meta;

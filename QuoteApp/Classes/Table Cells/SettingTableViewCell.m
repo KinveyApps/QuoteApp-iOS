@@ -27,6 +27,7 @@
         self.valueTextField.delegate = self;
         self.view.frame = self.contentView.bounds;
     }
+    
     return self;
 }
 

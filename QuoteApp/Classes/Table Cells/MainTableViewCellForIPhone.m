@@ -17,21 +17,39 @@
 #import "MainTableViewCellForIPhone.h"
 
 @interface MainTableViewCellForIPhone ()
+
 @property (weak, nonatomic) IBOutlet UILabel *noLabel;
 @property (weak, nonatomic) IBOutlet UILabel *statusPriceLabel;
+
 @end
 
 @implementation MainTableViewCellForIPhone
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-{
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+- (id)initWithFrame:(CGRect)frame{
+    
+    self = [super initWithFrame:frame];
     if (self) {
-        [[NSBundle mainBundle] loadNibNamed:@"MainTableViewCellForIPhone" owner:self options:nil];
-		[self.contentView addSubview:self.view];
-		self.view.frame = self.contentView.bounds;
+        [self setup];
     }
+    
     return self;
+}
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder{
+    
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        [self setup];
+    }
+    
+    return self;
+}
+
+- (void)setup{
+    
+    [[NSBundle mainBundle] loadNibNamed:@"MainTableViewCellForIPhone" owner:self options:nil];
+    [self.contentView addSubview:self.view];
+    self.view.frame = self.contentView.bounds;
 }
 
 - (void)setItem:(id)item{
@@ -41,16 +59,17 @@
         
         if ([item isKindOfClass:[Order class]]) {
             
+            //setup orders cell
             Order *order = (Order *)item;
             self.noLabel.text = order.referenceNumber;
             self.statusPriceLabel.text = [order statusDescription];
             
         }else if ([item isKindOfClass:[Quote class]]) {
             
+            //setup quote cell
             Quote *quote = (Quote *)item;
             self.noLabel.text = quote.referenceNumber;
             self.statusPriceLabel.text = quote.totalPrice;
-            
         }
     }
 }

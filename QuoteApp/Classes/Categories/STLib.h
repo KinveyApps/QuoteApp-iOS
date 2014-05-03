@@ -31,8 +31,6 @@
 #import "STBlocks.h"
 
 // Enumerations
-#import "STCallScheme.h"
-#import "SettingsManager.h"
 #import "AuthenticationHelper.h"
 #import "DataHelper.h"
 

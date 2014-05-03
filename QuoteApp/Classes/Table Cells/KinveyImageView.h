@@ -13,11 +13,13 @@
  * or implied. See the License for the specific language governing permissions and limitations under
  * the License. *
  */
+
 #import <UIKit/UIKit.h>
 
 @interface KinveyImageView : UIView
 
 @property (strong, nonatomic) IBOutlet UIView *view;
-@property (strong, nonatomic) NSString *kinveyID;
+
+@property (strong, nonatomic) NSString *kinveyID;   //id file of kinvey
 
 @end

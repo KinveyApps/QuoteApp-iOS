@@ -157,6 +157,7 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
+
 #pragma mark - Keyboard Notification
 
 - (void)keyboardShow:(NSNotification *)notification{
@@ -184,6 +185,7 @@
                          [self.view layoutIfNeeded];
                      }];
 }
+
 
 #pragma mark - Actions
 
@@ -317,6 +319,7 @@
     [self updateQuoteWithTextField:textField andIndex:0];
 }
 
+
 #pragma mark - Utils
 
 - (void)setNextResponderCellAfterCellWithTextFieldPlaceholder:(NSString *)placeholder{
@@ -355,6 +358,7 @@
     }
 }
 
+
 #pragma mark - PICKER VIEW
 #pragma mark - Delegate
 
@@ -374,6 +378,7 @@
     [self setNextResponderCellAfterCellWithTextFieldPlaceholder:cell.textField.placeholder];
 }
 
+
 #pragma mark - Data Source
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
@@ -383,6 +388,7 @@
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
     return self.pickerItem.count;
 }
+
 
 #pragma mark - Utils
 
@@ -476,6 +482,7 @@
     
     return datePicker;
 }
+
 
 #pragma mark - Table View
 #pragma mark - Delegate
@@ -626,6 +633,7 @@
     }
 }
 
+
 #pragma mark - Data Source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -635,6 +643,7 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
 }
+
 
 #pragma mark - Utils
 

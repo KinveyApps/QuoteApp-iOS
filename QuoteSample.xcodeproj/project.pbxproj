@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1B15819918D99778000BF6CA /* UIView+FrameAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B15819818D99778000BF6CA /* UIView+FrameAdditions.m */; };
 		1B1A180D18BF4B0C00CD23BE /* QuoteHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B1A180C18BF4B0C00CD23BE /* QuoteHomeViewController.m */; };
 		1B1A181718BFC7BF00CD23BE /* OrderHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B1A181618BFC7BF00CD23BE /* OrderHomeViewController.m */; };
 		1B1A181A18BFCC4800CD23BE /* ProductHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B1A181918BFCC4800CD23BE /* ProductHomeViewController.m */; };
@@ -25,6 +24,7 @@
 		1B4773FC18C5C672005E1A9C /* KinveyImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B4773FB18C5C672005E1A9C /* KinveyImageView.xib */; };
 		1B4773FF18C5CF8A005E1A9C /* ProductViewCellForIPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B4773FE18C5CF89005E1A9C /* ProductViewCellForIPhone.m */; };
 		1B47740118C5CF9E005E1A9C /* ProductViewCellForIPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B47740018C5CF9E005E1A9C /* ProductViewCellForIPhone.xib */; };
+		1B67E3001914CE6200966153 /* UIView+FrameAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B67E2FF1914CE6200966153 /* UIView+FrameAdditions.m */; };
 		1B727DE818B5DCBD0002F077 /* SettingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B727DE718B5DCBD0002F077 /* SettingTableViewCell.m */; };
 		1B9F390318B1E9D10089B813 /* ComboBoxNewQuoteTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B9F390218B1E9D10089B813 /* ComboBoxNewQuoteTableViewCell.m */; };
 		1B9F390518B1E9EC0089B813 /* ComboBoxNewQuoteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B9F390418B1E9EC0089B813 /* ComboBoxNewQuoteTableViewCell.xib */; };
@@ -67,7 +67,6 @@
 		C6A3107618A0F6D700916A1A /* QuoteAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A3107518A0F6D700916A1A /* QuoteAppTests.m */; };
 		C6A3108018A0F71B00916A1A /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6A3107F18A0F71B00916A1A /* MainWindow.xib */; };
 		C6A3109118A106DF00916A1A /* DejalActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A3108618A106DF00916A1A /* DejalActivityView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		C6A3109518A106DF00916A1A /* SettingsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A3108C18A106DF00916A1A /* SettingsManager.m */; };
 		C6A3109C18A107F900916A1A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C6A3109A18A107F900916A1A /* Localizable.strings */; };
 		C6A3110C18A1083400916A1A /* AuthenticationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A310CA18A1083400916A1A /* AuthenticationHelper.m */; };
 		C6A3110D18A1083400916A1A /* DataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A310CC18A1083400916A1A /* DataHelper.m */; };
@@ -95,8 +94,6 @@
 
 /* Begin PBXFileReference section */
 		1B15819618D98178000BF6CA /* constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = constant.h; sourceTree = "<group>"; };
-		1B15819718D99778000BF6CA /* UIView+FrameAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FrameAdditions.h"; sourceTree = "<group>"; };
-		1B15819818D99778000BF6CA /* UIView+FrameAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FrameAdditions.m"; sourceTree = "<group>"; };
 		1B1A180B18BF4B0C00CD23BE /* QuoteHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteHomeViewController.h; sourceTree = "<group>"; };
 		1B1A180C18BF4B0C00CD23BE /* QuoteHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuoteHomeViewController.m; sourceTree = "<group>"; };
 		1B1A181518BFC7BF00CD23BE /* OrderHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderHomeViewController.h; sourceTree = "<group>"; };
@@ -124,6 +121,8 @@
 		1B4773FD18C5CF89005E1A9C /* ProductViewCellForIPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductViewCellForIPhone.h; sourceTree = "<group>"; };
 		1B4773FE18C5CF89005E1A9C /* ProductViewCellForIPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductViewCellForIPhone.m; sourceTree = "<group>"; };
 		1B47740018C5CF9E005E1A9C /* ProductViewCellForIPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductViewCellForIPhone.xib; sourceTree = "<group>"; };
+		1B67E2FE1914CE6200966153 /* UIView+FrameAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FrameAdditions.h"; sourceTree = "<group>"; };
+		1B67E2FF1914CE6200966153 /* UIView+FrameAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FrameAdditions.m"; sourceTree = "<group>"; };
 		1B727DE618B5DCBD0002F077 /* SettingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTableViewCell.h; sourceTree = "<group>"; };
 		1B727DE718B5DCBD0002F077 /* SettingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTableViewCell.m; sourceTree = "<group>"; };
 		1B9F390118B1E9D10089B813 /* ComboBoxNewQuoteTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComboBoxNewQuoteTableViewCell.h; sourceTree = "<group>"; };
@@ -189,10 +188,7 @@
 		C6A3107F18A0F71B00916A1A /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		C6A3108518A106DF00916A1A /* DejalActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DejalActivityView.h; sourceTree = "<group>"; };
 		C6A3108618A106DF00916A1A /* DejalActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DejalActivityView.m; sourceTree = "<group>"; };
-		C6A3108B18A106DF00916A1A /* SettingsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsManager.h; sourceTree = "<group>"; };
-		C6A3108C18A106DF00916A1A /* SettingsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsManager.m; sourceTree = "<group>"; };
 		C6A3108D18A106DF00916A1A /* STBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STBlocks.h; sourceTree = "<group>"; };
-		C6A3108E18A106DF00916A1A /* STCallScheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STCallScheme.h; sourceTree = "<group>"; };
 		C6A3108F18A106DF00916A1A /* SynthesizeSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynthesizeSingleton.h; sourceTree = "<group>"; };
 		C6A3109618A107C900916A1A /* Localizable.strings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Localizable.strings.h; sourceTree = "<group>"; };
 		C6A3109B18A107F900916A1A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -345,10 +341,7 @@
 			children = (
 				1B2DC6EC18EB0AB400FB5AB7 /* KinveyKit-1.26.6 */,
 				C6A3108418A106DF00916A1A /* DejalActivityView */,
-				C6A3108B18A106DF00916A1A /* SettingsManager.h */,
-				C6A3108C18A106DF00916A1A /* SettingsManager.m */,
 				C6A3108D18A106DF00916A1A /* STBlocks.h */,
-				C6A3108E18A106DF00916A1A /* STCallScheme.h */,
 				C6A3108F18A106DF00916A1A /* SynthesizeSingleton.h */,
 			);
 			path = Externals;
@@ -379,8 +372,8 @@
 			isa = PBXGroup;
 			children = (
 				C6A310B518A1083400916A1A /* STLib.h */,
-				1B15819718D99778000BF6CA /* UIView+FrameAdditions.h */,
-				1B15819818D99778000BF6CA /* UIView+FrameAdditions.m */,
+				1B67E2FE1914CE6200966153 /* UIView+FrameAdditions.h */,
+				1B67E2FF1914CE6200966153 /* UIView+FrameAdditions.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -616,7 +609,6 @@
 				1BB1E83A18D343B500D1FD2C /* QuoteOrderSubView.m in Sources */,
 				C6A3106118A0F6D700916A1A /* AppDelegate.m in Sources */,
 				C6760A1718A39D8400BAC60D /* Order.m in Sources */,
-				1B15819918D99778000BF6CA /* UIView+FrameAdditions.m in Sources */,
 				C67609FE18A2826400BAC60D /* NewQuoteViewController.m in Sources */,
 				1B475DC718AEB7A60071BC98 /* Product.m in Sources */,
 				C6A3105D18A0F6D700916A1A /* main.m in Sources */,
@@ -633,8 +625,8 @@
 				1B1A180D18BF4B0C00CD23BE /* QuoteHomeViewController.m in Sources */,
 				1B4773FA18C5C65C005E1A9C /* KinveyImageView.m in Sources */,
 				C6760A0818A282E200BAC60D /* HomeViewController.m in Sources */,
+				1B67E3001914CE6200966153 /* UIView+FrameAdditions.m in Sources */,
 				1BACC98E18AA71A800D87C0F /* MainTableViewCell.m in Sources */,
-				C6A3109518A106DF00916A1A /* SettingsManager.m in Sources */,
 				1B4773FF18C5CF8A005E1A9C /* ProductViewCellForIPhone.m in Sources */,
 				1BACC98918AA602600D87C0F /* MainTableHeaderView.m in Sources */,
 				1BAECC8018E43DE1007B83BE /* AboutViewController.m in Sources */,

@@ -18,13 +18,11 @@
 
 @interface MainTableHeaderView ()
 
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *noLabel;
 @property (weak, nonatomic) IBOutlet UILabel *startSubscriptionDate;
 @property (weak, nonatomic) IBOutlet UILabel *statusPriceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *disclosureLabel;
-
 
 @end
 
@@ -34,12 +32,27 @@
     
     self = [super initWithFrame:frame];
     if (self) {
-        [[NSBundle mainBundle] loadNibNamed:@"MainTableHeaderView" owner:self options:nil];
-		[self.contentView addSubview:self.view];
-		self.view.frame = self.contentView.bounds;
+        [self setup];
     }
     
     return self;
+}
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder{
+    
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        [self setup];
+    }
+    
+    return self;
+}
+
+- (void)setup{
+    
+    [[NSBundle mainBundle] loadNibNamed:@"MainTableHeaderView" owner:self options:nil];
+    [self.contentView addSubview:self.view];
+    self.view.frame = self.contentView.bounds;
 }
 
 - (void)setType:(HeaderViewMainTableType)type{
@@ -48,17 +61,17 @@
     
     switch (_type) {
             
+        //setup order type header
         case HeaderViewMainTableTypeOrder:{
-            self.titleLabel.text = LOC(MTVH_TITLE_ORDER);
             self.dateLabel.text = LOC(MTVH_DATE_ORDER);
             self.noLabel.text = LOC(MTVH_NO_ORDER);
             self.startSubscriptionDate.text = LOC(MTVH_START_SUBSCRIPTION_DATE);
             self.statusPriceLabel.text = LOC(MTVH_STATUS_ORDER);
             self.disclosureLabel.text = LOC(MTVH_MORE_ORDER);
         }break;
-            
+          
+        //setup quote type header
         case HeaderViewMainTableTypeQuotes:{
-            self.titleLabel.text = LOC(MTVH_TITLE_QUOTE);
             self.dateLabel.text = LOC(MTVH_DATE_QUOTE);
             self.noLabel.text = LOC(MTVH_NO_QUOTE);
             self.startSubscriptionDate.text = LOC(MTVH_START_SUBSCRIPTION_DATE);
