@@ -56,7 +56,7 @@
     if (kinveyID.length) {
         [self.spinner startAnimating];
         
-        //Kinvey: Laod image file
+        //Kinvey: Load image file
         [KCSFileStore downloadFile:kinveyID                         //File ID
                            options:@{KCSFileOnlyIfNewer : @(YES)}   //Get file from cache if can
                    completionBlock: ^(NSArray *downloadedResources, NSError *error) {
