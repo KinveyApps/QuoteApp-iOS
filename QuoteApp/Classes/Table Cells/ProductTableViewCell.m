@@ -52,7 +52,7 @@
         
         //contvert HTML data to NSAttributed string
         NSError *error = nil;
-        NSAttributedString *description = [[NSAttributedString alloc] initWithData:[item.description dataUsingEncoding:NSUTF8StringEncoding]
+        NSAttributedString *description = [[NSAttributedString alloc] initWithData:[item.objectDescription dataUsingEncoding:NSUTF8StringEncoding]
                                                                            options:@{NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType}
                                                                 documentAttributes:nil
                                                                              error:&error];
