@@ -47,6 +47,7 @@
 		1BD60EFF18D21350002496B4 /* BaseModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD60EFD18D21350002496B4 /* BaseModalViewController.m */; };
 		1BD60F0018D21350002496B4 /* BaseModalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BD60EFE18D21350002496B4 /* BaseModalViewController.xib */; };
 		1BD60F0318D24502002496B4 /* QuoteOrderModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD60F0218D24502002496B4 /* QuoteOrderModalViewController.m */; };
+		BD7B76AC1AA73DCC001FD872 /* KinveyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B2DC6ED18EB0AB400FB5AB7 /* KinveyKit.framework */; };
 		C67609FE18A2826400BAC60D /* NewQuoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C67609FC18A2826400BAC60D /* NewQuoteViewController.m */; };
 		C67609FF18A2826400BAC60D /* NewQuoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C67609FD18A2826400BAC60D /* NewQuoteViewController.xib */; };
 		C6760A0818A282E200BAC60D /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6760A0618A282E200BAC60D /* HomeViewController.m */; };
@@ -239,6 +240,7 @@
 				C6A3106A18A0F6D700916A1A /* XCTest.framework in Frameworks */,
 				C6A3106C18A0F6D700916A1A /* UIKit.framework in Frameworks */,
 				C6A3106B18A0F6D700916A1A /* Foundation.framework in Frameworks */,
+				BD7B76AC1AA73DCC001FD872 /* KinveyKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -805,14 +807,15 @@
 		C6A3107D18A0F6D700916A1A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/QuoteApp.app/QuoteApp";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/QuoteSample.app/QuoteSample";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(PROJECT_DIR)/Externals/KinveyKit-1.26.6",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "QuoteApp/QuoteApp-Prefix.pch";
+				GCC_PREFIX_HEADER = "QuoteApp/QuoteSample-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -827,14 +830,15 @@
 		C6A3107E18A0F6D700916A1A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/QuoteApp.app/QuoteApp";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/QuoteSample.app/QuoteSample";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(PROJECT_DIR)/Externals/KinveyKit-1.26.6",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "QuoteApp/QuoteApp-Prefix.pch";
+				GCC_PREFIX_HEADER = "QuoteApp/QuoteSample-Prefix.pch";
 				INFOPLIST_FILE = "QuoteAppTests/QuoteSampleTests-Info.plist";
 				PRODUCT_NAME = QuoteSampleTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
