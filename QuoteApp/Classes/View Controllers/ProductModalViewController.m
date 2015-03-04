@@ -80,7 +80,7 @@
     
     self.detailSubView.titleLabel.text = self.item.title;
     NSError *error = nil;
-    NSAttributedString *description = [[NSAttributedString alloc] initWithData:[self.item.description dataUsingEncoding:NSUTF8StringEncoding]
+    NSAttributedString *description = [[NSAttributedString alloc] initWithData:[self.item.descriptions dataUsingEncoding:NSUTF8StringEncoding]
                                                                        options:@{NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType}
                                                             documentAttributes:nil
                                                                          error:&error];

@@ -27,7 +27,7 @@
     return @{@"entityId"	: KCSEntityKeyId,       //kinveyId maps to _id
 			 @"meta"        : KCSEntityKeyMetadata, //meta maps to metadata
 			 @"title"       : @"title",             //title maps to title
-			 @"description" : @"description",       //description maps to description
+			 @"descriptions": @"description",       //description maps to description
 			 @"thumbnailID" : @"thumbnailID",       //thumbnailID maps to thumbnailID
 			 @"imageID"     : @"imageID"};          //imageID maps to imageID
 }

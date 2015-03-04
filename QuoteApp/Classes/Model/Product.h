@@ -23,7 +23,7 @@
 @property (nonatomic, retain) NSString *entityId;
 @property (nonatomic, retain) KCSMetadata *meta;
 @property (nonatomic, retain) NSString *title;
-@property (nonatomic, retain) NSString *description;
+@property (nonatomic, retain) NSString *descriptions;
 @property (nonatomic, retain) NSString *thumbnailID;
 @property (nonatomic, retain) NSString *imageID;
 
