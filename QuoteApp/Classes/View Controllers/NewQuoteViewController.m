@@ -145,6 +145,7 @@
     
     [super viewWillAppear:animated];
     self.submitButton.layer.cornerRadius = BUTTON_CORNER_RADIUS;
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning{
@@ -213,6 +214,8 @@
     quote.totalPrice = self.quote.totalPrice;
     quote.product = self.quote.product;
     
+    self.quote = nil;
+    
     //Save item to Quote collection
     [[DataHelper instance] saveQuote:quote
                            OnSuccess:^(NSArray *quotes){
@@ -229,6 +232,7 @@
                                    }
                                }
                                [self.spinner stopAnimating];
+                               [self.tableView reloadData];
                            }
                            onFailure:^(NSError *error){
                                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:LOC(DV_MESSAGE_ERROR_CREATE_ORDER)
