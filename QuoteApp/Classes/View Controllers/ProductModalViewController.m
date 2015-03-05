@@ -18,7 +18,7 @@
 #import "ProductSubView.h"
 #import "NewQuoteViewController.h"
 
-#define SCROOLL_VIEW_INSETS_FOR_IPHONE 20
+#define SCROOLL_VIEW_INSETS_FOR_IPHONE 0
 #define TEXT_VIEW_INSET 20
 #define TEXT_VIEW_HEIGHT_SCALE_FACTOR 1.2
 #define KINVEY_IMAGE_VIEW_ASPECT_RATIO 3 * 2

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="4514" systemVersion="13C64" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingTableViewCell">
@@ -17,8 +18,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="icp-za-UTR">
-                    <rect key="frame" x="20" y="11" width="138" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <rect key="frame" x="0.0" y="12" width="138" height="21"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="138" id="O7Z-69-Ahe"/>
                     </constraints>
@@ -26,9 +26,8 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bjA-mA-6hU">
-                    <rect key="frame" x="166" y="8" width="324" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bjA-mA-6hU">
+                    <rect key="frame" x="146" y="8" width="364" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="iMz-SL-0UY"/>
                     </constraints>
@@ -39,12 +38,18 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="icp-za-UTR" secondAttribute="bottom" constant="12" id="1PZ-Ji-Tdp"/>
-                <constraint firstItem="icp-za-UTR" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="20" id="E9k-q5-sIx"/>
+                <constraint firstItem="icp-za-UTR" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="E9k-q5-sIx"/>
                 <constraint firstItem="bjA-mA-6hU" firstAttribute="leading" secondItem="icp-za-UTR" secondAttribute="trailing" constant="8" id="InL-os-eN8"/>
-                <constraint firstAttribute="trailing" secondItem="bjA-mA-6hU" secondAttribute="trailing" constant="20" id="c3h-sk-c8t"/>
+                <constraint firstAttribute="trailing" secondItem="bjA-mA-6hU" secondAttribute="trailing" id="c3h-sk-c8t"/>
                 <constraint firstAttribute="bottom" secondItem="bjA-mA-6hU" secondAttribute="bottom" constant="6" id="eJ2-ob-qgF"/>
             </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
         </view>
     </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
 </document>

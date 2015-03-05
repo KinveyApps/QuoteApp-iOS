@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignInViewController">
@@ -21,11 +22,9 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bkT-D5-PkE" userLabel="Content View">
                     <rect key="frame" x="128" y="0.0" width="508" height="1024"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1M8-PK-pUD">
                             <rect key="frame" x="114" y="699" width="280" height="34"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -37,9 +36,8 @@
                                 <action selector="demoPress:" destination="-1" eventType="touchUpInside" id="Zpy-l5-Pp6"/>
                             </connections>
                         </button>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="companylogo" translatesAutoresizingMaskIntoConstraints="NO" id="QVC-h4-UMZ" userLabel="Logo View">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="companylogo" translatesAutoresizingMaskIntoConstraints="NO" id="QVC-h4-UMZ" userLabel="Logo View">
                             <rect key="frame" x="99" y="200" width="310" height="80"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="310" id="57O-lg-6Mu"/>
                                 <constraint firstAttribute="height" constant="80" id="Td2-rG-Fqr"/>
@@ -47,7 +45,6 @@
                         </imageView>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CRl-JS-wKk" userLabel="Username Field">
                             <rect key="frame" x="114" y="741" width="280" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next"/>
                             <connections>
@@ -57,7 +54,6 @@
                         </textField>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JtW-c3-I4a" userLabel="Password Field">
                             <rect key="frame" x="114" y="779" width="280" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="280" id="14o-br-k6S"/>
                             </constraints>
@@ -70,7 +66,6 @@
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bY3-GR-VKq">
                             <rect key="frame" x="114" y="834" width="280" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="Log In">
                                 <color key="titleColor" red="1" green="0.72941178080000002" blue="0.14901961389999999" alpha="1" colorSpace="deviceRGB"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -81,7 +76,6 @@
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ww4-Vc-K9I">
                             <rect key="frame" x="114" y="874" width="280" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="Register">
                                 <color key="titleColor" red="1" green="0.72941178080000002" blue="0.14901961389999999" alpha="1" colorSpace="deviceRGB"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -95,6 +89,7 @@
                     <constraints>
                         <constraint firstItem="bY3-GR-VKq" firstAttribute="centerX" secondItem="QVC-h4-UMZ" secondAttribute="centerX" id="02r-CJ-YJV"/>
                         <constraint firstItem="QVC-h4-UMZ" firstAttribute="top" relation="lessThanOrEqual" secondItem="bkT-D5-PkE" secondAttribute="top" priority="750" constant="200" id="1v7-cB-93c"/>
+                        <constraint firstItem="QVC-h4-UMZ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="bkT-D5-PkE" secondAttribute="top" priority="250" constant="200" id="3zZ-lP-1BE"/>
                         <constraint firstItem="ww4-Vc-K9I" firstAttribute="leading" secondItem="bY3-GR-VKq" secondAttribute="leading" id="9yA-Zc-gYM"/>
                         <constraint firstItem="bY3-GR-VKq" firstAttribute="leading" secondItem="JtW-c3-I4a" secondAttribute="leading" id="EtR-CW-vNh"/>
                         <constraint firstItem="JtW-c3-I4a" firstAttribute="top" secondItem="CRl-JS-wKk" secondAttribute="bottom" constant="8" symbolic="YES" id="GFx-af-YeU"/>
@@ -105,7 +100,7 @@
                         <constraint firstItem="bY3-GR-VKq" firstAttribute="leading" secondItem="CRl-JS-wKk" secondAttribute="leading" id="hP8-g8-LFV"/>
                         <constraint firstItem="1M8-PK-pUD" firstAttribute="leading" secondItem="bY3-GR-VKq" secondAttribute="leading" id="iCM-2x-k3C"/>
                         <constraint firstAttribute="width" constant="508" id="mcV-Tv-omD"/>
-                        <constraint firstItem="1M8-PK-pUD" firstAttribute="top" relation="greaterThanOrEqual" secondItem="QVC-h4-UMZ" secondAttribute="bottom" priority="750" constant="8" id="oMR-GJ-tXV"/>
+                        <constraint firstItem="1M8-PK-pUD" firstAttribute="top" relation="greaterThanOrEqual" secondItem="QVC-h4-UMZ" secondAttribute="bottom" constant="8" id="oMR-GJ-tXV"/>
                         <constraint firstItem="bY3-GR-VKq" firstAttribute="top" secondItem="JtW-c3-I4a" secondAttribute="bottom" constant="25" id="q6i-dy-aU7"/>
                         <constraint firstItem="bY3-GR-VKq" firstAttribute="trailing" secondItem="ww4-Vc-K9I" secondAttribute="trailing" id="rEq-hI-qws"/>
                         <constraint firstItem="bY3-GR-VKq" firstAttribute="centerX" secondItem="bkT-D5-PkE" secondAttribute="centerX" id="rsX-ac-icN"/>
@@ -121,10 +116,14 @@
                 <constraint firstAttribute="bottom" secondItem="bkT-D5-PkE" secondAttribute="bottom" id="YDi-gC-DRO"/>
                 <constraint firstItem="bkT-D5-PkE" firstAttribute="centerX" secondItem="mvb-pq-axn" secondAttribute="centerX" constant="-2" id="fPd-Ml-SEq"/>
             </constraints>
-            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
         </view>
     </objects>
     <resources>
         <image name="companylogo" width="452" height="110"/>
     </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
 </document>

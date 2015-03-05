@@ -48,10 +48,10 @@
     [self.closeButton setTitle:LOC(CLOSE)];
 }
 
-- (void)viewWillAppear:(BOOL)animated{
+- (void)viewDidAppear:(BOOL)animated{
     
-    [super viewWillAppear:animated];
-    
+    [super viewDidAppear:animated];
+        
     [self setupConstraints];
     [self.view layoutIfNeeded];
     UIView *detailSubView = [self getDetailSubView];

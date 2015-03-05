@@ -17,7 +17,7 @@
 #import "QuoteOrderModalViewController.h"
 #import "QuoteOrderSubView.h"
 
-#define SCROLL_VIEW_WIDHT_FOR_IPAD 300
+#define SCROLL_VIEW_WIDHT_FOR_IPAD 400
 #define SCROLL_VIEW_HEIGHT_FOR_IPAD 400
 #define SCROLL_VIEW_INSETS_FOR_IPHONE 20
 
