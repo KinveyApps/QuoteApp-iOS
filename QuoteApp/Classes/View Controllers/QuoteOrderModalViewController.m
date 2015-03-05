@@ -94,7 +94,7 @@
     Order *order = [[Order alloc] init];
     
     order.meta = [[KCSMetadata alloc] init];
-    order.referenceNumber = self.item.referenceNumber;
+    order.referenceNumber = [@"O" stringByAppendingFormat:@"%ld", (random() % 10000000)];
     order.originator = self.item.originator;
     order.originator = self.item.originator;
     order.activeUsers = self.item.activeUsers;
