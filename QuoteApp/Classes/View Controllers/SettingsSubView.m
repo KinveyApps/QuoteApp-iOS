@@ -138,7 +138,7 @@
         [self.tableView reloadData];
     }else{
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Demo Account Limit"
-                                                            message:@"You can't change user info in demo account.\n Please sing up new account for testing this function"
+                                                            message:@"You can't change user info in demo account.\n Please sign up new account for testing this function"
                                                            delegate:nil
                                                   cancelButtonTitle:LOC(CANCEL)
                                                   otherButtonTitles:nil];
