@@ -132,7 +132,7 @@
         }else{
             if (!self.collectionViewRefreshControl.isRefreshing) {
                 [self.collectionViewRefreshControl beginRefreshing];
-                self.collectionViewRefreshControl = NO;
+                self.collectionViewRefreshControl.hidden = NO;
             }
         }
         
