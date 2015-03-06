@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController">
@@ -25,42 +26,26 @@
             <subviews>
                 <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="jOO-sA-huW">
                     <rect key="frame" x="0.0" y="20" width="768" height="44"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <textInputTraits key="textInputTraits"/>
                 </searchBar>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="95" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="d87-RW-cbZ">
                     <rect key="frame" x="0.0" y="64" width="768" height="911"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" red="0.86666673419999996" green="0.86666673419999996" blue="0.86666673419999996" alpha="1" colorSpace="deviceRGB"/>
                     <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     <color key="sectionIndexBackgroundColor" red="0.86666673419999996" green="0.86666673419999996" blue="0.86666673419999996" alpha="1" colorSpace="deviceRGB"/>
                 </tableView>
-                <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search result" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="693-4C-ue0">
-                    <rect key="frame" x="669" y="74" width="79" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="21" id="uc5-w5-nl0"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gkI-o9-a5o" userLabel="Top Bar View">
                     <rect key="frame" x="0.0" y="0.0" width="768" height="64"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aCr-o7-sNG" userLabel="Separator">
                             <rect key="frame" x="0.0" y="63" width="768" height="1"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="0.78431379800000001" green="0.77647066119999997" blue="0.80000007149999997" alpha="1" colorSpace="deviceRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="1" id="9iq-Q0-qJq"/>
                             </constraints>
-                            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                         </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BwA-Wt-VVI" userLabel="Settings Button">
                             <rect key="frame" x="10" y="20" width="44" height="44"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="ShJ-ky-Oge"/>
                                 <constraint firstAttribute="width" constant="44" id="ds8-NU-WxA"/>
@@ -73,7 +58,6 @@
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TYG-nm-Dbp" userLabel="Search Button">
                             <rect key="frame" x="714" y="20" width="44" height="44"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="aLR-zp-bF9"/>
                                 <constraint firstAttribute="width" constant="44" id="dub-eI-WH2"/>
@@ -87,7 +71,6 @@
                         </button>
                         <segmentedControl hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="amO-T6-84V">
                             <rect key="frame" x="613" y="25" width="93" height="29"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="93" id="uoJ-ZF-L61"/>
                             </constraints>
@@ -101,7 +84,6 @@
                         </segmentedControl>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wwq-O8-ftL">
                             <rect key="frame" x="306" y="28" width="157" height="21"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="157" id="QUV-e7-COk"/>
                                 <constraint firstAttribute="height" constant="21" id="lC5-GF-RhU"/>
@@ -129,7 +111,6 @@
                 </view>
                 <collectionView hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="oh5-Kf-YPG">
                     <rect key="frame" x="0.0" y="64" width="768" height="911"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" red="0.86666673419999996" green="0.86666673419999996" blue="0.86666673419999996" alpha="1" colorSpace="deviceRGB"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="2" id="PNi-g8-w77">
                         <size key="itemSize" width="253" height="189"/>
@@ -143,6 +124,15 @@
                         <outlet property="delegate" destination="-1" id="csm-Q8-fAl"/>
                     </connections>
                 </collectionView>
+                <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search result" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="693-4C-ue0">
+                    <rect key="frame" x="669" y="74" width="79" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="uc5-w5-nl0"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="0.86666673421859741" green="0.86666673421859741" blue="0.86666673421859741" alpha="1" colorSpace="deviceRGB"/>
             <color key="tintColor" red="1" green="0.72941178080000002" blue="0.14901961389999999" alpha="1" colorSpace="deviceRGB"/>
@@ -164,13 +154,16 @@
                 <constraint firstAttribute="trailing" secondItem="oh5-Kf-YPG" secondAttribute="trailing" id="vVI-Cm-8z7"/>
                 <constraint firstItem="d87-RW-cbZ" firstAttribute="bottom" secondItem="oh5-Kf-YPG" secondAttribute="bottom" id="zoH-Pu-b2n"/>
             </constraints>
-            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
-            <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
         </view>
     </objects>
     <resources>
         <image name="Search" width="30" height="30"/>
         <image name="Setting" width="30" height="30"/>
     </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
 </document>
