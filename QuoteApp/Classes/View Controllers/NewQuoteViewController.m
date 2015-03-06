@@ -677,6 +677,10 @@
                           withRowAnimation:UITableViewRowAnimationFade];
     
     [self.tableView endUpdates];
+    
+    [self.tableView scrollToRowAtIndexPath:self.pickerIndexPath
+                          atScrollPosition:UITableViewScrollPositionBottom
+                                  animated:YES];
 }
 
 @end

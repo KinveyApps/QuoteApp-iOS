@@ -18,7 +18,7 @@
 
 @interface ComboBoxNewQuoteTableViewCell ()
 
-@property (weak, nonatomic) IBOutlet UIButton *button;
+@property (weak, nonatomic) IBOutlet UIImageView *image;
 
 @end
 
@@ -105,13 +105,13 @@
 - (void)setupCellWithImageName:(NSString *)imageName andPlaceholder:(NSString *)placeholder andKeyboardType:(UIKeyboardType)keyboardType{
     
     if (imageName.length) {
-        [self.button setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
-        self.button.hidden = NO;
+        self.image.image = [UIImage imageNamed:imageName];
+        self.image.hidden = NO;
         self.textField.enabled = NO;
     }else{
         self.textField.enabled = YES;
         self.textField.keyboardType = keyboardType;
-        self.button.hidden = YES;
+        self.image.hidden = YES;
     }
     
     self.textField.placeholder = placeholder;
