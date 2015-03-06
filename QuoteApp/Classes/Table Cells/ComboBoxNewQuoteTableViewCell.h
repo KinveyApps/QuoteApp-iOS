@@ -49,5 +49,6 @@ typedef enum {
 @property (weak, nonatomic) IBOutlet UITextField *textField;
 
 @property (nonatomic) NSInteger index;
+@property (weak, nonatomic) IBOutlet UILabel *title;
 
 @end

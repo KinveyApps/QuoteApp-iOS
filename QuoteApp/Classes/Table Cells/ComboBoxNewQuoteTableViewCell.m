@@ -115,6 +115,7 @@
     }
     
     self.textField.placeholder = placeholder;
+    self.title.text = placeholder;
 }
 
 @end
