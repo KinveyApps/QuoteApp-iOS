@@ -189,8 +189,15 @@
         }
     }
     
-    [result setObject:[NSNumber numberWithBool:self.emailConfirmationSwitch.on]
-               forKey:USER_INFO_KEY_EMAIL_CONFIRMATION_ENABLE];
+    if ([self isValidEmail:self.userData[4]]) {
+        [result setObject:[NSNumber numberWithBool:self.emailConfirmationSwitch.on]
+                   forKey:USER_INFO_KEY_EMAIL_CONFIRMATION_ENABLE];
+    }else{
+        self.emailConfirmationSwitch.on = NO;
+        [result setObject:[NSNumber numberWithBool:self.emailConfirmationSwitch.on]
+                   forKey:USER_INFO_KEY_EMAIL_CONFIRMATION_ENABLE];
+    }
+    
     [result setObject:[NSNumber numberWithBool:self.pushNotificationSwitch.on]
                forKey:USER_INFO_KEY_PUSH_NOTIFICATION_ENABLE];
     
@@ -318,6 +325,13 @@
     }
     
     return nil;
+}
+
+- (BOOL)isValidEmail:(NSString *)email{
+    
+    NSString *emailRegex = @"[A-Z0-9a-z\\._%+-]+@([A-Za-z0-9-]+\\.)+[A-Za-z]{2,4}";
+    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
+    return [emailTest evaluateWithObject:email];
 }
 
 
