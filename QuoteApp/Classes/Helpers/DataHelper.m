@@ -88,7 +88,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DataHelper)
 - (NSString *)regexForContaintSubstring:(NSString *)substring{
     
     //Return string of regex format for search substring
-    return [[@"^.{0,}" stringByAppendingString:substring] stringByAppendingString:@".{0,}"];
+    return [[@"^(?i).{0,}" stringByAppendingString:substring] stringByAppendingString:@".{0,}"];
 }
 
 - (KCSQuery *)queryForOriginatorEqualsActiveUser{
