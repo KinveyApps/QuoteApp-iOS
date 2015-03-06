@@ -265,7 +265,7 @@
         cell.valueTextField.text = value;
     }
     cell.delegate = self;
-    if (self.isEditModeTableView) {
+    if (self.isEditModeTableView && (indexPath.row != 2)) {
         cell.valueTextField.enabled = YES;
     }else{
         cell.valueTextField.enabled = NO;
