@@ -267,8 +267,10 @@
     cell.delegate = self;
     if (self.isEditModeTableView && (indexPath.row != 2)) {
         cell.valueTextField.enabled = YES;
+        cell.valueTextField.placeholder = [self placeholderForCellWithKey:[self allUserInfoKey][indexPath.row]];
     }else{
         cell.valueTextField.enabled = NO;
+        cell.valueTextField.placeholder = @"";
     }
     
     return cell;
@@ -293,6 +295,26 @@
     }
     if ([key isEqualToString:USER_INFO_KEY_EMAIL]) {
         return LOC(SVC_CELL_TITLE_EMAIL);
+    }
+    
+    return nil;
+}
+
+- (NSString *)placeholderForCellWithKey:(NSString *)key{
+    if ([key isEqualToString:USER_INFO_KEY_CONTACT]) {
+        return LOC(SVC_CELL_PLACEHOLDER_CONTACT);
+    }
+    if ([key isEqualToString:USER_INFO_KEY_COMPANY]) {
+        return LOC(SVC_CELL_PLACEHOLDER_COMPANY);
+    }
+    if ([key isEqualToString:USER_INFO_KEY_ACCOUNT_NUMBER]) {
+        return @"";
+    }
+    if ([key isEqualToString:USER_INFO_KEY_PHONE]) {
+        return LOC(SVC_CELL_PLACEHOLDER_PHONE);
+    }
+    if ([key isEqualToString:USER_INFO_KEY_EMAIL]) {
+        return LOC(SVC_CELL_PLACEHOLDER_EMAIL);
     }
     
     return nil;
