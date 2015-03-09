@@ -80,15 +80,15 @@
 "DV_BUTTON_SUBMIT_ORDER"="Submit Order";
 
 //New Quote View Controller
-"NQV_PLACEHOLDER_PRODUCT"="Product";
-"NQV_PLACEHOLDER_ACTIVE_USER"="Active User";
-"NQV_PLACEHOLDER_BUSINESS_LOGIC_SCRIPTS"="Business Logic Scripts";
-"NQV_PLACEHOLDER_SCHEDULED_BUSINESS_LOGIC"="Scheduled Business Logic";
-"NQV_PLACEHOLDER_COLLABORATORS"="Collaborators";
-"NQV_PLACEHOLDER_BACKEND_ENVIROMENTS"="Backend Environments";
-"NQV_PLACEHOLDER_DATA_STOREGE"="Data Storage";
-"NQV_PLACEHOLDER_BUSINESS_LOGIC_EXECUTION_TIME_LIMIT"="Business Logic Execution Time Limit";
-"NQV_PLACEHOLDER_START_SUBSCRIPTION_DATE"="Start Subscription Date";
+"NQV_PLACEHOLDER_PRODUCT"="Product (required)";
+"NQV_PLACEHOLDER_ACTIVE_USER"="Active User (required)";
+"NQV_PLACEHOLDER_BUSINESS_LOGIC_SCRIPTS"="Business Logic Scripts (required)";
+"NQV_PLACEHOLDER_SCHEDULED_BUSINESS_LOGIC"="Scheduled Business Logic (required)";
+"NQV_PLACEHOLDER_COLLABORATORS"="Collaborators (required)";
+"NQV_PLACEHOLDER_BACKEND_ENVIROMENTS"="Backend Environments (required)";
+"NQV_PLACEHOLDER_DATA_STOREGE"="Data Storage (required)";
+"NQV_PLACEHOLDER_BUSINESS_LOGIC_EXECUTION_TIME_LIMIT"="Business Logic Execution Time Limit (required)";
+"NQV_PLACEHOLDER_START_SUBSCRIPTION_DATE"="Start Subscription Date (required)";
 "NQV_BUTTON_SUBMIT"="Submit";
 "NQV_TITLE"="Request a New Quote";
 "NQV_TOP_BAR_TITLE"="New Quote";

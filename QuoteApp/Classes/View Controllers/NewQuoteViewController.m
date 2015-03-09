@@ -199,65 +199,155 @@
 
 - (IBAction)pressSubmit {
     
-    [self.spinner startAnimating];
-    
-    [self addToQuotePriceAndUser];
-    
-    //Create new quote item
-    Quote *quote = [[Quote alloc] init];
-    
-    quote.meta = [[KCSMetadata alloc] init];
-    quote.referenceNumber = self.quote.referenceNumber;
-    quote.originator = self.quote.originator;
-    quote.originator = self.quote.originator;
-    quote.activeUsers = self.quote.activeUsers;
-    quote.businessLogicScripts = self.quote.businessLogicScripts;
-    quote.scheduledBusinessLogic = self.quote.scheduledBusinessLogic;
-    quote.collaborators = self.quote.collaborators;
-    quote.backendEnvironments = self.quote.backendEnvironments;
-    quote.dataStorage = self.quote.dataStorage;
-    quote.businessLogicExecutionTimeLimit = self.quote.businessLogicExecutionTimeLimit;
-    quote.startSubscriptionDate = self.quote.startSubscriptionDate;
-    quote.totalPrice = self.quote.totalPrice;
-    quote.product = self.quote.product;
-    
-    self.quote = nil;
-    
-    //Save item to Quote collection
-    [[DataHelper instance] saveQuote:quote
-                           OnSuccess:^(NSArray *quotes){
-                               if (quotes.count) {
-                                   QuoteOrderModalViewController *mvc = [[QuoteOrderModalViewController alloc] init];
-                                   if (self.quote) {
-                                       mvc.item = quote;
-                                       mvc.modalPresentationStyle = UIModalPresentationFormSheet;
-                                       [self.tabBarController presentViewController:mvc
-                                                                           animated:YES
-                                                                         completion:^{
-                                                                             mvc.item = quote;
-                                                                         }];
+    if ([self allDataFilled]){
+        
+        [self.spinner startAnimating];
+        
+        [self addToQuotePriceAndUser];
+        
+        //Create new quote item
+        Quote *quote = [[Quote alloc] init];
+        
+        quote.meta = [[KCSMetadata alloc] init];
+        quote.referenceNumber = self.quote.referenceNumber;
+        quote.originator = self.quote.originator;
+        quote.activeUsers = self.quote.activeUsers;
+        quote.businessLogicScripts = self.quote.businessLogicScripts;
+        quote.scheduledBusinessLogic = self.quote.scheduledBusinessLogic;
+        quote.collaborators = self.quote.collaborators;
+        quote.backendEnvironments = self.quote.backendEnvironments;
+        quote.dataStorage = self.quote.dataStorage;
+        quote.businessLogicExecutionTimeLimit = self.quote.businessLogicExecutionTimeLimit;
+        quote.startSubscriptionDate = self.quote.startSubscriptionDate;
+        quote.totalPrice = self.quote.totalPrice;
+        quote.product = self.quote.product;
+        
+        self.quote = nil;
+        
+        //Save item to Quote collection
+        [[DataHelper instance] saveQuote:quote
+                               OnSuccess:^(NSArray *quotes){
+                                   if (quotes.count) {
+                                       QuoteOrderModalViewController *mvc = [[QuoteOrderModalViewController alloc] init];
+                                       if (self.quote) {
+                                           mvc.item = quote;
+                                           mvc.modalPresentationStyle = UIModalPresentationFormSheet;
+                                           [self.tabBarController presentViewController:mvc
+                                                                               animated:YES
+                                                                             completion:^{
+                                                                                 mvc.item = quote;
+                                                                             }];
+                                       }
                                    }
+                                   [self.spinner stopAnimating];
+                                   [self.tableView reloadData];
                                }
-                               [self.spinner stopAnimating];
-                               [self.tableView reloadData];
-                           }
-                           onFailure:^(NSError *error){
-                               UIAlertView *alert = [[UIAlertView alloc] initWithTitle:LOC(DV_MESSAGE_ERROR_CREATE_ORDER)
-                                                                               message:error.localizedDescription
-                                                                              delegate:nil
-                                                                     cancelButtonTitle:LOC(OKAY)
-                                                                     otherButtonTitles:nil];
-                               [alert show];
-                               [self.spinner stopAnimating];
-                           }
-     ];
+                               onFailure:^(NSError *error){
+                                   UIAlertView *alert = [[UIAlertView alloc] initWithTitle:LOC(DV_MESSAGE_ERROR_CREATE_ORDER)
+                                                                                   message:error.localizedDescription
+                                                                                  delegate:nil
+                                                                         cancelButtonTitle:LOC(OKAY)
+                                                                         otherButtonTitles:nil];
+                                   [alert show];
+                                   [self.spinner stopAnimating];
+                               }
+         ];
+    }
+}
+
+- (BOOL)allDataFilled{
+    
+    
+    if (!self.quote.activeUsers.length){
+        
+        [[[UIAlertView alloc] initWithTitle:@"Error!"
+                                    message:[NSString stringWithFormat:@"%@ is empty", [PLACEHOLDER_ACTIVE_USER_TEXT_FIELD stringByReplacingOccurrencesOfString:@" (required)" withString:@""]]
+                                   delegate:nil
+                          cancelButtonTitle:LOC(CANCEL)
+                          otherButtonTitles:nil] show];
+        
+        return NO;
+        
+    }else if (!self.quote.businessLogicScripts.length){
+        
+        [[[UIAlertView alloc] initWithTitle:@"Error!"
+                                    message:[NSString stringWithFormat:@"%@ is empty", [PLACEHOLDER_BUSINESS_LOGIC_SCRIPTS_TEXT_FIELD stringByReplacingOccurrencesOfString:@" (required)" withString:@""]]
+                                   delegate:nil
+                          cancelButtonTitle:LOC(CANCEL)
+                          otherButtonTitles:nil] show];
+        
+        return NO;
+        
+    }else if (!self.quote.scheduledBusinessLogic.length){
+        
+        [[[UIAlertView alloc] initWithTitle:@"Error!"
+                                    message:[NSString stringWithFormat:@"%@ is empty", [PLACEHOLDER_SCHEDULED_BUSINESS_LOGIC_TEXT_FIELD stringByReplacingOccurrencesOfString:@" (required)" withString:@""]]
+                                   delegate:nil
+                          cancelButtonTitle:LOC(CANCEL)
+                          otherButtonTitles:nil] show];
+        return NO;
+        
+    }else if (!self.quote.collaborators.length){
+        
+        [[[UIAlertView alloc] initWithTitle:@"Error!"
+                                    message:[NSString stringWithFormat:@"%@ is empty", [PLACEHOLDER_COLLABORATORS_TEXT_FIELD stringByReplacingOccurrencesOfString:@" (required)" withString:@""]]
+                                   delegate:nil
+                          cancelButtonTitle:LOC(CANCEL)
+                          otherButtonTitles:nil] show];
+        return NO;
+        
+    }else if (!self.quote.backendEnvironments.length){
+        
+        [[[UIAlertView alloc] initWithTitle:@"Error!"
+                                    message:[NSString stringWithFormat:@"%@ is empty", [PLACEHOLDER_BACKEND_ENVIROMENTS_TEXT_FIELD stringByReplacingOccurrencesOfString:@" (required)" withString:@""]]
+                                   delegate:nil
+                          cancelButtonTitle:LOC(CANCEL)
+                          otherButtonTitles:nil] show];
+        return NO;
+        
+    }else if (!self.quote.dataStorage.length){
+        
+        [[[UIAlertView alloc] initWithTitle:@"Error!"
+                                    message:[NSString stringWithFormat:@"%@ is empty", [PLACEHOLDER_DATA_STOREGE_TEXT_FIELD stringByReplacingOccurrencesOfString:@" (required)" withString:@""]]
+                                   delegate:nil
+                          cancelButtonTitle:LOC(CANCEL)
+                          otherButtonTitles:nil] show];
+        return NO;
+        
+    }else if (!self.quote.businessLogicExecutionTimeLimit.length){
+        
+        [[[UIAlertView alloc] initWithTitle:@"Error!"
+                                    message:[NSString stringWithFormat:@"%@ is empty", [PLACEHOLDER_BUSINESS_LOGIC_EXECUTION_TIME_LIMIT_TEXT_FIELD stringByReplacingOccurrencesOfString:@" (required)" withString:@""]]
+                                   delegate:nil
+                          cancelButtonTitle:LOC(CANCEL)
+                          otherButtonTitles:nil] show];
+        return NO;
+        
+    }else if (!self.quote.startSubscriptionDate){
+        
+        [[[UIAlertView alloc] initWithTitle:@"Error!"
+                                    message:[NSString stringWithFormat:@"%@ is empty", [PLACEHOLDER_START_SUBSCRIPTION_DATE_TEXT_FIELD stringByReplacingOccurrencesOfString:@" (required)" withString:@""]]
+                                   delegate:nil
+                          cancelButtonTitle:LOC(CANCEL)
+                          otherButtonTitles:nil] show];
+        return NO;
+        
+    }else if (!self.quote.product){
+        [[[UIAlertView alloc] initWithTitle:@"Error!"
+                                    message:[NSString stringWithFormat:@"%@ is empty", [PLACEHOLDER_PRODUCT_TEXT_FIELD stringByReplacingOccurrencesOfString:@" (required)" withString:@""]]
+                                   delegate:nil
+                          cancelButtonTitle:LOC(CANCEL)
+                          otherButtonTitles:nil] show];
+        return NO;
+    }
+    return YES;
 }
 
 - (void)addToQuotePriceAndUser{
     
     float fabPrice = random();
     fabPrice = (float)(random() % 74) / (float)(random() % 74);
-    float preRandom = arc4random();
+    arc4random();
     self.quote.totalPrice = [@"$" stringByAppendingFormat:@"1,500/month"];
     self.quote.referenceNumber = [self generateUniqueReferenceNumber];
     self.quote.originator = [KCSUser activeUser];
@@ -343,6 +433,13 @@
         self.pickerIndexPath = nil;
         [self deletePikerFromTableViewInIndexPath:indexPath];
     }
+    return YES;
+}
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
+    
+    [self updateQuoteWithTextField:textField andIndex:0];
+    
     return YES;
 }
 

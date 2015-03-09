@@ -8,6 +8,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ComboBoxNewQuoteTableViewCell">
             <connections>
                 <outlet property="image" destination="naW-Na-TWD" id="4mA-Kc-fzb"/>
+                <outlet property="minusButton" destination="fxP-go-Ewh" id="c0D-C6-pdW"/>
+                <outlet property="plusButton" destination="rKv-mT-cLL" id="D3J-7Q-1iY"/>
                 <outlet property="textField" destination="OEm-k8-Yvr" id="b3c-AP-sqi"/>
                 <outlet property="title" destination="CLc-WN-wOH" id="jkZ-BK-Z1d"/>
                 <outlet property="view" destination="BLy-Gc-pcR" id="zDi-CI-DKB"/>
@@ -41,17 +43,47 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button hidden="YES" opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fxP-go-Ewh">
+                    <rect key="frame" x="400" y="16" width="30" height="28"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="28" id="D55-V4-OOz"/>
+                        <constraint firstAttribute="width" constant="30" id="lPQ-D4-qHT"/>
+                    </constraints>
+                    <state key="normal" image="MinusButton">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="decreaseValue:" destination="-1" eventType="touchUpInside" id="UeC-qy-42y"/>
+                    </connections>
+                </button>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rKv-mT-cLL">
+                    <rect key="frame" x="369" y="16" width="30" height="28"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="Kmm-IS-PrE"/>
+                        <constraint firstAttribute="height" constant="28" id="i4H-Sr-FI2"/>
+                    </constraints>
+                    <state key="normal" image="PlusButton">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="addValue:" destination="-1" eventType="touchUpInside" id="sal-os-uAh"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.86666673419999996" green="0.86666673419999996" blue="0.86666673419999996" alpha="1" colorSpace="deviceRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="naW-Na-TWD" secondAttribute="trailing" id="0KK-S3-Ooo"/>
                 <constraint firstItem="CLc-WN-wOH" firstAttribute="top" secondItem="BLy-Gc-pcR" secondAttribute="top" id="1Dv-gi-hoB"/>
                 <constraint firstAttribute="trailing" secondItem="CLc-WN-wOH" secondAttribute="trailing" constant="38" id="27a-0G-UxV"/>
+                <constraint firstAttribute="trailing" secondItem="fxP-go-Ewh" secondAttribute="trailing" id="G4k-GO-eCC"/>
                 <constraint firstAttribute="bottom" secondItem="OEm-k8-Yvr" secondAttribute="bottom" constant="15" id="HAR-J1-qj1"/>
                 <constraint firstAttribute="trailing" secondItem="OEm-k8-Yvr" secondAttribute="trailing" id="JY6-Qz-dik"/>
                 <constraint firstItem="CLc-WN-wOH" firstAttribute="leading" secondItem="BLy-Gc-pcR" secondAttribute="leading" constant="8" id="M3i-TR-Ocf"/>
                 <constraint firstItem="OEm-k8-Yvr" firstAttribute="top" secondItem="BLy-Gc-pcR" secondAttribute="top" constant="15" id="eA5-w1-X3O"/>
                 <constraint firstItem="OEm-k8-Yvr" firstAttribute="leading" secondItem="BLy-Gc-pcR" secondAttribute="leading" id="lXu-yQ-SBE"/>
+                <constraint firstItem="fxP-go-Ewh" firstAttribute="leading" secondItem="rKv-mT-cLL" secondAttribute="trailing" constant="1" id="m2G-fm-Kq5"/>
+                <constraint firstItem="fxP-go-Ewh" firstAttribute="centerY" secondItem="naW-Na-TWD" secondAttribute="centerY" id="v35-et-O89"/>
+                <constraint firstItem="rKv-mT-cLL" firstAttribute="centerY" secondItem="fxP-go-Ewh" secondAttribute="centerY" id="xln-Dv-abP"/>
                 <constraint firstItem="OEm-k8-Yvr" firstAttribute="centerY" secondItem="naW-Na-TWD" secondAttribute="centerY" id="yMW-aj-sJf"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
@@ -60,6 +92,8 @@
     </objects>
     <resources>
         <image name="ListButton" width="40" height="40"/>
+        <image name="MinusButton" width="40" height="40"/>
+        <image name="PlusButton" width="40" height="40"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

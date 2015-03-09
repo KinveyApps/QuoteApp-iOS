@@ -19,6 +19,8 @@
 @interface ComboBoxNewQuoteTableViewCell ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *image;
+@property (weak, nonatomic) IBOutlet UIButton *plusButton;
+@property (weak, nonatomic) IBOutlet UIButton *minusButton;
 
 @end
 
@@ -29,8 +31,8 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         [[NSBundle mainBundle] loadNibNamed:@"ComboBoxNewQuoteTableViewCell" owner:self options:nil];
-		[self.contentView addSubview:self.view];
-		self.view.frame = self.contentView.bounds;
+        [self.contentView addSubview:self.view];
+        self.view.frame = self.contentView.bounds;
     }
     
     return self;
@@ -46,55 +48,64 @@
         case ProductCellIndex:{
             [self setupCellWithImageName:IMAGE_NAME_LIST_BUTTON
                           andPlaceholder:PLACEHOLDER_PRODUCT_TEXT_FIELD
-                         andKeyboardType:UIKeyboardTypeNumbersAndPunctuation];
+                         andKeyboardType:UIKeyboardTypeNumbersAndPunctuation
+                               isDigital:NO];
         }break;
             
         case ActiveUserCellIndex:{
             [self setupCellWithImageName:nil
                           andPlaceholder:PLACEHOLDER_ACTIVE_USER_TEXT_FIELD
-                         andKeyboardType:UIKeyboardTypeNumbersAndPunctuation];
+                         andKeyboardType:UIKeyboardTypeNumbersAndPunctuation
+                               isDigital:YES];
         }break;
             
         case BusinessLogicScriptsCellIndex:{
             [self setupCellWithImageName:nil
                           andPlaceholder:PLACEHOLDER_BUSINESS_LOGIC_SCRIPTS_TEXT_FIELD
-                         andKeyboardType:UIKeyboardTypeNumbersAndPunctuation];
+                         andKeyboardType:UIKeyboardTypeNumbersAndPunctuation
+                               isDigital:YES];
         }break;
             
         case ScheduledBusinessLogicCellIndex:{
             [self setupCellWithImageName:nil
                           andPlaceholder:PLACEHOLDER_SCHEDULED_BUSINESS_LOGIC_TEXT_FIELD
-                         andKeyboardType:UIKeyboardTypeNumbersAndPunctuation];
+                         andKeyboardType:UIKeyboardTypeNumbersAndPunctuation
+                               isDigital:YES];
         }break;
             
         case CollaboratorsCellIndex:{
             [self setupCellWithImageName:nil
                           andPlaceholder:PLACEHOLDER_COLLABORATORS_TEXT_FIELD
-                         andKeyboardType:UIKeyboardTypeNumbersAndPunctuation];
+                         andKeyboardType:UIKeyboardTypeNumbersAndPunctuation
+                               isDigital:YES];
         }break;
             
         case BackendEnviromentsCellIndex:{
             [self setupCellWithImageName:nil
                           andPlaceholder:PLACEHOLDER_BACKEND_ENVIROMENTS_TEXT_FIELD
-                         andKeyboardType:UIKeyboardTypeNumbersAndPunctuation];
+                         andKeyboardType:UIKeyboardTypeNumbersAndPunctuation
+                               isDigital:YES];
         }break;
             
         case DataStoregeCellIndex:{
             [self setupCellWithImageName:nil
                           andPlaceholder:PLACEHOLDER_DATA_STOREGE_TEXT_FIELD
-                         andKeyboardType:UIKeyboardTypeNumbersAndPunctuation];
+                         andKeyboardType:UIKeyboardTypeNumbersAndPunctuation
+                               isDigital:YES];
         }break;
             
         case BusinessLogicExecutionTimeLimitCellIndex:{
             [self setupCellWithImageName:nil
                           andPlaceholder:PLACEHOLDER_BUSINESS_LOGIC_EXECUTION_TIME_LIMIT_TEXT_FIELD
-                         andKeyboardType:UIKeyboardTypeNumbersAndPunctuation];
+                         andKeyboardType:UIKeyboardTypeNumbersAndPunctuation
+                               isDigital:YES];
         }break;
             
         case StartSubscriptionDateCellIndex:{
             [self setupCellWithImageName:IMAGE_NAME_CALENDAR_BUTTON
                           andPlaceholder:PLACEHOLDER_START_SUBSCRIPTION_DATE_TEXT_FIELD
-                         andKeyboardType:UIKeyboardTypeNumbersAndPunctuation];
+                         andKeyboardType:UIKeyboardTypeNumbersAndPunctuation
+                               isDigital:NO];
         }break;
             
         default:
@@ -102,20 +113,47 @@
     }
 }
 
-- (void)setupCellWithImageName:(NSString *)imageName andPlaceholder:(NSString *)placeholder andKeyboardType:(UIKeyboardType)keyboardType{
+- (void)setupCellWithImageName:(NSString *)imageName andPlaceholder:(NSString *)placeholder andKeyboardType:(UIKeyboardType)keyboardType isDigital:(BOOL)isDigital{
     
-    if (imageName.length) {
-        self.image.image = [UIImage imageNamed:imageName];
-        self.image.hidden = NO;
+    if (isDigital) {
+        self.minusButton.hidden = NO;
+        self.plusButton.hidden = NO;
+        self.image.hidden = YES;
         self.textField.enabled = NO;
     }else{
-        self.textField.enabled = YES;
-        self.textField.keyboardType = keyboardType;
-        self.image.hidden = YES;
+        if (imageName.length) {
+            self.image.image = [UIImage imageNamed:imageName];
+            self.image.hidden = NO;
+            self.textField.enabled = NO;
+        }else{
+            self.textField.enabled = YES;
+            self.textField.keyboardType = keyboardType;
+            self.image.hidden = YES;
+        }
     }
     
+    
     self.textField.placeholder = placeholder;
-    self.title.text = placeholder;
+    self.title.text = [placeholder stringByReplacingOccurrencesOfString:@" (required)" withString:@""];
+}
+
+- (IBAction)addValue:(UIButton *)sender {
+    NSInteger currentValue = [self.textField.text integerValue];
+    
+    currentValue ++;
+    
+    self.textField.text = [NSString stringWithFormat:@"%ld", (long)currentValue];
+    [self.textField.delegate textField:self.textField shouldChangeCharactersInRange:NSMakeRange(0, 0) replacementString:nil];
+}
+
+- (IBAction)decreaseValue:(UIButton *)sender {
+    
+    NSInteger currentValue = [self.textField.text integerValue];
+    
+    currentValue --;
+    
+    self.textField.text = [NSString stringWithFormat:@"%ld", currentValue > 0 ? (long)currentValue : 0];
+    [self.textField.delegate textField:self.textField shouldChangeCharactersInRange:NSMakeRange(0, 0) replacementString:nil];
 }
 
 @end
