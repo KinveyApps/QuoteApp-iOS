@@ -41,6 +41,7 @@
 - (UITableViewCell *)cellForTableViewAtIndexPath:(NSIndexPath *)indexPath;
 - (CGFloat)heightForRow;
 - (CGFloat)heightForHeaderInSection;
+- (void)deleteItemAtIndex:(NSUInteger)index;
 
 //UI
 - (void)detailViewForIndex:(NSInteger)index;

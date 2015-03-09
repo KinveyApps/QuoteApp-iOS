@@ -20,6 +20,7 @@
 #import "MainTableViewCell.h"
 #import "MainTableViewCellForIPhone.h"
 #import "QuoteOrderModalViewController.h"
+#import "DejalActivityView.h"
 
 #define HEIGHT_FOR_ROW 44
 #define HEIGHT_FOR_HEADER_IN_SECTION_FOR_IPHONE 44
@@ -108,6 +109,33 @@
     }
 }
 
+- (void)deleteItemAtIndex:(NSUInteger)index{
+        
+    Quote *quoteForDelete;
+    if (index < self.items.count)
+        quoteForDelete = self.items[index];
+    
+    if (quoteForDelete) {
+        
+        [DejalBezelActivityView activityViewForView:self.view withLabel:@"Deleting..."];
+        
+        [[DataHelper instance] deleteQuote:quoteForDelete
+                                 onSuccess:^(BOOL result) {
+                                     
+                                     [self sendSearchRequestWithString:nil];
+                                     
+                                 } onFailure:^(NSError *error) {
+                                     
+                                     [self sendSearchRequestWithString:nil];
+                                     [[[UIAlertView alloc] initWithTitle:@"Error"
+                                                                 message:error.localizedDescription
+                                                                delegate:nil
+                                                       cancelButtonTitle:LOC(OKAY)
+                                                       otherButtonTitles:nil] show];
+                                 }];
+    }
+}
+
 
 #pragma mark - Data Source
 
@@ -140,6 +168,8 @@
     [[DataHelper instance] loadQuotesUseCache:NO
                            containtSubstinrg:searchString
                                    OnSuccess:^(NSArray *quotes) {
+                                       
+                                                [DejalActivityView removeView];
                                                 self.isSearchProcess = NO;
                                                 self.items = quotes;
                                                 self.searchCountResultLabel.text = [NSString stringWithFormat:LOC(HaSVC_LEBEL_COUNT_RESULT), self.items.count];

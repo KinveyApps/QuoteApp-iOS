@@ -86,6 +86,8 @@
     
     self.topBarView.backgroundColor = BAR_COLOR;
     self.titleLable.text = [self titleForView];
+    
+    self.tableView.allowsMultipleSelectionDuringEditing = NO;
 }
 
 - (void)updateData{
@@ -301,6 +303,18 @@
 }
 
 - (CGFloat)heightForHeaderInSection{ return 0; }//abstract
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [self deleteItemAtIndex:indexPath.row];
+    }
+}
+
+- (void)deleteItemAtIndex:(NSUInteger)index{ }//abstract
 
 
 #pragma mark - Data Source
