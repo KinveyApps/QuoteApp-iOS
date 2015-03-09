@@ -56,6 +56,7 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableViewWidthConstraint;
 @property (weak, nonatomic) IBOutlet UIView *topBarView;
 @property (weak, nonatomic) IBOutlet UILabel *titleTopBarLable;
+@property (nonatomic, strong) NSArray *allQuotes;
 
 @end
 
@@ -146,6 +147,12 @@
     [super viewWillAppear:animated];
     self.submitButton.layer.cornerRadius = BUTTON_CORNER_RADIUS;
     [self.tableView reloadData];
+    
+    [[DataHelper instance] loadQuotesUseCache:YES
+                            containtSubstinrg:nil
+                                    OnSuccess:^(NSArray *result) {
+                                        self.allQuotes = result;
+                                    } onFailure:nil];
 }
 
 - (void)didReceiveMemoryWarning{
@@ -250,9 +257,29 @@
     
     float fabPrice = random();
     fabPrice = (float)(random() % 74) / (float)(random() % 74);
+    float preRandom = arc4random();
     self.quote.totalPrice = [@"$" stringByAppendingFormat:@"1,500/month"];
-    self.quote.referenceNumber = [@"Q" stringByAppendingFormat:@"%ld", (random() % 10000000)];
+    self.quote.referenceNumber = [self generateUniqueReferenceNumber];
     self.quote.originator = [KCSUser activeUser];
+}
+
+- (NSString *)generateUniqueReferenceNumber{
+    
+    NSString *result;
+    BOOL isNotUnique = YES;
+    
+    do {
+        result = [@"Q" stringByAppendingFormat:@"%u", (arc4random() % 10000000)];
+        isNotUnique = NO;
+        for (Quote *item in self.allQuotes) {
+            if ([item.referenceNumber isEqualToString:result]) {
+                isNotUnique = YES;
+                break;
+            }
+        }
+    } while (isNotUnique);
+    
+    return result;
 }
 
 - (IBAction)pressSettings {

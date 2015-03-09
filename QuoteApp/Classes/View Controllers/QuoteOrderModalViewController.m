@@ -24,6 +24,7 @@
 @interface QuoteOrderModalViewController ()
 
 @property (nonatomic, strong) QuoteOrderSubView *detailSubView;
+@property (nonatomic, strong) NSArray *allOrders;
 
 @end
 
@@ -36,6 +37,12 @@
     
     self = [self initWithNibName:@"BaseModalViewController"
                           bundle:nil];
+    
+    [[DataHelper instance] loadOrdersUseCache:YES
+                            containtSubstinrg:nil
+                                    OnSuccess:^(NSArray *result) {
+                                        self.allOrders = result;
+                                    } onFailure:nil];
     return self;
 }
 
@@ -85,6 +92,25 @@
     }
 }
 
+- (NSString *)generateUniqueReferenceNumber{
+    
+    NSString *result;
+    BOOL isNotUnique = YES;
+    
+    do {
+        result = [@"Q" stringByAppendingFormat:@"%u", (arc4random() % 10000000)];
+        isNotUnique = NO;
+        for (Order *item in self.allOrders) {
+            if ([item.referenceNumber isEqualToString:result]) {
+                isNotUnique = YES;
+                break;
+            }
+        }
+    } while (isNotUnique);
+    
+    return result;
+}
+
 
 #pragma mark - Actions
 
@@ -94,7 +120,7 @@
     Order *order = [[Order alloc] init];
     
     order.meta = [[KCSMetadata alloc] init];
-    order.referenceNumber = [@"O" stringByAppendingFormat:@"%ld", (random() % 10000000)];
+    order.referenceNumber = [self generateUniqueReferenceNumber];
     order.originator = self.item.originator;
     order.originator = self.item.originator;
     order.activeUsers = self.item.activeUsers;
