@@ -186,6 +186,22 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DataHelper)
     
 }
 
+- (void)deleteQuote:(Quote *)quote onSuccess:(void (^)(BOOL))reportSuccess onFailure:(STErrorBlock)reportFailure{
+    
+    [self.quotesStore removeObject:quote
+               withCompletionBlock:^(unsigned long count, NSError *errorOrNil) {
+                   
+                   //Return to main thread for update UI
+                   dispatch_async(dispatch_get_main_queue(), ^{
+                       if (count != 1) {
+                           if (reportFailure) reportFailure(errorOrNil);
+                       } else {
+                           if (reportSuccess) reportSuccess(YES);
+                       }
+                   });
+               } withProgressBlock:nil];
+}
+
 
 #pragma mark - ORDER
 #pragma mark - Save and Load Entity
@@ -243,6 +259,22 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DataHelper)
              }
                withProgressBlock:nil];
     
+}
+
+- (void)deleteOrder:(Order *)order onSuccess:(void (^)(BOOL))reportSuccess onFailure:(STErrorBlock)reportFailure{
+    
+    [self.ordersStore removeObject:order
+               withCompletionBlock:^(unsigned long count, NSError *errorOrNil) {
+                   
+                   //Return to main thread for update UI
+                   dispatch_async(dispatch_get_main_queue(), ^{
+                       if (count != 1) {
+                           if (reportFailure) reportFailure(errorOrNil);
+                       } else {
+                           if (reportSuccess) reportSuccess(YES);
+                       }
+                   });
+               } withProgressBlock:nil];
 }
 
 

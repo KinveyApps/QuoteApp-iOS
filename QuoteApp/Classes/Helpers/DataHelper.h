@@ -40,9 +40,11 @@
 
 - (void)loadQuotesUseCache:(BOOL)useCache containtSubstinrg:(NSString *)substring OnSuccess:(void (^)(NSArray *))reportSuccess onFailure:(STErrorBlock)reportFailure;
 - (void)saveQuote:(Quote *)quote OnSuccess:(void (^)(NSArray *))reportSuccess onFailure:(STErrorBlock)reportFailure;
+- (void)deleteQuote:(Quote *)quote onSuccess:(void (^)(BOOL))reportSuccess onFailure:(STErrorBlock)reportFailure;
 
 - (void)loadOrdersUseCache:(BOOL)useCache containtSubstinrg:(NSString *)substring OnSuccess:(void (^)(NSArray *))reportSuccess onFailure:(STErrorBlock)reportFailure;
 - (void)saveOrder:(Order *)order OnSuccess:(void (^)(NSArray *))reportSuccess onFailure:(STErrorBlock)reportFailure;
+- (void)deleteOrder:(Order *)order onSuccess:(void (^)(BOOL))reportSuccess onFailure:(STErrorBlock)reportFailure;
 
 - (void)loadProductsUseCache:(BOOL)useCache containtSubstinrg:(NSString *)substring OnSuccess:(void (^)(NSArray *))reportSuccess onFailure:(STErrorBlock)reportFailure;
 
