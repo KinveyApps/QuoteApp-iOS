@@ -31,6 +31,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *totalCostLabel;
 @property (weak, nonatomic) IBOutlet UILabel *productTitleLabel;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *productLabelHeightConstraint;
+
 @end
 
 @implementation QuoteOrderSubView
@@ -75,8 +77,25 @@
     
     if (item) {
         _item = item;
+        NSString *productLabelText = [[LOC(DV_PRODUCT_TITLE) stringByAppendingString:@"\n"] stringByAppendingString:item.product.title];
         
-        if (item.product) self.productTitleLabel.text = [LOC(DV_PRODUCT_TITLE) stringByAppendingString:item.product.title];
+        CGSize size = CGSizeMake(self.view.frame.size.width, 0);
+        
+        UIFont *targetFont = self.productTitleLabel.font;
+        
+        CGRect labelRect = [productLabelText boundingRectWithSize:size
+                                                          options:NSStringDrawingUsesLineFragmentOrigin
+                                                       attributes:@{NSFontAttributeName :  targetFont}
+                                                          context:nil];
+        CGRect oneLineHeight = [@"Test" boundingRectWithSize:size
+                                                     options:NSStringDrawingUsesLineFragmentOrigin
+                                                  attributes:@{NSFontAttributeName :  targetFont}
+                                                     context:nil];
+        
+        if (item.product) self.productTitleLabel.text = productLabelText;
+        self.productLabelHeightConstraint.constant = labelRect.size.height;
+        self.productTitleLabel.numberOfLines = round(labelRect.size.height / oneLineHeight.size.height);
+        
         if (item.referenceNumber) self.referenceNumberLabel.text = [LOC(DV_REFERENCE_NUMBER) stringByAppendingString:item.referenceNumber];
         if (item.activeUsers) self.activeUserLabel.text = [LOC(DV_ACTIVE_USER) stringByAppendingString:item.activeUsers];
         if (item.businessLogicScripts) self.businessLogicScriptsLebel.text = [LOC(DV_BUSINESS_LOGIC_SCRIPTS) stringByAppendingString:item.businessLogicScripts];
