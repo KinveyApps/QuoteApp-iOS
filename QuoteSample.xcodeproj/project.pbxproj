@@ -11,7 +11,6 @@
 		1B1A181718BFC7BF00CD23BE /* OrderHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B1A181618BFC7BF00CD23BE /* OrderHomeViewController.m */; };
 		1B1A181A18BFCC4800CD23BE /* ProductHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B1A181918BFCC4800CD23BE /* ProductHomeViewController.m */; };
 		1B2825A51917E2B800EC09A4 /* License.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1B2825A41917E2B800EC09A4 /* License.txt */; };
-		1B2DC6EF18EB0D9B00FB5AB7 /* KinveyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B2DC6ED18EB0AB400FB5AB7 /* KinveyKit.framework */; };
 		1B475DBD18AE56EA0071BC98 /* ProductTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B475DBC18AE56EA0071BC98 /* ProductTableViewCell.m */; };
 		1B475DBF18AE571C0071BC98 /* ProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B475DBE18AE571C0071BC98 /* ProductTableViewCell.xib */; };
 		1B475DC718AEB7A60071BC98 /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B475DC618AEB7A60071BC98 /* Product.m */; };
@@ -47,7 +46,12 @@
 		1BD60EFF18D21350002496B4 /* BaseModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD60EFD18D21350002496B4 /* BaseModalViewController.m */; };
 		1BD60F0018D21350002496B4 /* BaseModalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BD60EFE18D21350002496B4 /* BaseModalViewController.xib */; };
 		1BD60F0318D24502002496B4 /* QuoteOrderModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD60F0218D24502002496B4 /* QuoteOrderModalViewController.m */; };
-		BD7B76AC1AA73DCC001FD872 /* KinveyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B2DC6ED18EB0AB400FB5AB7 /* KinveyKit.framework */; };
+		BDC9AD411AADB4D4002F993B /* com.kinvey.KinveyKit.docset in Resources */ = {isa = PBXBuildFile; fileRef = BDC9AD3E1AADB4D4002F993B /* com.kinvey.KinveyKit.docset */; };
+		BDC9AD421AADB4D4002F993B /* com.kinvey.KinveyKit.docset in Resources */ = {isa = PBXBuildFile; fileRef = BDC9AD3E1AADB4D4002F993B /* com.kinvey.KinveyKit.docset */; };
+		BDC9AD431AADB4D4002F993B /* KinveyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDC9AD3F1AADB4D4002F993B /* KinveyKit.framework */; };
+		BDC9AD441AADB4D4002F993B /* KinveyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDC9AD3F1AADB4D4002F993B /* KinveyKit.framework */; };
+		BDC9AD451AADB4D4002F993B /* LICENSES in Resources */ = {isa = PBXBuildFile; fileRef = BDC9AD401AADB4D4002F993B /* LICENSES */; };
+		BDC9AD461AADB4D4002F993B /* LICENSES in Resources */ = {isa = PBXBuildFile; fileRef = BDC9AD401AADB4D4002F993B /* LICENSES */; };
 		C67609FE18A2826400BAC60D /* NewQuoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C67609FC18A2826400BAC60D /* NewQuoteViewController.m */; };
 		C67609FF18A2826400BAC60D /* NewQuoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C67609FD18A2826400BAC60D /* NewQuoteViewController.xib */; };
 		C6760A0818A282E200BAC60D /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6760A0618A282E200BAC60D /* HomeViewController.m */; };
@@ -103,7 +107,6 @@
 		1B1A181818BFCC4800CD23BE /* ProductHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductHomeViewController.h; sourceTree = "<group>"; };
 		1B1A181918BFCC4800CD23BE /* ProductHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductHomeViewController.m; sourceTree = "<group>"; };
 		1B2825A41917E2B800EC09A4 /* License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = License.txt; sourceTree = SOURCE_ROOT; };
-		1B2DC6ED18EB0AB400FB5AB7 /* KinveyKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KinveyKit.framework; sourceTree = "<group>"; };
 		1B475DBB18AE56EA0071BC98 /* ProductTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductTableViewCell.h; sourceTree = "<group>"; };
 		1B475DBC18AE56EA0071BC98 /* ProductTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductTableViewCell.m; sourceTree = "<group>"; };
 		1B475DBE18AE571C0071BC98 /* ProductTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductTableViewCell.xib; sourceTree = "<group>"; };
@@ -159,6 +162,9 @@
 		1BD60EFE18D21350002496B4 /* BaseModalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseModalViewController.xib; sourceTree = "<group>"; };
 		1BD60F0118D24502002496B4 /* QuoteOrderModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteOrderModalViewController.h; sourceTree = "<group>"; };
 		1BD60F0218D24502002496B4 /* QuoteOrderModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuoteOrderModalViewController.m; sourceTree = "<group>"; };
+		BDC9AD3E1AADB4D4002F993B /* com.kinvey.KinveyKit.docset */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = com.kinvey.KinveyKit.docset; sourceTree = "<group>"; };
+		BDC9AD3F1AADB4D4002F993B /* KinveyKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KinveyKit.framework; sourceTree = "<group>"; };
+		BDC9AD401AADB4D4002F993B /* LICENSES */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSES; sourceTree = "<group>"; };
 		C67609EF18A2761400BAC60D /* License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = License.txt; sourceTree = "<group>"; };
 		C67609FB18A2826400BAC60D /* NewQuoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewQuoteViewController.h; sourceTree = "<group>"; };
 		C67609FC18A2826400BAC60D /* NewQuoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewQuoteViewController.m; sourceTree = "<group>"; };
@@ -219,7 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C6A3113618A110A000916A1A /* MessageUI.framework in Frameworks */,
-				1B2DC6EF18EB0D9B00FB5AB7 /* KinveyKit.framework in Frameworks */,
+				BDC9AD431AADB4D4002F993B /* KinveyKit.framework in Frameworks */,
 				C6A3113418A1108900916A1A /* SystemConfiguration.framework in Frameworks */,
 				C6A3113218A1107D00916A1A /* Social.framework in Frameworks */,
 				C6A3113018A1107400916A1A /* Security.framework in Frameworks */,
@@ -238,21 +244,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				C6A3106A18A0F6D700916A1A /* XCTest.framework in Frameworks */,
+				BDC9AD441AADB4D4002F993B /* KinveyKit.framework in Frameworks */,
 				C6A3106C18A0F6D700916A1A /* UIKit.framework in Frameworks */,
 				C6A3106B18A0F6D700916A1A /* Foundation.framework in Frameworks */,
-				BD7B76AC1AA73DCC001FD872 /* KinveyKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1B2DC6EC18EB0AB400FB5AB7 /* KinveyKit-1.26.6 */ = {
+		BDC9AD3D1AADB4D4002F993B /* KinveyKit-1.28.0 */ = {
 			isa = PBXGroup;
 			children = (
-				1B2DC6ED18EB0AB400FB5AB7 /* KinveyKit.framework */,
+				BDC9AD3E1AADB4D4002F993B /* com.kinvey.KinveyKit.docset */,
+				BDC9AD3F1AADB4D4002F993B /* KinveyKit.framework */,
+				BDC9AD401AADB4D4002F993B /* LICENSES */,
 			);
-			path = "KinveyKit-1.26.6";
+			path = "KinveyKit-1.28.0";
 			sourceTree = "<group>";
 		};
 		C6A3104418A0F6D700916A1A = {
@@ -344,7 +352,7 @@
 		C6A3108118A106DF00916A1A /* Externals */ = {
 			isa = PBXGroup;
 			children = (
-				1B2DC6EC18EB0AB400FB5AB7 /* KinveyKit-1.26.6 */,
+				BDC9AD3D1AADB4D4002F993B /* KinveyKit-1.28.0 */,
 				C6A3108418A106DF00916A1A /* DejalActivityView */,
 				C6A3108D18A106DF00916A1A /* STBlocks.h */,
 				C6A3108F18A106DF00916A1A /* SynthesizeSingleton.h */,
@@ -569,6 +577,7 @@
 			files = (
 				1BC2439C18C7038300D1E15B /* QuoteOrderSubView.xib in Resources */,
 				C6A3105B18A0F6D700916A1A /* InfoPlist.strings in Resources */,
+				BDC9AD411AADB4D4002F993B /* com.kinvey.KinveyKit.docset in Resources */,
 				1B4773F718C5BFDF005E1A9C /* MainTableViewCellForIPhone.xib in Resources */,
 				C6760A0918A282E200BAC60D /* HomeViewController.xib in Resources */,
 				1BC243A418C7B14D00D1E15B /* ProductSubView.xib in Resources */,
@@ -589,6 +598,7 @@
 				1B47740118C5CF9E005E1A9C /* ProductViewCellForIPhone.xib in Resources */,
 				C6A3108018A0F71B00916A1A /* MainWindow.xib in Resources */,
 				1BAECC8118E43DE1007B83BE /* AboutViewController.xib in Resources */,
+				BDC9AD451AADB4D4002F993B /* LICENSES in Resources */,
 				1B4773E818C4634D005E1A9C /* ProductCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -597,6 +607,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDC9AD421AADB4D4002F993B /* com.kinvey.KinveyKit.docset in Resources */,
+				BDC9AD461AADB4D4002F993B /* LICENSES in Resources */,
 				C6A3107418A0F6D700916A1A /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -772,11 +784,12 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Externals/KinveyKit-1.26.6",
+					"$(PROJECT_DIR)/Externals/KinveyKit-1.28.0",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "QuoteApp/QuoteSample-Prefix.pch";
 				INFOPLIST_FILE = "QuoteApp/QuoteSample-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = QuoteSample;
 				PROVISIONING_PROFILE = "";
@@ -794,11 +807,12 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Externals/KinveyKit-1.26.6",
+					"$(PROJECT_DIR)/Externals/KinveyKit-1.28.0",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "QuoteApp/QuoteSample-Prefix.pch";
 				INFOPLIST_FILE = "QuoteApp/QuoteSample-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = QuoteSample;
 				PROVISIONING_PROFILE = "";
@@ -816,6 +830,7 @@
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(PROJECT_DIR)/Externals/KinveyKit-1.26.6",
+					"$(PROJECT_DIR)/Externals/KinveyKit-1.28.0",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "QuoteApp/QuoteSample-Prefix.pch";
@@ -839,6 +854,7 @@
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(PROJECT_DIR)/Externals/KinveyKit-1.26.6",
+					"$(PROJECT_DIR)/Externals/KinveyKit-1.28.0",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "QuoteApp/QuoteSample-Prefix.pch";
