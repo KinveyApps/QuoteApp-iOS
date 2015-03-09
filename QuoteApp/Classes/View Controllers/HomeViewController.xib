@@ -125,9 +125,9 @@
                     </connections>
                 </collectionView>
                 <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search result" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="693-4C-ue0">
-                    <rect key="frame" x="669" y="74" width="79" height="21"/>
+                    <rect key="frame" x="669" y="64" width="79" height="19"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="21" id="uc5-w5-nl0"/>
+                        <constraint firstAttribute="height" constant="19" id="uc5-w5-nl0"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -150,7 +150,7 @@
                 <constraint firstAttribute="trailing" secondItem="jOO-sA-huW" secondAttribute="trailing" id="cJ8-Dd-1eB"/>
                 <constraint firstItem="jOO-sA-huW" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="d4V-ix-Qav"/>
                 <constraint firstAttribute="trailing" secondItem="gkI-o9-a5o" secondAttribute="trailing" id="dWd-dd-mLz"/>
-                <constraint firstItem="d87-RW-cbZ" firstAttribute="top" secondItem="693-4C-ue0" secondAttribute="top" constant="-10" id="mZs-h2-Tpo"/>
+                <constraint firstItem="d87-RW-cbZ" firstAttribute="top" secondItem="693-4C-ue0" secondAttribute="top" id="mZs-h2-Tpo"/>
                 <constraint firstAttribute="trailing" secondItem="oh5-Kf-YPG" secondAttribute="trailing" id="vVI-Cm-8z7"/>
                 <constraint firstItem="d87-RW-cbZ" firstAttribute="bottom" secondItem="oh5-Kf-YPG" secondAttribute="bottom" id="zoH-Pu-b2n"/>
             </constraints>
