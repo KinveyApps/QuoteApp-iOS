@@ -137,7 +137,7 @@
 - (void)sendSearchRequestWithString:(NSString *)searchString{
     
     //Load data which containts search string from Quote collection
-    [[DataHelper instance] loadQuotesUseCache:YES
+    [[DataHelper instance] loadQuotesUseCache:NO
                            containtSubstinrg:searchString
                                    OnSuccess:^(NSArray *quotes) {
                                                 self.isSearchProcess = NO;

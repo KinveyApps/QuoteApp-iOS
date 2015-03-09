@@ -138,7 +138,7 @@
 - (void)sendSearchRequestWithString:(NSString *)searchString{
     
     //Load data which containts search string from Order collection
-    [[DataHelper instance] loadOrdersUseCache:YES
+    [[DataHelper instance] loadOrdersUseCache:NO
                            containtSubstinrg:searchString
                                    OnSuccess:^(NSArray *orders) {
                                                 self.isSearchProcess = NO;
