@@ -103,7 +103,7 @@
         if (item.collaborators) self.collaboratorsLabel.text = [LOC(DV_COLLABORATORS) stringByAppendingString:item.collaborators];
         if (item.backendEnvironments) self.backendEnvironmentsLabel.text = [LOC(DV_BACKEND_ENVIRONMENTS) stringByAppendingString:item.backendEnvironments];
         if (item.dataStorage) self.dataStorageLabel.text = [LOC(DV_DATA_STORAGE) stringByAppendingString:item.dataStorage];
-        if (item.businessLogicExecutionTimeLimit) self.businessLogicScriptsLebel.text = [LOC(DV_BUSINESS_EXECUTION_TIME_LIMIT) stringByAppendingString:item.businessLogicExecutionTimeLimit];
+        if (item.businessLogicExecutionTimeLimit) self.businessLogicExecutionTimeLimitLabel.text = [LOC(DV_BUSINESS_EXECUTION_TIME_LIMIT) stringByAppendingString:item.businessLogicExecutionTimeLimit];
         if (item.totalPrice) self.totalCostLabel.text = [LOC(DV_TOTAL_COST) stringByAppendingString:item.totalPrice];
         if (item.startSubscriptionDate) self.startSubscriptionDateLabel.text = [LOC(DV_START_SUBSCRIPTION_DATE) stringByAppendingString:[[DataHelper instance].formatter stringFromDate:item.startSubscriptionDate]];
         
