@@ -275,9 +275,11 @@
     if (self.isEditModeTableView && (indexPath.row != 2)) {
         cell.valueTextField.enabled = YES;
         cell.valueTextField.placeholder = [self placeholderForCellWithKey:[self allUserInfoKey][indexPath.row]];
+        cell.valueTextField.borderStyle = UITextBorderStyleRoundedRect;
     }else{
         cell.valueTextField.enabled = NO;
         cell.valueTextField.placeholder = @"";
+        cell.valueTextField.borderStyle = UITextBorderStyleNone;
     }
     
     return cell;
