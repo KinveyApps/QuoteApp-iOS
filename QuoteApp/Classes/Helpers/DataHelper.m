@@ -76,7 +76,8 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DataHelper)
     if (!_formatter) {
         _formatter = [[NSDateFormatter alloc] init];
         [_formatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
-        [_formatter setDateFormat:FORMAT_DATE];
+        [_formatter setDateStyle:NSDateFormatterShortStyle];
+        [_formatter setTimeStyle:NSDateFormatterNoStyle];
     }
     
     return _formatter;
