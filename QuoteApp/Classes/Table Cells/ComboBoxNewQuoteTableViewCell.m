@@ -119,7 +119,8 @@
         self.minusButton.hidden = NO;
         self.plusButton.hidden = NO;
         self.image.hidden = YES;
-        self.textField.enabled = NO;
+        self.textField.enabled = YES;
+        self.textField.keyboardType = keyboardType;
     }else{
         if (imageName.length) {
             self.image.image = [UIImage imageNamed:imageName];
