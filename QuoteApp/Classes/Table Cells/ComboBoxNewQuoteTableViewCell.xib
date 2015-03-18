@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ComboBoxNewQuoteTableViewCell">
@@ -35,7 +35,7 @@
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Labelfasdf" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CLc-WN-wOH">
-                    <rect key="frame" x="8" y="0.0" width="384" height="16"/>
+                    <rect key="frame" x="0.0" y="0.0" width="392" height="16"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="16" id="dOj-Jv-aN0"/>
                     </constraints>
@@ -78,7 +78,7 @@
                 <constraint firstAttribute="trailing" secondItem="fxP-go-Ewh" secondAttribute="trailing" id="G4k-GO-eCC"/>
                 <constraint firstAttribute="bottom" secondItem="OEm-k8-Yvr" secondAttribute="bottom" constant="15" id="HAR-J1-qj1"/>
                 <constraint firstAttribute="trailing" secondItem="OEm-k8-Yvr" secondAttribute="trailing" id="JY6-Qz-dik"/>
-                <constraint firstItem="CLc-WN-wOH" firstAttribute="leading" secondItem="BLy-Gc-pcR" secondAttribute="leading" constant="8" id="M3i-TR-Ocf"/>
+                <constraint firstItem="CLc-WN-wOH" firstAttribute="leading" secondItem="BLy-Gc-pcR" secondAttribute="leading" id="M3i-TR-Ocf"/>
                 <constraint firstItem="OEm-k8-Yvr" firstAttribute="top" secondItem="BLy-Gc-pcR" secondAttribute="top" constant="15" id="eA5-w1-X3O"/>
                 <constraint firstItem="OEm-k8-Yvr" firstAttribute="leading" secondItem="BLy-Gc-pcR" secondAttribute="leading" id="lXu-yQ-SBE"/>
                 <constraint firstItem="fxP-go-Ewh" firstAttribute="leading" secondItem="rKv-mT-cLL" secondAttribute="trailing" constant="1" id="m2G-fm-Kq5"/>
