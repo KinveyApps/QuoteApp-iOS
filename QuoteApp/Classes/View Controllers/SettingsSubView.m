@@ -119,20 +119,26 @@
         if (self.isEditModeTableView) {
             [self.editButton setTitle:LOC(DONE) forState:UIControlStateNormal];
         }else{
-            [self.editButton setTitle:LOC(EDIT) forState:UIControlStateNormal];
-            [self.spinner startAnimating];
-            [self endInputIfNeed];
-            
-            //Save user info
-            [[DataHelper instance] saveUserWithInfo:[self userInfo]
-                                          OnSuccess:^(NSArray *users){
-                                              if (users.count) {
-                                                  [self.spinner stopAnimating];
+            if ([self isValidEmail:self.userData[4]]) {
+                [self.editButton setTitle:LOC(EDIT) forState:UIControlStateNormal];
+                [self.spinner startAnimating];
+                [self endInputIfNeed];
+                
+                //Save user info
+                [[DataHelper instance] saveUserWithInfo:[self userInfo]
+                                              OnSuccess:^(NSArray *users){
+                                                  if (users.count) {
+                                                      [self.spinner stopAnimating];
+                                                  }
                                               }
-                                          }
-                                          onFailure:^(NSError *error){
-                                              [self.spinner stopAnimating];
-                                          }];
+                                              onFailure:^(NSError *error){
+                                                  [self.spinner stopAnimating];
+                                              }];
+            }else{
+                [self showNotValidEmailMessage];
+                self.isEditModeTableView = YES;
+            }
+            
         }
         
         [self.tableView reloadData];
@@ -196,6 +202,12 @@
         self.emailConfirmationSwitch.on = NO;
         [result setObject:[NSNumber numberWithBool:self.emailConfirmationSwitch.on]
                    forKey:USER_INFO_KEY_EMAIL_CONFIRMATION_ENABLE];
+        
+        [[[UIAlertView alloc] initWithTitle:LOC(ERROR)
+                                    message:LOC(SVC_NOT_VALID_EMAIL_MESSAGE)
+                                   delegate:nil
+                          cancelButtonTitle:LOC(CANCEL)
+                          otherButtonTitles:nil] show];
     }
     
     [result setObject:[NSNumber numberWithBool:self.pushNotificationSwitch.on]
@@ -282,6 +294,10 @@
         cell.valueTextField.borderStyle = UITextBorderStyleNone;
     }
     
+    if (indexPath.row == 4) {
+        cell.valueTextField.keyboardType = UIKeyboardTypeEmailAddress;
+    }
+    
     return cell;
 }
 
@@ -331,9 +347,17 @@
 
 - (BOOL)isValidEmail:(NSString *)email{
     
-    NSString *emailRegex = @"[A-Z0-9a-z\\._%+-]+@([A-Za-z0-9-]+\\.)+[A-Za-z]{2,4}";
+    NSString *emailRegex = @".+@([A-Za-z0-9-]+\\.)+[A-Za-z]{2}[A-Za-z]*";
     NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
     return [emailTest evaluateWithObject:email];
+}
+
+- (void)showNotValidEmailMessage{
+    [[[UIAlertView alloc] initWithTitle:LOC(ERROR)
+                                message:LOC(SVC_NOT_VALID_EMAIL_MESSAGE_EDIT)
+                               delegate:nil
+                      cancelButtonTitle:LOC(CANCEL)
+                      otherButtonTitles:nil] show];
 }
 
 
@@ -344,6 +368,11 @@
     
     NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
     NSMutableArray *userData = [self.userData mutableCopy];
+    if (indexPath.row == 4) {
+        if (![self isValidEmail:value]) {
+            [self showNotValidEmailMessage];
+        }
+    }
     userData[indexPath.row] = value;
     self.userData = [userData copy];
 }

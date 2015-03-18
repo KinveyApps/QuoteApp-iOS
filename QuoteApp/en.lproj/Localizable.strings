@@ -57,6 +57,8 @@
 "SVC_PUSH_LABEL"="Push Notification";
 "SVC_EMAIL_CONFIRMATION_LABEL"="Email Confirmation on New Order";
 "SVC_BUTTON_LOGOUT"="Logout";
+"SVC_NOT_VALID_EMAIL_MESSAGE" = "Please enter valid email before turning email confirmations on.";
+"SVC_NOT_VALID_EMAIL_MESSAGE_EDIT" = "Email is not valid!";
 
 //Detail View
 "DV_PRODUCT_TITLE"="Product: ";
