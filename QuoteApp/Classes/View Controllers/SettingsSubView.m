@@ -35,6 +35,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *pushLabel;
 @property (weak, nonatomic) IBOutlet UILabel *emailConfirmationLabel;
+
+@property (nonatomic) BOOL isUserSaving;
 @end
 
 @implementation SettingsSubView
@@ -119,19 +121,23 @@
         if (self.isEditModeTableView) {
             [self.editButton setTitle:LOC(DONE) forState:UIControlStateNormal];
         }else{
-            if ([self isValidEmail:self.userData[4]]) {
+            self.isUserSaving = YES;
+            [self endInputIfNeed];
+            if ([self isValidEmail:self.userData[4]] || !self.emailConfirmationSwitch.on) {
                 [self.editButton setTitle:LOC(EDIT) forState:UIControlStateNormal];
                 [self.spinner startAnimating];
-                [self endInputIfNeed];
+                
                 
                 //Save user info
                 [[DataHelper instance] saveUserWithInfo:[self userInfo]
                                               OnSuccess:^(NSArray *users){
+                                                  self.isUserSaving = NO;
                                                   if (users.count) {
                                                       [self.spinner stopAnimating];
                                                   }
                                               }
                                               onFailure:^(NSError *error){
+                                                  self.isUserSaving = NO;
                                                   [self.spinner stopAnimating];
                                               }];
             }else{
@@ -195,7 +201,7 @@
         }
     }
     
-    if ([self isValidEmail:self.userData[4]]) {
+    if ([self isValidEmail:self.userData[4]] || !self.emailConfirmationSwitch.on) {
         [result setObject:[NSNumber numberWithBool:self.emailConfirmationSwitch.on]
                    forKey:USER_INFO_KEY_EMAIL_CONFIRMATION_ENABLE];
     }else{
@@ -369,7 +375,7 @@
     NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
     NSMutableArray *userData = [self.userData mutableCopy];
     if (indexPath.row == 4) {
-        if (![self isValidEmail:value]) {
+        if (![self isValidEmail:value] && !self.isUserSaving) {
             [self showNotValidEmailMessage];
         }
     }
